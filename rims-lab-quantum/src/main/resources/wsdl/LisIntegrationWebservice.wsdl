@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetReportPDF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReportPDFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReportPDFResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PushOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PushOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Response" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResultValues">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResultValuesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ApprovedResultVaues" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetReportPDFSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReportPDF" />
+  </wsdl:message>
+  <wsdl:message name="GetReportPDFSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReportPDFResponse" />
+  </wsdl:message>
+  <wsdl:message name="PushOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:PushOrder" />
+  </wsdl:message>
+  <wsdl:message name="PushOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:PushOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetResultValuesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetResultValues" />
+  </wsdl:message>
+  <wsdl:message name="GetResultValuesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetResultValuesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="LISIntegrationWebserviceSoap">
+    <wsdl:operation name="GetReportPDF">
+      <wsdl:input message="tns:GetReportPDFSoapIn" />
+      <wsdl:output message="tns:GetReportPDFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PushOrder">
+      <wsdl:input message="tns:PushOrderSoapIn" />
+      <wsdl:output message="tns:PushOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResultValues">
+      <wsdl:input message="tns:GetResultValuesSoapIn" />
+      <wsdl:output message="tns:GetResultValuesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LISIntegrationWebserviceSoap" type="tns:LISIntegrationWebserviceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetReportPDF">
+      <soap:operation soapAction="http://tempuri.org/GetReportPDF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PushOrder">
+      <soap:operation soapAction="http://tempuri.org/PushOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResultValues">
+      <soap:operation soapAction="http://tempuri.org/GetResultValues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LISIntegrationWebserviceSoap12" type="tns:LISIntegrationWebserviceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetReportPDF">
+      <soap12:operation soapAction="http://tempuri.org/GetReportPDF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PushOrder">
+      <soap12:operation soapAction="http://tempuri.org/PushOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResultValues">
+      <soap12:operation soapAction="http://tempuri.org/GetResultValues" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LISIntegrationWebservice">
+    <wsdl:port name="LISIntegrationWebserviceSoap" binding="tns:LISIntegrationWebserviceSoap">
+      <soap:address location="http://52.187.20.127/LISIntegrationtesting/LisIntegrationWebservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LISIntegrationWebserviceSoap12" binding="tns:LISIntegrationWebserviceSoap12">
+      <soap12:address location="http://52.187.20.127/LISIntegrationtesting/LisIntegrationWebservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

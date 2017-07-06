@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MSG>
+	<MSH>
+		<Sending_Application>Third Party</Sending_Application>
+		<Sending_Facility>JJJ</Sending_Facility>
+		<Receiving_Application>LIS</Receiving_Application>
+		<Receiving_Facility>JJJ</Receiving_Facility>
+		<Message_Date_Time>20160227084606</Message_Date_Time>
+		<Message_Type>ORM</Message_Type>
+		<Message_Control_Id>000877652</Message_Control_Id>
+	</MSH>
+	<EVN>
+		<Event_Type_Code>O01</Event_Type_Code>
+		<Recorded_DateTime>20160227084606</Recorded_DateTime>
+	</EVN>
+	<PID>
+		<Patient_Id_Ext />
+		<Patient_Id_Int>JJJ87878787</Patient_Id_Int>
+		<Patient_Id_Type>NEW IC</Patient_Id_Type>
+		<Patient_Id_Number>510915105063</Patient_Id_Number>
+		<Patient_Name>Abraham</Patient_Name>
+		<Date_Of_Birth>19510915</Date_Of_Birth>
+		<Gender_Code>M</Gender_Code>
+		<Race_code>MALAYSIA</Race_code>
+		<Address1>NO 5</Address1>
+		<Address2> TMN LUYANG PHASE </Address2>
+		<Address3 />
+		<City />
+		<State />
+		<Postal_Code>883400</Postal_Code>
+		<Country_Code>MALAYSIA</Country_Code>
+		<Phone_Home />
+		<Phone_Mobile />
+		<Phone_Business>0198202090</Phone_Business>
+		<Primary_Language />
+		<Marital_Status_Code>MARRIED</Marital_Status_Code>
+		<Religion_Code>OTHERS</Religion_Code>
+		<Nationality_Code>MALAYSIA</Nationality_Code>
+	</PID>
+
+	© Attune Technologies Page 10 of 20 www.attunelive.com
+
+	<PV1>
+		<Patient_Type_Code>ED</Patient_Type_Code>
+		<Ward_Code />
+		<Admission_Type />
+		<Preadmit_Number />
+		<Specialty_Code>SP_19</Specialty_Code>
+		<Attending_Doctor_Code />
+		<Attending_Doctor_Desc />
+		<Referring_Doctor_Code />
+		<Referring_Doctor_Desc />
+		<Consulting_Doctor_Code />
+		<Consulting_Doctor_Desc />
+		<Admitting_Doctor_Code>WRJFF</Admitting_Doctor_Code>
+		<Admitting_Doctor_Desc>WRJFF</Admitting_Doctor_Desc>
+		<Patient_Class />
+		<Visit_Number>16ED00001102</Visit_Number>
+		<Financial_Class_Code>NA</Financial_Class_Code>
+		<Admit_DateTime>20160227080600</Admit_DateTime>
+	</PV1>
+	<ORC>
+		<Order_Control>NW</Order_Control>
+		<ORC_Placer_Order_Number>16017259</ORC_Placer_Order_Number>
+		<ORC_Filler_Order_Number />
+		<Placer_Group_Number />
+		<Order_Status_Code />
+		<Response_Flag />
+		<ORC_Quantity_Timing />
+		<Parent />
+		<DateTime_Of_Transaction />
+		<Entered_By_ID />
+		<Entered_By_Name />
+		<Verified_By_ID />
+		<Verified_By_Name />
+		<ORC_Ordering_Provider_ID>WRJFF</ORC_Ordering_Provider_ID>
+		<ORC_Ordering_Provider_Name>DR Isanth Kumar</ORC_Ordering_Provider_Name>
+		<Enter_Location />
+		<Call_Back_Phone_Number />
+		<Order_Effective_DateTime />
+		<Order_Control_Code_Reason />
+		<Entering_Organization />
+		<Entering_Device />
+		<Action_By />
+		<Advanced_Beneficiary_Notice_Code />
+		<Ordering_Facility_Code />
+		<Ordering_Facility_Name />
+	</ORC>
+	<Observation_Request>
+		<OBR>
+			<Set_Id_OBR>1</Set_Id_OBR>
+			<OBR_Placer_Order_Number>218228</OBR_Placer_Order_Number>
+			<OBR_Filler_Order_Number />
+			<Package_Code />
+			<Package_Description />
+			<Test_Code>P.QDN</Test_Code>
+			<Test_Name>QDN - Quantum General Screen</Test_Name>
+			<Priority_Code />
+			<Priority_Desc />
+			<Requested_DateTime>20160227084605</Requested_DateTime>
+			<Observation_DateTime />
+			<Observation_End_DateTime />
+			<Collection_Volume />
+			<Collector_Identifier />
+			<Specimen_Action_Code />
+			<Danger_Code />
+			<Relevant_Clinical_Info />
+			<Specimen_Received_DateTime />
+			<Specimen_Source_Code />
+			<Specimen_Source_Desc />
+			<OBR_Ordering_Provider_ID>WRJFF</OBR_Ordering_Provider_ID>
+			<OBR_Ordering_Provider_Name>DR Ishant Kumar</OBR_Ordering_Provider_Name>
+			<Order_Callback_Phone_Number />
+			<Placer_Field1>LAB</Placer_Field1>
+			<Placer_Field2>LAB</Placer_Field2>
+			<Filler_Field1 />
+			<Filler_Field2 />
+			<Status_Change_DateTime />
+			<Charge_To_Practice />
+			<Diagnostic_Serv_Sect_Code>GENERALSCREENS</Diagnostic_Serv_Sect_Code>
+			<Diagnostic_Serv_Sect_Desc>GENERAL SCREENS</Diagnostic_Serv_Sect_Desc>
+			<Result_Status />
+			<Parent_Result />
+			<OBR_Quantity_Timing>1.00</OBR_Quantity_Timing>
+			<Unit_Code>UN</Unit_Code>
+			<Unit_Desc />
+			<Result_Copies_To />
+			<Transportation_Mode />
+			<Reason_For_Study />
+			<Principal_Result_Interpreter />
+			<Assistant_Result_Interpreter />
+			<Technician />
+			<Transcriptionist />
+			<Scheduled_DateTime />
+			<Number_Of_Sample_Containers />
+			<Transport_Logistics_Of_Collected_Sample />
+			<Collector_Comment />
+			<Transport_Arrangement_Responsibility />
+			<Transport_Arranged />
+			<Escort_Required />
+			<Planned_Patient_Transport_Comment />
+			<Procedure_Code />
+			<Procedure_Code_Modifier />
+			<Placer_Supplemental_Service />
+			<Filler_Supplemental_Service />
+			<Cancel_Reason_Code />
+			<Cancel_Reason_Desc />
+		</OBR>
+	</Observation_Request>
+</MSG> 

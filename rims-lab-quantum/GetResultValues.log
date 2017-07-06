@@ -1,0 +1,14 @@
+4323 [main] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Outbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.connectors.connect.mirth.com">
+  <soap:Body>
+    <GetResultValues xmlns="http://tempuri.org/">
+      <OrderNo>161004337</OrderNo>
+    </GetResultValues></soap:Body></soap:Envelope>
+4625 [main] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Inbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GetResultValuesResponse xmlns="http://tempuri.org/">
+      <ApprovedResultVaues/>
+    </GetResultValuesResponse>
+  </soap:Body>
+</soap:Envelope>

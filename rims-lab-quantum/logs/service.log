@@ -1,0 +1,1746 @@
+541  [main] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Starting SpringBootLabQuantumApplication on LAPTOP-J5VT00AT with PID 13600 (E:\Works\workspace\lab\rims-lab-quantum\target\classes started by HUY in E:\Works\workspace\lab\rims-lab-quantum)
+545  [main] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - No active profile set, falling back to default profiles: default
+2035 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2037 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+2149 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2308 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+2309 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+2309 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+2766 [main] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://tempuri.org/}LISIntegrationWebserviceSoapService from class org.tempuri.LISIntegrationWebserviceSoap
+4329 [main] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Outbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.connectors.connect.mirth.com">
+  <soap:Body>
+    <GetReportPDF xmlns="http://tempuri.org/">
+      <OrderNo>0001</OrderNo>
+      <userName>RenalTeam</userName>
+      <password>renal@123</password>
+    </GetReportPDF></soap:Body></soap:Envelope>
+5025 [main] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Outbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.connectors.connect.mirth.com">
+  <soap:Body>
+    <PushOrder xmlns="http://tempuri.org/">
+      <ws:acceptMessage>
+
+        <arg0>
+
+          <content>
+            <MSG>
+    
+              <MSH>
+        
+                <Sending_Application>Third Party</Sending_Application>
+        
+                <Sending_Facility>JJJ</Sending_Facility>
+        
+                <Receiving_Application>LIS</Receiving_Application>
+        
+                <Receiving_Facility>JJJ</Receiving_Facility>
+        
+                <Message_Date_Time>20160227084606</Message_Date_Time>
+        
+                <Message_Type>ORM</Message_Type>
+        
+                <Message_Control_Id>877652</Message_Control_Id>
+    
+              </MSH>
+    
+              <EVN>
+        
+                <Event_Type_Code>O01</Event_Type_Code>
+        
+                <Recorded_DateTime>20160227084606</Recorded_DateTime>
+    
+              </EVN>
+    
+              <PID>
+        
+                <Patient_Id_Ext/>
+        
+                <Patient_Id_Int>JJJ87878787</Patient_Id_Int>
+        
+                <Patient_Id_Type>NEW IC</Patient_Id_Type>
+        
+                <Patient_Id_Number>510915105063</Patient_Id_Number>
+        
+                <Patient_Name>Abraham</Patient_Name>
+        
+                <Date_Of_Birth>19510915</Date_Of_Birth>
+        
+                <Gender_Code>M</Gender_Code>
+        
+                <Race_code>MALAYSIA</Race_code>
+        
+                <Address1>NO 5</Address1>
+        
+                <Address2> TMN LUYANG PHASE </Address2>
+        
+                <Address3/>
+        
+                <City/>
+        
+                <State/>
+        
+                <Postal_Code>883400</Postal_Code>
+        
+                <Country_Code>MALAYSIA</Country_Code>
+        
+                <Phone_Home/>
+        
+                <Phone_Mobile/>
+        
+                <Phone_Business>0198202090</Phone_Business>
+        
+                <Primary_Language/>
+        
+                <Marital_Status_Code>MARRIED</Marital_Status_Code>
+        
+                <Religion_Code>OTHERS</Religion_Code>
+        
+                <Nationality_Code>MALAYSIA</Nationality_Code>
+    
+              </PID>
+    
+              <PV1>
+        
+                <Patient_Type_Code>ED</Patient_Type_Code>
+        
+                <Ward_Code/>
+        
+                <Admission_Type/>
+        
+                <Preadmit_Number/>
+        
+                <Specialty_Code>SP_19</Specialty_Code>
+        
+                <Attending_Doctor_Code/>
+        
+                <Attending_Doctor_Desc/>
+        
+                <Referring_Doctor_Code/>
+        
+                <Referring_Doctor_Desc/>
+        
+                <Consulting_Doctor_Code/>
+        
+                <Consulting_Doctor_Desc/>
+        
+                <Admitting_Doctor_Code>WRJFF</Admitting_Doctor_Code>
+        
+                <Admitting_Doctor_Desc>WRJFF</Admitting_Doctor_Desc>
+        
+                <Patient_Class/>
+        
+                <Visit_Number>16ED00001102</Visit_Number>
+        
+                <Financial_Class_Code>NA</Financial_Class_Code>
+        
+                <Admit_DateTime>20160227080600</Admit_DateTime>
+    
+              </PV1>
+    
+              <ORC>
+        
+                <Order_Control>NW</Order_Control>
+        
+                <ORC_Placer_Order_Number>16017259</ORC_Placer_Order_Number>
+        
+                <ORC_Filler_Order_Number/>
+        
+                <Placer_Group_Number/>
+        
+                <Order_Status_Code/>
+        
+                <Response_Flag/>
+        
+                <ORC_Quantity_Timing/>
+        
+                <Parent/>
+        
+                <DateTime_Of_Transaction/>
+        
+                <Entered_By_ID/>
+        
+                <Entered_By_Name/>
+        
+                <Verified_By_ID/>
+        
+                <Verified_By_Name/>
+        
+                <ORC_Ordering_Provider_ID>WRJFF</ORC_Ordering_Provider_ID>
+        
+                <ORC_Ordering_Provider_Name>DR Isanth Kumar</ORC_Ordering_Provider_Name>
+        
+                <Enter_Location/>
+        
+                <Call_Back_Phone_Number/>
+        
+                <Order_Effective_DateTime/>
+        
+                <Order_Control_Code_Reason/>
+        
+                <Entering_Organization/>
+        
+                <Entering_Device/>
+        
+                <Action_By/>
+        
+                <Advanced_Beneficiary_Notice_Code/>
+        
+                <Ordering_Facility_Code/>
+        
+                <Ordering_Facility_Name/>
+    
+              </ORC>
+    
+              <Observation_Request>
+        
+                <OBR>
+            
+                  <Set_Id_OBR>1</Set_Id_OBR>
+            
+                  <OBR_Placer_Order_Number>218228</OBR_Placer_Order_Number>
+            
+                  <OBR_Filler_Order_Number/>
+            
+                  <Package_Code/>
+            
+                  <Package_Description/>
+            
+                  <Test_Code>P.QDN</Test_Code>
+            
+                  <Test_Name>QDN - Quantum General Screen</Test_Name>
+            
+                  <Priority_Code/>
+            
+                  <Priority_Desc/>
+            
+                  <Requested_DateTime>20160227084605</Requested_DateTime>
+            
+                  <Observation_DateTime/>
+            
+                  <Observation_End_DateTime/>
+            
+                  <Collection_Volume/>
+            
+                  <Collector_Identifier/>
+            
+                  <Specimen_Action_Code/>
+            
+                  <Danger_Code/>
+            
+                  <Relevant_Clinical_Info/>
+            
+                  <Specimen_Received_DateTime/>
+            
+                  <Specimen_Source_Code/>
+            
+                  <Specimen_Source_Desc/>
+            
+                  <OBR_Ordering_Provider_ID>WRJFF</OBR_Ordering_Provider_ID>
+            
+                  <OBR_Ordering_Provider_Name>DR Ishant Kumar</OBR_Ordering_Provider_Name>
+            
+                  <Order_Callback_Phone_Number/>
+            
+                  <Placer_Field1>LAB</Placer_Field1>
+            
+                  <Placer_Field2>LAB</Placer_Field2>
+            
+                  <Filler_Field1/>
+            
+                  <Filler_Field2/>
+            
+                  <Status_Change_DateTime/>
+            
+                  <Charge_To_Practice/>
+            
+                  <Diagnostic_Serv_Sect_Code>GENERALSCREENS</Diagnostic_Serv_Sect_Code>
+            
+                  <Diagnostic_Serv_Sect_Desc>GENERAL SCREENS</Diagnostic_Serv_Sect_Desc>
+            
+                  <Result_Status/>
+            
+                  <Parent_Result/>
+            
+                  <OBR_Quantity_Timing>1.00</OBR_Quantity_Timing>
+            
+                  <Unit_Code>UN</Unit_Code>
+            
+                  <Unit_Desc/>
+            
+                  <Result_Copies_To/>
+            
+                  <Transportation_Mode/>
+            
+                  <Reason_For_Study/>
+            
+                  <Principal_Result_Interpreter/>
+            
+                  <Assistant_Result_Interpreter/>
+            
+                  <Technician/>
+            
+                  <Transcriptionist/>
+            
+                  <Scheduled_DateTime/>
+            
+                  <Number_Of_Sample_Containers/>
+            
+                  <Transport_Logistics_Of_Collected_Sample/>
+            
+                  <Collector_Comment/>
+            
+                  <Transport_Arrangement_Responsibility/>
+            
+                  <Transport_Arranged/>
+            
+                  <Escort_Required/>
+            
+                  <Planned_Patient_Transport_Comment/>
+            
+                  <Procedure_Code/>
+            
+                  <Procedure_Code_Modifier/>
+            
+                  <Placer_Supplemental_Service/>
+            
+                  <Filler_Supplemental_Service/>
+            
+                  <Cancel_Reason_Code/>
+            
+                  <Cancel_Reason_Desc/>
+        
+                </OBR>
+    
+              </Observation_Request>
+
+            </MSG>
+
+          </content>
+
+        </arg0>
+
+      </ws:acceptMessage>
+      <userName>RenalTeam</userName>
+      <password>renal@123</password>
+    </PushOrder></soap:Body></soap:Envelope>
+65036 [main] WARN  org.apache.cxf.endpoint.ClientImpl - Timed out waiting for response to operation {http://tempuri.org/}PushOrder.
+65085 [main] ERROR o.s.boot.SpringApplication - Application startup failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:735)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:716)
+	at org.springframework.boot.SpringApplication.afterRefresh(SpringApplication.java:703)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.iis.rims.lab.quantum.SpringBootLabQuantumApplication.main(SpringBootLabQuantumApplication.java:21)
+Caused by: javax.xml.ws.soap.SOAPFaultException: Timed out waiting for response to operation {http://tempuri.org/}PushOrder.
+	at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:161)
+	at com.sun.proxy.$Proxy89.pushOrder(Unknown Source)
+	at com.iis.rims.lab.quantum.SpringBootLabQuantumApplication$1.run(SpringBootLabQuantumApplication.java:42)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:732)
+	... 6 common frames omitted
+Caused by: java.io.IOException: Timed out waiting for response to operation {http://tempuri.org/}PushOrder.
+	at org.apache.cxf.endpoint.ClientImpl.waitResponse(ClientImpl.java:689)
+	at org.apache.cxf.endpoint.ClientImpl.processResult(ClientImpl.java:612)
+	at org.apache.cxf.endpoint.ClientImpl.doInvoke(ClientImpl.java:523)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:423)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:324)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:277)
+	at org.apache.cxf.frontend.ClientProxy.invokeSync(ClientProxy.java:96)
+	at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:139)
+	... 9 common frames omitted
+988  [main] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Starting SpringBootLabQuantumApplication on LAPTOP-J5VT00AT with PID 24092 (E:\Works\workspace\lab\rims-lab-quantum\target\classes started by HUY in E:\Works\workspace\lab\rims-lab-quantum)
+995  [main] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - No active profile set, falling back to default profiles: default
+6493 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+6495 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+6630 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+6816 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+6816 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+6816 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+7499 [main] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://tempuri.org/}LISIntegrationWebserviceSoapService from class org.tempuri.LISIntegrationWebserviceSoap
+21432 [main] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Outbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.connectors.connect.mirth.com">
+  <soap:Body>
+    <GetResultValues xmlns="http://tempuri.org/">
+      <OrderNo>0001</OrderNo>
+    </GetResultValues></soap:Body></soap:Envelope>
+32726 [main] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Outbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.connectors.connect.mirth.com">
+  <soap:Body>
+    <GetReportPDF xmlns="http://tempuri.org/">
+      <OrderNo>0001</OrderNo>
+      <userName>RenalTeam</userName>
+      <password>renal@123</password>
+    </GetReportPDF></soap:Body></soap:Envelope>
+33022 [main] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Outbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.connectors.connect.mirth.com">
+  <soap:Body>
+    <PushOrder xmlns="http://tempuri.org/">
+      <ws:acceptMessage>
+
+        <arg0>
+
+          <content>
+            <MSG>
+    
+              <MSH>
+        
+                <Sending_Application>Third Party</Sending_Application>
+        
+                <Sending_Facility>JJJ</Sending_Facility>
+        
+                <Receiving_Application>LIS</Receiving_Application>
+        
+                <Receiving_Facility>JJJ</Receiving_Facility>
+        
+                <Message_Date_Time>20160227084606</Message_Date_Time>
+        
+                <Message_Type>ORM</Message_Type>
+        
+                <Message_Control_Id>877652</Message_Control_Id>
+    
+              </MSH>
+    
+              <EVN>
+        
+                <Event_Type_Code>O01</Event_Type_Code>
+        
+                <Recorded_DateTime>20160227084606</Recorded_DateTime>
+    
+              </EVN>
+    
+              <PID>
+        
+                <Patient_Id_Ext/>
+        
+                <Patient_Id_Int>JJJ87878787</Patient_Id_Int>
+        
+                <Patient_Id_Type>NEW IC</Patient_Id_Type>
+        
+                <Patient_Id_Number>510915105063</Patient_Id_Number>
+        
+                <Patient_Name>Abraham</Patient_Name>
+        
+                <Date_Of_Birth>19510915</Date_Of_Birth>
+        
+                <Gender_Code>M</Gender_Code>
+        
+                <Race_code>MALAYSIA</Race_code>
+        
+                <Address1>NO 5</Address1>
+        
+                <Address2> TMN LUYANG PHASE </Address2>
+        
+                <Address3/>
+        
+                <City/>
+        
+                <State/>
+        
+                <Postal_Code>883400</Postal_Code>
+        
+                <Country_Code>MALAYSIA</Country_Code>
+        
+                <Phone_Home/>
+        
+                <Phone_Mobile/>
+        
+                <Phone_Business>0198202090</Phone_Business>
+        
+                <Primary_Language/>
+        
+                <Marital_Status_Code>MARRIED</Marital_Status_Code>
+        
+                <Religion_Code>OTHERS</Religion_Code>
+        
+                <Nationality_Code>MALAYSIA</Nationality_Code>
+    
+              </PID>
+    
+              <PV1>
+        
+                <Patient_Type_Code>ED</Patient_Type_Code>
+        
+                <Ward_Code/>
+        
+                <Admission_Type/>
+        
+                <Preadmit_Number/>
+        
+                <Specialty_Code>SP_19</Specialty_Code>
+        
+                <Attending_Doctor_Code/>
+        
+                <Attending_Doctor_Desc/>
+        
+                <Referring_Doctor_Code/>
+        
+                <Referring_Doctor_Desc/>
+        
+                <Consulting_Doctor_Code/>
+        
+                <Consulting_Doctor_Desc/>
+        
+                <Admitting_Doctor_Code>WRJFF</Admitting_Doctor_Code>
+        
+                <Admitting_Doctor_Desc>WRJFF</Admitting_Doctor_Desc>
+        
+                <Patient_Class/>
+        
+                <Visit_Number>16ED00001102</Visit_Number>
+        
+                <Financial_Class_Code>NA</Financial_Class_Code>
+        
+                <Admit_DateTime>20160227080600</Admit_DateTime>
+    
+              </PV1>
+    
+              <ORC>
+        
+                <Order_Control>NW</Order_Control>
+        
+                <ORC_Placer_Order_Number>16017259</ORC_Placer_Order_Number>
+        
+                <ORC_Filler_Order_Number/>
+        
+                <Placer_Group_Number/>
+        
+                <Order_Status_Code/>
+        
+                <Response_Flag/>
+        
+                <ORC_Quantity_Timing/>
+        
+                <Parent/>
+        
+                <DateTime_Of_Transaction/>
+        
+                <Entered_By_ID/>
+        
+                <Entered_By_Name/>
+        
+                <Verified_By_ID/>
+        
+                <Verified_By_Name/>
+        
+                <ORC_Ordering_Provider_ID>WRJFF</ORC_Ordering_Provider_ID>
+        
+                <ORC_Ordering_Provider_Name>DR Isanth Kumar</ORC_Ordering_Provider_Name>
+        
+                <Enter_Location/>
+        
+                <Call_Back_Phone_Number/>
+        
+                <Order_Effective_DateTime/>
+        
+                <Order_Control_Code_Reason/>
+        
+                <Entering_Organization/>
+        
+                <Entering_Device/>
+        
+                <Action_By/>
+        
+                <Advanced_Beneficiary_Notice_Code/>
+        
+                <Ordering_Facility_Code/>
+        
+                <Ordering_Facility_Name/>
+    
+              </ORC>
+    
+              <Observation_Request>
+        
+                <OBR>
+            
+                  <Set_Id_OBR>1</Set_Id_OBR>
+            
+                  <OBR_Placer_Order_Number>218228</OBR_Placer_Order_Number>
+            
+                  <OBR_Filler_Order_Number/>
+            
+                  <Package_Code/>
+            
+                  <Package_Description/>
+            
+                  <Test_Code>P.QDN</Test_Code>
+            
+                  <Test_Name>QDN - Quantum General Screen</Test_Name>
+            
+                  <Priority_Code/>
+            
+                  <Priority_Desc/>
+            
+                  <Requested_DateTime>20160227084605</Requested_DateTime>
+            
+                  <Observation_DateTime/>
+            
+                  <Observation_End_DateTime/>
+            
+                  <Collection_Volume/>
+            
+                  <Collector_Identifier/>
+            
+                  <Specimen_Action_Code/>
+            
+                  <Danger_Code/>
+            
+                  <Relevant_Clinical_Info/>
+            
+                  <Specimen_Received_DateTime/>
+            
+                  <Specimen_Source_Code/>
+            
+                  <Specimen_Source_Desc/>
+            
+                  <OBR_Ordering_Provider_ID>WRJFF</OBR_Ordering_Provider_ID>
+            
+                  <OBR_Ordering_Provider_Name>DR Ishant Kumar</OBR_Ordering_Provider_Name>
+            
+                  <Order_Callback_Phone_Number/>
+            
+                  <Placer_Field1>LAB</Placer_Field1>
+            
+                  <Placer_Field2>LAB</Placer_Field2>
+            
+                  <Filler_Field1/>
+            
+                  <Filler_Field2/>
+            
+                  <Status_Change_DateTime/>
+            
+                  <Charge_To_Practice/>
+            
+                  <Diagnostic_Serv_Sect_Code>GENERALSCREENS</Diagnostic_Serv_Sect_Code>
+            
+                  <Diagnostic_Serv_Sect_Desc>GENERAL SCREENS</Diagnostic_Serv_Sect_Desc>
+            
+                  <Result_Status/>
+            
+                  <Parent_Result/>
+            
+                  <OBR_Quantity_Timing>1.00</OBR_Quantity_Timing>
+            
+                  <Unit_Code>UN</Unit_Code>
+            
+                  <Unit_Desc/>
+            
+                  <Result_Copies_To/>
+            
+                  <Transportation_Mode/>
+            
+                  <Reason_For_Study/>
+            
+                  <Principal_Result_Interpreter/>
+            
+                  <Assistant_Result_Interpreter/>
+            
+                  <Technician/>
+            
+                  <Transcriptionist/>
+            
+                  <Scheduled_DateTime/>
+            
+                  <Number_Of_Sample_Containers/>
+            
+                  <Transport_Logistics_Of_Collected_Sample/>
+            
+                  <Collector_Comment/>
+            
+                  <Transport_Arrangement_Responsibility/>
+            
+                  <Transport_Arranged/>
+            
+                  <Escort_Required/>
+            
+                  <Planned_Patient_Transport_Comment/>
+            
+                  <Procedure_Code/>
+            
+                  <Procedure_Code_Modifier/>
+            
+                  <Placer_Supplemental_Service/>
+            
+                  <Filler_Supplemental_Service/>
+            
+                  <Cancel_Reason_Code/>
+            
+                  <Cancel_Reason_Desc/>
+        
+                </OBR>
+    
+              </Observation_Request>
+
+            </MSG>
+
+          </content>
+
+        </arg0>
+
+      </ws:acceptMessage>
+      <userName>RenalTeam</userName>
+      <password>renal@123</password>
+    </PushOrder></soap:Body></soap:Envelope>
+93034 [main] WARN  org.apache.cxf.endpoint.ClientImpl - Timed out waiting for response to operation {http://tempuri.org/}PushOrder.
+93056 [main] ERROR o.s.boot.SpringApplication - Application startup failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:735)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:716)
+	at org.springframework.boot.SpringApplication.afterRefresh(SpringApplication.java:703)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.iis.rims.lab.quantum.SpringBootLabQuantumApplication.main(SpringBootLabQuantumApplication.java:22)
+Caused by: javax.xml.ws.soap.SOAPFaultException: Timed out waiting for response to operation {http://tempuri.org/}PushOrder.
+	at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:161)
+	at com.sun.proxy.$Proxy89.pushOrder(Unknown Source)
+	at com.iis.rims.lab.quantum.SpringBootLabQuantumApplication$1.run(SpringBootLabQuantumApplication.java:45)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:732)
+	... 6 common frames omitted
+Caused by: java.io.IOException: Timed out waiting for response to operation {http://tempuri.org/}PushOrder.
+	at org.apache.cxf.endpoint.ClientImpl.waitResponse(ClientImpl.java:689)
+	at org.apache.cxf.endpoint.ClientImpl.processResult(ClientImpl.java:612)
+	at org.apache.cxf.endpoint.ClientImpl.doInvoke(ClientImpl.java:523)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:423)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:324)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:277)
+	at org.apache.cxf.frontend.ClientProxy.invokeSync(ClientProxy.java:96)
+	at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:139)
+	... 9 common frames omitted
+935  [main] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Starting SpringBootLabQuantumApplication on LAPTOP-J5VT00AT with PID 25048 (E:\Works\workspace\lab\rims-lab-quantum\target\classes started by HUY in E:\Works\workspace\lab\rims-lab-quantum)
+941  [main] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - No active profile set, falling back to default profiles: default
+2535 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2537 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+2649 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2807 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+2807 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+2807 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3278 [main] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://tempuri.org/}LISIntegrationWebserviceSoapService from class org.tempuri.LISIntegrationWebserviceSoap
+22597 [main] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Outbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.connectors.connect.mirth.com">
+  <soap:Body>
+    <GetResultValues xmlns="http://tempuri.org/">
+      <OrderNo>161004337</OrderNo>
+    </GetResultValues></soap:Body></soap:Envelope>
+37101 [main] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Outbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.connectors.connect.mirth.com">
+  <soap:Body>
+    <GetReportPDF xmlns="http://tempuri.org/">
+      <OrderNo>161004337</OrderNo>
+      <userName>RenalTeam</userName>
+      <password>renal@123</password>
+    </GetReportPDF></soap:Body></soap:Envelope>
+37443 [main] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Outbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.connectors.connect.mirth.com">
+  <soap:Body>
+    <PushOrder xmlns="http://tempuri.org/">
+      <ws:acceptMessage>
+
+        <arg0>
+
+          <content>
+            <MSG>
+    
+              <MSH>
+        
+                <Sending_Application>Third Party</Sending_Application>
+        
+                <Sending_Facility>JJJ</Sending_Facility>
+        
+                <Receiving_Application>LIS</Receiving_Application>
+        
+                <Receiving_Facility>JJJ</Receiving_Facility>
+        
+                <Message_Date_Time>20160227084606</Message_Date_Time>
+        
+                <Message_Type>ORM</Message_Type>
+        
+                <Message_Control_Id>877652</Message_Control_Id>
+    
+              </MSH>
+    
+              <EVN>
+        
+                <Event_Type_Code>O01</Event_Type_Code>
+        
+                <Recorded_DateTime>20160227084606</Recorded_DateTime>
+    
+              </EVN>
+    
+              <PID>
+        
+                <Patient_Id_Ext/>
+        
+                <Patient_Id_Int>JJJ87878787</Patient_Id_Int>
+        
+                <Patient_Id_Type>NEW IC</Patient_Id_Type>
+        
+                <Patient_Id_Number>510915105063</Patient_Id_Number>
+        
+                <Patient_Name>Abraham</Patient_Name>
+        
+                <Date_Of_Birth>19510915</Date_Of_Birth>
+        
+                <Gender_Code>M</Gender_Code>
+        
+                <Race_code>MALAYSIA</Race_code>
+        
+                <Address1>NO 5</Address1>
+        
+                <Address2> TMN LUYANG PHASE </Address2>
+        
+                <Address3/>
+        
+                <City/>
+        
+                <State/>
+        
+                <Postal_Code>883400</Postal_Code>
+        
+                <Country_Code>MALAYSIA</Country_Code>
+        
+                <Phone_Home/>
+        
+                <Phone_Mobile/>
+        
+                <Phone_Business>0198202090</Phone_Business>
+        
+                <Primary_Language/>
+        
+                <Marital_Status_Code>MARRIED</Marital_Status_Code>
+        
+                <Religion_Code>OTHERS</Religion_Code>
+        
+                <Nationality_Code>MALAYSIA</Nationality_Code>
+    
+              </PID>
+    
+              <PV1>
+        
+                <Patient_Type_Code>ED</Patient_Type_Code>
+        
+                <Ward_Code/>
+        
+                <Admission_Type/>
+        
+                <Preadmit_Number/>
+        
+                <Specialty_Code>SP_19</Specialty_Code>
+        
+                <Attending_Doctor_Code/>
+        
+                <Attending_Doctor_Desc/>
+        
+                <Referring_Doctor_Code/>
+        
+                <Referring_Doctor_Desc/>
+        
+                <Consulting_Doctor_Code/>
+        
+                <Consulting_Doctor_Desc/>
+        
+                <Admitting_Doctor_Code>WRJFF</Admitting_Doctor_Code>
+        
+                <Admitting_Doctor_Desc>WRJFF</Admitting_Doctor_Desc>
+        
+                <Patient_Class/>
+        
+                <Visit_Number>16ED00001102</Visit_Number>
+        
+                <Financial_Class_Code>NA</Financial_Class_Code>
+        
+                <Admit_DateTime>20160227080600</Admit_DateTime>
+    
+              </PV1>
+    
+              <ORC>
+        
+                <Order_Control>NW</Order_Control>
+        
+                <ORC_Placer_Order_Number>16017259</ORC_Placer_Order_Number>
+        
+                <ORC_Filler_Order_Number/>
+        
+                <Placer_Group_Number/>
+        
+                <Order_Status_Code/>
+        
+                <Response_Flag/>
+        
+                <ORC_Quantity_Timing/>
+        
+                <Parent/>
+        
+                <DateTime_Of_Transaction/>
+        
+                <Entered_By_ID/>
+        
+                <Entered_By_Name/>
+        
+                <Verified_By_ID/>
+        
+                <Verified_By_Name/>
+        
+                <ORC_Ordering_Provider_ID>WRJFF</ORC_Ordering_Provider_ID>
+        
+                <ORC_Ordering_Provider_Name>DR Isanth Kumar</ORC_Ordering_Provider_Name>
+        
+                <Enter_Location/>
+        
+                <Call_Back_Phone_Number/>
+        
+                <Order_Effective_DateTime/>
+        
+                <Order_Control_Code_Reason/>
+        
+                <Entering_Organization/>
+        
+                <Entering_Device/>
+        
+                <Action_By/>
+        
+                <Advanced_Beneficiary_Notice_Code/>
+        
+                <Ordering_Facility_Code/>
+        
+                <Ordering_Facility_Name/>
+    
+              </ORC>
+    
+              <Observation_Request>
+        
+                <OBR>
+            
+                  <Set_Id_OBR>1</Set_Id_OBR>
+            
+                  <OBR_Placer_Order_Number>218228</OBR_Placer_Order_Number>
+            
+                  <OBR_Filler_Order_Number/>
+            
+                  <Package_Code/>
+            
+                  <Package_Description/>
+            
+                  <Test_Code>P.QDN</Test_Code>
+            
+                  <Test_Name>QDN - Quantum General Screen</Test_Name>
+            
+                  <Priority_Code/>
+            
+                  <Priority_Desc/>
+            
+                  <Requested_DateTime>20160227084605</Requested_DateTime>
+            
+                  <Observation_DateTime/>
+            
+                  <Observation_End_DateTime/>
+            
+                  <Collection_Volume/>
+            
+                  <Collector_Identifier/>
+            
+                  <Specimen_Action_Code/>
+            
+                  <Danger_Code/>
+            
+                  <Relevant_Clinical_Info/>
+            
+                  <Specimen_Received_DateTime/>
+            
+                  <Specimen_Source_Code/>
+            
+                  <Specimen_Source_Desc/>
+            
+                  <OBR_Ordering_Provider_ID>WRJFF</OBR_Ordering_Provider_ID>
+            
+                  <OBR_Ordering_Provider_Name>DR Ishant Kumar</OBR_Ordering_Provider_Name>
+            
+                  <Order_Callback_Phone_Number/>
+            
+                  <Placer_Field1>LAB</Placer_Field1>
+            
+                  <Placer_Field2>LAB</Placer_Field2>
+            
+                  <Filler_Field1/>
+            
+                  <Filler_Field2/>
+            
+                  <Status_Change_DateTime/>
+            
+                  <Charge_To_Practice/>
+            
+                  <Diagnostic_Serv_Sect_Code>GENERALSCREENS</Diagnostic_Serv_Sect_Code>
+            
+                  <Diagnostic_Serv_Sect_Desc>GENERAL SCREENS</Diagnostic_Serv_Sect_Desc>
+            
+                  <Result_Status/>
+            
+                  <Parent_Result/>
+            
+                  <OBR_Quantity_Timing>1.00</OBR_Quantity_Timing>
+            
+                  <Unit_Code>UN</Unit_Code>
+            
+                  <Unit_Desc/>
+            
+                  <Result_Copies_To/>
+            
+                  <Transportation_Mode/>
+            
+                  <Reason_For_Study/>
+            
+                  <Principal_Result_Interpreter/>
+            
+                  <Assistant_Result_Interpreter/>
+            
+                  <Technician/>
+            
+                  <Transcriptionist/>
+            
+                  <Scheduled_DateTime/>
+            
+                  <Number_Of_Sample_Containers/>
+            
+                  <Transport_Logistics_Of_Collected_Sample/>
+            
+                  <Collector_Comment/>
+            
+                  <Transport_Arrangement_Responsibility/>
+            
+                  <Transport_Arranged/>
+            
+                  <Escort_Required/>
+            
+                  <Planned_Patient_Transport_Comment/>
+            
+                  <Procedure_Code/>
+            
+                  <Procedure_Code_Modifier/>
+            
+                  <Placer_Supplemental_Service/>
+            
+                  <Filler_Supplemental_Service/>
+            
+                  <Cancel_Reason_Code/>
+            
+                  <Cancel_Reason_Desc/>
+        
+                </OBR>
+    
+              </Observation_Request>
+
+            </MSG>
+
+          </content>
+
+        </arg0>
+
+      </ws:acceptMessage>
+      <userName>RenalTeam</userName>
+      <password>renal@123</password>
+    </PushOrder></soap:Body></soap:Envelope>
+560  [main] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Starting SpringBootLabQuantumApplication on LAPTOP-J5VT00AT with PID 23676 (E:\Works\workspace\lab\rims-lab-quantum\target\classes started by HUY in E:\Works\workspace\lab\rims-lab-quantum)
+563  [main] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - No active profile set, falling back to default profiles: default
+2049 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2051 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+2160 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2303 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+2303 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+2303 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+2744 [main] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://tempuri.org/}LISIntegrationWebserviceSoapService from class org.tempuri.LISIntegrationWebserviceSoap
+4252 [main] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Outbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.connectors.connect.mirth.com">
+  <soap:Body>
+    <GetResultValues xmlns="http://tempuri.org/">
+      <OrderNo>161004337</OrderNo>
+    </GetResultValues></soap:Body></soap:Envelope>
+4623 [main] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Outbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.connectors.connect.mirth.com">
+  <soap:Body>
+    <GetReportPDF xmlns="http://tempuri.org/">
+      <OrderNo>161004337</OrderNo>
+      <userName>RenalTeam</userName>
+      <password>renal@123</password>
+    </GetReportPDF></soap:Body></soap:Envelope>
+5010 [main] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Outbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.connectors.connect.mirth.com">
+  <soap:Body>
+    <PushOrder xmlns="http://tempuri.org/">
+      <ws:acceptMessage>
+
+        <arg0>
+
+          <content>
+            <MSG>
+    
+              <MSH>
+        
+                <Sending_Application>Third Party</Sending_Application>
+        
+                <Sending_Facility>JJJ</Sending_Facility>
+        
+                <Receiving_Application>LIS</Receiving_Application>
+        
+                <Receiving_Facility>JJJ</Receiving_Facility>
+        
+                <Message_Date_Time>20160227084606</Message_Date_Time>
+        
+                <Message_Type>ORM</Message_Type>
+        
+                <Message_Control_Id>877652</Message_Control_Id>
+    
+              </MSH>
+    
+              <EVN>
+        
+                <Event_Type_Code>O01</Event_Type_Code>
+        
+                <Recorded_DateTime>20160227084606</Recorded_DateTime>
+    
+              </EVN>
+    
+              <PID>
+        
+                <Patient_Id_Ext/>
+        
+                <Patient_Id_Int>JJJ87878787</Patient_Id_Int>
+        
+                <Patient_Id_Type>NEW IC</Patient_Id_Type>
+        
+                <Patient_Id_Number>510915105063</Patient_Id_Number>
+        
+                <Patient_Name>Abraham</Patient_Name>
+        
+                <Date_Of_Birth>19510915</Date_Of_Birth>
+        
+                <Gender_Code>M</Gender_Code>
+        
+                <Race_code>MALAYSIA</Race_code>
+        
+                <Address1>NO 5</Address1>
+        
+                <Address2> TMN LUYANG PHASE </Address2>
+        
+                <Address3/>
+        
+                <City/>
+        
+                <State/>
+        
+                <Postal_Code>883400</Postal_Code>
+        
+                <Country_Code>MALAYSIA</Country_Code>
+        
+                <Phone_Home/>
+        
+                <Phone_Mobile/>
+        
+                <Phone_Business>0198202090</Phone_Business>
+        
+                <Primary_Language/>
+        
+                <Marital_Status_Code>MARRIED</Marital_Status_Code>
+        
+                <Religion_Code>OTHERS</Religion_Code>
+        
+                <Nationality_Code>MALAYSIA</Nationality_Code>
+    
+              </PID>
+    
+              <PV1>
+        
+                <Patient_Type_Code>ED</Patient_Type_Code>
+        
+                <Ward_Code/>
+        
+                <Admission_Type/>
+        
+                <Preadmit_Number/>
+        
+                <Specialty_Code>SP_19</Specialty_Code>
+        
+                <Attending_Doctor_Code/>
+        
+                <Attending_Doctor_Desc/>
+        
+                <Referring_Doctor_Code/>
+        
+                <Referring_Doctor_Desc/>
+        
+                <Consulting_Doctor_Code/>
+        
+                <Consulting_Doctor_Desc/>
+        
+                <Admitting_Doctor_Code>WRJFF</Admitting_Doctor_Code>
+        
+                <Admitting_Doctor_Desc>WRJFF</Admitting_Doctor_Desc>
+        
+                <Patient_Class/>
+        
+                <Visit_Number>16ED00001102</Visit_Number>
+        
+                <Financial_Class_Code>NA</Financial_Class_Code>
+        
+                <Admit_DateTime>20160227080600</Admit_DateTime>
+    
+              </PV1>
+    
+              <ORC>
+        
+                <Order_Control>NW</Order_Control>
+        
+                <ORC_Placer_Order_Number>16017259</ORC_Placer_Order_Number>
+        
+                <ORC_Filler_Order_Number/>
+        
+                <Placer_Group_Number/>
+        
+                <Order_Status_Code/>
+        
+                <Response_Flag/>
+        
+                <ORC_Quantity_Timing/>
+        
+                <Parent/>
+        
+                <DateTime_Of_Transaction/>
+        
+                <Entered_By_ID/>
+        
+                <Entered_By_Name/>
+        
+                <Verified_By_ID/>
+        
+                <Verified_By_Name/>
+        
+                <ORC_Ordering_Provider_ID>WRJFF</ORC_Ordering_Provider_ID>
+        
+                <ORC_Ordering_Provider_Name>DR Isanth Kumar</ORC_Ordering_Provider_Name>
+        
+                <Enter_Location/>
+        
+                <Call_Back_Phone_Number/>
+        
+                <Order_Effective_DateTime/>
+        
+                <Order_Control_Code_Reason/>
+        
+                <Entering_Organization/>
+        
+                <Entering_Device/>
+        
+                <Action_By/>
+        
+                <Advanced_Beneficiary_Notice_Code/>
+        
+                <Ordering_Facility_Code/>
+        
+                <Ordering_Facility_Name/>
+    
+              </ORC>
+    
+              <Observation_Request>
+        
+                <OBR>
+            
+                  <Set_Id_OBR>1</Set_Id_OBR>
+            
+                  <OBR_Placer_Order_Number>218228</OBR_Placer_Order_Number>
+            
+                  <OBR_Filler_Order_Number/>
+            
+                  <Package_Code/>
+            
+                  <Package_Description/>
+            
+                  <Test_Code>P.QDN</Test_Code>
+            
+                  <Test_Name>QDN - Quantum General Screen</Test_Name>
+            
+                  <Priority_Code/>
+            
+                  <Priority_Desc/>
+            
+                  <Requested_DateTime>20160227084605</Requested_DateTime>
+            
+                  <Observation_DateTime/>
+            
+                  <Observation_End_DateTime/>
+            
+                  <Collection_Volume/>
+            
+                  <Collector_Identifier/>
+            
+                  <Specimen_Action_Code/>
+            
+                  <Danger_Code/>
+            
+                  <Relevant_Clinical_Info/>
+            
+                  <Specimen_Received_DateTime/>
+            
+                  <Specimen_Source_Code/>
+            
+                  <Specimen_Source_Desc/>
+            
+                  <OBR_Ordering_Provider_ID>WRJFF</OBR_Ordering_Provider_ID>
+            
+                  <OBR_Ordering_Provider_Name>DR Ishant Kumar</OBR_Ordering_Provider_Name>
+            
+                  <Order_Callback_Phone_Number/>
+            
+                  <Placer_Field1>LAB</Placer_Field1>
+            
+                  <Placer_Field2>LAB</Placer_Field2>
+            
+                  <Filler_Field1/>
+            
+                  <Filler_Field2/>
+            
+                  <Status_Change_DateTime/>
+            
+                  <Charge_To_Practice/>
+            
+                  <Diagnostic_Serv_Sect_Code>GENERALSCREENS</Diagnostic_Serv_Sect_Code>
+            
+                  <Diagnostic_Serv_Sect_Desc>GENERAL SCREENS</Diagnostic_Serv_Sect_Desc>
+            
+                  <Result_Status/>
+            
+                  <Parent_Result/>
+            
+                  <OBR_Quantity_Timing>1.00</OBR_Quantity_Timing>
+            
+                  <Unit_Code>UN</Unit_Code>
+            
+                  <Unit_Desc/>
+            
+                  <Result_Copies_To/>
+            
+                  <Transportation_Mode/>
+            
+                  <Reason_For_Study/>
+            
+                  <Principal_Result_Interpreter/>
+            
+                  <Assistant_Result_Interpreter/>
+            
+                  <Technician/>
+            
+                  <Transcriptionist/>
+            
+                  <Scheduled_DateTime/>
+            
+                  <Number_Of_Sample_Containers/>
+            
+                  <Transport_Logistics_Of_Collected_Sample/>
+            
+                  <Collector_Comment/>
+            
+                  <Transport_Arrangement_Responsibility/>
+            
+                  <Transport_Arranged/>
+            
+                  <Escort_Required/>
+            
+                  <Planned_Patient_Transport_Comment/>
+            
+                  <Procedure_Code/>
+            
+                  <Procedure_Code_Modifier/>
+            
+                  <Placer_Supplemental_Service/>
+            
+                  <Filler_Supplemental_Service/>
+            
+                  <Cancel_Reason_Code/>
+            
+                  <Cancel_Reason_Desc/>
+        
+                </OBR>
+    
+              </Observation_Request>
+
+            </MSG>
+
+          </content>
+
+        </arg0>
+
+      </ws:acceptMessage>
+      <userName>RenalTeam</userName>
+      <password>renal@123</password>
+    </PushOrder></soap:Body></soap:Envelope>
+65019 [main] WARN  org.apache.cxf.endpoint.ClientImpl - Timed out waiting for response to operation {http://tempuri.org/}PushOrder.
+65054 [main] ERROR o.s.boot.SpringApplication - Application startup failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:735)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:716)
+	at org.springframework.boot.SpringApplication.afterRefresh(SpringApplication.java:703)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.iis.rims.lab.quantum.SpringBootLabQuantumApplication.main(SpringBootLabQuantumApplication.java:22)
+Caused by: javax.xml.ws.soap.SOAPFaultException: Timed out waiting for response to operation {http://tempuri.org/}PushOrder.
+	at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:161)
+	at com.sun.proxy.$Proxy89.pushOrder(Unknown Source)
+	at com.iis.rims.lab.quantum.SpringBootLabQuantumApplication$1.run(SpringBootLabQuantumApplication.java:45)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:732)
+	... 6 common frames omitted
+Caused by: java.io.IOException: Timed out waiting for response to operation {http://tempuri.org/}PushOrder.
+	at org.apache.cxf.endpoint.ClientImpl.waitResponse(ClientImpl.java:689)
+	at org.apache.cxf.endpoint.ClientImpl.processResult(ClientImpl.java:612)
+	at org.apache.cxf.endpoint.ClientImpl.doInvoke(ClientImpl.java:523)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:423)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:324)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:277)
+	at org.apache.cxf.frontend.ClientProxy.invokeSync(ClientProxy.java:96)
+	at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:139)
+	... 9 common frames omitted
+546  [main] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Starting SpringBootLabQuantumApplication on LAPTOP-J5VT00AT with PID 25108 (E:\Works\workspace\lab\rims-lab-quantum\target\classes started by HUY in E:\Works\workspace\lab\rims-lab-quantum)
+549  [main] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - No active profile set, falling back to default profiles: default
+2070 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2072 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+2186 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2343 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+2344 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+2344 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+2805 [main] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://tempuri.org/}LISIntegrationWebserviceSoapService from class org.tempuri.LISIntegrationWebserviceSoap
+4323 [main] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Outbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.connectors.connect.mirth.com">
+  <soap:Body>
+    <GetResultValues xmlns="http://tempuri.org/">
+      <OrderNo>161004337</OrderNo>
+    </GetResultValues></soap:Body></soap:Envelope>
+4625 [main] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Inbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GetResultValuesResponse xmlns="http://tempuri.org/">
+      <ApprovedResultVaues/>
+    </GetResultValuesResponse>
+  </soap:Body>
+</soap:Envelope>
+
+4666 [main] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Outbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.connectors.connect.mirth.com">
+  <soap:Body>
+    <GetReportPDF xmlns="http://tempuri.org/">
+      <OrderNo>161004337</OrderNo>
+      <userName>RenalTeam</userName>
+      <password>renal@123</password>
+    </GetReportPDF></soap:Body></soap:Envelope>
+4718 [main] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Inbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GetReportPDFResponse xmlns="http://tempuri.org/">
+      <GetReportPDFResult>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</GetReportPDFResult></
+5049 [main] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Outbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.connectors.connect.mirth.com">
+  <soap:Body>
+    <PushOrder xmlns="http://tempuri.org/">
+      <ws:acceptMessage>
+
+        <arg0>
+
+          <content>
+            <MSG>
+    
+              <MSH>
+        
+                <Sending_Application>Third Party</Sending_Application>
+        
+                <Sending_Facility>JJJ</Sending_Facility>
+        
+                <Receiving_Application>LIS</Receiving_Application>
+        
+                <Receiving_Facility>JJJ</Receiving_Facility>
+        
+                <Message_Date_Time>20160227084606</Message_Date_Time>
+        
+                <Message_Type>ORM</Message_Type>
+        
+                <Message_Control_Id>877652</Message_Control_Id>
+    
+              </MSH>
+    
+              <EVN>
+        
+                <Event_Type_Code>O01</Event_Type_Code>
+        
+                <Recorded_DateTime>20160227084606</Recorded_DateTime>
+    
+              </EVN>
+    
+              <PID>
+        
+                <Patient_Id_Ext/>
+        
+                <Patient_Id_Int>JJJ87878787</Patient_Id_Int>
+        
+                <Patient_Id_Type>NEW IC</Patient_Id_Type>
+        
+                <Patient_Id_Number>510915105063</Patient_Id_Number>
+        
+                <Patient_Name>Abraham</Patient_Name>
+        
+                <Date_Of_Birth>19510915</Date_Of_Birth>
+        
+                <Gender_Code>M</Gender_Code>
+        
+                <Race_code>MALAYSIA</Race_code>
+        
+                <Address1>NO 5</Address1>
+        
+                <Address2> TMN LUYANG PHASE </Address2>
+        
+                <Address3/>
+        
+                <City/>
+        
+                <State/>
+        
+                <Postal_Code>883400</Postal_Code>
+        
+                <Country_Code>MALAYSIA</Country_Code>
+        
+                <Phone_Home/>
+        
+                <Phone_Mobile/>
+        
+                <Phone_Business>0198202090</Phone_Business>
+        
+                <Primary_Language/>
+        
+                <Marital_Status_Code>MARRIED</Marital_Status_Code>
+        
+                <Religion_Code>OTHERS</Religion_Code>
+        
+                <Nationality_Code>MALAYSIA</Nationality_Code>
+    
+              </PID>
+    
+              <PV1>
+        
+                <Patient_Type_Code>ED</Patient_Type_Code>
+        
+                <Ward_Code/>
+        
+                <Admission_Type/>
+        
+                <Preadmit_Number/>
+        
+                <Specialty_Code>SP_19</Specialty_Code>
+        
+                <Attending_Doctor_Code/>
+        
+                <Attending_Doctor_Desc/>
+        
+                <Referring_Doctor_Code/>
+        
+                <Referring_Doctor_Desc/>
+        
+                <Consulting_Doctor_Code/>
+        
+                <Consulting_Doctor_Desc/>
+        
+                <Admitting_Doctor_Code>WRJFF</Admitting_Doctor_Code>
+        
+                <Admitting_Doctor_Desc>WRJFF</Admitting_Doctor_Desc>
+        
+                <Patient_Class/>
+        
+                <Visit_Number>16ED00001102</Visit_Number>
+        
+                <Financial_Class_Code>NA</Financial_Class_Code>
+        
+                <Admit_DateTime>20160227080600</Admit_DateTime>
+    
+              </PV1>
+    
+              <ORC>
+        
+                <Order_Control>NW</Order_Control>
+        
+                <ORC_Placer_Order_Number>16017259</ORC_Placer_Order_Number>
+        
+                <ORC_Filler_Order_Number/>
+        
+                <Placer_Group_Number/>
+        
+                <Order_Status_Code/>
+        
+                <Response_Flag/>
+        
+                <ORC_Quantity_Timing/>
+        
+                <Parent/>
+        
+                <DateTime_Of_Transaction/>
+        
+                <Entered_By_ID/>
+        
+                <Entered_By_Name/>
+        
+                <Verified_By_ID/>
+        
+                <Verified_By_Name/>
+        
+                <ORC_Ordering_Provider_ID>WRJFF</ORC_Ordering_Provider_ID>
+        
+                <ORC_Ordering_Provider_Name>DR Isanth Kumar</ORC_Ordering_Provider_Name>
+        
+                <Enter_Location/>
+        
+                <Call_Back_Phone_Number/>
+        
+                <Order_Effective_DateTime/>
+        
+                <Order_Control_Code_Reason/>
+        
+                <Entering_Organization/>
+        
+                <Entering_Device/>
+        
+                <Action_By/>
+        
+                <Advanced_Beneficiary_Notice_Code/>
+        
+                <Ordering_Facility_Code/>
+        
+                <Ordering_Facility_Name/>
+    
+              </ORC>
+    
+              <Observation_Request>
+        
+                <OBR>
+            
+                  <Set_Id_OBR>1</Set_Id_OBR>
+            
+                  <OBR_Placer_Order_Number>218228</OBR_Placer_Order_Number>
+            
+                  <OBR_Filler_Order_Number/>
+            
+                  <Package_Code/>
+            
+                  <Package_Description/>
+            
+                  <Test_Code>P.QDN</Test_Code>
+            
+                  <Test_Name>QDN - Quantum General Screen</Test_Name>
+            
+                  <Priority_Code/>
+            
+                  <Priority_Desc/>
+            
+                  <Requested_DateTime>20160227084605</Requested_DateTime>
+            
+                  <Observation_DateTime/>
+            
+                  <Observation_End_DateTime/>
+            
+                  <Collection_Volume/>
+            
+                  <Collector_Identifier/>
+            
+                  <Specimen_Action_Code/>
+            
+                  <Danger_Code/>
+            
+                  <Relevant_Clinical_Info/>
+            
+                  <Specimen_Received_DateTime/>
+            
+                  <Specimen_Source_Code/>
+            
+                  <Specimen_Source_Desc/>
+            
+                  <OBR_Ordering_Provider_ID>WRJFF</OBR_Ordering_Provider_ID>
+            
+                  <OBR_Ordering_Provider_Name>DR Ishant Kumar</OBR_Ordering_Provider_Name>
+            
+                  <Order_Callback_Phone_Number/>
+            
+                  <Placer_Field1>LAB</Placer_Field1>
+            
+                  <Placer_Field2>LAB</Placer_Field2>
+            
+                  <Filler_Field1/>
+            
+                  <Filler_Field2/>
+            
+                  <Status_Change_DateTime/>
+            
+                  <Charge_To_Practice/>
+            
+                  <Diagnostic_Serv_Sect_Code>GENERALSCREENS</Diagnostic_Serv_Sect_Code>
+            
+                  <Diagnostic_Serv_Sect_Desc>GENERAL SCREENS</Diagnostic_Serv_Sect_Desc>
+            
+                  <Result_Status/>
+            
+                  <Parent_Result/>
+            
+                  <OBR_Quantity_Timing>1.00</OBR_Quantity_Timing>
+            
+                  <Unit_Code>UN</Unit_Code>
+            
+                  <Unit_Desc/>
+            
+                  <Result_Copies_To/>
+            
+                  <Transportation_Mode/>
+            
+                  <Reason_For_Study/>
+            
+                  <Principal_Result_Interpreter/>
+            
+                  <Assistant_Result_Interpreter/>
+            
+                  <Technician/>
+            
+                  <Transcriptionist/>
+            
+                  <Scheduled_DateTime/>
+            
+                  <Number_Of_Sample_Containers/>
+            
+                  <Transport_Logistics_Of_Collected_Sample/>
+            
+                  <Collector_Comment/>
+            
+                  <Transport_Arrangement_Responsibility/>
+            
+                  <Transport_Arranged/>
+            
+                  <Escort_Required/>
+            
+                  <Planned_Patient_Transport_Comment/>
+            
+                  <Procedure_Code/>
+            
+                  <Procedure_Code_Modifier/>
+            
+                  <Placer_Supplemental_Service/>
+            
+                  <Filler_Supplemental_Service/>
+            
+                  <Cancel_Reason_Code/>
+            
+                  <Cancel_Reason_Desc/>
+        
+                </OBR>
+    
+              </Observation_Request>
+
+            </MSG>
+
+          </content>
+
+        </arg0>
+
+      </ws:acceptMessage>
+      <userName>RenalTeam</userName>
+      <password>renal@123</password>
+    </PushOrder></soap:Body></soap:Envelope>
