@@ -16,7 +16,21 @@
 		<h2>
 			<span th:text="'Welcome to: ' + ${appName}"></span>
 		</h2>
-		
+		<form>
+			<div class="form-group">
+		      <label for="orderNumber">Order Number:</label>
+		      <input type="text" class="form-control" id="orderNumber" placeholder="Order Number" name="orderNumber" />
+		    </div>
+		    <div class="form-group">
+		      <label for="patientName">Patient Name:</label>
+		      <input type="text" class="form-control" id="patientName" placeholder="Patient Name" name="patientName" />
+		    </div>
+		    <div class="form-group">
+		      <label for="nricFinNumber">Patient NRIC:</label>
+		      <input type="text" class="form-control" id="nricFinNumber" placeholder="Patient NRIC" name="nricFinNumber" />
+		    </div>
+		    <button type="button" class="btn btn-primary">Submit Order</button>
+		</form>
 	</div>
 	<!-- /.container -->
 
