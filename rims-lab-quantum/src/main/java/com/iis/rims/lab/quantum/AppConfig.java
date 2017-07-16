@@ -49,7 +49,7 @@ public class AppConfig {
 	}
 	
 	@Bean
-	public LISIntegrationWebserviceSoap createHelloWorldService() {
+	public LISIntegrationWebserviceSoap createLISIntegrationService() {
 		return createService(LISIntegrationWebserviceSoap.class, "http://52.187.20.127/LISIntegrationtesting/LisIntegrationWebservice.asmx?wsdl");
 	}
 	
