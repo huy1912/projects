@@ -9,7 +9,19 @@
 
 <link rel="stylesheet" th:href="@{/css/main.css}"
 	href="../../css/main.css" />
+<link rel="stylesheet" th:href="@{/css/main.css}"
+	href="../../css/bootstrapValidator.css" />
+<style type="text/css">
+/*
+.error {
+	color: #ff0000;
+}
 
+input.error, textarea.error{
+    border:1px solid red;
+}
+*/
+</style>
 </head>
 <body>
 	<div class="container">
@@ -17,14 +29,20 @@
 			<span th:text="'Welcome to: ' + ${appName}"></span>
 		</h2>
 		<div id="feedback"></div>
-		<form>
+		<form class="form-horizontal" id="lab">
 			<div class="form-group">
 		      <label for="orcOrderNumber">ORC Order Number:</label>
-		      <input type="text" class="form-control" id="orcOrderNumber" placeholder="ORC Order Number" name="orcOrderNumber" />
+		      <div class="input-group">
+			      <input type="text" class="form-control" id="orcOrderNumber" placeholder="ORC Order Number" name="orcOrderNumber" />
+			      <span class="input-group-addon" style=""><i class="glyphicon"></i></span>
+		      </div>
 		    </div>
 		    <div class="form-group">
 		      <label for="obrOrderNumber">OBR Order Number:</label>
-		      <input type="text" class="form-control" id="obrOrderNumber" placeholder="OBR Order Number" name="obrOrderNumber" />
+		      <div class="input-group">
+		      	<input type="text" class="form-control" id="obrOrderNumber" placeholder="OBR Order Number" name="obrOrderNumber" />
+		      	<span class="input-group-addon" style=""><i class="glyphicon"></i></span>
+		      </div>
 		    </div>
 		    <div class="form-group">
 		      <label for="visitNumber">Visit Number:</label>
@@ -42,6 +60,9 @@
 		      <label for="nricFinNumber">Patient NRIC:</label>
 		      <input type="text" class="form-control" id="nricFinNumber" placeholder="Patient NRIC" name="nricFinNumber" />
 		    </div>
+		    <div class="form-group">
+		       <div id="messages"></div>
+		    </div>
 		    <button type="button" class="btn btn-primary" id="submitOrder">Submit Order</button>
 		    <button type="button" class="btn btn-primary" id="getReport">Get Report</button>
 		    <button type="button" class="btn btn-primary" id="getResult">Get Result</button>
@@ -53,6 +74,8 @@
         src="webjars/jquery/2.2.4/jquery.min.js"></script>
 	<script type="text/javascript"
 		src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="jquery/jquery.validate.js"></script>
+	<script type="text/javascript" src="jquery/bootstrapValidator.js"></script>
 	<script type="text/javascript"
 		src="js/main.js"></script>
 </body>

@@ -9,6 +9,7 @@ import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -70,5 +71,13 @@ public class PageController {
         response.flushBuffer();
 //		System.err.println(orderNumber);
 //		return orderNumber;
+	}
+	
+	@RequestMapping(value = "/valVisitNo", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody AjaxResponse validateVisitNumber(String visitNumber) {
+		AjaxResponse ajaxResponse = new AjaxResponse();
+		ajaxResponse.setValid("111".equals(visitNumber));
+		ajaxResponse.setMessage("Blah blah");
+		return ajaxResponse;
 	}
 }
