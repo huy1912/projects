@@ -7,6 +7,8 @@ import javax.xml.bind.JAXB;
 
 import com.iis.rims.lab.quantum.controller.SubmitOrder;
 import com.iis.rims.lab.quantum.orm.MSG;
+import com.iis.rims.lab.quantum.orm.MSG.MSH;
+import com.iis.rims.lab.quantum.orm.MSG.EVN;
 import com.iis.rims.lab.quantum.orm.MSG.ORC;
 import com.iis.rims.lab.quantum.orm.MSG.ObservationRequest;
 import com.iis.rims.lab.quantum.orm.MSG.ObservationRequest.OBR;
@@ -27,6 +29,8 @@ public class EncodeMessage {
 	
 	public static String encodeMsg(SubmitOrder order) throws Exception {
 		MSG msg = new MSG();
+		msg.setMSH(new MSH());
+		msg.setEVN(new EVN());
 		PID pid = new PID();
 		pid.setPatientIdInt(order.getPatientId());
 		pid.setPatientName(order.getPatientName());
