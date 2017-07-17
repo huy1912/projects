@@ -22,7 +22,8 @@ import com.iis.rims.lab.quantum.log.LabLoggingOutInterceptor;
 public class AppConfig {
 	
 	@Value("${lis.wsdl}")
-	private String lisWsdl; 
+	private String lisWsdl;
+	
 	@Bean(name = Bus.DEFAULT_BUS_ID)
 	public SpringBus springBus() {
 	    SpringBus springBus = new SpringBus();
@@ -30,10 +31,10 @@ public class AppConfig {
 //	    logFeature.setPrettyLogging(true);
 //	    logFeature.initialize(springBus);
 //	    springBus.getFeatures().add(logFeature);
-	    springBus.getInInterceptors().add(logInInterceptor());
+//	    springBus.getOutInterceptors().add(new OutSoapInterceptor());
 	    springBus.getOutInterceptors().add(logOutInterceptor());
-	    springBus.getOutInterceptors().add(new OutSoapInterceptor());
 	    springBus.getOutFaultInterceptors().add(logOutInterceptor());
+	    springBus.getInInterceptors().add(logInInterceptor());
 	    return springBus;
 	}
 	
@@ -53,8 +54,8 @@ public class AppConfig {
 	
 	@Bean
 	public LISIntegrationWebserviceSoap createLISIntegrationService() {
-		//return createService(LISIntegrationWebserviceSoap.class, "http://52.187.20.127/LISIntegrationtesting/LisIntegrationWebservice.asmx?wsdl");
-		return createService(LISIntegrationWebserviceSoap.class, lisWsdl);
+		return createService(LISIntegrationWebserviceSoap.class, "http://52.187.20.127/LISIntegrationtesting/LisIntegrationWebservice.asmx?wsdl");
+//		return createService(LISIntegrationWebserviceSoap.class, lisWsdl);
 	}
 	
 	private <T> T createService(Class<T> clazz, String address) {
@@ -66,7 +67,7 @@ public class AppConfig {
 		ns.put("ws", "http://ws.connectors.connect.mirth.com");
 		properties.put("soap.env.ns.map", ns);
 		factory.setProperties(properties);
-//		factory.getInInterceptors().add(new OutSoapInterceptor());
+		factory.getInInterceptors().add(new OutSoapInterceptor());
 //		factory.getOutInterceptors().add(new LabLoggingOutInterceptor());
 		T service = (T) factory.create();
 		return service;

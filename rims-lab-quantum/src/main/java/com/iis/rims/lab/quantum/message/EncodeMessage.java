@@ -22,6 +22,9 @@ public class EncodeMessage {
 		StringWriter stringWriter = new StringWriter();
 		JAXB.marshal(msg, stringWriter);
 		String xmlData = stringWriter.toString();
+		
+		xmlData = xmlData.replace("<", "&lt;");
+		xmlData = xmlData.replace(">", "&gt;");
 		xmlData = xmlData.substring(xmlData.indexOf("\n") + 1);
 		
 		return xmlData;
@@ -29,7 +32,13 @@ public class EncodeMessage {
 	
 	public static String encodeMsg(SubmitOrder order) throws Exception {
 		MSG msg = new MSG();
-		msg.setMSH(new MSH());
+		MSH msh = new MSH();
+		msh.setSendingApplication("");
+		msh.setSendingFacility("");
+		msh.setReceivingApplication("");
+		msh.setReceivingFacility("");
+		msh.setMessageDateTime("");
+		msg.setMSH(msh);
 		msg.setEVN(new EVN());
 		PID pid = new PID();
 		pid.setPatientIdInt(order.getPatientId());

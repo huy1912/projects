@@ -10,9 +10,9 @@
               <xsd:element name="Sending_Facility" type="xsd:string" />
               <xsd:element name="Receiving_Application" type="xsd:string" />
               <xsd:element name="Receiving_Facility" type="xsd:string" />
-              <xsd:element name="Message_Date_Time" type="xsd:decimal" />
+              <xsd:element name="Message_Date_Time" type="xsd:string" />
               <xsd:element name="Message_Type" type="xsd:string" />
-              <xsd:element name="Message_Control_Id" type="xsd:int" />
+              <xsd:element name="Message_Control_Id" type="xsd:string" />
             </xsd:sequence>
           </xsd:complexType>
         </xsd:element>
@@ -20,7 +20,7 @@
           <xsd:complexType>
             <xsd:sequence>
               <xsd:element name="Event_Type_Code" type="xsd:string" />
-              <xsd:element name="Recorded_DateTime" type="xsd:decimal" />
+              <xsd:element name="Recorded_DateTime" type="xsd:string" />
             </xsd:sequence>
           </xsd:complexType>
         </xsd:element>
@@ -71,7 +71,7 @@
               <xsd:element name="Patient_Class" type="xsd:string" />
               <xsd:element name="Visit_Number" type="xsd:string" />
               <xsd:element name="Financial_Class_Code" type="xsd:string" />
-              <xsd:element name="Admit_DateTime" type="xsd:decimal" />
+              <xsd:element name="Admit_DateTime" type="xsd:string" />
             </xsd:sequence>
           </xsd:complexType>
         </xsd:element>
@@ -121,7 +121,7 @@
                     <xsd:element name="Test_Name" type="xsd:string" />
                     <xsd:element name="Priority_Code" type="xsd:string" />
                     <xsd:element name="Priority_Desc" type="xsd:string" />
-                    <xsd:element name="Requested_DateTime" type="xsd:decimal" />
+                    <xsd:element name="Requested_DateTime" type="xsd:string" />
                     <xsd:element name="Observation_DateTime" type="xsd:string" />
                     <xsd:element name="Observation_End_DateTime" type="xsd:string" />
                     <xsd:element name="Collection_Volume" type="xsd:string" />
@@ -145,7 +145,7 @@
                     <xsd:element name="Diagnostic_Serv_Sect_Desc" type="xsd:string" />
                     <xsd:element name="Result_Status" type="xsd:string" />
                     <xsd:element name="Parent_Result" type="xsd:string" />
-                    <xsd:element name="OBR_Quantity_Timing" type="xsd:decimal" />
+                    <xsd:element name="OBR_Quantity_Timing" type="xsd:string" />
                     <xsd:element name="Unit_Code" type="xsd:string" />
                     <xsd:element name="Unit_Desc" type="xsd:string" />
                     <xsd:element name="Result_Copies_To" type="xsd:string" />
