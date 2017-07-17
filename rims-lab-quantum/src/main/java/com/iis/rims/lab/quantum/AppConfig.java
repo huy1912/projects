@@ -9,6 +9,7 @@ import org.apache.cxf.interceptor.AbstractLoggingInterceptor;
 import org.apache.cxf.interceptor.LoggingInInterceptor;
 import org.apache.cxf.interceptor.LoggingOutInterceptor;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.tempuri.LISIntegrationWebserviceSoap;
@@ -20,6 +21,8 @@ import com.iis.rims.lab.quantum.log.LabLoggingOutInterceptor;
 @Configuration
 public class AppConfig {
 	
+	@Value("${lis.wsdl}")
+	private String lisWsdl; 
 	@Bean(name = Bus.DEFAULT_BUS_ID)
 	public SpringBus springBus() {
 	    SpringBus springBus = new SpringBus();
@@ -50,7 +53,8 @@ public class AppConfig {
 	
 	@Bean
 	public LISIntegrationWebserviceSoap createLISIntegrationService() {
-		return createService(LISIntegrationWebserviceSoap.class, "http://52.187.20.127/LISIntegrationtesting/LisIntegrationWebservice.asmx?wsdl");
+		//return createService(LISIntegrationWebserviceSoap.class, "http://52.187.20.127/LISIntegrationtesting/LisIntegrationWebservice.asmx?wsdl");
+		return createService(LISIntegrationWebserviceSoap.class, lisWsdl);
 	}
 	
 	private <T> T createService(Class<T> clazz, String address) {

@@ -5,12 +5,45 @@ import java.io.StringWriter;
 
 import javax.xml.bind.JAXB;
 
+import com.iis.rims.lab.quantum.controller.SubmitOrder;
 import com.iis.rims.lab.quantum.orm.MSG;
+import com.iis.rims.lab.quantum.orm.MSG.ORC;
+import com.iis.rims.lab.quantum.orm.MSG.ObservationRequest;
+import com.iis.rims.lab.quantum.orm.MSG.ObservationRequest.OBR;
+import com.iis.rims.lab.quantum.orm.MSG.PID;
+import com.iis.rims.lab.quantum.orm.MSG.PV1;
 
 public class EncodeMessage {
 	public static String encodeMsg() throws Exception {
 		MSG msg = new MSG();
 		msg = JAXB.unmarshal(new File("ORM_sample.xml"), MSG.class);
+		StringWriter stringWriter = new StringWriter();
+		JAXB.marshal(msg, stringWriter);
+		String xmlData = stringWriter.toString();
+		xmlData = xmlData.substring(xmlData.indexOf("\n") + 1);
+		
+		return xmlData;
+	}
+	
+	public static String encodeMsg(SubmitOrder order) throws Exception {
+		MSG msg = new MSG();
+		PID pid = new PID();
+		pid.setPatientIdInt(order.getPatientId());
+		pid.setPatientName(order.getPatientName());
+		pid.setPatientIdNumber(order.getNricFinNumber());
+		msg.setPID(pid);
+		PV1 pv1 = new PV1();
+		pv1.setVisitNumber(order.getVisitNumber());
+		msg.setPV1(pv1);
+		ORC orc = new ORC();
+		orc.setORCPlacerOrderNumber(order.getOrcOrderNumber());
+		msg.setORC(orc);
+		ObservationRequest observationRequest = new ObservationRequest();
+		OBR obr = new OBR();
+		obr.setOBRPlacerOrderNumber(order.getObrOrderNumber());
+		observationRequest.getOBR().add(obr);
+		msg.setObservationRequest(observationRequest);
+//		msg = JAXB.unmarshal(new File("ORM_sample.xml"), MSG.class);
 		StringWriter stringWriter = new StringWriter();
 		JAXB.marshal(msg, stringWriter);
 		String xmlData = stringWriter.toString();

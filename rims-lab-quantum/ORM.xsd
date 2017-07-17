@@ -30,7 +30,7 @@
               <xsd:element name="Patient_Id_Ext" type="xsd:string" />
               <xsd:element name="Patient_Id_Int" type="xsd:string" />
               <xsd:element name="Patient_Id_Type" type="xsd:string" />
-              <xsd:element name="Patient_Id_Number" type="xsd:decimal" />
+              <xsd:element name="Patient_Id_Number" type="xsd:string" />
               <xsd:element name="Patient_Name" type="xsd:string" />
               <xsd:element name="Date_Of_Birth" type="xsd:string" />
               <xsd:element name="Gender_Code" type="xsd:string" />
@@ -79,7 +79,7 @@
           <xsd:complexType>
             <xsd:sequence>
               <xsd:element name="Order_Control" type="xsd:string" />
-              <xsd:element name="ORC_Placer_Order_Number" type="xsd:int" />
+              <xsd:element name="ORC_Placer_Order_Number" type="xsd:string" />
               <xsd:element name="ORC_Filler_Order_Number" type="xsd:string" />
               <xsd:element name="Placer_Group_Number" type="xsd:string" />
               <xsd:element name="Order_Status_Code" type="xsd:string" />
@@ -109,11 +109,11 @@
         <xsd:element name="Observation_Request">
           <xsd:complexType>
             <xsd:sequence>
-              <xsd:element name="OBR">
+              <xsd:element name="OBR" maxOccurs="unbounded" minOccurs="0">
                 <xsd:complexType>
                   <xsd:sequence>
-                    <xsd:element name="Set_Id_OBR" type="xsd:int" />
-                    <xsd:element name="OBR_Placer_Order_Number" type="xsd:int" />
+                    <xsd:element name="Set_Id_OBR" type="xsd:string" />
+                    <xsd:element name="OBR_Placer_Order_Number" type="xsd:string" />
                     <xsd:element name="OBR_Filler_Order_Number" type="xsd:string" />
                     <xsd:element name="Package_Code" type="xsd:string" />
                     <xsd:element name="Package_Description" type="xsd:string" />

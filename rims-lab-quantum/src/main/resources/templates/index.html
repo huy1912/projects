@@ -19,18 +19,32 @@
 		<div id="feedback"></div>
 		<form>
 			<div class="form-group">
-		      <label for="orderNumber">Order Number:</label>
-		      <input type="text" class="form-control" id="orderNumber" placeholder="Order Number" name="orderNumber" />
+		      <label for="orcOrderNumber">ORC Order Number:</label>
+		      <input type="text" class="form-control" id="orcOrderNumber" placeholder="ORC Order Number" name="orcOrderNumber" />
 		    </div>
 		    <div class="form-group">
+		      <label for="obrOrderNumber">OBR Order Number:</label>
+		      <input type="text" class="form-control" id="obrOrderNumber" placeholder="OBR Order Number" name="obrOrderNumber" />
+		    </div>
+		    <div class="form-group">
+		      <label for="visitNumber">Visit Number:</label>
+		      <input type="text" class="form-control" id="visitNumber" placeholder="Visit Number" name="visitNumber" />
+		    </div>
+		    <!-- <div class="form-group">
 		      <label for="patientName">Patient Name:</label>
 		      <input type="text" class="form-control" id="patientName" placeholder="Patient Name" name="patientName" />
+		    </div> -->
+		    <div class="form-group">
+		      <label for="patientId">Patient Id:</label>
+		      <input type="text" class="form-control" id="patientId" placeholder="Patient Id" name="patientId" />
 		    </div>
 		    <div class="form-group">
 		      <label for="nricFinNumber">Patient NRIC:</label>
 		      <input type="text" class="form-control" id="nricFinNumber" placeholder="Patient NRIC" name="nricFinNumber" />
 		    </div>
 		    <button type="button" class="btn btn-primary" id="submitOrder">Submit Order</button>
+		    <button type="button" class="btn btn-primary" id="getReport">Get Report</button>
+		    <button type="button" class="btn btn-primary" id="getResult">Get Result</button>
 		</form>
 	</div>
 	<!-- /.container -->
