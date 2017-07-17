@@ -23,8 +23,6 @@ public class EncodeMessage {
 		JAXB.marshal(msg, stringWriter);
 		String xmlData = stringWriter.toString();
 		
-		xmlData = xmlData.replace("<", "&lt;");
-		xmlData = xmlData.replace(">", "&gt;");
 		xmlData = xmlData.substring(xmlData.indexOf("\n") + 1);
 		
 		return xmlData;

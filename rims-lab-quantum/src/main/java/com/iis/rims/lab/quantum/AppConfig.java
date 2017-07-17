@@ -31,7 +31,7 @@ public class AppConfig {
 //	    logFeature.setPrettyLogging(true);
 //	    logFeature.initialize(springBus);
 //	    springBus.getFeatures().add(logFeature);
-//	    springBus.getOutInterceptors().add(new OutSoapInterceptor());
+	    springBus.getOutInterceptors().add(new OutSoapInterceptor());
 	    springBus.getOutInterceptors().add(logOutInterceptor());
 	    springBus.getOutFaultInterceptors().add(logOutInterceptor());
 	    springBus.getInInterceptors().add(logInInterceptor());
@@ -67,7 +67,7 @@ public class AppConfig {
 		ns.put("ws", "http://ws.connectors.connect.mirth.com");
 		properties.put("soap.env.ns.map", ns);
 		factory.setProperties(properties);
-		factory.getInInterceptors().add(new OutSoapInterceptor());
+//		factory.getInInterceptors().add(new OutSoapInterceptor());
 //		factory.getOutInterceptors().add(new LabLoggingOutInterceptor());
 		T service = (T) factory.create();
 		return service;

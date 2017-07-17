@@ -23,7 +23,7 @@ import com.iis.rims.lab.quantum.message.EncodeMessage;
 @Controller
 public class PageController {
 	
-	@Autowired
+//	@Autowired
 	private LISIntegrationWebserviceSoap integrationWebserviceSoap;
 	
 	@Value("${lis.username}")
