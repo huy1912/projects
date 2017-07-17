@@ -1,15 +1,26 @@
 $(document).ready(function() {
 	console.log('ready......');
 	$('#lab').bootstrapValidator({
-		rules: {
-			orcOrderNumber: {
-				required: true
-			},
-			obrOrderNumber: {
-				required: true
-			}
-		},
+//		rules: {
+//			orcOrderNumber: {
+//				required: true
+//			},
+//			obrOrderNumber: {
+//				required: true
+//			}
+//		},
 		fields: {
+			orcOrderNumber: {
+				validators: {
+					regexp: {
+						message: 'Invalid ORC Order Number',
+						regexp: /^[a-zA-Z0-9]{1,10}$/
+					},
+					notEmpty: {
+                        message: 'The ORC Order Number is required and cannot be empty'
+                    },
+				}
+			},
 			patientId: {
                 validators: {
                     notEmpty: {
