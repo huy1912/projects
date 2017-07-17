@@ -16,6 +16,7 @@
 		<h2>
 			<span th:text="'Welcome to: ' + ${appName}"></span>
 		</h2>
+		<div id="feedback"></div>
 		<form>
 			<div class="form-group">
 		      <label for="orderNumber">Order Number:</label>
@@ -29,13 +30,16 @@
 		      <label for="nricFinNumber">Patient NRIC:</label>
 		      <input type="text" class="form-control" id="nricFinNumber" placeholder="Patient NRIC" name="nricFinNumber" />
 		    </div>
-		    <button type="button" class="btn btn-primary">Submit Order</button>
+		    <button type="button" class="btn btn-primary" id="submitOrder">Submit Order</button>
 		</form>
 	</div>
 	<!-- /.container -->
 
 	<script type="text/javascript"
+        src="webjars/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript"
 		src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+	<script type="text/javascript"
+		src="js/main.js"></script>
 </body>
 </html>
