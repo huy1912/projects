@@ -14,21 +14,32 @@ $(document).ready(function() {
 				validators: {
 					regexp: {
 						message: 'Invalid ORC Order Number',
-						regexp: /^[a-zA-Z0-9]{1,10}$/
+						regexp: /^[a-zA-Z0-9]{1,20}$/
 					},
 					notEmpty: {
                         message: 'The ORC Order Number is required and cannot be empty'
                     },
 				}
 			},
+			obrOrderNumber: {
+				validators: {
+					regexp: {
+						message: 'Invalid OBR Order Number',
+						regexp: /^[a-zA-Z0-9]{1,20}$/
+					},
+					notEmpty: {
+                        message: 'The OBR Order Number is required and cannot be empty'
+                    },
+				}
+			},
 			patientId: {
                 validators: {
                     notEmpty: {
-                        message: 'The patient name is required and cannot be empty'
+                        message: 'The patient id is required and cannot be empty'
                     },
                     stringLength: {
-                        max: 10,
-                        message: 'The patient name must be less than 10 characters long'
+                        max: 50,
+                        message: 'The patient id must be less than 50 characters long'
                     }
                 }
             },
@@ -43,15 +54,30 @@ $(document).ready(function() {
                     }
                 }
             },
+            patientName: {
+                validators: {
+                    notEmpty: {
+                        message: 'The patient name is required and cannot be empty'
+                    },
+                    stringLength: {
+                        max: 50,
+                        message: 'The patient name must be less than 50 characters long'
+                    }
+                }
+            },
             visitNumber: {
             	validators: {
-            		remote: {
-            			url: 'valVisitNo',
-            			message: 'Invalid visit number'
-//            			data: function(validator) {
-//            				
-//            			}
-            		}
+//            		remote: {
+//            			url: 'valVisitNo',
+//            			message: 'Invalid visit number'
+//            		}
+            		notEmpty: {
+                        message: 'The visit number is required and cannot be empty'
+                    },
+                    stringLength: {
+                        max: 20,
+                        message: 'The visit number must be less than 20 characters long'
+                    }
             	}
             }
 		},
@@ -127,7 +153,6 @@ $(document).ready(function() {
 		}
 		console.log('get report');
 		var orcOrderNumber = $('#orcOrderNumber').val();
-		/*
 		$.ajax({
 			type: 'POST',
 			contentType: 'application/json',
@@ -147,8 +172,7 @@ $(document).ready(function() {
 			}
 				
 		});
-		*/
-		window.location = 'getReport?orderNumber=' + orcOrderNumber;
+//		window.location = 'getReport?orderNumber=' + orcOrderNumber;
 	});
 	
 	$('#getResult').click(function() {

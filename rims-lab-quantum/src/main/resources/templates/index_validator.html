@@ -32,16 +32,26 @@ input.error, textarea.error{
 		<form class="form-horizontal" id="lab">
 			<div class="form-group">
 		      <label for="orcOrderNumber">ORC Order Number:</label>
-			  <input type="text" class="form-control" id="orcOrderNumber" placeholder="ORC Order Number" name="orcOrderNumber" />
+		      <div class="input-group">
+			      <input type="text" class="form-control" id="orcOrderNumber" placeholder="ORC Order Number" name="orcOrderNumber" />
+			      <span class="input-group-addon" style=""><i class="glyphicon"></i></span>
+		      </div>
 		    </div>
 		    <div class="form-group">
 		      <label for="obrOrderNumber">OBR Order Number:</label>
-		      <input type="text" class="form-control" id="obrOrderNumber" placeholder="OBR Order Number" name="obrOrderNumber" />
+		      <div class="input-group">
+		      	<input type="text" class="form-control" id="obrOrderNumber" placeholder="OBR Order Number" name="obrOrderNumber" />
+		      	<span class="input-group-addon" style=""><i class="glyphicon"></i></span>
+		      </div>
 		    </div>
 		    <div class="form-group">
 		      <label for="visitNumber">Visit Number:</label>
 		      <input type="text" class="form-control" id="visitNumber" placeholder="Visit Number" name="visitNumber" />
 		    </div>
+		    <!-- <div class="form-group">
+		      <label for="patientName">Patient Name:</label>
+		      <input type="text" class="form-control" id="patientName" placeholder="Patient Name" name="patientName" />
+		    </div> -->
 		    <div class="form-group">
 		      <label for="patientId">Patient Id:</label>
 		      <input type="text" class="form-control" id="patientId" placeholder="Patient Id" name="patientId" />
@@ -49,10 +59,6 @@ input.error, textarea.error{
 		    <div class="form-group">
 		      <label for="nricFinNumber">Patient NRIC:</label>
 		      <input type="text" class="form-control" id="nricFinNumber" placeholder="Patient NRIC" name="nricFinNumber" />
-		    </div>
-		    <div class="form-group">
-		      <label for="patientName">Patient Name:</label>
-		      <input type="text" class="form-control" id="patientName" placeholder="Patient Name" name="patientName" />
 		    </div>
 		    <div class="form-group">
 		       <div id="messages"></div>

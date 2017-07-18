@@ -24,6 +24,7 @@ public class AppConfig {
 	@Value("${lis.wsdl}")
 	private String lisWsdl;
 	
+	/*
 	@Bean(name = Bus.DEFAULT_BUS_ID)
 	public SpringBus springBus() {
 	    SpringBus springBus = new SpringBus();
@@ -37,6 +38,7 @@ public class AppConfig {
 	    springBus.getInInterceptors().add(logInInterceptor());
 	    return springBus;
 	}
+	*/
 	
 //	@Bean
 	public AbstractLoggingInterceptor logOutInterceptor() {

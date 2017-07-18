@@ -65,18 +65,20 @@ public class PageController {
 		return results.getString();
 	}
 	
-	@RequestMapping(value = "/getReport", method = RequestMethod.GET)
-	public void getReport(HttpServletResponse response, @RequestParam("orderNumber") String orderNumber) {
+	@RequestMapping(value = "/getReport", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody String getReport(HttpServletResponse response, String orderNumber) {
 		try {
 			byte[] buffer = integrationWebserviceSoap.getReportPDF(orderNumber, username, password);
 //			byte[] buffer = IOUtils.toByteArray(new FileInputStream("C:\\jhmi\\tmp\\ABI.pdf"));
-			IOUtils.write(buffer, response.getOutputStream());
-			response.setContentType("application/x-download");
-			response.setHeader("Content-Disposition", "attachment;filename=report.pdf");
-			response.flushBuffer();
+//			IOUtils.write(buffer, response.getOutputStream());
+//			response.setContentType("application/x-download");
+//			response.setHeader("Content-Disposition", "attachment;filename=report.pdf");
+//			response.flushBuffer();
+			return "Report is successfully retrieved for the given " + orderNumber;
 		}
-		catch (IOException e) {
+		catch (Exception e) {
 			LOGGER.error(e.getMessage(), e);
+			return e.getMessage();
 		}
 	}
 	
