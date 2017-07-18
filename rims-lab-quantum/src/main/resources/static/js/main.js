@@ -127,6 +127,7 @@ $(document).ready(function() {
 		}
 		console.log('get report');
 		var orcOrderNumber = $('#orcOrderNumber').val();
+		/*
 		$.ajax({
 			type: 'POST',
 			contentType: 'application/json',
@@ -146,6 +147,8 @@ $(document).ready(function() {
 			}
 				
 		});
+		*/
+		window.location = 'getReport?orderNumber=' + orcOrderNumber;
 	});
 	
 	$('#getResult').click(function() {

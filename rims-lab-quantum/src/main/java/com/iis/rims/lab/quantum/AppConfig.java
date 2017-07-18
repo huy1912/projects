@@ -41,14 +41,14 @@ public class AppConfig {
 //	@Bean
 	public AbstractLoggingInterceptor logOutInterceptor() {
 	    LoggingOutInterceptor logOutInterceptor = new LabLoggingOutInterceptor();
-	    logOutInterceptor.setPrettyLogging(true);
+//	    logOutInterceptor.setPrettyLogging(true);
 	    return logOutInterceptor;
 	}
 	
 //	@Bean
 	public AbstractLoggingInterceptor logInInterceptor() {
 	    LoggingInInterceptor logInInterceptor = new LabLoggingInInterceptor();
-	    logInInterceptor.setPrettyLogging(true);
+//	    logInInterceptor.setPrettyLogging(true);
 	    return logInInterceptor;
 	}
 	
@@ -67,8 +67,9 @@ public class AppConfig {
 		ns.put("ws", "http://ws.connectors.connect.mirth.com");
 		properties.put("soap.env.ns.map", ns);
 		factory.setProperties(properties);
-//		factory.getInInterceptors().add(new OutSoapInterceptor());
-//		factory.getOutInterceptors().add(new LabLoggingOutInterceptor());
+		factory.getOutInterceptors().add(new OutSoapInterceptor());
+		factory.getOutInterceptors().add(logOutInterceptor());
+		factory.getInInterceptors().add(logInInterceptor());
 		T service = (T) factory.create();
 		return service;
 	}

@@ -34,6 +34,7 @@ public class SpringBootLabQuantumApplication extends SpringBootServletInitialize
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
 		return builder.sources(SpringBootLabQuantumApplication.class);
 	}
+	/*
 	@Bean
 	public CommandLineRunner run(final LISIntegrationWebserviceSoap integrationWebserviceSoap) throws Exception {
 		return new CommandLineRunner() {
@@ -54,4 +55,5 @@ public class SpringBootLabQuantumApplication extends SpringBootServletInitialize
 			}
 		};
 	}
+	*/
 }
