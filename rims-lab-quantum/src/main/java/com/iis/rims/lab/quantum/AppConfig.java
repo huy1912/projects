@@ -1,5 +1,6 @@
 package com.iis.rims.lab.quantum;
 
+import java.lang.invoke.MethodHandles;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,6 +10,8 @@ import org.apache.cxf.interceptor.AbstractLoggingInterceptor;
 import org.apache.cxf.interceptor.LoggingInInterceptor;
 import org.apache.cxf.interceptor.LoggingOutInterceptor;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,6 +23,8 @@ import com.iis.rims.lab.quantum.log.LabLoggingOutInterceptor;
 
 @Configuration
 public class AppConfig {
+	
+	public static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 	
 	@Value("${lis.wsdl}")
 	private String lisWsdl;

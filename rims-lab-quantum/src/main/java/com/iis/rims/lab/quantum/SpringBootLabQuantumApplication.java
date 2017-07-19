@@ -10,6 +10,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.tempuri.ArrayOfString;
 import org.tempuri.LISIntegrationWebserviceSoap;
 
@@ -17,6 +18,7 @@ import com.iis.rims.lab.quantum.message.EncodeMessage;
 
 
 //@SpringBootApplication(scanBasePackages = {"hello", "spring.boot.example"})
+@EnableScheduling
 @SpringBootApplication
 public class SpringBootLabQuantumApplication extends SpringBootServletInitializer {
 
