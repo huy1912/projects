@@ -10,7 +10,7 @@ public class SimpleUserDetailsService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		return new SimpleUserDetails(username, username, "ADMIN");
+		return new SimpleUserDetails(username, username, "ROLE_ADMIN");
 	}
 
 }
