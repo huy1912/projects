@@ -1,1 +1,2 @@
 https://jsfiddle.net/084w9en1/1/
+https://www.sencha.com/blog/using-viewcontrollers-in-ext-js-5/

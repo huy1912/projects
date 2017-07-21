@@ -1,0 +1,3 @@
+https://hellokoding.com/spring-boot-hello-world-example-with-jsp/
+http://websystique.com/spring-security/secure-spring-rest-api-using-basic-authentication/
+http://www.baeldung.com/spring-async
