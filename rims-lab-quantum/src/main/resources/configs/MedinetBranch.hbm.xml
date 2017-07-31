@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 23, 2015 11:03:21 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.MedinetBranch" table="tbl_MedinetBranch" schema="medinet" catalog="RIMSDB_NEW">
+        <id name="medinetBranchId" type="java.lang.Integer">
+            <column name="MedinetBranchId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+        <property name="hostName" type="string">
+            <column name="HostName" not-null="true" />
+        </property>
+        <property name="port" type="int">
+            <column name="Port" not-null="true" />
+        </property>
+        <property name="userName" type="string">
+            <column name="UserName" />
+        </property>
+        <property name="password" type="string">
+            <column name="Password" />
+        </property>
+        <property name="privateKey" type="binary">
+            <column name="PrivateKey" not-null="true" />
+        </property>
+        <property name="privatePassword" type="string">
+            <column name="PrivatePassword" />
+        </property>
+        <property name="createdBy" type="int">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

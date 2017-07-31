@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.iis.rims.domain.MortalityForm" table="tbl_MortalityForm" schema="his" catalog="RIMSDB_NEW">
+		<id name="mortalityFormId" type="int">
+			<column name="MortalityFormId" />
+			<generator class="native"></generator>
+		</id>
+		<property name="organizationId" type="int">
+			<column name="OrganizationId" not-null="true" />
+		</property>
+		<property name="branchId" type="int">
+			<column name="BranchId" not-null="true" />
+		</property>
+		<property name="patientId" type="int">
+			<column name="PatientId" not-null="true" />
+		</property>
+		<property name="patientName" type="string">
+			<column name="PatientName" length="100" not-null="true"/>
+		</property>
+		<property name="patientIc" type="string">
+			<column name="PatientIc" length="20" not-null="true"/>
+		</property>
+		<property name="deathDate" type="timestamp">
+			<column name="DeathDate" length="23" not-null="true" />
+		</property>
+		<property name="joinDate" type="timestamp">
+			<column name="joinDate" length="23" not-null="true" />
+		</property> 
+		<property name="doctorInchargeId" type="int">
+			<column name="DoctorInchargeId" not-null="true" />
+		</property>
+		<property name="doctorInchargeName" type="string">
+			<column name="DoctorInchargeName" length="100" not-null="true" />
+		</property>
+		<property name="placeOfDeath" type="int">
+			<column name="PlaceOfDeath" not-null="true" />
+		</property>
+		<property name="deathAtHospital" type="string">
+			<column name="DeathAtHospital" length="255" />
+		</property>
+		<property name="deathAtOther" type="string">
+			<column name="DeathAtOther" length="255" />
+		</property>
+		<property name="coronorCase" type="java.lang.Boolean">
+			<column name="CoronorCase" not-null="true"/>
+		</property>
+		<property name="causeOfDeath" type="string">
+			<column name="CauseOfDeath" length="1000" />
+		</property>
+		<property name="lastDialysisDate" type="timestamp">
+			<column name="LastDialysisDate" length="23" not-null="true" />
+		</property>
+		<property name="comorbidity" type="string">
+			<column name="Comorbidity" length="1000" />
+		</property>
+		<property name="history" type="string">
+			<column name="History" length="1000" />
+		</property>
+		<property name="symptom" type="string">
+			<column name="Symptom" length="1000" />
+		</property>
+		<property name="dialysisPerformance" type="string">
+			<column name="DialysisPerformance" length="255" />
+		</property>
+		<property name="reportedById" type="int">
+			<column name="ReportedById" not-null="true" />
+		</property>
+		<property name="reportedByName" type="string">
+			<column name="ReportedByName" length="255" not-null="true" />
+		</property>
+		<property name="reportDate" type="timestamp">
+			<column name="ReportDate" length="23" not-null="true" />
+		</property>
+		<property name="mortalityIndicator1" type="java.lang.Boolean">
+			<column name="MortalityIndicator1" not-null="true"/>
+		</property>
+		<property name="mortalityIndicator2" type="java.lang.Boolean">
+			<column name="MortalityIndicator2" not-null="true"/>
+		</property>
+		<property name="mortalityIndicator3" type="java.lang.Boolean">
+			<column name="MortalityIndicator3" not-null="true"/>
+		</property>
+		<property name="mortalityReviewComment" type="string">
+			<column name="MortalityReviewComment" length="1000" />
+		</property>
+		<property name="mortalityReviewDate" type="timestamp">
+			<column name="MortalityReviewDate" length="23" not-null="true" />
+		</property>
+		<property name="signedById" type="int">
+			<column name="SignedById" not-null="true" />
+		</property>
+		<property name="signedByName" type="string">
+			<column name="SignedByName" length="255" not-null="true" />
+		</property>
+		<property name="createdBy" type="int">
+			<column name="CreatedBy" not-null="true" />
+		</property>
+		<property name="createdDate" type="timestamp">
+			<column name="CreatedDate" length="23" not-null="true" />
+		</property>
+		<property name="lastUpdatedBy" type="int">
+			<column name="LastUpdatedBy" not-null="true" />
+		</property>
+		<property name="lastUpdatedDate" type="timestamp">
+			<column name="LastUpdatedDate" length="23" not-null="true" />
+		</property> 
+		<property name="entityStatus" type="java.lang.Boolean">
+			<column name="EntityStatus" />
+		</property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -4,8 +4,8 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/generated/cxf"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/generated/message"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/generated/cxf"/>
         <property name="context-root" value="rims-lab-quantum"/>
         <property name="java-output-path" value="/rims-lab-quantum/target/classes"/>
     </wb-module>

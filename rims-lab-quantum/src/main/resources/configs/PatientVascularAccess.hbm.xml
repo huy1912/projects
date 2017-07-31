@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.PatientVascularAccess" table="tbl_PatientVascularAccess" schema="dis" catalog="RIMSDB_NEW">
+        <id name="vascularAccessRecordId" type="int">
+            <column name="VascularAccessRecordId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="visitId" type="java.lang.Integer">
+            <column name="VisitId" not-null="true" />
+        </property>
+        <property name="vascularAccessRecordDate" type="timestamp">
+            <column name="VascularAccessRecordDate" length="23" />
+        </property>
+        <property name="typeOfAccess" type="int">
+            <column name="TypeOfAccess" not-null="true" />
+        </property>
+        <property name="accessTypeSide" type="int">
+            <column name="AccessTypeSide" not-null="true" />
+        </property>
+        <property name="fistulaOrGraftTypeId" type="java.lang.Integer">
+            <column name="FistulaOrGraftTypeId" />
+        </property>
+        <property name="needleSizeA" type="string">
+            <column name="NeedleSizeA" length="20" not-null="true" />
+        </property>
+        <property name="needleSizeV" type="string">
+            <column name="needleSizeV" length="20" not-null="true" />
+        </property>
+        <property name="lengthA" type="string">
+            <column name="lengthA" length="50"  />
+        </property>
+        <property name="lengthV" type="string">
+            <column name="lengthV" length="50"  />
+        </property>
+        <property name="volumeA" type="string">
+            <column name="volumeA" length="50"  />
+        </property>
+        <property name="volumeV" type="string">
+            <column name="volumeV" length="50"  />
+        </property>
+        <property name="ijOthersDtl" type="string">
+            <column name="ijOthersDtl" length="50"  />
+        </property>
+        <property name="permcath" type="java.lang.Boolean">
+            <column name="permcath"/>
+        </property>
+        <property name="hepLock" type="java.lang.Boolean">
+            <column name="hepLock"/>
+        </property>
+        <property name="tegoLock" type="java.lang.Boolean">
+            <column name="tegoLock"/>
+        </property>
+        <property name="ijOthers" type="java.lang.Boolean">
+            <column name="ijOthers"/>
+        </property>
+	 	<property name="referringDoctorId" type="int">
+            <column name="ReferringDoctorId"/>
+        </property>        
+        <property name="rotationOfSites" type="string">
+            <column name="RotationOfSites" length="60"  />
+        </property>
+        <property name="referringDoctorName" type="string">
+            <column name="ReferringDoctorName" length="50"  />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks"  />
+        </property>
+        <property name="comments" type="string">
+            <column name="Comments"  />
+        </property>
+         <property name="dateInserted" type="timestamp">
+            <column name="DateInserted" length="23" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="patientId" type="int">
+            <column name="PatientId" not-null="false" />
+        </property>
+        <property name="registrationId" type="int">
+            <column name="RegistrationId" not-null="false" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+        <property name="catheterLock" type="int">
+            <column name="CatheterLock" not-null="false" />
+        </property>
+    </class>
+    <query name="findRecentPatientVascularAccess">
+     	<![CDATA[select pva from PatientVascularAccess pva, Registration reg, Patient pat where pva.entityStatus = 1 and pva.registrationId = reg.registrationId and reg.patientId = pat.patientId and pat.patientId = :patientId order by pva.vascularAccessRecordDate desc]]>
+    </query>
+</hibernate-mapping>

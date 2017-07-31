@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 31, 2013 4:11:27 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.ConcentratorConfiguration" table="tbl_ConcentratorConfiguration" schema="ssp" catalog="RIMSDB_NEW">
+        <id name="concentratorConfigurationId" type="java.lang.Integer">
+            <column name="ConcentratorConfigurationId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+        <property name="branchName" type="string">
+            <column name="BranchName" length="50" not-null="true" />
+        </property>
+        <property name="schedularTimingStart" type="timestamp">
+            <column name="SchedularTimingStart" length="23" />
+        </property>
+        <property name="schedularTimingEnd" type="timestamp">
+            <column name="SchedularTimingEnd" length="23" />
+        </property>
+        <property name="pollingInterval" type="java.lang.Integer">
+            <column name="PollingInterval" />
+        </property>
+        <property name="numberOfStations" type="java.lang.Integer">
+            <column name="NumberOfStations" />
+        </property>
+        <property name="dianetAddressStart" type="java.lang.Integer">
+            <column name="DianetAddressStart" />
+        </property>
+        <property name="dianetAddressEnd" type="java.lang.Integer">
+            <column name="DianetAddressEnd" />
+        </property>
+        <property name="edsswitchIp" type="string">
+            <column name="EDSSwitchIP" length="20" />
+        </property>
+        <property name="dianetPortStart" type="java.lang.Integer">
+            <column name="DianetPortStart" />
+        </property>
+        <property name="dianetPortEnd" type="java.lang.Integer">
+            <column name="DianetPortEnd" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

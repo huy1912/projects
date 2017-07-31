@@ -1,0 +1,515 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 13, 2013 7:38:13 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.HaemodialysisChart" table="tbl_HaemodialysisChart" schema="dis" catalog="RIMSDB_NEW">
+        <id name="haemodialysisChartId" type="java.lang.Integer">
+            <column name="HaemodialysisChartId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="visitId" type="java.lang.Integer">
+            <column name="VisitId" />
+        </property>
+        <property name="branchId" type="java.lang.Integer">
+            <column name="BranchId" />
+        </property>
+        <property name="visitNumber" type="string">
+            <column name="VisitNumber" length="20" />
+        </property>
+        <property name="patientId" type="java.lang.Integer">
+            <column name="PatientId" />
+        </property>
+        <property name="nricNumber" type="string">
+            <column name="NricNumber" length="20" />
+        </property>
+        <property name="disinfectantPresent" type="java.lang.Boolean">
+            <column name="DisinfectantPresent" />
+        </property>
+        <property name="startTime" type="timestamp">
+            <column name="StartTime" length="23" />
+        </property>
+        <property name="startedBy" type="java.lang.Integer">
+            <column name="StartedBy" />
+        </property>
+        <property name="endTime" type="timestamp">
+            <column name="EndTime" length="23" />
+        </property>
+        <property name="endedBy" type="java.lang.Integer">
+            <column name="EndedBy" />
+        </property>
+        <property name="dialyzer" type="java.lang.Integer">
+            <column name="Dialyzer" />
+        </property>
+        <property name="reuseNumber" type="big_decimal">
+            <column name="ReuseNumber" precision="4" />
+        </property>        
+        <property name="dialyserNo" type="string">
+            <column name="DialyserNo" length="50" />
+        </property>
+        <property name="dialysateConcentrate" type="java.lang.Integer">
+            <column name="DialysateConcentrate" />
+        </property>
+        <property name="dialysateTemp" type="java.lang.Double">
+            <column name="DialysateTemp" />
+        </property>
+        <property name="equipmentDetailId" type="java.lang.Integer">
+            <column name="EquipmentDetailId" />
+        </property>
+        <property name="timeCommence" type="string">
+            <column name="TimeCommence" length="10" />
+        </property>
+        <property name="commencedBy" type="java.lang.Integer">
+            <column name="CommencedBy" />
+        </property>
+        <property name="timeConcluded" type="string">
+            <column name="TimeConcluded" length="10" />
+        </property>
+        <property name="concludedBy" type="java.lang.Integer">
+            <column name="ConcludedBy" />
+        </property>
+        <property name="dialyzerSterliantTestedBy" type="java.lang.Integer">
+            <column name="DialyzerSterliantTestedBy" />
+        </property>
+        <property name="residualSterliantTestedBy" type="java.lang.Integer">
+            <column name="ResidualSterliantTestedBy" />
+        </property>
+        <property name="primeBy" type="java.lang.Integer">
+            <column name="PrimeBy" />
+        </property>
+        <property name="durationOfDialysis" type="big_decimal">
+            <column name="DurationOfDialysis" precision="4" />
+        </property>
+        <property name="weightToday" type="big_decimal">
+            <column name="WeightToday" precision="4" />
+        </property>
+        <property name="lastWeight" type="big_decimal">
+            <column name="LastWeight" precision="4" />
+        </property>
+        <property name="weightDifference" type="big_decimal">
+            <column name="WeightDifference" precision="4" />
+        </property>
+        <property name="estDryWeight" type="big_decimal">
+            <column name="EstDryWeight" precision="4" />
+        </property>
+        <property name="uftarget" type="big_decimal">
+            <column name="UFTarget" precision="4" />
+        </property>
+        <property name="canunulation" type="java.lang.Integer">
+            <column name="Canunulation" />
+        </property>
+        <property name="bpsitting" type="string">
+            <column name="BPSitting" length="20" />
+        </property>
+        <property name="bpstanding" type="string">
+            <column name="BPStanding" length="20" />
+        </property>
+        <property name="bodyTemprature" type="big_decimal">
+            <column name="BodyTemprature" precision="4" />
+        </property>
+        <property name="pulseSitting" type="string">
+            <column name="Pulse" length="20" />
+        </property>
+        <property name="anticoagulant" type="java.lang.Integer">
+            <column name="Anticoagulant" />
+        </property>
+        <property name="permCathFlow" type="java.lang.Integer">
+            <column name="PermCathFlow" />
+        </property>
+        <property name="prime" type="string">
+            <column name="Prime" length="50" />
+        </property>
+        <property name="bolus" type="string">
+            <column name="Bolus" length="50" />
+        </property>
+        <property name="initial" type="string">
+            <column name="Initial" length="50" />
+        </property>
+        <property name="continuous" type="string">
+            <column name="Continuous" length="50" />
+        </property>
+        <property name="total" type="string">
+            <column name="Total" length="50" />
+        </property>
+        <property name="shortnessOfBreath" type="java.lang.Boolean">
+            <column name="ShortnessOfBreath" />
+        </property>
+        <property name="prepheralOedema" type="java.lang.Boolean">
+            <column name="PrepheralOedema" />
+        </property>
+        <property name="pysicalOrChestPain" type="java.lang.Boolean">
+            <column name="PysicalOrChestPain" />
+        </property>
+        <property name="discomfort" type="java.lang.Boolean">
+            <column name="Discomfort" />
+        </property>
+        <property name="salineBackrinse" type="string">
+            <column name="SalineBackrinse" length="20" />
+        </property>
+        <property name="salineInfusion" type="string">
+            <column name="SalineInfusion" length="20" />
+        </property>
+        <property name="accessType" type="java.lang.Integer">
+            <column name="AccessType" />
+        </property>
+        <property name="accessSide" type="java.lang.Integer">
+            <column name="AccessSide" />
+        </property>
+        <property name="needleSizeA" type="string">
+            <column name="NeedleSizeA" length="20" />
+        </property>
+        <property name="needleSizeAInt" type="java.lang.Integer">
+            <column name="NeedleSizeAInt"/>
+        </property>
+        <property name="needleSizeV" type="string">
+            <column name="NeedleSizeV" length="20" />
+        </property>
+        <property name="needleSizeVInt" type="java.lang.Integer">
+            <column name="NeedleSizeVInt"/>
+        </property>
+        <property name="lengthA" type="string">
+            <column name="lengthA" length="50"  />
+        </property>
+        <property name="lengthV" type="string">
+            <column name="lengthV" length="50"  />
+        </property>
+        <property name="volumeA" type="string">
+            <column name="volumeA" length="50"  />
+        </property>
+        <property name="volumeV" type="string">
+            <column name="volumeV" length="50"  />
+        </property>
+        <property name="ijOthersDtl" type="string">
+            <column name="ijOthersDtl" length="50"  />
+        </property>
+        <property name="permcath" type="java.lang.Boolean">
+            <column name="permcath"/>
+        </property>
+        <property name="hepLock" type="java.lang.Boolean">
+            <column name="hepLock"/>
+        </property>
+        <property name="tegoLock" type="java.lang.Boolean">
+            <column name="tegoLock"/>
+        </property>
+        <property name="ijOthers" type="java.lang.Boolean">
+            <column name="ijOthers"/>
+        </property>
+        <property name="tegoConnectorChanged" type="java.lang.Boolean">
+            <column name="tegoConnectorChanged"/>
+        </property>
+        <property name="bruitResult" type="java.lang.Integer">
+            <column name="bruitResult"/>
+        </property>
+        <property name="thrillResult" type="java.lang.Integer">
+            <column name="thrillResult"/>
+        </property>
+        <property name="postBruitResult" type="java.lang.Integer">
+            <column name="PostBruitResult"/>
+        </property>
+        <property name="postThrillResult" type="java.lang.Integer">
+            <column name="PostThrillResult"/>
+        </property>
+        <property name="iua" type="string">
+            <column name="IUA" length="20" />
+        </property>
+        <property name="iuv" type="string">
+            <column name="IUV" length="20" />
+        </property>
+        <property name="hepLockAInt" type="java.lang.Integer">
+            <column name="HepLockAInt"/>
+        </property>
+        <property name="hepLockVInt" type="java.lang.Integer">
+            <column name="HepLockVInt"/>
+        </property>
+        <property name="bruit" type="java.lang.Boolean">
+            <column name="Bruit" />
+        </property>
+        <property name="eczema" type="java.lang.Boolean">
+            <column name="Eczema" />
+        </property>
+        <property name="thrill" type="java.lang.Boolean">
+            <column name="Thrill" />
+        </property>
+        <property name="haematoma" type="java.lang.Boolean">
+            <column name="Haematoma" />
+        </property>
+        <property name="redness" type="java.lang.Boolean">
+            <column name="Redness" />
+        </property>
+        <property name="oedema" type="java.lang.Boolean">
+            <column name="Oedema" />
+        </property>
+        <property name="postWeight" type="big_decimal">
+            <column name="PostWeight" precision="4" />
+        </property>
+        <property name="weightLoss" type="big_decimal">
+            <column name="WeightLoss" precision="4" />
+        </property>
+        <property name="postBodyTemprature" type="big_decimal">
+            <column name="PostBodyTemprature" precision="4" />
+        </property>
+        <property name="postPulse" type="string">
+            <column name="PostPulse" length="20" />
+        </property>
+        <property name="postBpsitting" type="string">
+            <column name="PostBPSitting" length="20" />
+        </property>
+        <property name="postBpstanding" type="string">
+            <column name="PostBPStanding" length="20" />
+        </property>
+        <property name="postShortnessOfBreath" type="java.lang.Boolean">
+            <column name="PostShortnessOfBreath" />
+        </property>
+        <property name="postPrepheralOedema" type="java.lang.Boolean">
+            <column name="PostPrepheralOedema" />
+        </property>
+        <property name="postPysicalOrChestPain" type="java.lang.Boolean">
+            <column name="PostPysicalOrChestPain" />
+        </property>
+        <property name="postDiscomfort" type="java.lang.Boolean">
+            <column name="PostDiscomfort" />
+        </property>
+        <property name="symptomaticHypertension" type="java.lang.Boolean">
+            <column name="SymptomaticHypertension" />
+        </property>
+        <property name="prolongedBleeding" type="java.lang.Boolean">
+            <column name="ProlongedBleeding" />
+        </property>
+        <property name="postBruit" type="java.lang.Boolean">
+            <column name="PostBruit" />
+        </property>
+        <property name="postEczema" type="java.lang.Boolean">
+            <column name="PostEczema" />
+        </property>
+        <property name="postThrill" type="java.lang.Boolean">
+            <column name="PostThrill" />
+        </property>
+        <property name="postHaematoma" type="java.lang.Boolean">
+            <column name="PostHaematoma" />
+        </property>
+        <property name="postRedness" type="java.lang.Boolean">
+            <column name="PostRedness" />
+        </property>
+        <property name="postOedema" type="java.lang.Boolean">
+            <column name="PostOedema" />
+        </property>
+        <property name="postOthers" type="java.lang.Boolean">
+            <column name="PostOthers" />
+        </property>
+        <property name="postOthersDetail" type="string">
+            <column name="PostOthersDetail" length="200" />
+        </property>
+        <property name="scid" type="big_decimal">
+            <column name="SCId" precision="4" />
+        </property>
+        <property name="scdosage" type="string">
+            <column name="SCDosage" length="10" />
+        </property>
+        <property name="scsignBy" type="java.lang.Integer">
+            <column name="SCSignBy" />
+        </property>
+        <property name="iv1id" type="big_decimal">
+            <column name="IV1Id" precision="4" />
+        </property>
+        <property name="iv1dosage" type="string">
+            <column name="IV1Dosage" length="10" />
+        </property>
+        <property name="iv1signBy" type="java.lang.Integer">
+            <column name="IV1SignBy" />
+        </property>
+        <property name="iv2id" type="big_decimal">
+            <column name="IV2Id" precision="4" />
+        </property>
+        <property name="iv2dosage" type="string">
+            <column name="IV2Dosage" length="10" />
+        </property>
+        <property name="iv2signBy" type="java.lang.Integer">
+            <column name="IV2SignBy" />
+        </property>
+        <property name="additionalInformation" type="string">
+            <column name="AdditionalInformation" length="300" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="processedDate" type="timestamp">
+            <column name="ProcessedDate" length="23" />
+        </property>
+       	<property name="therapyStatus" type="java.lang.Integer">
+            <column name="TherapyStatus" />
+      	</property>
+      	<property name="stationName" type="string">
+            <column name="StationName" length="100" />
+        </property>
+      	<property name="weightGain" type="big_decimal">
+            <column name="WeightGain" precision="4" />
+        </property>
+        <property name="heparinPresent" type="boolean">
+            <column name="HeparinPresent" not-null="true" />
+        </property>
+        <property name="ktV" type="java.lang.Double">
+            <column name="KtV" precision="5" scale="0" />
+        </property>
+        <property name="uRR" type="java.lang.Integer">
+            <column name="URR" />
+        </property>
+        <property name="catheterArterialClotAspirated" type="java.lang.Integer">
+            <column name="CatheterArterialClotAspirated" />
+        </property>
+        <property name="catheterArterialFlowPatency" type="java.lang.Integer">
+            <column name="CatheterArterialFlowPatency" />
+        </property>
+        <property name="catheterArterialFlowType" type="java.lang.Integer">
+            <column name="CatheterArterialFlowType" />
+        </property>
+        <property name="catheterVenousClotAspirated" type="java.lang.Integer">
+            <column name="CatheterVenousClotAspirated" />
+        </property>
+        <property name="catheterVenousFlowPatency" type="java.lang.Integer">
+            <column name="CatheterVenousFlowPatency" />
+        </property>
+        <property name="catheterVenousFlowType" type="java.lang.Integer">
+            <column name="CatheterVenousFlowType" />
+        </property>
+        <property name="exitSite" type="string">
+            <column name="ExitSite" length="30" />
+        </property>
+        <property name="dialyserSterilant" type="java.lang.Boolean">
+            <column name="DialyserSterilant" />
+        </property>
+        <property name="residualSterilant" type="java.lang.Boolean">
+            <column name="ResidualSterilant" />
+        </property>
+        <property name="dialyzerSterliantCheckedBy" type="java.lang.Integer">
+            <column name="DialyzerSterliantCheckedBy" />
+      	</property>
+      	<property name="residualSterliantCheckedBy" type="java.lang.Integer">
+            <column name="ResidualSterliantCheckedBy" />
+      	</property>
+      	<property name="standingPulse" type="string">
+            <column name="StandingPulse" length="20" />
+        </property>
+        <property name="postStandingPulse" type="string">
+            <column name="PostStandingPulse" length="20" />
+        </property>
+      	<property name="totalUf" type="big_decimal">
+            <column name="TotalUf" precision="4" />
+        </property>
+        <property name="nettUf" type="big_decimal">
+            <column name="NettUf" precision="4" />
+        </property>
+        
+        <property name="postOthersDosage" type="string">
+            <column name="PostOthersDosage" length="20" />
+        </property>
+        <property name="postOthersDosageUnit" type="java.lang.Integer">
+            <column name="PostOthersDosageUnit" />
+      	</property>
+      	<property name="postOthersSignBy" type="java.lang.Integer">
+            <column name="PostOthersSignBy" />
+      	</property>
+      	<property name="scDosageUnit" type="java.lang.Integer">
+            <column name="ScDosageUnit" />
+      	</property>
+      	<property name="iv1DosageUnit" type="java.lang.Integer">
+            <column name="Iv1DosageUnit" />
+      	</property>
+      	<property name="iv2DosageUnit" type="java.lang.Integer">
+            <column name="Iv2DosageUnit" />
+      	</property>
+      	<property name="postOthersSignTime" type="timestamp">
+            <column name="PostOthersSignTime" length="23" not-null="false" />
+        </property>
+        <property name="scSignTime" type="timestamp">
+            <column name="ScSignTime" length="23" not-null="false" />
+        </property>
+        <property name="iv1SignTime" type="timestamp">
+            <column name="Iv1SignTime" length="23" not-null="false" />
+        </property>
+        <property name="iv2SignTime" type="timestamp">
+            <column name="Iv2SignTime" length="23" not-null="false" />
+        </property>
+        
+        <property name="scRemarks" type="string">
+            <column name="ScRemarks" length="30" />
+        </property>
+        <property name="iv1Remarks" type="string">
+            <column name="Iv1Remarks" length="30" />
+        </property>
+        <property name="iv2Remarks" type="string">
+            <column name="Iv2Remarks" length="30" />
+        </property>
+        <property name="postOtherRemarks" type="string">
+            <column name="PostOtherRemarks" length="30" />
+        </property>
+        <property name="prepheralOedemaConditionPre" type="java.lang.Integer">
+            <column name="PrepheralOedemaConditionPre" />
+      	</property>
+      	<property name="prepheralOedemaConditionPost" type="java.lang.Integer">
+            <column name="PrepheralOedemaConditionPost" />
+      	</property>
+      	<property name="scCheckedBy" type="java.lang.Integer">
+            <column name="SCCheckedBy" />
+      	</property>
+      	<property name="iv1CheckedBy" type="java.lang.Integer">
+            <column name="IV1CheckedBy" />
+      	</property>
+      	<property name="iv2CheckedBy" type="java.lang.Integer">
+            <column name="IV2CheckedBy" />
+      	</property>
+      	<property name="postOthersCheckedBy" type="java.lang.Integer">
+            <column name="PostOthersCheckedBy" />
+      	</property>
+      	<property name="eventFul" type="boolean">
+            <column name="EventFul" />
+      	</property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+        <property name="catheterLock" type="int">
+            <column name="CatheterLock" not-null="false" />
+        </property>
+        <property name="patientHeight" type="java.lang.Double">
+            <column name="PatientHeight" precision="53" scale="0"/>
+        </property>
+    </class>
+    <query name="getRecentHaemodialysisChart">
+     	<![CDATA[select dialysis from HaemodialysisChart dialysis where dialysis.entityStatus = 1 and dialysis.patientId = :patientId order by dialysis.haemodialysisChartId desc]]>
+     </query>
+     <query name="getHDUseDialyserNo">
+     	<![CDATA[select dialysis from HaemodialysisChart dialysis where dialysis.entityStatus = 1 and dialysis.patientId = :patientId and dialyserNo = :dialyserNo and haemodialysisChartId != :haemodialysisChartId order by dialysis.haemodialysisChartId desc]]>
+     </query>
+     <query name="getOtherHDUseDialyserNo">
+     	<![CDATA[select dialysis from HaemodialysisChart dialysis where dialysis.entityStatus = 1 and dialysis.patientId != :patientId and dialyserNo = :dialyserNo order by dialysis.haemodialysisChartId desc]]>
+     </query>
+     <query name="getPreviousHaemodialysisChart">
+     	<![CDATA[select dialysis from HaemodialysisChart dialysis where dialysis.entityStatus = 1 
+     	and dialysis.patientId = :patientId 
+     	and dialysis.haemodialysisChartId < :haemodialysisChartId
+     	order by dialysis.haemodialysisChartId desc]]>
+     </query>
+     <query name="getPreviousHaemodialysisChartByDay">
+     	<![CDATA[select dialysis from HaemodialysisChart dialysis where dialysis.entityStatus = 1 
+     	and dialysis.patientId = :patientId 
+     	and dialysis.createdDate < :today
+     	order by dialysis.haemodialysisChartId desc]]>
+     </query>
+     <query name="getTodayHaemodialysisChart">
+     	<![CDATA[select dialysis from HaemodialysisChart dialysis where dialysis.entityStatus = 1 
+     	and dialysis.patientId = :patientId 
+     	and dialysis.createdDate >= :today
+     	order by dialysis.haemodialysisChartId desc]]>
+     </query>     
+</hibernate-mapping>

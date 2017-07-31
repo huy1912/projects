@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.DialysisAssessment" table="tbl_DialysisAssessment" schema="dis" catalog="RIMSDB_NEW">
+        <id name="dialysisAssesmentId" type="int">
+            <column name="DialysisAssesmentId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="visitId" type="int">
+            <column name="VisitId" not-null="true" />
+        </property>
+        <property name="hemodialysisChartId" type="int">
+            <column name="HemodialysisChartId" not-null="true" />
+        </property>
+        <property name="sssesmentType" type="int">
+            <column name="SssesmentType" not-null="true" />
+        </property>
+        <property name="weightToday" type="big_decimal">
+            <column name="WeightToday" precision="5" not-null="true" />
+        </property>
+        <property name="lastWeight" type="big_decimal">
+            <column name="LastWeight" precision="5" not-null="true" />
+        </property>
+        <property name="estimatedDryWeight" type="big_decimal">
+            <column name="EstimatedDryWeight" precision="5" />
+        </property>
+        <property name="uftarget" type="string">
+            <column name="UFTarget" length="20" />
+        </property>
+        <property name="bpSitting" type="big_decimal">
+            <column name="BP_Sitting" precision="5" />
+        </property>
+        <property name="bpStanding" type="big_decimal">
+            <column name="BP_Standing" precision="5" />
+        </property>
+        <property name="symptomaticHypoTension" type="java.lang.Boolean">
+            <column name="SymptomaticHypoTension" />
+        </property>
+        <property name="bodyTemprature" type="big_decimal">
+            <column name="BodyTemprature" precision="5" />
+        </property>
+        <property name="pulse" type="java.lang.Integer">
+            <column name="Pulse" />
+        </property>
+        <property name="antigoagulant" type="java.lang.Integer">
+            <column name="Antigoagulant" />
+        </property>
+        <property name="prime" type="big_decimal">
+            <column name="Prime" precision="5" />
+        </property>
+        <property name="bolus" type="big_decimal">
+            <column name="Bolus" precision="5" />
+        </property>
+        <property name="initial" type="big_decimal">
+            <column name="Initial" precision="5" />
+        </property>
+        <property name="continuous" type="big_decimal">
+            <column name="Continuous" precision="5" />
+        </property>
+        <property name="total" type="big_decimal">
+            <column name="Total" precision="5" />
+        </property>
+        <property name="cvcHepLockAiu" type="string">
+            <column name="CvcHepLockAiu" length="20" />
+        </property>
+        <property name="cvcHepLockAmis" type="string">
+            <column name="CvcHepLockAmis" length="20" />
+        </property>
+        <property name="cvcHepLockViu" type="string">
+            <column name="CvcHepLockViu" length="20" />
+        </property>
+        <property name="cvcHepLockVmis" type="string">
+            <column name="CvcHepLockVmis" length="20" />
+        </property>
+        <property name="salineType" type="java.lang.Integer">
+            <column name="SalineType" />
+        </property>
+        <property name="salineValue" type="string">
+            <column name="SalineValue" length="20" />
+        </property>
+        <property name="cruit" type="java.lang.Boolean">
+            <column name="Cruit" />
+        </property>
+        <property name="thrill" type="java.lang.Boolean">
+            <column name="Thrill" />
+        </property>
+        <property name="redness" type="java.lang.Boolean">
+            <column name="Redness" />
+        </property>
+        <property name="eczeme" type="java.lang.Boolean">
+            <column name="Eczeme" />
+        </property>
+        <property name="haematoma" type="java.lang.Boolean">
+            <column name="Haematoma" />
+        </property>
+        <property name="oedema" type="java.lang.Boolean">
+            <column name="Oedema" />
+        </property>
+        <property name="others" type="java.lang.Boolean">
+            <column name="Others" />
+        </property>
+        <property name="otherValue" type="string">
+            <column name="OtherValue" length="20" />
+        </property>
+        <property name="canulation" type="java.lang.Integer">
+            <column name="Canulation" />
+        </property>
+        <property name="permCathFlow" type="java.lang.Integer">
+            <column name="PermCathFlow" />
+        </property>
+        <property name="shortnessOfBreath" type="java.lang.Boolean">
+            <column name="ShortnessOfBreath" />
+        </property>
+        <property name="peripheralOedema" type="java.lang.Boolean">
+            <column name="PeripheralOedema" />
+        </property>
+        <property name="physicalChestPain" type="java.lang.Boolean">
+            <column name="PhysicalChestPain" />
+        </property>
+        <property name="postWeight" type="big_decimal">
+            <column name="PostWeight" precision="5" />
+        </property>
+        <property name="weightLoss" type="big_decimal">
+            <column name="WeightLoss" precision="5" />
+        </property>
+        <property name="prolongedBleeding" type="java.lang.Boolean">
+            <column name="ProlongedBleeding" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

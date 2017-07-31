@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 30, 2013 8:31:34 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.dto.PaymentPlanCheckDTO" schema="dbo" catalog="RIMSDB_NEW">
+        <id name="planDetailId" type="java.lang.Integer">
+            <column name="PlanDetailId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+        <property name="patientPaymentPlanId" type="int">
+            <column name="PatientPaymentPlanId" not-null="true" />
+        </property>
+        <property name="paymentPlanSupportType" type="int">
+            <column name="PaymentPlanSupportType" not-null="true" />
+        </property>
+        <property name="supportType" type="string">
+            <column name="supportType" length="100" />
+        </property>
+        <property name="patientName" type="string">
+            <column name="PatientName" length="100" />
+        </property>
+        <property name="patientNRIC" type="string">
+            <column name="PatientNRIC" length="20" />
+        </property>
+        <property name="CPFClaimFromPatient" type="int">
+            <column name="CPFClaimFromPatient" not-null="false" />
+        </property>
+        <property name="CPFType" type="int">
+            <column name="CPFType" not-null="false" />
+        </property>
+        <property name="CPFPayerName" type="string">
+            <column name="CPFPayerName" length="100" />
+        </property>
+        <property name="CPFAccountNumber" type="string">
+            <column name="CPFAccountNumber" length="20" />
+        </property>
+        <property name="fundType" type="int">
+            <column name="FundType" not-null="false" />
+        </property>
+        <property name="insuranceType" type="int">
+            <column name="InsuranceType" not-null="false" />
+        </property>
+        <property name="companyType" type="int">
+            <column name="CompanyType" not-null="false" />
+        </property>
+    </class>
+    <sql-query name="getPaymentPlanTypeCheck">
+		<return alias="paymentPlanCheck" class="com.iis.rims.domain.dto.PaymentPlanCheckDTO"/>
+		<![CDATA[
+		SELECT [OrganizationId], [BranchId], PatientPaymentPlanId, PlanDetailId, [PaymentPlanSupportType]
+, (SELECT DBO.[GET_LOOKUP_DETAIL_NAME] (OrganizationId, 'Payment Plan Support Type', PaymentPlanSupportType)) as supportType,
+[PatientNRIC]
+      ,[PatientName]
+      ,[CPFClaimFromPatient]
+      ,[CPFType]
+      ,[CPFPayerName]
+      ,[CPFAccountNumber]
+      ,[FundType]
+      ,[InsuranceType]
+      ,[CompanyType]
+  FROM [RIMSDB_NEW].[dbo].[View_PatientPaymentPlanScenario]
+  WHERE PatientPaymentPlanId = :patientPaymentPlanId
+  		]]>
+	</sql-query>
+</hibernate-mapping>

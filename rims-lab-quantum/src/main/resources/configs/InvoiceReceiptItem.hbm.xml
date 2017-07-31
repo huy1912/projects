@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.InvoiceReceiptItem" table="tbl_InvoiceReceiptItem" schema="acc" catalog="RIMSDB_NEW">
+        <id name="receiptItemId" type="int">
+            <column name="ReceiptItemId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+        <property name="invoiceReceiptId" type="int">
+            <column name="InvoiceReceiptId" not-null="true" />
+        </property>
+        <property name="customerId" type="java.lang.Integer">
+            <column name="CustomerId" />
+        </property>
+        <property name="paymentMode" type="int">
+            <column name="PaymentMode" not-null="true" />
+        </property>
+        <property name="paymentModeDescription" type="string">
+            <column name="PaymentModeDescription" length="20" not-null="true" />
+        </property>
+        <property name="paymentModeReference" type="string">
+            <column name="PaymentModeReference" length="250" />
+        </property>
+        <property name="paymentModeRate" type="big_decimal">
+            <column name="PaymentModeRate" precision="12" />
+        </property>
+        <property name="paymentModeAmount" type="big_decimal">
+            <column name="PaymentModeAmount" precision="12" />
+        </property>
+        <property name="gstPercent" type="big_decimal">
+            <column name="GSTPercent" precision="12" />
+        </property>
+        <property name="gstAmount" type="big_decimal">
+            <column name="GSTAmount" precision="12" />
+        </property>
+        <property name="paymentAmount" type="big_decimal">
+            <column name="PaymentAmount" precision="12" />
+        </property>
+        <property name="accpackInvoiceNumber" type="string">
+            <column name="AccpackInvoiceNumber" length="20" />
+        </property>
+        <property name="batchId" type="string">
+            <column name="BatchId" length="20" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

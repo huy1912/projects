@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.Doctor" table="tbl_Doctor" schema="mst" catalog="RIMSDB_NEW">
+        <id name="doctorId" type="int">
+            <column name="DoctorId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="primaryClinicId" type="int">
+            <column name="PrimaryClinicId" not-null="true" />
+        </property>
+        <property name="doctorCode" type="string">
+            <column name="DoctorCode" length="20" not-null="true" />
+        </property>
+        <property name="title" type="java.lang.Integer">
+            <column name="Title" />
+        </property>
+        <property name="showNameType" type="java.lang.Integer">
+            <column name="ShowNameType" />
+        </property>
+        <property name="firstName" type="string">
+            <column name="FirstName" length="50" not-null="true" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="LastName" length="50" />
+        </property>
+        <property name="doctorName" type="string">
+            <column name="DoctorName" length="100" not-null="true" />
+        </property>
+        <property name="shortName" type="string">
+            <column name="ShortName" length="100" />
+        </property>
+        <property name="userName" type="string">
+            <column name="UserName" length="20" />
+        </property>
+        <property name="password" type="string">
+            <column name="Password" length="20" />
+        </property>
+        <property name="speciality" type="int">
+            <column name="Speciality" not-null="true" />
+        </property>
+        <property name="registrationDate" type="timestamp">
+            <column name="RegistrationDate" length="23" />
+        </property>
+        <property name="professionalQualification" type="string">
+            <column name="ProfessionalQualification" length="150" not-null="true" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" />
+        </property>
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="doctorType" type="int">
+            <column name="DoctorType" not-null="true" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

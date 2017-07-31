@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 13, 2013 2:36:23 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.ProcedurePackage" table="tbl_ProcedurePackage" schema="mst" catalog="RIMSDB_NEW">
+        <id name="packageId" type="java.lang.Integer">
+            <column name="PackageId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="branchId" type="java.lang.Integer">
+            <column name="BranchId" />
+        </property>
+        <property name="packageType" type="int">
+            <column name="PackageType" not-null="true" />
+        </property>
+        <property name="packageName" type="string">
+            <column name="PackageName" length="100" />
+        </property>
+        <property name="packageDescription" type="string">
+            <column name="PackageDescription" length="500" />
+        </property>
+        <property name="startDate" type="timestamp">
+            <column name="StartDate" length="23" not-null="true" />
+        </property>
+        <property name="endDate" type="timestamp">
+            <column name="EndDate" length="23" />
+        </property>
+        <property name="specialCashPrice" type="big_decimal">
+            <column name="SpecialCashPrice" scale="4" />
+        </property>
+        <property name="specialBillPrice" type="big_decimal">
+            <column name="SpecialBillPrice" scale="4" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="serviceId" type="int">
+            <column name="ServiceId" not-null="true" />
+        </property>
+        <set name="procedurePackageDetails" table="tbl_ProcedurePackageDetail" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="PackageId" not-null="true" />
+            </key>
+            <one-to-many class="com.iis.rims.domain.ProcedurePackageDetail" />
+        </set>
+        <set name="customerProcedurePackages" table="tbl_CustomerProcedurePackage" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="PackageId" not-null="true" />
+            </key>
+            <one-to-many class="com.iis.rims.domain.CustomerProcedurePackage" />
+        </set>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+    
+	<query name="getPackagesByFilters">
+		<![CDATA[
+		    select distinct package.packageId as packageId,package.packageType as packageType, package.packageName as packageName,
+		    package.packageDescription as packageDescription, package.startDate as startDate, package.endDate as endDate,
+		    pkDetail.cashPrice as specialCashPrice 		    
+		    from ProcedurePackage package,ProcedurePackageDetail pkDetail 
+			where package.packageId = pkDetail.packageId and pkDetail.serviceId= :serviceId and pkDetail.procedureId= :procedureId 
+			and package.entityStatus=1 and package.organizationId= :organizationId 
+			and (package.startDate IS NOT NULL OR getdate()>package.startDate) 
+        	and (package.endDate IS NULL OR getdate() between package.startDate and package.endDate)			
+		]]>
+	</query>
+	<!-- and (GETDATE() between package.startDate and package.endDate ) -->
+</hibernate-mapping>

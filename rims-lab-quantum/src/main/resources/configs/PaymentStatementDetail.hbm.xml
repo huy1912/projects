@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"
+[
+<!ENTITY paymentStatementDetailShared SYSTEM "classpath://configs/PaymentStatementDetailShared.hbm.xml">
+]>
+<!-- Generated Oct 19, 2013 5:09:20 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.PaymentStatementDetail" table="tbl_PaymentStatementDetail" schema="acc" catalog="RIMSDB_NEW">
+    	&paymentStatementDetailShared;
+    	<!--Need to confirm whether statementDetailDate is allowed null -->    	
+    	 <property name="documentType" type="string">
+            <column name="DocumentType" not-null="true" />
+        </property>
+        <property name="customerName" type="string">
+            <column name="CustomerName" length="100" not-null="true" />
+        </property>
+         <property name="refDocumentType" type="string">
+            <column name="RefDocumentType" not-null="true" />
+        </property>
+         <property name="refDocumentNumber" type="string">
+            <column name="RefDocumentNumber" not-null="true" />
+        </property>
+        <property name="refDocumentDate" type="timestamp">
+            <column name="RefDocumentDate" not-null="true" />
+        </property>
+        <property name="statementDetailDate" type="timestamp">
+            <column name="StatementDetailDate" length="23" not-null="true" />
+        </property>
+        <property name="statementInvoiceCount" type="int">
+            <column name="StatementInvoiceCount" not-null="true" />
+        </property>
+        <property name="statementOutstandingAmount" type="big_decimal">
+            <column name="StatementOutstandingAmount" precision="18" not-null="true" />
+        </property>
+         <property name="statementAmountSign" type="int">
+            <column name="StatementAmountSign" not-null="true" />
+        </property>
+         <property name="statementCNAmount" type="big_decimal">
+            <column name="StatementCNAmount" precision="18" not-null="true" />
+        </property>
+        <property name="statementDNAmount" type="big_decimal">
+            <column name="StatementDNAmount" precision="18" not-null="true" />
+        </property>
+        <property name="finalPaymentChk" type="boolean">
+            <column name="FinalPayment" not-null="true" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="paymentStatementStatus" type="int">
+            <column name="PaymentStatementStatus" />
+        </property>
+        <property name="paymentStatus" type="int">
+            <column name="PaymentStatus" />
+        </property>
+    </class>
+    
+    <sql-query name="searchStatementDetail">
+    	<!-- <return-scalar column="paymentStatementDetailId" type="int" /> -->
+		<return-scalar column="patientId" type="int" />
+        <return-scalar column="patientName" type="string" />
+        <return-scalar column="patientIc" type="string" />
+        <return-scalar column="dateOfBirth" type="timestamp" />
+        <return-scalar column="customerId" type="int" />
+        <return-scalar column="customerName" type="string" />
+        <return-scalar column="customerAccountCode" type="string" />
+		<![CDATA[
+			{ call dbo.RIMS_SP_SearchStatementDetail(:organizationId, :branchId, :searchType, :patientName, :customerName, :fromDate, :toDate, :paymentStatus)}
+		]]>
+	</sql-query>
+	
+	<sql-query name="RIMS_SP_StatementDetailCollection">
+		<return alias="paymentStatementDetail" class="com.iis.rims.domain.PaymentStatementDetail"/>
+		<![CDATA[
+			{ call dbo.RIMS_SP_StatementDetailCollection(:organizationId, :branchId, :customerId, :fromDate, :toDate, :isAvaiable)}
+		]]>
+	</sql-query>
+	<sql-query name="RIMS_SP_StatementDetailCollectionOnPatientId">
+		<return alias="paymentStatementDetail" class="com.iis.rims.domain.PaymentStatementDetail"/>
+		<![CDATA[
+			{ call dbo.RIMS_SP_StatementDetailCollectionOnPatientId(:organizationId, :branchId, :patientId, :fromDate, :toDate, :isAvaiable)}
+		]]>
+	</sql-query>	
+	<sql-query name="RIMS_SP_PatientPaymentStatementDetailReport">
+		<![CDATA[
+			{ call dbo.RIMS_SP_PatientPaymentStatementDetailReport(:paymentStatementId, :statementType)}
+		]]>
+	</sql-query>
+	<query name="TotalBillAmountByStatementType">
+		<![CDATA[
+			SELECT SUM(p.statementAmount) FROM PaymentStatementDetail p 
+			WHERE p.paymentStatementId = :paymentStatementId AND p.statementDetailType = :statementType 
+		]]>
+	</query>
+	<sql-query name="RIMS_SP_INCNDNListing_FundingOrg">
+		<![CDATA[
+			{ call dbo.RIMS_SP_INCNDNListing_FundingOrg(:organizationId, :branchId,  :fromDate, :toDate, :documentType,:customerId,:customerType )}
+		]]>
+	</sql-query>
+	<sql-query name="RIMS_SP_RCRFListing_FundingOrg">
+		<![CDATA[
+			{ call dbo.RIMS_SP_RCRFListing_FundingOrg(:organizationId, :branchId,  :fromDate, :toDate, :documentType,:customerId,:customerType )}
+		]]>
+	</sql-query>
+	<sql-query name="RIMS_SP_Outstanding_Ledger_Fund_Org">
+		<![CDATA[
+			{ call dbo.RIMS_SP_Outstanding_Ledger_Fund_Org(:organizationId, :branchId,  :fromDate, :toDate )}
+		]]>
+	</sql-query>
+	<sql-query name="RIMS_SP_Outstanding_Ledger_Fund_Org_Addr">
+		<![CDATA[
+			{ call dbo.RIMS_SP_Outstanding_Ledger_Fund_Org_Addr(:organizationId, :branchId,  :fromDate, :toDate )}
+		]]>
+	</sql-query>
+	<sql-query name="RIMS_SP_Outstanding_SummarywAddress_FO">
+		<![CDATA[
+			{ call dbo.RIMS_SP_Outstanding_SummarywAddress_FO(:organizationId, :branchId,  :fromDate, :toDate )}
+		]]>
+	</sql-query>
+</hibernate-mapping>

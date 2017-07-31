@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.Currency" table="tbl_Currency" schema="com" catalog="RIMSDB_NEW">
+        <id name="currencyId" type="int">
+            <column name="CurrencyId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="currencyName" type="string">
+            <column name="CurrencyName" not-null="true" />
+        </property>
+        <property name="currencyDescription" type="string">
+            <column name="CurrencyDescription" length="256" />
+        </property>
+        <property name="currencyIsocode" type="string">
+            <column name="CurrencyISOCode" length="5" />
+        </property>
+        <property name="currencyBaseUnits" type="string">
+            <column name="CurrencyBaseUnits" />
+        </property>
+        <property name="countryName" type="string">
+            <column name="CountryName" not-null="true" />
+        </property>
+        <property name="countryId" type="java.lang.Integer">
+            <column name="CountryId" />
+        </property>
+        <property name="websiteurl" type="string">
+            <column name="Websiteurl" length="100" />
+        </property>
+     
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        
+        <!-- 
+        <property name="createdBy" type="int">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createddate" type="timestamp">
+            <column name="Createddate" length="23" not-null="true" />
+        </property>
+        <property name="lastupdatedby" type="int">
+            <column name="Lastupdatedby" not-null="true" />
+        </property>
+        <property name="lastupdateddate" type="timestamp">
+            <column name="Lastupdateddate" length="23" not-null="true" />
+        </property> 
+        -->
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

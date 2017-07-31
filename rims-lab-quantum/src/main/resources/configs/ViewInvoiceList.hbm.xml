@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 17, 2013 7:17:30 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.ViewInvoiceList" table="View_InvoiceList" schema="dbo" catalog="RIMSDB_NEW">
+        <id name="invoiceId" type="int">
+            <column name="InvoiceId" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="visitId" type="java.lang.Integer">
+            <column name="VisitId" />
+        </property>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+        <property name="billToType" type="int">
+            <column name="BillToType" not-null="true" />
+        </property>
+        <property name="billToId" type="int">
+            <column name="BillToId" not-null="true" />
+        </property>
+        <property name="documentTypeId" type="int">
+            <column name="DocumentTypeId" not-null="true" />
+        </property>
+        <property name="documentType" type="string">
+            <column name="DocumentType" length="3" not-null="true" />
+        </property>
+        <property name="documentNumber" type="string">
+            <column name="DocumentNumber" length="20" not-null="true" />
+        </property>
+        <property name="documentDate" type="timestamp">
+            <column name="DocumentDate" length="23" />
+        </property>
+        <property name="refDocumentTypeId" type="int">
+            <column name="RefDocumentTypeId" not-null="true" />
+        </property>
+        <property name="refDocumentType" type="string">
+            <column name="RefDocumentType" length="3" />
+        </property>
+        <property name="refdocumentNumber" type="string">
+            <column name="RefdocumentNumber" length="20" />
+        </property>
+        <property name="refDocumentDate" type="timestamp">
+            <column name="RefDocumentDate" length="23" />
+        </property>
+        <property name="batchId" type="string">
+            <column name="BatchId" length="20" />
+        </property>
+        <property name="recordLock" type="java.lang.Boolean">
+            <column name="RecordLock" />
+        </property>
+        <property name="importExportStatus" type="java.lang.Integer">
+            <column name="ImportExportStatus" />
+        </property>
+        <property name="posted" type="java.lang.Boolean">
+            <column name="Posted" />
+        </property>
+        <property name="grossAmount" type="big_decimal">
+            <column name="GrossAmount" precision="12" />
+        </property>
+        <property name="gstPercentage" type="big_decimal">
+            <column name="GstPercentage" precision="12" />
+        </property>
+        <property name="gstAmount" type="big_decimal">
+            <column name="GstAmount" precision="12" />
+        </property>
+        <property name="netSalesAmount" type="big_decimal">
+            <column name="NetSalesAmount" precision="12" />
+        </property>
+        <property name="salesAmountSign" type="int">
+            <column name="SalesAmountSign" not-null="true" />
+        </property>
+        <property name="paymentAmount" type="big_decimal">
+            <column name="PaymentAmount" precision="12" />
+        </property>
+        <property name="receiptDue" type="big_decimal">
+            <column name="ReceiptDue" precision="12" />
+        </property>
+        <property name="balanceAmount" type="big_decimal">
+            <column name="BalanceAmount" precision="12" />
+        </property>
+        <property name="creditAmount" type="big_decimal">
+            <column name="CreditAmount" precision="12" />
+        </property>
+        <property name="refundAmount" type="big_decimal">
+            <column name="RefundAmount" precision="12" />
+        </property>
+        <property name="collectedAmount" type="big_decimal">
+            <column name="CollectedAmount" precision="12" />
+        </property>
+        <property name="changeReturned" type="big_decimal">
+            <column name="ChangeReturned" precision="12" />
+        </property>
+        <property name="creditTerm" type="java.lang.Integer">
+            <column name="CreditTerm" />
+        </property>
+        <property name="printCount" type="java.lang.Integer">
+            <column name="PrintCount" />
+        </property>
+        <property name="splitPayment" type="int">
+            <column name="SplitPayment" not-null="true" />
+        </property>
+        <property name="paymentStatus" type="int">
+            <column name="PaymentStatus" not-null="true" />
+        </property>
+        <property name="advancePaid" type="boolean">
+            <column name="AdvancePaid" not-null="true" />
+        </property>
+        <property name="advanceBalance" type="big_decimal">
+            <column name="AdvanceBalance" precision="12" />
+        </property>
+        <property name="transferToDocumentId" type="java.lang.Integer">
+            <column name="TransferToDocumentId" />
+        </property>
+        <property name="transferAmount" type="big_decimal">
+            <column name="TransferAmount" precision="12" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="visitNumber" type="string">
+            <column name="VisitNumber" length="20" not-null="true" />
+        </property>
+        <property name="registrationNumber" type="string">
+            <column name="RegistrationNumber" length="12" not-null="true" />
+        </property>
+        <property name="nricFinNumber" type="string">
+            <column name="NricFinNumber" length="50" not-null="true" />
+        </property>
+        <property name="patientName" type="string">
+            <column name="PatientName" length="100" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

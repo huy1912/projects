@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 3:53:12 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.TblHaemodialysisChartDetail" table="tbl_HaemodialysisChartDetail" catalog="RIMSDB_NEW">
+        <id name="hemodialysisChartDetailId" type="int">
+            <column name="HemodialysisChartDetailId" />
+            <generator class="assigned" />
+        </id>
+        <property name="hemodialysisChartId" type="int">
+            <column name="HemodialysisChartId" not-null="true" />
+        </property>
+        <property name="readingTime" type="timestamp">
+            <column name="ReadingTime" length="23" not-null="true" />
+        </property>
+        <property name="bp" type="string">
+            <column name="Bp" length="10" />
+        </property>
+        <property name="hr" type="string">
+            <column name="Hr" length="10" />
+        </property>
+        <property name="ap" type="string">
+            <column name="Ap" length="10" />
+        </property>
+        <property name="vp" type="string">
+            <column name="Vp" length="10" />
+        </property>
+        <property name="tmp" type="string">
+            <column name="Tmp" length="10" />
+        </property>
+        <property name="ufr" type="string">
+            <column name="Ufr" length="10" />
+        </property>
+        <property name="qb" type="string">
+            <column name="Qb" length="10" />
+        </property>
+        <property name="hep" type="string">
+            <column name="Hep" length="10" />
+        </property>
+        <property name="lmwh" type="string">
+            <column name="Lmwh" length="10" />
+        </property>
+        <property name="totalUf" type="big_decimal">
+            <column name="TotalUF" precision="5" scale="3" />
+        </property>
+        <property name="condition" type="string">
+            <column name="Condition" length="20" />
+        </property>
+        <property name="temp" type="string">
+            <column name="Temp" length="20" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" length="50" />
+        </property>
+        <property name="enteredBy" type="java.lang.Integer">
+            <column name="EnteredBy" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

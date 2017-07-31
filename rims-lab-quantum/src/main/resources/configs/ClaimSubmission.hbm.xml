@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.iis.rims.domain.ClaimSubmission" table="tbl_ClaimSubmission"
+		schema="medinet" catalog="RIMSDB_NEW">
+		<id name="claimId" type="int">
+			<column name="ClaimId" />
+			<generator class="native"></generator>
+		</id>
+		<property name="patientAccNo" type="string">
+			<column name="PatientAccNo" length="20" />
+		</property>
+		<property name="submissionType" type="string">
+			<column name="SubmissionType" length="50" not-null="true" />
+		</property>
+		<property name="healthcareEstablishmentCode" type="string">
+			<column name="HealthcareEstablishmentCode" length="20" />
+		</property>		
+		<property name="patientName" type="string">
+			<column name="PatientName" length="100" not-null="true" />
+		</property>
+		<property name="identificationType" type="string">
+			<column name="IdentificationType" length="10" />
+		</property>
+		<property name="identificationNo" type="string">
+			<column name="IdentificationNo" length="50" not-null="true" />
+		</property>
+		<property name="nationality" type="string">
+			<column name="Nationality" length="20" />
+		</property>
+		<property name="race" type="string">
+			<column name="Race" length="20" />
+		</property>
+		<property name="dateOfBirth" type="timestamp">
+			<column name="DateOfBirth" length="23" />
+		</property>
+		<property name="sex" type="string">
+			<column name="Sex" length="10" />
+		</property>
+		<property name="insuranceClaimIndicator" type="string">
+			<column name="InsuranceClaimIndicator" length="20" />
+		</property>
+		<property name="exceptionalCase" type="string">
+			<column name="ExceptionalCase" length="20" />
+		</property>
+		<property name="noOfChildren" type="int">
+			<column name="NoOfChildren" />
+		</property>
+		<property name="countryOfResidence" type="string">
+			<column name="CountryOfResidence" length="20" />
+		</property>
+		<property name="addressType" type="string">
+			<column name="AddressType" length="20" />
+		</property>
+		<property name="address" type="string">
+			<column name="Address" length="250" />
+		</property>
+		<property name="speciality" type="string">
+			<column name="Speciality" length="20" />
+		</property>
+		<property name="sourceOfReferral" type="string">
+			<column name="SourceOfReferral" length="20" />
+		</property>
+		<property name="dateOfAdmission" type="timestamp">
+			<column name="DateOfAdmission" length="23" not-null="true" />
+		</property>
+
+
+		<property name="admissionType" type="string">
+			<column name="AdmissionType" length="20" />
+		</property>
+		<property name="admittingSource" type="string">
+			<column name="AdmittingSource" length="20" />
+		</property>
+		<property name="typeOfOutcome" type="string">
+			<column name="TypeOfOutcome" length="20" />
+		</property>
+		<property name="wardOfDischarge" type="string">
+			<column name="WardOfDischarge" length="20" />
+		</property>
+		<property name="dateOfDischarge" type="timestamp">
+			<column name="DateOfDischarge" length="23" not-null="true" />
+		</property>
+
+
+		<property name="diagnosisClassification" type="string">
+			<column name="DiagnosisClassification" length="20" />
+		</property>
+		<property name="finalDiagnosis" type="string">
+			<column name="FinalDiagnosis" length="250" />
+		</property>
+		<property name="causeOfInjury" type="string">
+			<column name="CauseOfInjury" length="250" />
+		</property>
+		<property name="otherDiagnosis1" type="string">
+			<column name="OtherDiagnosis1" length="100" />
+		</property>
+		<property name="otherDiagnosis2" type="string">
+			<column name="OtherDiagnosis2" length="100" />
+		</property>
+		<property name="smcNoOfPrincipalDr" type="string">
+			<column name="SmcNoOfPrincipalDr" length="50" />
+		</property>
+		<property name="smcNoOfLocalDr" type="string">
+			<column name="SmcNoOfLocalDr" length="50" />
+		</property>
+		<property name="patientMgmtStartDate" type="timestamp">
+			<column name="PatientMgmtStartDate" length="23" />
+		</property>
+		<property name="patientMgmtEndDate" type="timestamp">
+			<column name="PatientMgmtEndDate" length="23" />
+		</property>
+		<property name="billCategory" type="string">
+			<column name="BillCategory" length="20" />
+		</property>
+		<property name="billNo" type="string">
+			<column name="BillNo" length="50" not-null="true" />
+		</property>
+		<property name="totalBillAmount" type="big_decimal">
+			<column name="TotalBillAmount" precision="12" />
+		</property>
+		
+		<property name="submittedStatus" type="string">
+			<column name="SubmittedStatus" length="10" not-null="true" />
+		</property>
+		<property name="submittedDate" type="timestamp">
+            <column name="SubmittedDate" length="23" />
+        </property>
+		
+		<property name="claimType" type="string">
+			<column name="ClaimType" length="10" />
+		</property>
+		<property name="messageId" type="string">
+			<column name="MessageId" length="14" />
+		</property>
+		
+		<property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="paymentStatementId" type="int">
+            <column name="PaymentStatementId" not-null="true" />
+        </property>
+        <property name="patientId" type="int">
+            <column name="PatientId" not-null="true" />
+        </property>
+        
+        <property name="reason" type="string">
+			<column name="Reason" length="1" />
+		</property>
+		<property name="organizationId" type="int">
+            <column name="OrganizationId" />
+        </property>
+		<property name="branchId" type="int">
+            <column name="BranchId" />
+        </property>
+        <property name="statementType" type="int">
+            <column name="StatementType" />
+        </property>
+        <property name="uploadStatus" type="int">
+            <column name="UploadStatus" />
+        </property>
+	</class>
+	
+	<!-- <sql-query name="submitClaimSubmission">
+		<![CDATA[
+			{ call medinet.RIMS_SP_SubmitMedinetClaimByClaimId(:claimIds)}
+		]]>
+	</sql-query> -->
+	<sql-query name="deleteClaimSubmission">
+		<![CDATA[
+			{ call medinet.RIMS_SP_DeleteMedinetClaimByClaimId(:claimIds)}
+		]]>
+	</sql-query>
+</hibernate-mapping>

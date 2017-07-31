@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.LabProfile" table="tbl_LabProfile" schema="lab" catalog="RIMSDB_NEW">
+        <id name="labProfileId" type="int">
+            <column name="LabProfileId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="customerId" type="int">
+            <column name="CustomerId" not-null="true" />
+        </property>
+        <property name="profileName" type="string">
+            <column name="ProfileName" length="20" not-null="true" />
+        </property>
+        <property name="profileDescription" type="string">
+            <column name="ProfileDescription" length="50" not-null="true" />
+        </property>
+        
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+    </class>
+    <query name="QUERY_GETLABPROCEDURE">
+     	<![CDATA[
+     		SELECT profile FROM LabProcedure procedure, LabProfile profile
+     		WHERE procedure.procedureId = :procedureId AND procedure.customerId = :customerId
+     		AND procedure.labProfileId = profile.labProfileId
+     	]]>
+     </query>
+</hibernate-mapping>

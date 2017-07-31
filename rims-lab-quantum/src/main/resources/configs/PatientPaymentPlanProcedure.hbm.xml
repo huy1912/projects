@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 1, 2015 1:21:45 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.PatientPaymentPlanProcedure" table="tbl_PatientPaymentPlanProcedure" schema="mst" catalog="RIMSDB_NEW">
+        <id name="planProcedureId" type="java.lang.Integer">
+            <column name="PlanProcedureId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="patientPaymentPlanId" type="int">
+            <column name="PatientPaymentPlanId" not-null="true" />
+        </property>
+        <property name="procedureId" type="int">
+            <column name="ProcedureId" not-null="true" />
+        </property>
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="createdBy" type="int">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="deleted" type="java.lang.Boolean">
+            <column name="Deleted" />
+        </property>
+    </class>
+    
+    <sql-query name="RIMS_SP_PatientPaymentPlanProcedure">
+		<![CDATA[
+			{call dbo.RIMS_SP_PatientPaymentPlanProcedure(:patientPaymentPlanId, :serviceId) }
+		]]>
+    </sql-query>
+</hibernate-mapping>

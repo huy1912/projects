@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 13, 2013 10:01:17 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.ComputerHardware" table="tbl_ComputerHardware" schema="mst" catalog="RIMSDB_NEW">
+        <id name="computerHardwareId" type="java.lang.Integer">
+            <column name="ComputerHardwareId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+        <property name="computerHardwareName" type="string">
+            <column name="ComputerHardwareName" length="100" not-null="true" />
+        </property>
+        <property name="computerHardwareDescription" type="string">
+            <column name="ComputerHardwareDescription" length="250" />
+        </property>
+        <property name="softwareDetails" type="string">
+            <column name="SoftwareDetails" length="250" />
+        </property>
+        <property name="operatingSystemDetails" type="string">
+            <column name="OperatingSystemDetails" length="250" />
+        </property>
+        <property name="serialNumber" type="string">
+            <column name="SerialNumber" length="20" />
+        </property>
+        <property name="brandName" type="string">
+            <column name="BrandName" length="100" />
+        </property>
+        <property name="model" type="string">
+            <column name="Model" length="50" />
+        </property>
+        <property name="supplierId" type="java.lang.Integer">
+            <column name="SupplierId" />
+        </property>
+        <property name="universalProductCode" type="string">
+            <column name="UniversalProductCode" length="20" />
+        </property>
+        <property name="commissionedDate" type="timestamp">
+            <column name="CommissionedDate" length="23" />
+        </property>
+        <property name="underWarrenty" type="java.lang.Boolean">
+            <column name="UnderWarrenty" />
+        </property>
+        <property name="warrentyStartDate" type="timestamp">
+            <column name="WarrentyStartDate" length="23" />
+        </property>
+        <property name="warrentyExpiryDate" type="timestamp">
+            <column name="WarrentyExpiryDate" length="23" />
+        </property>
+        <property name="underMaintenance" type="java.lang.Boolean">
+            <column name="UnderMaintenance" />
+        </property>
+        <property name="maintenanceStartDate" type="timestamp">
+            <column name="MaintenanceStartDate" length="23" />
+        </property>
+        <property name="maintenanceEndDate" type="timestamp">
+            <column name="MaintenanceEndDate" length="23" />
+        </property>
+        <property name="networkAddress" type="string">
+            <column name="NetworkAddress" length="15" />
+        </property>
+        <property name="networkPort" type="java.lang.Integer">
+            <column name="NetworkPort" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" length="250" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.JobAndEmailSetting" table="tbl_JobAndEmailSetting" schema="mst" catalog="RIMSDB_NEW">
+        <id name="jobAndEmailSettingId" type="int">
+            <column name="JobAndEmailSettingId" />
+            <generator class="native" />
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="branchId" type="integer">
+            <column name="BranchId" not-null="false" />
+        </property>
+        <property name="jobName" type="string">
+            <column name="JobName" length="100" not-null="true" unique="true" />
+        </property>
+        <property name="velocityTemplateName" type="string">
+            <column name="VelocityTemplateName" length="256" not-null="true" unique="true" />
+        </property>
+        <property name="templateSummaryLabel" type="string">
+            <column name="TemplateSummaryLabel" length="256" not-null="true" />
+        </property>
+        <property name="templateDetailLabel" type="string">
+            <column name="TemplateDetailLabel" length="256" not-null="true" />
+        </property>
+        <property name="sentToAlias" type="string">
+            <column name="SentToAlias" length="1024" />
+        </property>
+        <property name="sentToEmails" type="string">
+            <column name="SentToEmails" length="1024" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" length="256" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastupdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastupdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

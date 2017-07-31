@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.InvoicePaymentDetail" table="tbl_InvoicePaymentDetail" schema="acc" catalog="RIMSDB_NEW">
+        <id name="invoicePaymentDetailId" type="int">
+            <column name="InvoicePaymentDetailId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="visitId" type="int">
+            <column name="VisitId" not-null="true" />
+        </property>
+        <property name="invoiceId" type="int">
+            <column name="InvoiceId" not-null="true" />
+        </property>
+        <property name="paymentAmount" type="big_decimal">
+            <column name="PaymentAmount" precision="12" not-null="true" />
+        </property>
+        <property name="advanceBalanceAmount" type="big_decimal">
+            <column name="AdvanceBalanceAmount" precision="12" not-null="true" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="createdBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="createdDate" length="23" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

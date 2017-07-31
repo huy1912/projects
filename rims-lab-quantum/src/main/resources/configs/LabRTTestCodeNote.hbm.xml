@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.LabRTTestCodeNote" table="tbl_LabRTTestCodeNote" schema="lab" catalog="RIMSDB_NEW">
+        <id name="labRtTestCodeNoteId" type="int">
+            <column name="LabRTTestCodeNoteId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="labRtTestCodeId" type="int">
+            <column name="labRtTestCodeId" not-null="true" />
+        </property>
+        <property name="rtTestCodeColumn" type="string">
+            <column name="RTTestCodeColumn" length="30" not-null="true" />
+        </property>
+        <property name="note" type="string">
+            <column name="Note" length="50" />
+        </property>
+        
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

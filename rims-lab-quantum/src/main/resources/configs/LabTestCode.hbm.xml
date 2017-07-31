@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.LabTestCode" table="tbl_LabTestCode" schema="lab" catalog="RIMSDB_NEW">
+        <id name="labTestCodeId" type="int">
+            <column name="LabTestCodeId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="customerId" type="int">
+            <column name="CustomerId" not-null="true" />
+        </property>
+        <property name="testCode" type="string">
+            <column name="TestCode" length="20" not-null="true" />
+        </property>
+        <property name="testName" type="string">
+            <column name="TestName" length="50" not-null="true" />
+        </property>
+        <property name="remark" type="string">
+            <column name="Remark" length="250" />
+        </property>
+        
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="rtTestCodeColumn" type="string">
+            <column name="RtTestCodeColumn" length="30" not-null="true" />
+        </property>
+        
+        <property name="testCodeType" type="java.lang.Integer">
+            <column name="TestCodeType" />
+        </property>
+        <property name="reportDisplay" type="java.lang.Boolean">
+            <column name="ReportDisplay" />
+        </property>
+        <property name="testGroup" type="java.lang.Integer">
+            <column name="TestGroup" />
+        </property>
+        <property name="rangeValue" type="string">
+            <column name="RangeValue" length="50" />
+        </property>
+        <property name="displayOrder" type="java.lang.Float">
+            <column name="DisplayOrder" />
+        </property>
+    </class>
+    <!-- <query name="GetRTLabTestCodeList">
+     	<![CDATA[
+     	SELECT rtTestCodeColumn from LabTestCode ltc 
+     	GROUP BY rtTestCodeColumn
+     	ORDER BY rtTestCodeColumn ASC
+     	]]>
+	</query> -->
+	<sql-query name="GetRTLabTestCodeList">
+     	<![CDATA[
+     	SELECT RTTestCodeColumn as rtTestCodeColumn FROM lab.tbl_LabTestCode
+		GROUP BY RTTestCodeColumn
+		ORDER BY RTTestCodeColumn ASC
+     	]]>
+	</sql-query>
+</hibernate-mapping>

@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.Branch" table="tbl_Branch" schema="ssp" catalog="RIMSDB_NEW">
+        <id name="branchId" type="int">
+            <column name="BranchId" />
+            <generator class="native" />
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="branchName" type="string">
+            <column name="BranchName" length="100" not-null="true" unique="true" />
+        </property>
+        <property name="branchShortName" type="string">
+            <column name="BranchShortName" length="50" not-null="true" unique="true" />
+        </property>
+        <property name="branchCode" type="string">
+            <column name="BranchCode" length="2" not-null="true" unique="true" />
+        </property>
+        <property name="businessRegistrationNumber" type="string">
+            <column name="BusinessRegistrationNumber" length="20" />
+        </property>
+        <property name="businessRegisteredDate" type="timestamp">
+            <column name="BusinessRegisteredDate" length="23" />
+        </property>
+        <property name="businessIncorporatedIn" type="java.lang.Integer">
+            <column name="BusinessIncorporatedIn" />
+        </property>
+        <property name="primaryContact" type="string">
+            <column name="PrimaryContact" length="100" />
+        </property>
+        <property name="weekDayStartAt" type="string">
+            <column name="WeekDayStartAt" length="10" />
+        </property>
+        <property name="weekDayEndBy" type="string">
+            <column name="WeekDayEndBy" length="10" />
+        </property>
+        <property name="weedEndStartAt" type="string">
+            <column name="WeedEndStartAt" length="10" />
+        </property>
+        <property name="weekEndEndBy" type="string">
+            <column name="WeekEndEndBy" length="10" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" length="256" />
+        </property>
+        <property name="letterHeadRequired" type="java.lang.Boolean">
+            <column name="LetterHeadRequired" length="1" not-null="true" />
+        </property>
+        <property name="logo" type="binary">
+            <column name="Logo" />
+        </property>
+        <property name="taxApplicable" type="java.lang.Boolean">
+            <column name="TaxApplicable" length="1" />
+        </property>
+        <property name="taxRegistrationNumber" type="string">
+            <column name="TaxRegistrationNumber" length="20" />
+        </property>
+        <property name="defaultCurrency" type="java.lang.Integer">
+            <column name="DefaultCurrency" />
+        </property>
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastupdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastupdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="accountCode" type="string">
+            <column name="AccountCode" length="50" />
+        </property>
+        <property name="warehouseCode" type="string">
+            <column name="WarehouseCode" length="50" />
+        </property>
+        <property name="commPort" type="string">
+            <column name="CommPort" length="6"/>
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+        <property name="healthcareEstablishmentCode" type="string">
+            <column name="HealthcareEstablishmentCode" length="20"/>
+        </property>
+        <property name="hospitalCode" type="string">
+            <column name="HospitalCode" length="3"/>
+        </property>
+        <property name="defaultDoctorId" type="int">
+            <column name="DefaultDoctorId" not-null="false" />
+        </property>
+        <property name="defaultLabId" type="int">
+            <column name="DefaultLabId" not-null="false" />
+        </property>
+        <property name="labCentreCode" type="string">
+            <column name="LabCentreCode" length="6"/>
+        </property>
+    </class>
+    
+    <query name="DoctorCode">
+		<![CDATA[
+			SELECT su.employeeNo FROM Branch b, SystemUser su 
+			WHERE b.branchId = :branchId AND b.defaultDoctorId = su.userId AND su.userType in :doctorDesignations
+		]]>
+	</query>
+	<sql-query name="RIMS_SP_OrganizationBranchDetail">
+		<![CDATA[
+			{ call dbo.RIMS_SP_OrganizationBranchDetail(:organizationId, :branchId)}
+		]]>
+	</sql-query>
+</hibernate-mapping>

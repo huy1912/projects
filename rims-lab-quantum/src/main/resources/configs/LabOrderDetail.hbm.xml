@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 29, 2015 11:30:25 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.LabOrderDetail" table="tbl_LabOrderDetail" schema="his" catalog="RIMSDB_NEW">
+        <id name="labOrderDetailId" type="java.lang.Integer">
+            <column name="LabOrderDetailId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="labOrderId" type="int">
+            <column name="LabOrderId" not-null="true" />
+        </property>
+        <property name="labPackageId" type="int">
+            <column name="LabPackageId" not-null="true" />
+        </property>
+        <property name="labPackageName" type="string">
+            <column name="LabPackageName" length="150" not-null="true" />
+        </property>
+        <property name="accessionNumber" type="string">
+            <column name="AccessionNumber" length="20" not-null="true" />
+        </property>
+        <property name="procedureId" type="int">
+            <column name="ProcedureId" not-null="true" />
+        </property>
+        <property name="procedureName" type="string">
+            <column name="ProcedureName" length="150" not-null="true" />
+        </property>
+        <property name="listedCashPrice" type="big_decimal">
+            <column name="ListedCashPrice" precision="12" />
+        </property>
+        <property name="quantity" type="int">
+            <column name="Quantity" not-null="true" />
+        </property>
+        <property name="netAmount" type="big_decimal">
+            <column name="NetAmount" precision="12" not-null="true" />
+        </property>
+        <property name="netAmountSign" type="int">
+            <column name="NetAmountSign" not-null="true" />
+        </property>
+        <property name="confirmed" type="boolean">
+            <column name="Confirmed" not-null="true" />
+        </property>
+        <property name="paymentStatus" type="int">
+            <column name="PaymentStatus" not-null="true" />
+        </property>
+        <property name="orderReportStatus" type="java.lang.Integer">
+            <column name="OrderReportStatus" />
+        </property>
+        <property name="orderStatus" type="java.lang.Integer">
+            <column name="OrderStatus" />
+        </property>
+        <property name="orderHl7status" type="int">
+            <column name="OrderHL7Status" not-null="true" />
+        </property>
+        <property name="orderHl7message" type="string">
+            <column name="OrderHL7Message" />
+        </property>
+        <property name="orderReportAttached" type="binary">
+            <column name="OrderReportAttached" />
+        </property>
+        <property name="remark" type="string">
+            <column name="Remark" />
+        </property>
+        <property name="deleted" type="java.lang.Boolean">
+            <column name="Deleted" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="createdBy" type="int">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="labCustomerId" type="java.lang.Integer">
+            <column name="LabCustomerId" />
+        </property>
+        <property name="uploadStatus" type="java.lang.Integer">
+            <column name="UploadStatus" />
+        </property>
+        <property name="visitDetailId" type="java.lang.Integer">
+            <column name="VisitDetailId" />
+        </property>
+        <property name="detailType" type="int">
+            <column name="DetailType" />
+        </property>
+        <property name="labOrderNumber" type="string">
+            <column name="LabOrderNumber" length="20" />
+        </property>
+        <property name="failedOrderPath" type="string">
+            <column name="FailedOrderPath" length="50" />
+        </property>
+        <property name="errorMessage" type="string">
+            <column name="ErrorMessage" length="100" />
+        </property>
+        <property name="resultInput" type="java.lang.Integer">
+            <column name="ResultInput" />
+        </property>
+        <property name="labResultDate" type="timestamp">
+            <column name="LabResultDate" length="23" />
+        </property>
+        <!-- Order Number Ref which is used for pdf report. -->
+        <property name="orderNumberRef" type="string">
+            <column name="OrderNumberRef" length="50" />
+        </property>
+        
+        <property name="ormMessage" type="string">
+            <column name="OrmMessage" />
+        </property>
+        <property name="orderDetailNumber" type="string">
+            <column name="OrderDetailNumber" length="20" />
+        </property>
+        
+    </class>
+    
+    <sql-query name="RIMS_SP_LabOrderDetailUpload">
+		<![CDATA[
+			{ call dbo.RIMS_SP_LabOrderDetailUpload(:labOrderId, :labCustomerId, :labOrderDetailId)}
+		]]>
+	</sql-query>
+	
+	<sql-query name="RIMS_SP_LabTestResult">
+		<![CDATA[
+			{ call dbo.RIMS_SP_LabTestResult(:patientId, :serviceId, :pageStart, :pageSize, :sortKey, :sortDirection)}
+		]]>
+	</sql-query>
+</hibernate-mapping>

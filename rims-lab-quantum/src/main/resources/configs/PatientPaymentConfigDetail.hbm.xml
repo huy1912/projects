@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 10, 2013 9:42:12 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.PatientPaymentConfigDetail" table="tbl_PatientPaymentConfigDetail" schema="mst" catalog="RIMSDB_NEW">
+        <id name="paymentConfigDetailId" type="java.lang.Integer">
+            <column name="PaymentConfigDetailId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="paymentConfigId" type="java.lang.Integer">
+            <column name="PaymentConfigId" not-null="true" />
+        </property>
+        <property name="paymentPlanSupportType" type="java.lang.Integer">
+            <column name="PaymentPlanSupportType" not-null="true" />
+        </property>
+        <property name="customerId" type="java.lang.Integer">
+            <column name="CustomerId" />
+        </property>
+        <property name="cpfclaimFromPatient" type="java.lang.Boolean">
+            <column name="CPFClaimFromPatient" />
+        </property>
+        <property name="cpftype" type="java.lang.Integer">
+            <column name="CPFType" />
+        </property>
+        <property name="cpfpayerName" type="string">
+            <column name="CPFPayerName" length="100" />
+        </property>
+        <property name="cpfaccountNumber" type="string">
+            <column name="CPFAccountNumber" length="30" />
+        </property>
+        <property name="cpfenquiryOnDate" type="timestamp">
+            <column name="CPFEnquiryOnDate" length="23" />
+        </property>
+        <property name="cpfcurrentBalance" type="big_decimal">
+            <column name="CPFCurrentBalance" precision="8" />
+        </property>
+        <property name="fundType" type="java.lang.Integer">
+            <column name="FundType" />
+        </property>
+        <property name="insuranceType" type="java.lang.Integer">
+            <column name="InsuranceType" />
+        </property>
+        <property name="companyType" type="java.lang.Integer">
+            <column name="CompanyType" />
+        </property>
+        <property name="amountPayableBy" type="java.lang.Integer">
+            <column name="AmountPayableBy" not-null="true" />
+        </property>
+        <property name="amountPayable" type="big_decimal">
+            <column name="AmountPayable" precision="8" not-null="true" />
+        </property>
+        <property name="gstincludedPrice" type="boolean">
+            <column name="GSTIncludedPrice" not-null="true" />
+        </property>
+        <property name="amountValue" type="big_decimal">
+            <column name="AmountValue" precision="8" not-null="true" />
+        </property>
+        <property name="createdBy" type="java.lang.Integer" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="java.lang.Integer">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+    
+    <query name="getPaymentDetails">
+     	<![CDATA[SELECT d FROM PatientPaymentConfigDetail d, PatientPaymentConfig c 
+     	WHERE c.registrationId = :registrationId AND c.claimDate = :claimDate
+     	AND d.paymentConfigId = c.paymentConfigId]]>
+     </query>
+</hibernate-mapping>

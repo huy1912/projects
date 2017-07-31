@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.LookupDetail" table="tbl_LookupDetail" schema="cmn" catalog="RIMSDB_NEW">
+        <id name="lookupDetailId" type="int">
+            <column name="LookupDetailId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="lookupHeaderId" type="int">
+            <column name="lookupHeaderId" not-null="true" />
+        </property>
+        <property name="lookupDetailName" type="string">
+            <column name="LookupDetailName" length="50" not-null="true" />
+        </property>
+        <property name="lookupDetailDescription" type="string">
+            <column name="LookupDetailDescription" length="256" />
+        </property>
+        <property name="lookupDetailValue" type="int">
+            <column name="LookupDetailValue" not-null="true" />
+        </property>
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="Createddate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="Lastupdatedby" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="Lastupdateddate" length="23" not-null="true" />
+        </property>
+        
+        <!-- SAPB1 Integration -->
+        <property name="isInventoryItem" type="boolean">
+            <column name="IsInventoryItem" not-null="false" />
+        </property>
+        <property name="sapb1InventoryItemCode" type="string">
+            <column name="SAPB1InventoryItemCode" length="30" />
+        </property>
+        <property name="sapb1InventoryItemRemarks" type="string">
+            <column name="SAPB1InventoryItemRemarks" length="250" />
+        </property>
+
+    </class>
+</hibernate-mapping>

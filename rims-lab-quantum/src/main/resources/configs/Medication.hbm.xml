@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.Medication" table="tbl_Medication" schema="mst" catalog="RIMSDB_NEW">
+        <id name="medicationId" type="int">
+            <column name="MedicationId" />
+            <generator class="native" />
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="medicationName" type="string">
+            <column name="MedicationName" length="255" not-null="true" unique="true" />
+        </property>
+        <property name="medicationDescription" type="string">
+            <column name="medicationDescription" length="255" not-null="false" unique="false" />
+        </property>
+        <property name="medicationGroupId" type="java.lang.Integer">
+            <column name="MedicationGroupId" />
+        </property>
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastupdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastupdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

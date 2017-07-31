@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 29, 2015 11:30:25 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.LabOrder" table="tbl_LabOrder" schema="his" catalog="RIMSDB_NEW">
+        <id name="labOrderId" type="java.lang.Integer">
+            <column name="LabOrderId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="orderDate" type="timestamp">
+            <column name="OrderDate" length="23" not-null="true" />
+        </property>
+        <property name="labCustomerId" type="java.lang.Integer">
+            <column name="LabCustomerId" />
+        </property>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+        <property name="visitId" type="int">
+            <column name="VisitId" not-null="true" />
+        </property>
+        <property name="registrationId" type="int">
+            <column name="RegistrationId" not-null="true" />
+        </property>
+        <property name="patientId" type="int">
+            <column name="PatientId" not-null="true" />
+        </property>
+        <property name="nricFinNumber" type="string">
+            <column name="NricFinNumber" length="20" not-null="true" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" />
+        </property>
+        <property name="orderItemCount" type="int">
+            <column name="OrderItemCount" not-null="true" />
+        </property>
+        <property name="orderStatus" type="int">
+            <column name="OrderStatus" not-null="true" />
+        </property>
+        <property name="orderHl7status" type="int">
+            <column name="OrderHL7Status" not-null="true" />
+        </property>
+        <property name="orderHl7message" type="string">
+            <column name="OrderHL7Message" />
+        </property>
+        <property name="orderReportStatus" type="java.lang.Integer">
+            <column name="OrderReportStatus" />
+        </property>
+        <property name="orderPaymentStatus" type="java.lang.Integer">
+            <column name="OrderPaymentStatus" />
+        </property>
+        <property name="cancellationRemarks" type="string">
+            <column name="CancellationRemarks" length="250" />
+        </property>
+        <property name="deleted" type="java.lang.Boolean">
+            <column name="Deleted" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+    </class>
+    
+    <sql-query name="RIMS_SP_LabOrderReceived">
+		<![CDATA[
+			{ call dbo.RIMS_SP_LabOrderReceived(:topRecord, :patientId)}
+		]]>
+	</sql-query>
+</hibernate-mapping>

@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 29, 2013 5:36:07 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.SystemUserSecurityRole" table="tbl_SystemUserSecurityRole" schema="ssp" catalog="RIMSDB_NEW">
+        <id name="systemUserSecurityRoleId" type="java.lang.Integer">
+            <column name="SystemUserSecurityRoleID" />
+            <generator class="native"></generator>
+        </id>
+        <property name="systemUserId" type="int">
+            <column name="SystemUserID" not-null="true" />
+        </property>
+        <property name="securityRolePermissionId" type="java.lang.Integer">
+            <column name="SecurityRolePermissionID"/>
+        </property>
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastModifiedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastModifiedDate" length="23" not-null="true" />
+        </property>
+        <property name="canAdd" type="java.lang.Boolean">
+            <column name="CanAdd" />
+        </property>
+        <property name="canEdit" type="java.lang.Boolean">
+            <column name="CanEdit" />
+        </property>
+        <property name="canDelete" type="java.lang.Boolean">
+            <column name="CanDelete" />
+        </property>
+        <property name="canRead" type="java.lang.Boolean">
+            <column name="CanRead" />
+        </property>
+        <property name="securityRoleId" type="java.lang.Integer">
+            <column name="SecurityRoleID"  />
+        </property>
+        <property name="securityPrevilegeId" type="java.lang.Integer">
+            <column name="SecurityPrevilegeId"  />
+        </property>
+        <property name="remarks" type="java.lang.String">
+            <column name="Remarks"  />
+        </property>
+    </class>
+    <sql-query name="getBySystemUserId">
+		<![CDATA[
+SELECT SystemUserSecurityRoleID, SystemUserID, SecurityRolePermissionID, EntityStatus,CreatedBy, CreatedDate, 
+LastModifiedBy, LastModifiedDate, CanAdd, CanEdit, CanDelete, CanRead, SecurityRoleID,SecurityPrevilegeId FROM	
+(		
+SELECT su.SystemUserSecurityRoleID as SystemUserSecurityRoleID
+      ,su.SystemUserID as SystemUserID
+      ,su.SecurityRolePermissionID as SecurityRolePermissionID
+      ,su.EntityStatus as EntityStatus
+      ,su.CreatedBy as CreatedBy
+      ,su.CreatedDate as CreatedDate
+      ,su.LastModifiedBy as LastModifiedBy
+      ,su.LastModifiedDate as LastModifiedDate
+      ,su.CanAdd as CanAdd
+      ,su.CanEdit as CanEdit
+      ,su.CanDelete as CanDelete
+      ,su.CanRead as CanRead          
+      ,sr1.SecurityRoleID as SecurityRoleID
+      ,sp1.SecurityPrevilegeId as SecurityPrevilegeId
+  FROM ssp.tbl_SystemUserSecurityRole su, ssp.tbl_SecurityRolePermission sut1,
+  ssp.tbl_SecurityRole sr1, ssp.tbl_SecurityPrevilege sp1
+  WHERE su.SecurityRolePermissionID = sut1.SecurityRolePermissionID  
+  and sut1.SecurityRoleID = sr1.SecurityRoleID and sut1.SecurityPrevilegeId = sp1.SecurityPrevilegeId
+  and su.SystemUserID = :systemUser1  
+ 
+  Union   
+  SELECT 
+	   row_number() over (order by SecurityRolePermissionID) - 9999999
+      ,0 as SystemUserID
+      ,sr.SecurityRolePermissionID as SecurityRolePermissionID
+      ,sr.EntityStatus as EntityStatus
+      ,sr.CreatedBy as CreatedBy
+      ,sr.CreatedDate as CreatedDate
+      ,sr.LastUpdatedBy as LastModifiedBy
+      ,sr.LastUpdatedDate as LastModifiedDate
+      ,sr.CanAddDefault as CanAdd
+      ,sr.CanEditDefault as CanEdit
+      ,sr.CanDeleteDefault as CanDelete
+      ,sr.CanReadDefault as CanRead      
+      ,sr2.SecurityRoleID as SecurityRoleID
+      ,sp2.SecurityPrevilegeId as SecurityPrevilegeId 
+  FROM ssp.tbl_SecurityRolePermission sr, ssp.tbl_SecurityRole sr2, ssp.tbl_SecurityPrevilege sp2
+  WHERE sr.SecurityRoleID = sr2.SecurityRoleID and sr.SecurityPrevilegeId = sp2.SecurityPrevilegeId
+  and sr.SecurityRolePermissionID  NOT IN (SELECT sut.SecurityRolePermissionID
+  FROM ssp.tbl_SystemUserSecurityRole sut WHERE sut.SystemUserID = :systemUser2 )
+  
+) temptable order by SecurityPrevilegeId, SecurityRoleID
+	]]>
+    </sql-query>
+    
+    <sql-query name="getUserSecurityAllRole">
+		<![CDATA[
+			{call dbo.RIMS_SP_UserSecurityAllRoleList(:organizationId, :systemUserId, :designationId) }
+		]]>
+    </sql-query>    
+    <sql-query name="getUserSecurityRole">
+		<![CDATA[
+			{call dbo.RIMS_SP_UserSecurityRoleList(:organizationId, :systemUserId, :designationId) }
+		]]>
+    </sql-query> 
+</hibernate-mapping>

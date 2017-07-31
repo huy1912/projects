@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.SystemUser" table="tbl_SystemUser" schema="ssp" catalog="RIMSDB_NEW">
+        <id name="userId" type="int">
+            <column name="UserID" />
+            <generator class="native"></generator>
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="defaultBranchId" type="int">
+            <column name="DefaultBranchId" not-null="true" />
+        </property>
+        <property name="userType" type="java.lang.Integer">
+            <column name="UserType" />
+        </property>
+        <property name="loginName" type="string">
+            <column name="LoginName" length="50" />
+        </property>
+        <property name="hasAdminRole" type="java.lang.Boolean">
+            <column name="HasAdminRole" />
+        </property>
+        <property name="managementUser" type="java.lang.Boolean">
+            <column name="ManagementUser" />
+        </property>
+        <property name="password" type="string">
+            <column name="Password" />
+        </property>
+        <property name="employeeNo" type="string">
+            <column name="EmployeeNo" length="50" />
+        </property>
+        <property name="nricfinnumber" type="string">
+            <column name="NRICFINNumber" length="50" />
+        </property>
+        <property name="displayName" type="string">
+            <column name="DisplayName" />
+        </property>
+        <property name="firstName" type="string">
+            <column name="FirstName" length="50" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="LastName" length="50" />
+        </property>
+        <property name="email" type="string">
+            <column name="Email" />
+        </property>
+        <property name="officeTel" type="string">
+            <column name="OfficeTel" length="20" />
+        </property>
+        <property name="mobile" type="string">
+            <column name="Mobile" length="20" />
+        </property>
+        <property name="userStatus" type="int">
+            <column name="UserStatus" />
+        </property>
+        <property name="userStatusRemark" type="string">
+            <column name="UserStatusRemark" length="100" />
+        </property>
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="createdBy" type="java.lang.Integer" update="false">
+            <column name="CreatedBy" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" />
+        </property>
+        <property name="lastUpdatedBy" type="java.lang.Integer">
+            <column name="LastModifiedBy" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastModifiedDate" length="23" />
+        </property>
+        <property name="designation"  type="int">
+            <column name="Designation"/>
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

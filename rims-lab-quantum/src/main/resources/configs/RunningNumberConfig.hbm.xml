@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 20, 2013 11:25:34 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.RunningNumberConfig" table="tbl_RunningNumberConfig" schema="ssp" catalog="RIMSDB_NEW">
+        <id name="runningNumberConfigId" type="java.lang.Integer">
+            <column name="RunningNumberConfigId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+        <property name="runningNumberType" type="string">
+            <column name="RunningNumberType" length="50" not-null="true" />
+        </property>
+        <property name="countryCodeSet" type="string">
+            <column name="CountryCodeSet" length="3" />
+        </property>
+        <property name="organizationCodeSet" type="string">
+            <column name="OrganizationCodeSet" length="2" />
+        </property>
+        <property name="branchCodeSet" type="string">
+            <column name="BranchCodeSet" length="5" />
+        </property>
+        <property name="serviceClassCodeSet" type="string">
+            <column name="ServiceClassCodeSet" length="3" />
+        </property>
+        <property name="servicePrefixCodeSet" type="string">
+            <column name="ServicePrefixCodeSet" length="5" />
+        </property>
+        <property name="yearSet" type="string">
+            <column name="YearSet" length="4" />
+        </property>
+        <property name="monthSet" type="string">
+            <column name="MonthSet" length="3" />
+        </property>
+        <property name="dateSet" type="string">
+            <column name="DateSet" length="2" />
+        </property>
+        <property name="startTimeSet" type="string">
+            <column name="StartTimeSet" length="10" />
+        </property>
+        <property name="startRunningNumber" type="string">
+            <column name="StartRunningNumber" length="10" />
+        </property>
+        <property name="separatorCharSet" type="java.lang.Character">
+            <column name="SeparatorCharSet" length="1" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

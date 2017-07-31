@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.Country" table="tbl_Country" schema="com" catalog="RIMSDB_NEW">
+        <id name="countryId" type="int">
+            <column name="countryId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="countryName" type="string">
+            <column name="CountryName" not-null="true" unique="true" />
+        </property>
+        <property name="formalName" type="string">
+            <column name="FormalName" />
+        </property>
+        <property name="type" type="string">
+            <column name="Type" />
+        </property>
+        <property name="subtype" type="string">
+            <column name="Subtype" />
+        </property>
+        <property name="sovereignty" type="string">
+            <column name="Sovereignty" />
+        </property>
+        <property name="capital" type="string">
+            <column name="Capital" />
+        </property>
+        <property name="countryDescription" type="string">
+            <column name="Countryescription" />
+        </property>
+        <property name="iso4217currencyCode" type="string">
+            <column name="ISO4217CurrencyCode" length="20" />
+        </property>
+        <property name="isp4217currencyName" type="string">
+            <column name="ISP4217CurrencyName" />
+        </property>
+        <property name="itutTelephoneCode" type="string">
+            <column name="ItutTelephoneCode" length="20" />
+        </property>
+        <property name="iso316612letterCode" type="string">
+            <column name="ISO3166_1_2Letter_Code" length="2" />
+        </property>
+        <property name="iso316613letterCode" type="string">
+            <column name="ISO3166_1_3Letter_Code" length="3" />
+        </property>
+        <property name="iso31661Number" type="java.lang.Integer">
+            <column name="ISO3166_1_Number" />
+        </property>
+        <property name="ianacountryCode" type="string">
+            <column name="IANACountryCode" length="30" />
+        </property>
+        <property name="RIMSCountryCode" type="java.lang.Integer">
+            <column name="RIMSCountryCode" />
+        </property>
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        
+        <property name="nationality" type="string">
+            <column name="Nationality" />
+        </property>
+        
+        <!--
+        <property name="createdBy" type="int">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="Createddate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        -->
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

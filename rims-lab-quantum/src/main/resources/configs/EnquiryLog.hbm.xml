@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.EnquiryLog" table="tbl_EnquiryLog" schema="his" catalog="RIMSDB_NEW">
+        <id name="enquiryId" type="int">
+            <column name="EnquiryId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+        <property name="serviceClassId" type="int">
+            <column name="ServiceClassId" not-null="true" />
+        </property>
+        <property name="enquiryDateTime" type="timestamp">
+            <column name="EnquiryDateTime" length="23" not-null="true" />
+        </property>
+        <property name="patientName" type="string">
+            <column name="PatientName" length="100" />
+        </property>
+        <property name="identificationNumber" type="string">
+            <column name="IdentificationNumber" length="20" />
+        </property>
+        <property name="callerName" type="string">
+            <column name="CallerName" length="50" not-null="true" />
+        </property>
+        <property name="relationshipToPatient" type="int">
+            <column name="RelationshipToPatient" not-null="true" />
+        </property>
+        <property name="contactNumber" type="string">
+            <column name="ContactNumber" length="20" not-null="true" />
+        </property>
+        <property name="paymentType" type="int">
+            <column name="PaymentType" not-null="true" />
+        </property>
+        <property name="followup" type="string">
+            <column name="Followup" />
+        </property>
+        <property name="patientLocation" type="string">
+            <column name="PatientLocation" length="150" />
+        </property>
+        <property name="informedPatientRequirement" type="java.lang.Boolean">
+            <column name="InformedPatientRequirement" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" length="50" />
+        </property>
+        <property name="enquiryStatus" type="int">
+            <column name="EnquiryStatus" not-null="true" />
+        </property>
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

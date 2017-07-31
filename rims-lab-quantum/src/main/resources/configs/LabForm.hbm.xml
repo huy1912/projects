@@ -1,0 +1,338 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.iis.rims.domain.LabForm" table="tbl_LabForm" schema="his" catalog="RIMSDB_NEW">
+		<id name="labFormId" type="int">
+			<column name="LabFormId" />
+			<generator class="native"></generator>
+		</id>
+		<property name="organizationId" type="int">
+			<column name="OrganizationId" not-null="true" />
+		</property>
+		<property name="branchId" type="int">
+			<column name="BranchId" not-null="true" />
+		</property>
+		<property name="patientId" type="int">
+			<column name="PatientId" not-null="true" />
+		</property>
+		<property name="patientName" type="string">
+			<column name="PatientName" length="255" not-null="true" />
+		</property>
+		<property name="patientIc" type="string">
+			<column name="PatientIc" length="20" not-null="true" />
+		</property>
+		<property name="patientDOB" type="timestamp">
+			<column name="PatientDOB" length="23" not-null="true" />
+		</property>
+		<property name="patientGender" type="string">
+			<column name="PatientGender" length="10" not-null="true" />
+		</property>
+		<property name="patientPhone" type="string">
+			<column name="PatientPhone" length="20" />
+		</property>
+		<property name="patientRef" type="string">
+			<column name="PatientRef" length="10" />
+		</property>
+		<property name="patientAddress" type="string">
+			<column name="PatientAddress" length="255" />
+		</property>
+		<property name="hospitalId" type="int">
+			<column name="HospitalId"  not-null="true" />
+		</property>
+		<property name="testDate" type="timestamp">
+			<column name="TestDate" length="23" not-null="true" />
+		</property>
+		<property name="doctorId" type="int">
+			<column name="DoctorId" />
+		</property>
+		<property name="doctorName" type="string">
+			<column name="DoctorName" length="255" />
+		</property>
+		<property name="doctorCode" type="string">
+			<column name="DoctorCode" length="10" />
+		</property>
+		<property name="doctorAddress" type="string">
+			<column name="DoctorAddress" length="255" />
+		</property>
+		<property name="blood" type="java.lang.Boolean">
+			<column name="Blood" not-null="true" />
+		</property>
+		<property name="faeces" type="java.lang.Boolean">
+			<column name="Faeces" not-null="true" />
+		</property>
+		<property name="urine" type="java.lang.Boolean">
+			<column name="Urine" not-null="true" />
+		</property>
+		<property name="sputum" type="java.lang.Boolean">
+			<column name="Sputum" not-null="true" />
+		</property>
+		<property name="swab" type="java.lang.Boolean">
+			<column name="Swab" not-null="true" />
+		</property>
+		<property name="fluids" type="java.lang.Boolean">
+			<column name="Fluids" not-null="true" />
+		</property>
+		<property name="tissue" type="java.lang.Boolean">
+			<column name="Tissue" not-null="true" />
+		</property>
+		<property name="cytology" type="java.lang.Boolean">
+			<column name="Cytology" not-null="true" />
+		</property>
+		<property name="specimenOther" type="string">
+			<column name="SpecimenOther" length="255" />
+		</property>
+		<property name="specimenDate" type="timestamp">
+			<column name="SpecimenDate" length="23" not-null="true" />
+		</property>
+		<property name="specimenTime" type="string">
+			<column name="SpecimenTime" length="10" />
+		</property>
+		<property name="fasting" type="int">
+			<column name="Fasting" not-null="true" />
+		</property>
+		<property name="drugTherapy" type="string">
+			<column name="DrugTherapy" length="255" />
+		</property>
+		<property name="lastDoseDate" type="timestamp">
+			<column name="LastDoseDate" length="23" />
+		</property>
+		<property name="lastDoseTime" type="string">
+			<column name="LastDoseTime" length="10" />
+		</property>
+		<property name="urgent" type="java.lang.Boolean">
+			<column name="Urgent" not-null="true" />
+		</property>
+		<property name="phone" type="java.lang.Boolean">
+			<column name="Phone" not-null="true" />
+		</property>
+		<property name="fax" type="java.lang.Boolean">
+			<column name="Fax" not-null="true" />
+		</property>
+		<property name="phoneNumber" type="string">
+			<column name="PhoneNumber" length="20" />
+		</property>
+		<property name="copyTo" type="string">
+			<column name="CopyTo" length="255" />
+		</property>
+		<property name="billingTo" type="string">
+			<column name="BillingTo" length="255" />
+		</property>
+		<property name="cash" type="java.lang.Boolean">
+			<column name="Cash" not-null="true" />
+		</property>
+		<property name="amountRM" type="big_decimal"> 
+			<column name="AmountRM" />
+		</property>
+		<property name="receiptNo" type="string">
+			<column name="ReceiptNo" length="20" />
+		</property>
+		<property name="collectedBy" type="string">
+			<column name="CollectedBy" length="255" />
+		</property>
+		<property name="clinicalHistory" type="string">
+			<column name="ClinicalHistory" length="1000" />
+		</property>
+		<property name="papSmear" type="java.lang.Boolean">
+			<column name="PapSmear" not-null="true" />
+		</property>
+		<property name="thinPrep" type="java.lang.Boolean">
+			<column name="ThinPrep" not-null="true" />
+		</property>
+		<property name="hpv" type="java.lang.Boolean">
+			<column name="HPV" not-null="true" />
+		</property>
+		<property name="normal" type="java.lang.Boolean">
+			<column name="Normal" not-null="true" />
+		</property>
+		<property name="postMenoBleed" type="java.lang.Boolean">
+			<column name="PostMenoBleed" not-null="true" />
+		</property>
+		<property name="suspLesion" type="java.lang.Boolean">
+			<column name="SuspLesion" not-null="true" />
+		</property>
+		<property name="ccOther1" type="string">
+			<column name="CCOther1" length="255" />
+		</property>
+		<property name="cervlx" type="java.lang.Boolean">
+			<column name="Cervlx" not-null="true" />
+		</property>
+		<property name="endocx" type="java.lang.Boolean">
+			<column name="Endocx" not-null="true" />
+		</property>
+		<property name="postFornix" type="java.lang.Boolean">
+			<column name="PostFornix" not-null="true" />
+		</property>
+		<property name="vault" type="java.lang.Boolean">
+			<column name="Vault" not-null="true" />
+		</property>
+		<property name="latVagWall" type="java.lang.Boolean">
+			<column name="LatVagWall" not-null="true" />
+		</property>
+		<property name="ccOther2" type="string">
+			<column name="CCOther2" length="255" />
+		</property>
+		<property name="lmp" type="java.lang.Boolean">
+			<column name="LMP" not-null="true" />
+		</property>
+		<property name="lmpDate" type="timestamp">
+			<column name="LMPDate" length="23" />
+		</property>
+		<property name="postMenopausal" type="java.lang.Boolean">
+			<column name="PostMenopausal" not-null="true" />
+		</property>
+		<property name="hrt" type="java.lang.Boolean">
+			<column name="HRT" not-null="true" />
+		</property>
+		<property name="ccOther3" type="string">
+			<column name="CCOther3" length="255" />
+		</property>
+		<property name="g2000" type="java.lang.Boolean">
+			<column name="G2000" not-null="true" />
+		</property>
+		<property name="g2000X" type="java.lang.Boolean">
+			<column name="G2000X" not-null="true" />
+		</property>
+		<property name="gt9" type="java.lang.Boolean">
+			<column name="GT9" not-null="true" />
+		</property>
+		<property name="gt1" type="java.lang.Boolean">
+			<column name="GT1" not-null="true" />
+		</property>
+		<property name="neo" type="java.lang.Boolean">
+			<column name="NEO" not-null="true" />
+		</property>
+		<property name="es" type="java.lang.Boolean">
+			<column name="ES" not-null="true" />
+		</property>
+		<property name="hb3" type="java.lang.Boolean">
+			<column name="HB3" not-null="true" />
+		</property>
+		<property name="dfs" type="java.lang.Boolean">
+			<column name="DFS" not-null="true" />
+		</property>
+		<property name="lft" type="java.lang.Boolean">
+			<column name="LFT" not-null="true" />
+		</property>
+		<property name="rft" type="java.lang.Boolean">
+			<column name="RFT" not-null="true" />
+		</property>
+		<property name="tft" type="java.lang.Boolean">
+			<column name="TFT" not-null="true" />
+		</property>
+		<property name="mac" type="java.lang.Boolean">
+			<column name="MAC" not-null="true" />
+		</property>
+		<property name="lgl" type="java.lang.Boolean">
+			<column name="LGL" not-null="true" />
+		</property>
+		<property name="lip" type="java.lang.Boolean">
+			<column name="LIP" not-null="true" />
+		</property>
+		<property name="cea" type="java.lang.Boolean">
+			<column name="CEA" not-null="true" />
+		</property>
+		<property name="ca1" type="java.lang.Boolean">
+			<column name="CA1" not-null="true" />
+		</property>
+		<property name="ca5" type="java.lang.Boolean">
+			<column name="CA5" not-null="true" />
+		</property>
+		<property name="ca9" type="java.lang.Boolean">
+			<column name="CA9" not-null="true" />
+		</property>
+		<property name="psa" type="java.lang.Boolean">
+			<column name="PSA" not-null="true" />
+		</property>
+		<property name="afp" type="java.lang.Boolean">
+			<column name="AFP" not-null="true" />
+		</property>
+		<property name="glucose" type="java.lang.Boolean">
+			<column name="Glucose" not-null="true" />
+		</property>
+		<property name="hiv" type="java.lang.Boolean">
+			<column name="HIV" not-null="true" />
+		</property>
+		<property name="hba1c" type="java.lang.Boolean">
+			<column name="HbA1c" not-null="true" />
+		</property>
+		<property name="hbsag" type="java.lang.Boolean">
+			<column name="HBsAg" not-null="true" />
+		</property>
+		<property name="hpylori" type="java.lang.Boolean">
+			<column name="Hpylori" not-null="true" />
+		</property>
+		<property name="uricAcid" type="java.lang.Boolean">
+			<column name="UricAcid" not-null="true" />
+		</property>
+		<property name="freeT4" type="java.lang.Boolean">
+			<column name="FreeT4" not-null="true" />
+		</property>
+		<property name="fbe" type="java.lang.Boolean">
+			<column name="FBE" not-null="true" />
+		</property>
+		<property name="fbc" type="java.lang.Boolean">
+			<column name="FBC" not-null="true" />
+		</property>
+		<property name="hb" type="java.lang.Boolean">
+			<column name="Hb" not-null="true" />
+		</property>
+		<property name="twdc" type="java.lang.Boolean">
+			<column name="TWDC" not-null="true" />
+		</property>
+		<property name="platelets" type="java.lang.Boolean">
+			<column name="Platelets" not-null="true" />
+		</property>
+		<property name="aborh" type="java.lang.Boolean">
+			<column name="ABORh" not-null="true" />
+		</property>
+		<property name="malarialParasite" type="java.lang.Boolean">
+			<column name="MalarialParasite" not-null="true" />
+		</property>
+		<property name="urineFEME" type="java.lang.Boolean">
+			<column name="UrineFEME" not-null="true" />
+		</property>
+		<property name="rpr" type="java.lang.Boolean">
+			<column name="RPR" not-null="true" />
+		</property>
+		<property name="mcs" type="java.lang.Boolean">
+			<column name="MCS" not-null="true" />
+		</property>
+		<property name="afbSmear" type="java.lang.Boolean">
+			<column name="AFBSmear" not-null="true" />
+		</property>
+		<property name="afbSmearCulture" type="java.lang.Boolean">
+			<column name="AFBSmearCulture" not-null="true" />
+		</property>
+		<property name="histology" type="java.lang.Boolean">
+			<column name="Histology" not-null="true" />
+		</property>
+		<property name="nonGynae" type="java.lang.Boolean">
+			<column name="NonGynae" not-null="true" />
+		</property>
+		<property name="site" type="string">
+			<column name="Site" length="255" />
+		</property>
+		<property name="additionTest" type="string">
+			<column name="AdditionTest" length="1000" />
+		</property>		
+		<property name="createdBy" type="int">
+			<column name="CreatedBy" not-null="true" />
+		</property>
+		<property name="createdDate" type="timestamp">
+			<column name="CreatedDate" length="23" not-null="true" />
+		</property>
+		<property name="lastUpdatedBy" type="int">
+			<column name="LastUpdatedBy" not-null="true" />
+		</property>
+		<property name="lastUpdatedDate" type="timestamp">
+			<column name="LastUpdatedDate" length="23" not-null="true" />
+		</property> 
+		<property name="entityStatus" type="java.lang.Boolean">
+			<column name="EntityStatus" />
+		</property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

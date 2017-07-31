@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.Patient" table="tbl_Patient" schema="mst" catalog="RIMSDB_NEW">
+        <id name="patientId" type="int">
+            <column name="PatientId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="identificationType" type="java.lang.Integer">
+            <column name="IdentificationType" />
+        </property>
+        <property name="nricFinNumber" type="string">
+            <column name="NricFinNumber" length="50" not-null="true" />
+        </property>
+        <property name="firstName" type="string">
+            <column name="FirstName" length="50" not-null="true" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="LastName" length="50" />
+        </property>
+        <property name="patientName" type="string">
+            <column name="PatientName" length="100" not-null="true" />
+        </property>
+        <property name="dateOfBirth" type="timestamp">
+            <column name="DateOfBirth" length="23" not-null="true" />
+        </property>
+        <property name="gender" type="int">
+            <column name="Gender" not-null="true" />
+        </property>
+        <property name="maritalStatus" type="int">
+            <column name="MaritalStatus" not-null="true" />
+        </property>
+        <property name="educationLevel" type="int">
+            <column name="EducationLevel" not-null="true" />
+        </property>
+        <property name="occupation" type="int">
+            <column name="Occupation" not-null="true" />
+        </property>
+        <property name="race" type="int">
+            <column name="Race" not-null="true" />
+        </property>
+        <property name="language" type="java.lang.Integer">
+            <column name="Language" length="50" />
+        </property>
+        <property name="numberOfChildren" type="int">
+            <column name="NumberOfChildren" not-null="true" />
+        </property>
+        <property name="nationality" type="java.lang.Integer">
+            <column name="Nationality" />
+        </property>
+        <property name="allergy" type="string">
+            <column name="Allergy" />
+        </property>
+        <property name="additionalRemarks" type="string">
+            <column name="AdditionalRemarks" length="250" />
+        </property>
+        <property name="referringCardType" type="java.lang.Integer">
+            <column name="ReferringCardType" />
+        </property>
+        <property name="referringCardNumber" type="string">
+            <column name="ReferringCardNumber" length="20" />
+        </property>
+        <property name="referringRegisteredDate" type="timestamp">
+            <column name="ReferringRegisteredDate" length="23" />
+        </property>
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+        <property name="patientStatus" type="int">
+            <column name="PatientStatus" />
+        </property>
+        <property name="religion" type="int">
+            <column name="Religion" />
+        </property>
+        <property name="patientCategory" type="java.lang.Integer">
+            <column name="PatientCategory" />
+        </property>
+        <property name="patientPhysicalStatus" type="java.lang.Integer">
+            <column name="PatientPhysicalStatus" />
+        </property>
+        <property name="wheelchairWeight" type="big_decimal">
+            <column name="WheelchairWeight" />
+        </property>
+        <property name="nricTypeId" type="java.lang.Integer">
+            <column name="NricTypeId" />
+        </property>
+        <property name="infectionStatusId" type="java.lang.Integer">
+            <column name="InfectionStatusId" />
+        </property>
+        <property name="sapb1PostedDate" type="timestamp">
+            <column name="sapb1PostedDate" length="23" />
+        </property>
+        <property name="sapb1Posted" type="java.lang.Boolean">
+            <column name="sapb1Posted" />
+        </property>
+        <property name="sapb1ReferenceRemarks" type="string">
+            <column name="sapb1ReferenceRemarks" length="50" />
+        </property>
+        <property name="smokingHabit" type="int">
+            <column name="SmokingHabit" not-null="false" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+        
+        <property name="patientHeight" type="java.lang.Double">
+            <column name="PatientHeight" precision="53" scale="0"/>
+        </property>
+    </class>
+ </hibernate-mapping>

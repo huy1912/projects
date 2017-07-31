@@ -1,0 +1,144 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.Visit" table="tbl_Visit" schema="his" catalog="RIMSDB_NEW">
+        <id name="visitId" type="int">
+            <column name="VisitId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="registrationId" type="int">
+            <column name="RegistrationId" not-null="true" />
+        </property>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+        <property name="serviceClassId" type="int">
+            <column name="ServiceClassId" not-null="true" />
+        </property>
+        <property name="equipmentDetailId" type="java.lang.Integer">
+            <column name="EquipmentDetailId" />
+        </property>
+        <property name="equipmentDetailName" type="string">
+            <column name="EquipmentDetailName" length="50" />
+        </property>
+        <property name="visitType" type="int">
+            <column name="VisitType" not-null="true" />
+        </property>
+        <property name="visitNumber" type="string">
+            <column name="VisitNumber" length="20" not-null="true" />
+        </property>
+        <property name="visitDate" type="timestamp">
+            <column name="VisitDate" length="23" not-null="true" />
+        </property>
+        <property name="newOrBhb" type="boolean">
+            <column name="NewOrBHB" not-null="true" />
+        </property>
+        <property name="ageYears" type="int">
+            <column name="AgeYears" not-null="true" />
+        </property>
+        <property name="ageMonths" type="int">
+            <column name="AgeMonths" not-null="true" />
+        </property>
+        <property name="ageDays" type="int">
+            <column name="AgeDays" not-null="true" />
+        </property>
+        <property name="referringCustomerId" type="java.lang.Integer">
+            <column name="ReferringCustomerId" />
+        </property>
+        <property name="referringBillToId" type="java.lang.Integer">
+            <column name="ReferringBillToId" />
+        </property>
+        <property name="referringDoctorId" type="java.lang.Integer">
+            <column name="ReferringDoctorId" />
+        </property>
+        <property name="referringClinicName" type="string">
+            <column name="ReferringClinicName" length="120" not-null="true" />
+        </property>
+        <property name="referringDoctorName" type="string">
+            <column name="ReferringDoctorName" length="100" not-null="true" />
+        </property>
+        
+        <property name="medicalSocialWorkerId" type="java.lang.Integer">
+            <column name="MedicalSocialWorkerId" />
+        </property>        
+        <property name="medicalSocialWorkerName" type="string">
+            <column name="MedicalSocialWorkerName" length="100" />
+        </property>        
+        <property name="previousDialysisCentreId" type="java.lang.Integer">
+            <column name="PreviousDialysisCentreId" />
+        </property>        
+        <property name="previousDialysisCentreName" type="string">
+            <column name="PreviousDialysisCentreName" length="100" />
+        </property>
+        
+        <property name="billToType" type="int">
+            <column name="BillToType" not-null="true" />
+        </property>
+        <property name="billToId" type="int">
+            <column name="BillToId" not-null="true" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" />
+        </property>
+        <property name="cancellationRemarks" type="string">
+            <column name="CancellationRemarks" />
+        </property>
+        <property name="visitStatus" type="int">
+            <column name="VisitStatus" not-null="true" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        
+        <property name="appointmentId" type="java.lang.Integer">
+            <column name="AppointmentId" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+       <property name="inPatient" type="boolean">
+            <column name="InPatient" not-null="true" />
+        </property>
+    </class>
+    <query name="findVisitByRegId">
+     	<![CDATA[select v from Visit v 
+     	where v.visitId=(SELECT MAX(v1.visitId) FROM Visit v1 where v1.registrationId = :regId )]]>
+	</query>
+    <query name="recentVisitByRegId">
+     	<![CDATA[select v from Visit v 
+     	where v.visitId=(SELECT MAX(v1.visitId) FROM Visit v1 where v1.registrationId = :regId and v1.visitDate >= :currentDate)]]>
+     </query>
+     <query name="recentVisitByMaxId">
+     	<![CDATA[select v from Visit v 
+     	where v.visitId=(SELECT MAX(v1.visitId) FROM Visit v1 where v1.registrationId = :regId )]]>
+     </query>
+   
+     <query name="recentVisitById">
+     	<![CDATA[select v from Visit v 
+     	where v.visitId = :visitId )]]>
+     </query>
+     
+     <query name="pastVisitByRegId">
+     	<![CDATA[select v from Visit v 
+     	where v.visitId=(SELECT MAX(v1.visitId) FROM Visit v1 where v1.registrationId = :regId and v1.visitDate < :currentDate)]]>
+     </query>
+     <sql-query name="findAllMortalityPatientVisit">
+     	<return alias="findAllMortalityPatientVisit" class="com.iis.rims.domain.Visit"/>
+     	<![CDATA[select v.* from his.tbl_Visit v, his.tbl_Registration r
+     	where v.RegistrationId = r.RegistrationId and r.NricNumber = :nricNumber
+     	order by v.VisitId]]>
+     </sql-query>
+</hibernate-mapping>

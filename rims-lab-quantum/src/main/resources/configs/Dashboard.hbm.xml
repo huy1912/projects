@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 20, 2013 6:50:53 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.dto.Dashboard" table="view_Dashboard" schema="dbo" catalog="RIMSDB_NEW" mutable="false">
+        <id name="dashboardId" type="java.lang.Integer">
+            <column name="DashboardId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="visitId" type="java.lang.Integer">
+            <column name="VisitId" />
+        </property>
+        <property name="registrationId" type="java.lang.Integer">
+            <column name="RegistrationId" />
+        </property>
+        <property name="haemodialysisChartId" type="java.lang.Integer">
+            <column name="HaemodialysisChartId" />
+        </property>        
+        <property name="branchId" type="java.lang.Integer">
+            <column name="BranchId" />
+        </property>
+        <property name="serviceClassId" type="java.lang.Integer">
+            <column name="ServiceClassId" />
+        </property>
+        <property name="visitType" type="java.lang.Integer">
+            <column name="VisitType" />
+        </property>
+        <property name="visitNumber" type="string">
+            <column name="VisitNumber" length="20" />
+        </property>
+        <property name="visitDate" type="timestamp">
+            <column name="VisitDate" length="23" />
+        </property>
+        <property name="newOrBhb" type="java.lang.Boolean">
+            <column name="NewOrBHB" />
+        </property>
+        <property name="ageYears" type="java.lang.Integer">
+            <column name="AgeYears" />
+        </property>
+        <property name="ageMonths" type="java.lang.Integer">
+            <column name="AgeMonths" />
+        </property>
+        <property name="ageDays" type="java.lang.Integer">
+            <column name="AgeDays" />
+        </property>
+        <property name="referringCustomerId" type="java.lang.Integer">
+            <column name="ReferringCustomerId" />
+        </property>
+        <property name="referringBillToId" type="java.lang.Integer">
+            <column name="ReferringBillToId" />
+        </property>
+        <property name="referringDoctorId" type="java.lang.Integer">
+            <column name="ReferringDoctorId" />
+        </property>
+        <property name="referringClinicName" type="string">
+            <column name="ReferringClinicName" length="120" />
+        </property>
+        <property name="referringDoctorName" type="string">
+            <column name="ReferringDoctorName" length="100" />
+        </property>
+        <property name="billToType" type="java.lang.Integer">
+            <column name="BillToType" />
+        </property>
+        <property name="billToId" type="java.lang.Integer">
+            <column name="BillToId" />
+        </property>
+        <property name="visitStatus" type="java.lang.Integer">
+            <column name="VisitStatus" />
+        </property>
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="equipmentDetailId" type="java.lang.Integer">
+            <column name="EquipmentDetailId" />
+        </property>
+        <property name="equipmentDetailName" type="string">
+            <column name="EquipmentDetailName" length="50" />
+        </property>
+        <property name="appointmentId" type="java.lang.Integer">
+            <column name="AppointmentId" />
+        </property>
+        <property name="organizationId" type="java.lang.Integer">
+            <column name="OrganizationId" />
+        </property>
+        <property name="patientPrescriptionId" type="java.lang.Integer">
+            <column name="patientPrescriptionId" />
+        </property>
+        <property name="appointmentDate" type="timestamp">
+            <column name="AppointmentDate" length="23" />
+        </property>
+        <property name="appointmentStartTime" type="string">
+            <column name="AppointmentStartTime" length="10" />
+        </property>
+        <property name="appointmentEndTime" type="string">
+            <column name="AppointmentEndTime" length="10" />
+        </property>
+        <property name="careplanId" type="java.lang.Integer">
+            <column name="CareplanId" />
+        </property>
+        <property name="patientId" type="java.lang.Integer">
+            <column name="PatientId" />
+        </property>
+        <property name="patientName" type="string">
+            <column name="PatientName" length="100" />
+        </property>
+        <property name="nricFinNumber" type="string">
+            <column name="NricFinNumber" length="50" />
+        </property>
+        <property name="gender" type="string">
+            <column name="Gender" length="50" />
+        </property>
+        <property name="patientAge" type="java.lang.Integer">
+            <column name="PatientAge" />
+        </property>
+        <property name="dateOfBirth" type="timestamp">
+            <column name="DateOfBirth" length="23" />
+        </property>
+        <property name="patientContactNo" type="string">
+            <column name="PatientContactNo" length="50" />
+        </property>
+        <property name="referringClinicId" type="java.lang.Integer">
+            <column name="ReferringClinicID" />
+        </property>
+        <property name="referringClinicDetails" type="string">
+            <column name="ReferringClinicDetails" />
+        </property>
+        <property name="specialIndicationsToPatient" type="string">
+            <column name="SpecialIndicationsToPatient" />
+        </property>
+        <property name="appointmentStatus" type="java.lang.Integer">
+            <column name="AppointmentStatus" />
+        </property>
+        <property name="loginBranchId" type="java.lang.Integer">
+            <column name="LoginBranchId" />
+        </property>
+        <property name="appointmentDetailId" type="java.lang.Integer">
+            <column name="AppointmentDetailId" />
+        </property>
+        <property name="serviceId" type="java.lang.Integer">
+            <column name="ServiceId" />
+        </property>
+        <property name="procedureId" type="java.lang.Integer">
+            <column name="ProcedureId" />
+        </property>
+        <property name="numberOfSlots" type="java.lang.Integer">
+            <column name="NumberOfSlots" />
+        </property>
+        <property name="examinationStartTime" type="timestamp">
+            <column name="ExaminationStartTime" length="23" />
+        </property>
+        <property name="examinationEndTime" type="timestamp">
+            <column name="ExaminationEndTime" length="23" />
+        </property>
+        <property name="approximateMinutes" type="java.lang.Integer">
+            <column name="ApproximateMinutes" />
+        </property>
+        <property name="serviceName" type="string">
+            <column name="ServiceName" length="150" />
+        </property>
+        <property name="stationName" type="string">
+            <column name="StationName" />
+        </property>
+        <property name="aeTitle" type="string">
+            <column name="AeTitle" />
+        </property>
+         <property name="serialNumber" type="string">
+            <column name="SerialNumber"  length="20" />
+        </property>
+        <property name="timesDoing" type="java.lang.Integer">
+            <column name="TimesDoing" />
+        </property>
+        <property name="invoiceId" type="java.lang.Integer">
+            <column name="InvoiceId" />
+        </property>
+        <property name="paymentStatus" type="java.lang.Integer">
+            <column name="PaymentStatus" />
+        </property>
+        <property name="haemodialysisChartStatus" type="java.lang.Boolean">
+            <column name="HaemodialysisChartStatus" />
+        </property>
+        <property name="readingStartTime" type="timestamp">
+            <column name="ReadingStartTime" length="23" />
+        </property>
+        <property name="readingEndTime" type="timestamp">
+            <column name="ReadingEndTime" length="23" />
+        </property>
+        <property name="actualStationName" type="string">
+            <column name="ActualStationName" length="23" />
+        </property>
+        <property name="actualSerialNumber" type="string">
+            <column name="ActualSerialNumber" length="20" />
+        </property>
+        <property name="therapyStatus" type="java.lang.Integer">
+            <column name="TherapyStatus" />
+        </property>
+        <property name="numOfReading" type="java.lang.Integer">
+            <column name="NumOfReading" />
+        </property>
+        <property name="patientWeight" type="java.lang.Double">
+            <column name="PatientWeight" precision="53" scale="0"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" length="20" />
+        </property>
+        <property name="epoProcedureId" type="string">
+            <column name="EpoProcedureId" />
+        </property>
+        <property name="medicationProcedureId" type="string">
+            <column name="MedicationProcedureId" />
+        </property>
+        <property name="epoEnable" type="java.lang.Boolean">
+            <column name="EpoEnable" />
+        </property>
+        <property name="medicationEnable" type="java.lang.Boolean">
+            <column name="MedicationEnable" />
+        </property>
+        <property name="receiptId" type="java.lang.Integer">
+            <column name="ReceiptId" />
+        </property>
+        <property name="inPatient" type="java.lang.Boolean">
+            <column name="InPatient" />
+        </property>
+    </class>
+    
+    <sql-query name="GetDashBoardList">
+		<return alias="dashboard" class="com.iis.rims.domain.dto.Dashboard"/>
+		<![CDATA[
+			{call dbo.GetDashboardList(:OrganizationId, :BranchId, :AppointmentDate, :sortKey, :sortDirection) }
+		]]>
+    </sql-query>
+</hibernate-mapping>

@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 30, 2013 8:31:34 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.PatientPaymentPlan" table="tbl_PatientPaymentPlan" schema="mst" catalog="RIMSDB_NEW">
+        <id name="patientPaymentPlanId" type="java.lang.Integer">
+            <column name="PatientPaymentPlanId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+        <property name="patientName" type="string">
+            <column name="PatientName" length="100" />
+        </property>
+        <property name="patientNric" type="string">
+            <column name="PatientNRIC" length="20" />
+        </property>
+        <property name="referringClinic" type="java.lang.Integer">
+            <column name="ReferringClinic" />
+        </property>
+        <property name="referringClinicName" type="string">
+            <column name="ReferringClinicName" length="100" />
+        </property>
+        <property name="referringDoctor" type="java.lang.Integer">
+            <column name="ReferringDoctor" />
+        </property>
+        <property name="referringDoctorName" type="string">
+            <column name="ReferringDoctorName" length="100" />
+        </property>
+        <property name="numberOfTimesId" type="java.lang.Integer">
+            <column name="NumberOfTimesId" not-null="true" />
+        </property>
+        <property name="patternId" type="java.lang.Integer">
+            <column name="PatternId" not-null="true" />
+        </property>
+        <property name="packageId" type="java.lang.Integer">
+            <column name="PackageId" />
+        </property>
+        <property name="serviceId" type="java.lang.Integer">
+            <column name="ServiceId" not-null="true" />
+        </property>
+        <property name="procedureId" type="java.lang.Integer">
+            <column name="ProcedureId" not-null="true" />
+        </property>
+        <property name="procedurePrice" type="big_decimal">
+            <column name="ProcedurePrice" precision="8" not-null="true" />
+        </property>
+        <property name="GSTAmount" type="big_decimal">
+            <column name="GSTAmount" precision="8" not-null="true" />
+        </property>
+        <property name="totalNumberOfDialysis" type="int">
+            <column name="TotalNumberOfDialysis" not-null="true" />
+        </property>
+        <property name="totalProcedurePrice" type="big_decimal">
+            <column name="TotalProcedurePrice" precision="8" not-null="true" />
+        </property>
+        <property name="totalGSTAmount" type="big_decimal">
+            <column name="TotalGSTAmount" precision="8" not-null="true" />
+        </property>
+        <property name="adminFee" type="big_decimal">
+            <column name="AdminFee" precision="8" not-null="true" />
+        </property>
+        <property name="patientCoPayment" type="big_decimal">
+            <column name="PatientCoPayment" precision="8" not-null="true" />
+        </property>
+        <property name="paymentBy" type="int">
+            <column name="PaymentBy" not-null="true" />
+        </property>
+        <property name="startDate" type="timestamp">
+            <column name="StartDate" length="23" not-null="true" />
+        </property>
+        <property name="endDate" type="timestamp">
+            <column name="EndDate" length="23" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="registrationId" type="int">
+            <column name="RegistrationId" />
+        </property>
+        <property name="patientId" type="int">
+            <column name="PatientId" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="paymentPlanStatus" type="int">
+            <column name="PaymentPlanStatus" />
+        </property>
+        <property name="configureStatus" type="int">
+            <column name="ConfigureStatus" />
+        </property>
+        <property name="lock" type="boolean">
+            <column name="Lock" not-null="true" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+    
+	<query name="getPaymentPlanForReg">
+		<![CDATA[
+			SELECT payment.patientPaymentPlanId as patientPaymentPlanId, payment.startDate as startDate, payment.endDate as endDate,
+				payment.patientId as patientId, payment.paymentPlanStatus as paymentPlanStatus,
+				payment.procedureId as procedureId, payment.referringDoctorName as referringDoctorName,
+				procedure.procedureName as procedureName, payment.entityStatus as entityStatus, payment.configureStatus as configureStatus 
+				FROM PatientPaymentPlan payment, Procedure procedure
+				WHERE payment.procedureId= procedure.procedureId AND payment.patientNric = :patientNric AND payment.entityStatus = 1 Order By payment.startDate
+		]]>
+	</query>
+		<query name="getPaymentPlanForRegDateTime">
+		<![CDATA[
+			SELECT payment.patientPaymentPlanId as patientPaymentPlanId, payment.startDate as startDate, payment.endDate as endDate,
+				payment.patientId as patientId, payment.paymentPlanStatus as paymentPlanStatus,
+				payment.procedureId as procedureId, payment.referringDoctorName as referringDoctorName,
+				procedure.procedureName as procedureName, payment.entityStatus as entityStatus, payment.configureStatus as configureStatus 
+				FROM PatientPaymentPlan payment, Procedure procedure
+				WHERE payment.procedureId= procedure.procedureId AND payment.patientNric = :patientNric
+				AND payment.deleted = 0
+				order by startDate desc
+		]]>
+	</query>	
+	<query name="getProcedureFromActivePaymentPlan">
+		<![CDATA[
+			SELECT s.serviceId as serviceId, s.serviceName as serviceName, p.procedureId as procedureId,
+				p.procedureName as procedureName, p.listCashPrice as listCashPrice,
+				1 as quantity, p.listCashPrice as totalPrice,
+				0 as equipmentDetailId, '' as equipmentDetailName,
+				d.procedurePrice as cashWave, d.packageId as packageId 
+				FROM PatientPaymentPlan d, Service s, Procedure p
+				WHERE d.patientId = :patientId AND d.entityStatus = 1
+				AND d.paymentPlanStatus = 1 AND d.configureStatus = 1 
+				AND (:today BETWEEN d.startDate AND d.endDate)
+				AND d.serviceId = s.serviceId AND d.procedureId = p.procedureId
+		]]>
+	</query>
+	<sql-query name="getPatientPaymentPlanList">
+		<return alias="ppl_tbl" class="com.iis.rims.domain.PatientPaymentPlan"/>
+		<![CDATA[
+			{call dbo.RIMS_SP_SearchPatientPlanList(:organizationId, :branchId, :patientNric, :patientName, :startDate, :endDate, :statusName, :statusValue,
+				:sortKey, :sortDirection) }
+		]]>
+    </sql-query>
+    <query name="findOverlapPaymentPlan1">
+		<![CDATA[
+			SELECT ppl 
+			FROM PatientPaymentPlan ppl 					      
+			WHERE ppl.patientId = :patientId 
+				and ppl.entityStatus = :entityStatus 
+				and ppl.organizationId = :organizationId
+				and ppl.branchId = :branchId
+				and ppl.patientPaymentPlanId <> :patientPaymentPlanId
+				and convert(varchar, ppl.startDate, 112) <=  convert(varchar, :startDate , 112)
+				and convert(varchar, ppl.endDate, 112) >= convert(varchar, :startDate , 112)
+		]]>
+	</query>	
+    <query name="findOverlapPaymentPlan2">
+		<![CDATA[
+			SELECT ppl 
+			FROM PatientPaymentPlan ppl 					      
+			WHERE ppl.patientId = :patientId 
+				and ppl.entityStatus = :entityStatus 
+				and ppl.organizationId = :organizationId
+				and ppl.branchId = :branchId
+				and ppl.patientPaymentPlanId <> :patientPaymentPlanId
+				and convert(varchar, ppl.startDate, 112) >=  convert(varchar, :startDate , 112)
+				and convert(varchar, ppl.startDate, 112) <= convert(varchar, :endDate , 112)
+		]]>
+	</query>
+ 
+	<!-- <query name="isPaymentPlanConfigured">
+		<![CDATA[
+			SELECT count(payment.patientNric)
+				FROM PatientPaymentPlan payment
+				WHERE payment.patientNric = :patientNric AND payment.patientId = :patientId
+		]]>
+	</query> -->
+</hibernate-mapping>

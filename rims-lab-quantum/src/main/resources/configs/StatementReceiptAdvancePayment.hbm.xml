@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 22, 2014 11:04:52 AM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.StatementReceiptAdvancePayment" table="tbl_StatementReceiptAdvancePayment" schema="acc" catalog="RIMSDB_NEW">
+        <id name="statementReceiptAdvancePaymentId" type="java.lang.Integer">
+            <column name="StatementReceiptAdvancePaymentId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="statementReceiptAdvanceId" type="java.lang.Integer">
+            <column name="StatementReceiptAdvanceId" not-null="true" />
+        </property>
+        <property name="statementReceiptId" type="java.lang.Integer">
+            <column name="StatementReceiptId" not-null="true" />
+        </property> 
+        <property name="billToTypeId" type="int">
+            <column name="BillToTypeId" not-null="true" />
+        </property>
+        <property name="billToId" type="int">
+            <column name="BillToId" not-null="true" />
+        </property>
+        <property name="patientId" type="java.lang.Integer">
+            <column name="PatientId" />
+        </property>
+        <property name="amountSign" type="int">
+            <column name="AmountSign" not-null="true" />
+        </property>
+        <property name="balanceAmount" type="big_decimal">
+            <column name="BalanceAmount" precision="12" />
+        </property>
+        <property name="amountPaid" type="big_decimal">
+            <column name="AmountPaid" precision="12" />
+        </property>
+        <property name="gstpercent" type="big_decimal">
+            <column name="GSTPercent" precision="12" />
+        </property>
+        <property name="gstamount" type="big_decimal">
+            <column name="GSTAmount" precision="12" />
+        </property>
+        <property name="receiptDate" type="timestamp">
+            <column name="ReceiptDate" length="23" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

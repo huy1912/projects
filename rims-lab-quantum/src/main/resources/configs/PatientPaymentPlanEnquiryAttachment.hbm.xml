@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 20, 2013 8:42:52 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.PatientPaymentPlanEnquiryAttachment" table="tbl_PatientPaymentPlanEnquiryAttachment" schema="mst" catalog="RIMSDB_NEW">
+        <id name="patientPaymentPlanEnquiryAttachmentId" type="java.lang.Integer">
+            <column name="PatientPaymentPlanEnquiryAttachmentId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="patientPaymentPlanEnquiryId" type="int">
+            <column name="PatientPaymentPlanEnquiryId" not-null="true" />
+        </property>
+        <property name="fileName" type="string">
+            <column name="FileName" length="200" />
+        </property>
+        <property name="attachmentContent" type="binary">
+            <column name="AttachmentContent" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" />
+        </property>
+        <property name="createdBy" type="java.lang.Integer" update="false">
+            <column name="CreatedBy" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="lastUpdatedDate" length="23" />
+        </property>
+        <property name="lastUpdatedBy" type="java.lang.Integer">
+            <column name="LastUpdatedBy" />
+        </property>                
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="false" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

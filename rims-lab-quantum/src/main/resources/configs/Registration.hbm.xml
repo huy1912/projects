@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.Registration" table="tbl_Registration" schema="his" catalog="RIMSDB_NEW">
+        <id name="registrationId" type="int">
+            <column name="RegistrationId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+        <property name="serviceClassId" type="int">
+            <column name="ServiceClassId" not-null="true" />
+        </property>
+        <property name="registeredDate" type="timestamp">
+            <column name="RegisteredDate" length="23" not-null="true" />
+        </property>
+        <property name="registrationNumber" type="string">
+            <column name="RegistrationNumber" length="12" not-null="true" />
+        </property>
+        <property name="patientId" type="int">
+            <column name="PatientId" not-null="true" />
+        </property>
+        <property name="nricNumber" type="string">
+            <column name="NricNumber" length="20" not-null="true" />
+        </property>
+        <property name="referringCustomerId" type="java.lang.Integer">
+            <column name="ReferringCustomerId" />
+        </property>
+        <property name="referringDoctorId" type="java.lang.Integer">
+            <column name="ReferringDoctorId" />
+        </property>
+        <property name="referringClinicName" type="string">
+            <column name="ReferringClinicName" length="120" not-null="true" />
+        </property>
+        <property name="referringDoctorName" type="string">
+            <column name="ReferringDoctorName" length="100" not-null="true" />
+        </property>
+        
+        <property name="medicalSocialWorkerId" type="java.lang.Integer">
+            <column name="MedicalSocialWorkerId" />
+        </property>        
+        <property name="medicalSocialWorkerName" type="string">
+            <column name="MedicalSocialWorkerName" length="100" />
+        </property>        
+        <property name="previousDialysisCentreId" type="java.lang.Integer">
+            <column name="PreviousDialysisCentreId" />
+        </property>        
+        <property name="previousDialysisCentreName" type="string">
+            <column name="PreviousDialysisCentreName" length="100" />
+        </property>
+        
+        <property name="registrationMode" type="java.lang.Integer">
+            <column name="RegistrationMode" />
+        </property>
+        <property name="paymentMode" type="int">
+            <column name="PaymentMode" not-null="true" />
+        </property>
+        <property name="paymentModeDescription" type="string">
+            <column name="PaymentModeDescription" length="20" />
+        </property>
+        <property name="whoPays" type="int">
+            <column name="WhoPays" not-null="true" />
+        </property>
+        <property name="whoPayDescription" type="string">
+            <column name="WhoPayDescription" length="20" />
+        </property>
+        <property name="coPayment" type="boolean">
+            <column name="CoPayment" not-null="true" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" />
+        </property>
+        <property name="registrationStatus" type="int">
+            <column name="RegistrationStatus" not-null="true" />
+        </property>
+        <property name="registeredByStaff" type="string">
+            <column name="RegisteredByStaff" length="100" not-null="true" />
+        </property>
+        <property name="referringNumber" type="string">
+            <column name="ReferringNumber" length="20" />
+        </property>       
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="dateOfFirstDialysis" type="timestamp">
+            <column name="DateOfFirstDialysis" length="23" not-null="false" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+     <query name="getProcedureFromActiveCarePlan">
+	  <![CDATA[
+	   SELECT s.serviceId as serviceId, s.serviceName as serviceName, p.procedureId as procedureId,
+	    p.procedureName as procedureName, p.listCashPrice as listCashPrice,
+	    1 as quantity, p.listCashPrice as totalPrice 
+	   FROM CarePlan c, Service s, Procedure p 
+	   WHERE c.procedureId = p.procedureId AND c.serviceId = s.serviceId 
+	    AND c.patientId = :patientId AND c.entityStatus = 1
+	    AND c.startDate = (Select MAX(startDate) from CarePlan where patientId = :patientId)    
+	  ]]>
+	 </query>
+</hibernate-mapping>

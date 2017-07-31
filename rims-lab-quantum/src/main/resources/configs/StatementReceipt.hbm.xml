@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 25, 2013 7:00:28 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.StatementReceipt" table="tbl_StatementReceipt" schema="acc" catalog="RIMSDB_NEW">
+        <id name="statementReceiptId" type="java.lang.Integer">
+            <column name="StatementReceiptId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+        <property name="statementDetailId" type="java.lang.Integer">
+            <column name="StatementDetailId" />
+        </property>
+        <property name="billToTypeId" type="int">
+            <column name="BillToTypeId" />
+        </property>
+        <property name="billToId" type="int">
+            <column name="BillToId" />
+        </property>
+        <property name="patientId" type="java.lang.Integer">
+            <column name="PatientId" />
+        </property>
+        <property name="toPerson" type="string">
+            <column name="ToPerson" length="100" />
+        </property>
+        <property name="documentType" type="string">
+            <column name="DocumentType" length="10" />
+        </property>
+        <property name="receiptNumber" type="string">
+            <column name="ReceiptNumber" length="20" not-null="true" />
+        </property>
+        <property name="refDocumentType" type="string">
+            <column name="RefDocumentType" length="10" />
+        </property>
+        <property name="refReceiptNumber" type="string">
+            <column name="RefReceiptNumber" length="20" />
+        </property>
+        <property name="refundFlag" type="java.lang.Boolean">
+            <column name="RefundFlag" />
+        </property>
+        <property name="gstPercent" type="big_decimal">
+            <column name="GSTPercent" precision="12" />
+        </property>
+        <property name="gstAmount" type="big_decimal">
+            <column name="GSTAmount" precision="12" />
+        </property>
+        <property name="amountPaid" type="big_decimal">
+            <column name="AmountPaid" precision="12" />
+        </property>
+        <property name="amountSign" type="int">
+            <column name="AmountSign" not-null="true" />
+        </property>
+        <property name="multiplePaymentMode" type="int">
+            <column name="MultiplePaymentMode" not-null="true" />
+        </property>
+        <property name="collectedAmount" type="big_decimal">
+            <column name="CollectedAmount" precision="12" />
+        </property>
+        <property name="changeReturned" type="big_decimal">
+            <column name="ChangeReturned" precision="12" />
+        </property>
+        <property name="receiptDue" type="big_decimal">
+            <column name="ReceiptDue" precision="12" />
+        </property>
+        <property name="receiptDate" type="timestamp">
+            <column name="ReceiptDate" length="23" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="sapb1ReceiptDocumentId" type="java.lang.Long">
+            <column name="sapb1ReceiptDocumentId" />
+        </property>
+        <property name="sapb1PostedDate" type="timestamp">
+            <column name="sapb1PostedDate" length="23" />
+        </property>
+        <property name="sapb1Posted" type="java.lang.Boolean">
+            <column name="sapb1Posted" />
+        </property>
+    </class>
+</hibernate-mapping>

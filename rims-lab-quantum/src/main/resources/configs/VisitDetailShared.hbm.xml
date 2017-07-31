@@ -1,0 +1,118 @@
+		<id name="visitDetailPaymentId" type="int">
+            <column name="VisitDetailPaymentId" />
+            <generator class="native"></generator>
+        </id>
+		<!-- <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="false" />
+        </property>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="false" />
+        </property> -->
+        <property name="visitDetailId" type="int">
+            <column name="VisitDetailId" not-null="true" />
+        </property>
+        <property name="visitId" type="int">
+            <column name="VisitId" not-null="true" />
+        </property>
+        <property name="accessionNumber" type="string">
+            <column name="AccessionNumber" length="20" not-null="true" />
+        </property>
+        <property name="billToType" type="int">
+            <column name="BillToType" not-null="true" />
+        </property>
+        <property name="billToId" type="int">
+            <column name="BillToId" not-null="true" />
+        </property>
+        <property name="serviceId" type="java.lang.Integer">
+            <column name="ServiceId" not-null="true" />
+        </property>
+        <property name="serviceName" type="string">
+            <column name="serviceName" length="50" not-null="true" />
+        </property>
+        <property name="procedureId" type="int">
+            <column name="ProcedureId" not-null="true" />
+        </property>
+        <property name="procedureName" type="string">
+            <column name="ProcedureName" length="150" not-null="true" />
+        </property>
+        <property name="equipmentDetailId" type="int">
+            <column name="EquipmentDetailId" />
+        </property>
+        <property name="equipmentDetailName" type="string">
+            <column name="EquipmentDetailName" length="150" />
+        </property>
+        <property name="priceBasedOn" type="java.lang.Integer">
+            <column name="PriceBasedOn" />
+        </property>
+        <property name="listedBillPrice" type="java.math.BigDecimal">
+            <column name="ListedBillPrice" precision="12" />
+        </property>
+        <property name="listedCashPrice" type="java.math.BigDecimal">
+            <column name="ListedCashPrice" precision="12" />
+        </property>
+        <property name="quantity" type="int">
+            <column name="Quantity" not-null="true" />
+        </property>
+        <property name="netAmount" type="java.math.BigDecimal">
+            <column name="NetAmount" precision="12" not-null="true" />
+        </property>
+        <property name="netAmountSign" type="int">
+            <column name="NetAmountSign" not-null="true" />
+        </property>
+        <property name="recordLock" type="boolean">
+            <column name="RecordLock" not-null="true" />
+        </property>
+        <property name="confirmed" type="boolean">
+            <column name="Confirmed" not-null="true" />
+        </property>
+        <property name="paymentStatus" type="int">
+            <column name="PaymentStatus" not-null="true" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        
+        
+        <property name="paymentSponsors" type="string" >
+            <column name="PaymentSponsors" length="10" />
+        </property>
+        <property name="paymentIncluded" type="boolean">
+            <column name="paymentIncluded" not-null="true" />
+        </property>
+        <property name="gstIncluded" type="boolean">
+            <column name="GstIncluded" not-null="true" />
+        </property>
+        <property name="outstandingGst" type="big_decimal">
+            <column name="OutstandingGst" precision="12" not-null="true" />
+        </property>
+        <property name="outstandingBalance" type="big_decimal">
+            <column name="OutstandingBalance" precision="12" not-null="true" />
+        </property>
+        <property name="gstAmount" type="big_decimal">
+            <column name="GSTAmount" precision="12" not-null="true" />
+        </property>
+        <property name="gstPercent" type="big_decimal">
+            <column name="GSTPercent" precision="12" not-null="true" />
+        </property>
+        
+        <property name="sapb1InvoiceDocumentId" type="java.lang.Long">
+            <column name="sapb1InvoiceDocumentId" />
+        </property>
+        <property name="sapb1PostedDate" type="timestamp">
+            <column name="sapb1PostedDate" length="23" />
+        </property>
+        <property name="sapb1Posted" type="java.lang.Boolean">
+            <column name="sapb1Posted" />
+        </property>

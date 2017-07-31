@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.ServicePrefix" table="tbl_ServicePrefix" schema="com" catalog="RIMSDB_NEW">
+        <id name="prefixId" type="int">
+            <column name="PrefixId" />
+            <generator class="native" />
+        </id>
+        <property name="serviceId" type="int">
+            <column name="ServiceId" not-null="true" />
+        </property>
+        <property name="prefixCode" type="string">
+            <column name="PrefixCode" length="6" not-null="true" />
+        </property>
+        <property name="prefixName" type="string">
+            <column name="PrefixName" length="50" not-null="true" />
+        </property>
+        <property name="prefixDescription" type="string">
+            <column name="PrefixDescription" length="150" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

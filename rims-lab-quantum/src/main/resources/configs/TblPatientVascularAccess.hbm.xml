@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 3:53:12 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.TblPatientVascularAccess" table="tbl_PatientVascularAccess" catalog="RIMSDB_NEW">
+        <id name="vascularAccessRecordId" type="int">
+            <column name="VascularAccessRecordId" />
+            <generator class="assigned" />
+        </id>
+        <property name="visitId" type="int">
+            <column name="VisitId" not-null="true" />
+        </property>
+        <property name="vascularAccessRecordDate" type="timestamp">
+            <column name="VascularAccessRecordDate" length="23" />
+        </property>
+        <property name="typeOfAccess" type="int">
+            <column name="TypeOfAccess" not-null="true" />
+        </property>
+        <property name="accessTypeSide" type="int">
+            <column name="AccessTypeSide" not-null="true" />
+        </property>
+        <property name="needleSizeA" type="string">
+            <column name="NeedleSizeA" length="20" not-null="true" />
+        </property>
+        <property name="needleSizeV" type="string">
+            <column name="needleSizeV" length="20" not-null="true" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

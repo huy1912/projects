@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 24, 2013 1:38:56 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.PatientSponsorInvoice" table="PatientSponsorInvoice" schema="dbo" catalog="RIMSDB_NEW">
+        <id name="sponsorType" type="int">
+            <column name="SponsorType" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="sponsorAmount" type="big_decimal">
+            <column name="SponsorAmount" precision="12" />
+        </property>
+        <property name="sponsorPercentage" type="big_decimal">
+            <column name="SponsorPercentage" precision="12" />
+        </property>
+        <property name="sponsorPaidAmount" type="big_decimal">
+            <column name="SponsorPaidAmount" precision="12" />
+        </property>
+    </class>
+    <sql-query name="callSponsorInvoiceProcedure">
+		<return alias="PatientSponsorInvoice" class="com.iis.rims.domain.PatientSponsorInvoice"/>
+		<![CDATA[
+			{call dbo.RIMS_SP_PatientSponsorInvoice(:patientId) }
+		]]>
+    </sql-query>
+</hibernate-mapping>

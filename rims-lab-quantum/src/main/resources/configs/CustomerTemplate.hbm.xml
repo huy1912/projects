@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.CustomerTemplate" table="tbl_CustomerTemplate" schema="mst" catalog="RIMSDB_NEW">
+        <id name="customerTemplateId" type="java.lang.Integer">
+            <column name="CustomerTemplateId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="organizationId" type="int" update="false">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="branchId" type="int" update="false">
+            <column name="BranchId" not-null="true" />
+        </property>
+        <property name="customerType" type="int" update="false">
+            <column name="CustomerType" not-null="true" />
+        </property>
+        <property name="customerId" type="int" update="false">
+            <column name="CustomerId" not-null="true" />
+        </property>
+        <property name="fileName" type="string" update="false">
+            <column name="FileName" length="256" not-null="true" />
+        </property>
+        <property name="format" type="string" update="false">
+            <column name="Format" length="20" not-null="true" />
+        </property>
+        <property name="size" type="long" update="false">
+            <column name="Size" />
+        </property>
+        <property name="content" type="binary" update="false">
+            <column name="Content" />
+        </property>
+        <property name="templateCustomerType" type="int" update="false">
+            <column name="TemplateCustomerType" not-null="true" length="100" />
+        </property>
+        <property name="templateCustomerId" type="int" update="false">
+            <column name="TemplateCustomerId" not-null="true" />
+        </property>
+        <property name="templateStartDate" type="timestamp" update="false">
+            <column name="TemplateStartDate" length="23" not-null="true" />
+        </property>
+        <property name="templateEndDate" type="timestamp" update="false">
+            <column name="TemplateEndDate" length="23" not-null="true" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

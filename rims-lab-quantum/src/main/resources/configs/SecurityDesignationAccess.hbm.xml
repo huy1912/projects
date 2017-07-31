@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.SecurityDesignationAccess" table="tbl_SecurityDesignationAccess" schema="ssp" catalog="RIMSDB_NEW">
+        
+        <id name="securityDesignationId" type="java.lang.Integer">
+            <column name="SecurityDesignationId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="designationLookupId" type="int">
+            <column name="DesignationLookupId" />
+        </property>
+        <property name="securityPrevilegeId" type="int">
+            <column name="SecurityPrevilegeId"/>
+        </property>
+    
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="false" />
+        </property>
+    </class>
+    <query name="deleteSecurityDesignationAccessByIds">
+     	<![CDATA[update SecurityDesignationAccess set deleted = true where securityDesignationId = :securityDesignationId]]>
+     </query>
+     <query name="getOrganizationDesignationAccessList">
+     	<![CDATA[select d.securityDesignationId as securityDesignationId, d.designationLookupId as designationLookupId, 
+     	d.securityPrevilegeId as securityPrevilegeId from SecurityDesignationAccess d, SecurityPrevilege h 
+     	where h.securityPrevilegeId = d.securityPrevilegeId and h.organizationId = :organizationId 
+     	and d.designationLookupId = :designationId and d.entityStatus = 1
+     	order by d.securityPrevilegeId ASC]]>
+     </query>
+</hibernate-mapping>

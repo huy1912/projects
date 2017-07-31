@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 24, 2014 4:15:31 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.EnquiryForm" table="tbl_EnquiryForm" schema="his" catalog="RIMSDB_NEW">
+        <id name="enquiryFormId" type="int">
+            <column name="EnquiryFormId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+        <property name="patientId" type="int">
+            <column name="PatientId" not-null="true" />
+        </property>
+        <property name="patientIc" type="string">
+            <column name="PatientIc" length="20" not-null="true" />
+        </property>
+        <property name="patientName" type="string">
+            <column name="PatientName" not-null="true" />
+        </property>
+        <property name="patientCurrentAddress" type="string">
+            <column name="PatientCurrentAddress" />
+        </property>
+        <property name="enquiryDate" type="timestamp">
+            <column name="EnquiryDate" length="23" not-null="true" />
+        </property>
+        <property name="enquiryTime" type="string">
+            <column name="EnquiryTime" length="10" not-null="true" />
+        </property>
+        <property name="callerName" type="string">
+            <column name="CallerName" not-null="true" />
+        </property>
+        <property name="relationshipToPatient" type="string">
+            <column name="RelationshipToPatient" length="20" not-null="true" />
+        </property>
+        <property name="contactNumber" type="string">
+            <column name="ContactNumber" length="20" not-null="true" />
+        </property>
+        <property name="virologyStatus" type="string">
+            <column name="VirologyStatus" />
+        </property>
+        <property name="civilServiceCard" type="java.lang.Boolean">
+            <column name="CivilServiceCard" not-null="true" />
+        </property>
+        <property name="mediShieldClaim" type="java.lang.Boolean">
+            <column name="MediShieldClaim" not-null="true" />
+        </property>
+        <property name="mediSaveClaim" type="java.lang.Boolean">
+            <column name="MediSaveClaim" not-null="true" />
+        </property>
+        <property name="fundingOrganization" type="java.lang.Boolean">
+            <column name="FundingOrganization" not-null="true" />
+        </property>
+        <property name="insuranceCompany" type="java.lang.Boolean">
+            <column name="InsuranceCompany" not-null="true" />
+        </property>
+        <property name="corporateCompany" type="java.lang.Boolean">
+            <column name="CorporateCompany" not-null="true" />
+        </property>
+        <property name="patientCoPayment" type="java.lang.Boolean">
+            <column name="PatientCoPayment" not-null="true" />
+        </property>
+        <property name="clinics" type="java.lang.Boolean">
+            <column name="Clinics" not-null="true" />
+        </property>
+        <property name="billingToOthers" type="string">
+            <column name="BillingToOthers" length="100" />
+        </property>
+        <property name="cash" type="java.lang.Boolean">
+            <column name="Cash" not-null="true" />
+        </property>
+        <property name="cheque" type="java.lang.Boolean">
+            <column name="Cheque" not-null="true" />
+        </property>
+        <property name="nets" type="java.lang.Boolean">
+            <column name="NETS" not-null="true" />
+        </property>
+        <property name="visa" type="java.lang.Boolean">
+            <column name="Visa" not-null="true" />
+        </property>
+        <property name="master" type="java.lang.Boolean">
+            <column name="Master" not-null="true" />
+        </property>
+        <property name="amex" type="java.lang.Boolean">
+            <column name="Amex" not-null="true" />
+        </property>
+        <property name="credit" type="java.lang.Boolean">
+            <column name="Credit" not-null="true" />
+        </property>
+        <property name="billing" type="java.lang.Boolean">
+            <column name="Billing" not-null="true" />
+        </property>
+        <property name="paymentTypeOthers" type="string">
+            <column name="PaymentTypeOthers" length="100" />
+        </property>
+        <property name="haemodialysis" type="java.lang.Boolean">
+            <column name="Haemodialysis" not-null="true" />
+        </property>
+        <property name="epo" type="java.lang.Boolean">
+            <column name="EPO" not-null="true" />
+        </property>
+        <property name="labtest" type="java.lang.Boolean">
+            <column name="LABTest" not-null="true" />
+        </property>
+        <property name="doctorConsultation" type="java.lang.Boolean">
+            <column name="DoctorConsultation" not-null="true" />
+        </property>
+        <property name="medication" type="java.lang.Boolean">
+            <column name="Medication" not-null="true" />
+        </property>
+        <property name="pdServices" type="java.lang.Boolean">
+            <column name="PDServices" not-null="true" />
+        </property>
+        <property name="serviceOthers" type="string">
+            <column name="ServiceOthers" length="100" />
+        </property>
+        <property name="blanket" type="java.lang.Boolean">
+            <column name="Blanket" not-null="true" />
+        </property>
+        <property name="meds" type="java.lang.Boolean">
+            <column name="MEDS" not-null="true" />
+        </property>
+        <property name="dischargedSummary" type="string">
+            <column name="DischargedSummary" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" />
+        </property>
+        <property name="followUp" type="string">
+            <column name="FollowUp" />
+        </property>
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

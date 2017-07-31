@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.SystemPropertyExternalConnection" table="tbl_SystemPropertyExternalConnection" 
+    	schema="com" catalog="RIMSDB_NEW">
+        <id name="systemPropertyExternalConnectionId" type="int">
+            <column name="SystemPropertyExternalConnectionId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="organizationId" type="java.lang.Integer">
+            <column name="OrganizationId" not-null="true"/>
+        </property>
+        <property name="branchId" type="java.lang.Integer">
+            <column name="BranchId" not-null="false"/>
+        </property>
+        <property name="connectionName" type="string">
+            <column name="ConnectionName" not-null="true" />
+        </property>
+        <property name="connectionDescription" type="string">
+            <column name="ConnectionDescription" not-null="true" length="256" />
+        </property>
+        <property name="hostName" type="string">
+            <column name="HostName" not-null="false" />
+        </property>
+        <property name="hostIp" type="string">
+            <column name="HostIp" not-null="false" />
+        </property>
+        <property name="connectingPort" type="string">
+            <column name="ConnectingPort" not-null="false" />
+        </property>
+        <property name="userName" type="string">
+            <column name="UserName" not-null="false" />
+        </property>
+        <property name="password" type="string">
+            <column name="Password" not-null="false" />
+        </property>
+        <property name="encryptedPassword" type="string">
+            <column name="EncryptedPassword" not-null="false" />
+        </property>
+        <property name="secureProtocolType" type="string">
+            <column name="SecureProtocolType" not-null="false" />
+        </property>
+        <property name="secureProtocolRemarks" type="string">
+            <column name="SecureProtocolRemarks" not-null="false" />
+        </property>
+        <property name="privateKeyPath" type="string">
+            <column name="PrivateKeyPath" not-null="false" />
+        </property>
+        <property name="privateKeyValue" type="string">
+            <column name="PrivateKeyValue" not-null="false" />
+        </property>
+        <property name="inFolderPath" type="string">
+            <column name="InFolderPath" not-null="false" />
+        </property>
+        <property name="outFolderPath" type="string">
+            <column name="OutFolderPath" not-null="false" />
+        </property>
+        <property name="errorFolderPath" type="string">
+            <column name="ErrorFolderPath" not-null="false" />
+        </property>
+        <property name="tcpIpOrSerialPort" type="int">
+            <column name="TcpIpOrSerialPort" not-null="false" />
+        </property>
+        <property name="secureProtocolEnabled" type="int">
+            <column name="SecureProtocolEnabled" not-null="false" />
+        </property>
+        <property name="haveFolderStructure" type="boolean">
+            <column name="HaveFolderStructure" not-null="false" />
+        </property>     
+        <property name="polling" type="boolean">
+            <column name="Polling" not-null="false" />
+        </property>
+        <property name="pollingIntervalInMinutes" type="int" update="false">
+            <column name="PollingIntervalInMinutes" not-null="false" />
+        </property>
+        <property name="pushing" type="boolean">
+            <column name="Pushing" not-null="false" />
+        </property>
+        <property name="pushingIntervalInMinutes" type="int" update="false">
+            <column name="PushingIntervalInMinutes" not-null="false" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.PrePostClinicalAssesment" table="tbl_PrePostClinicalAssesment" schema="dis" catalog="RIMSDB_NEW">
+        <id name="prePostClinicalAssesmentId" type="int">
+            <column name="PrePostClinicalAssesmentId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="registrationId" type="int">
+            <column name="RegistrationId" not-null="true" />
+        </property>
+        <property name="visitId" type="int">
+            <column name="VisitId" not-null="false" />
+        </property>
+        <property name="patientId" type="int">
+            <column name="PatientId" not-null="true" />
+        </property>
+        <property name="weightTodayPre" type="java.lang.Double">
+            <column name="WeightTodayPre" precision="8" scale="2" />
+        </property>
+        <property name="bodyTempraturePre" type="java.lang.Double">
+            <column name="BodyTempraturePre" precision="8" scale="2" />
+        </property>
+        <property name="bpSittingPre" type="string">
+            <column name="BpSittingPre" length="10" />
+        </property>
+        <property name="pulseSittingPre" type="string">
+            <column name="PulseSittingPre" length="10" />
+        </property>
+        <property name="bpStandingPre" type="string">
+            <column name="BpStandingPre" length="10" />
+        </property>
+        <property name="signedByPre" type="int" >
+            <column name="SignedByPre" not-null="false" />
+        </property>
+        <property name="signedTimePre" type="timestamp" >
+            <column name="SignedTimePre" length="23" not-null="false" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" length="50" />
+        </property>
+        <property name="weightTodayPost" type="java.lang.Double">
+            <column name="WeightTodayPost" precision="8" scale="2" />
+        </property>
+        <property name="bodyTempraturePost" type="java.lang.Double">
+            <column name="BodyTempraturePost" precision="8" scale="2" />
+        </property>
+        <property name="bpSittingPost" type="string">
+            <column name="BpSittingPost" length="10" />
+        </property>
+        <property name="pulseSittingPost" type="string">
+            <column name="PulseSittingPost" length="10" />
+        </property>
+        <property name="bpStandingPost" type="string">
+            <column name="BpStandingPost" length="10" />
+        </property>
+        <property name="pulseStandingPre" type="string">
+            <column name="PulseStandingPre" length="10" />
+        </property>
+        <property name="pulseStandingPost" type="string">
+            <column name="PulseStandingPost" length="10" />
+        </property>
+        <property name="signedByPost" type="int" >
+            <column name="SignedByPost" not-null="false" />
+        </property>
+        <property name="signedTimePost" type="timestamp" >
+            <column name="SignedTimePost" length="23" not-null="false" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="wheelChairBound" type="boolean">
+            <column name="WheelChairBound" not-null="false" />
+        </property>
+        <property name="wheelChairWeight" type="java.lang.Double">
+            <column name="WheelChairWeight" precision="8" scale="2" />
+        </property>
+        <property name="weightPre" type="java.lang.Double">
+            <column name="WeightPre" precision="8" scale="2" />
+        </property>
+        <property name="weightPost" type="java.lang.Double">
+            <column name="WeightPost" precision="8" scale="2" />
+        </property>
+        <property name="dryWeight" type="java.lang.Double">
+            <column name="DryWeight" precision="8" scale="2" />
+        </property>
+        <property name="lastPostWeight" type="java.lang.Double">
+            <column name="LastPostWeight" precision="8" scale="2" />
+        </property>
+        <property name="interDialysisWeightGain" type="java.lang.Double">
+            <column name="InterDialysisWeightGain" precision="8" scale="2" />
+        </property>
+        <property name="weightDifference" type="java.lang.Double">
+            <column name="WeightDifference" precision="8" scale="2" />
+        </property>
+        <property name="prePostWeightLoss" type="java.lang.Double">
+            <column name="PrePostWeightLoss" precision="8" scale="2" />
+        </property>
+    </class>
+</hibernate-mapping>

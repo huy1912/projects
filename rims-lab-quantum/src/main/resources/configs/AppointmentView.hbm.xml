@@ -1,0 +1,238 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+	<class name="com.iis.rims.domain.AppointmentView" table="tbl_Appointment"
+		schema="his" catalog="RIMSDB_NEW">
+		<id name="appointmentId" type="int">
+			<column name="AppointmentId" />
+		</id>
+		<property name="organizationId" type="int">
+			<column name="OrganizationId" not-null="true" />
+		</property>
+		<property name="branchId" type="int">
+			<column name="BranchId" not-null="true" />
+		</property>
+		<property name="serviceClassId" type="int">
+			<column name="ServiceClassId" not-null="true" />
+		</property>
+		<property name="patientPrescriptionId" type="java.lang.Integer">
+			<column name="patientPrescriptionId" />
+		</property>
+		<property name="appointmentDate" type="timestamp">
+			<column name="AppointmentDate" length="23" not-null="true" />
+		</property>
+		<property name="appointmentStartTime" type="string">
+			<column name="AppointmentStartTime" length="10" not-null="true" />
+		</property>
+		<property name="appointmentEndTime" type="string">
+			<column name="AppointmentEndTime" length="10" not-null="true" />
+		</property>
+		<property name="patientId" type="java.lang.Integer">
+			<column name="PatientId" />
+		</property>
+		<property name="patientName" type="string">
+			<column name="PatientName" length="100" not-null="true" />
+		</property>
+		<property name="patientIc" type="string">
+			<column name="PatientIC" length="20" not-null="true" />
+		</property>
+		<property name="patientContactNo" type="string">
+			<column name="PatientContactNo" length="50" not-null="true" />
+		</property>
+		<property name="referringDoctorId" type="java.lang.Integer">
+			<column name="ReferringDoctorId" />
+		</property>
+		<property name="referringDoctorName" type="string">
+			<column name="ReferringDoctorName" length="100" />
+		</property>
+		<property name="referringClinicId" type="java.lang.Integer">
+			<column name="ReferringClinicID" />
+		</property>
+		<property name="referringClinicName" type="string">
+			<column name="ReferringClinicName" length="100" />
+		</property>
+		<property name="referringClinicDetails" type="string">
+			<column name="ReferringClinicDetails" />
+		</property>
+		<property name="specialIndicationsToPatient" type="string">
+			<column name="SpecialIndicationsToPatient" />
+		</property>
+		<property name="appointmentStatus" type="int">
+			<column name="AppointmentStatus" not-null="true" />
+		</property>
+		<property name="loginBranchId" type="int">
+			<column name="LoginBranchId" not-null="true" />
+		</property>
+		<property name="remarks" type="string">
+			<column name="Remarks" />
+		</property>
+		<property name="entityStatus" type="boolean">
+			<column name="EntityStatus" not-null="true" />
+		</property>
+		<property name="createdBy" type="int" update="false">
+			<column name="CreatedBy" not-null="true" />
+		</property>
+		<property name="createdDate" type="timestamp" update="false">
+			<column name="CreatedDate" length="23" not-null="true" />
+		</property>
+		<property name="lastUpdatedBy" type="int">
+			<column name="LastUpdatedBy" not-null="true" />
+		</property>
+		<property name="lastUpdatedDate" type="timestamp">
+			<column name="LastUpdatedDate" length="23" not-null="true" />
+		</property>
+
+		<property name="appointmentDetailId" type="int">
+			<column name="AppointmentDetailId" />
+		</property>
+		<property name="equipmentDetailId" type="int">
+			<column name="EquipmentDetailId" not-null="true" />
+		</property>
+		<property name="serviceId" type="int">
+			<column name="ServiceId" not-null="true" />
+		</property>
+		<property name="procedureId" type="int">
+			<column name="ProcedureId" not-null="true" />
+		</property>
+		<property name="numberOfSlots" type="int">
+			<column name="NumberOfSlots" not-null="true" />
+		</property>
+		<property name="examinationStartTime" type="timestamp">
+			<column name="ExaminationStartTime" length="23" not-null="true" />
+		</property>
+		<property name="examinationEndTime" type="timestamp">
+			<column name="ExaminationEndTime" length="23" not-null="true" />
+		</property>
+		<property name="approximateMinutes" type="java.lang.Integer">
+			<column name="ApproximateMinutes" />
+		</property>
+		<property name="dtlEntityStatus" type="boolean">
+			<column name="dtlEntityStatus" not-null="true" />
+		</property>
+		<property name="dtlCreatedBy" type="int">
+			<column name="dtlCreatedBy" not-null="true" />
+		</property>
+		<property name="dtlCreatedDate" type="timestamp">
+			<column name="dtlCreatedDate" length="23" not-null="true" />
+		</property>
+		<property name="dtlLastUpdatedBy" type="int">
+			<column name="dtlLastUpdatedBy" not-null="true" />
+		</property>
+		<property name="dtlLastUpdatedDate" type="timestamp">
+			<column name="dtlLastUpdatedDate" length="23" not-null="true" />
+		</property>
+		<property name="inPatient" type="boolean">
+			<column name="InPatient" not-null="true" />
+		</property>
+	</class>
+	<sql-query name="findAppointmentNativeSQL">
+		<![CDATA[SELECT appt.AppointmentId, appt.OrganizationId, appt.BranchId, appt.ServiceClassId, 
+		appt.AppointmentDate, appt.AppointmentStartTime, appt.AppointmentEndTime,
+		appt.PatientId, appt.PatientName, appt.PatientIC, appt.PatientContactNo,
+		appt.ReferringDoctorId, appt.ReferringDoctorName, appt.ReferringClinicID,
+		appt.ReferringClinicName, appt.ReferringClinicDetails, appt.SpecialIndicationsToPatient,
+		appt.AppointmentStatus, appt.LoginBranchId, appt.EntityStatus, appt.CreatedBy, appt.CreatedDate,
+		appt.LastUpdatedBy, appt.LastUpdatedDate, apptDtl.AppointmentDetailId, apptDtl.EquipmentDetailId,
+		apptDtl.ServiceId, apptDtl.ProcedureId, apptDtl.NumberOfSlots, apptDtl.ExaminationStartTime,
+		apptDtl.ExaminationEndTime, apptDtl.ApproximateMinutes, apptDtl.EntityStatus AS dtlEntityStatus,
+		apptDtl.CreatedBy AS dtlCreatedBy, apptDtl.CreatedDate AS dtlCreatedDate, apptDtl.LastUpdatedBy AS dtlLastUpdatedBy,
+		apptDtl.LastUpdatedDate AS dtlLastUpdatedDate
+		FROM his.tbl_Appointment AS appt INNER JOIN his.tbl_AppointmentDetail AS apptDtl
+		ON appt.AppointmentId = apptDtl.AppointmentId
+		
+		]]>
+	</sql-query>
+	
+    <query name="findAppointmentByEquipmentId">
+		<![CDATA[
+				SELECT new com.iis.rims.domain.AppointmentView(
+							mst.appointmentId, mst.organizationId, mst.branchId, mst.serviceClassId, 
+							mst.patientPrescriptionId, mst.appointmentDate,	mst.appointmentStartTime,
+							mst.appointmentEndTime,	mst.patientId, mst.patientName,
+							mst.patientIc, mst.patientContactNo, mst.referringDoctorId,
+							mst.referringDoctorName, mst.referringClinicId,	mst.referringClinicName,
+							mst.referringClinicDetails,	mst.specialIndicationsToPatient, mst.appointmentStatus,
+							mst.loginBranchId, mst.remarks, mst.entityStatus,
+							mst.createdBy, mst.createdDate,	mst.lastUpdatedBy,
+							mst.lastUpdatedDate, dtl.appointmentDetailId, dtl.equipmentDetailId,
+							dtl.serviceId, dtl.procedureId,	dtl.numberOfSlots,
+							dtl.examinationStartTime, dtl.examinationEndTime, dtl.approximateMinutes,
+							dtl.entityStatus, dtl.createdBy, dtl.createdDate,
+							dtl.lastUpdatedBy, dtl.lastUpdatedDate,	pat.dateOfBirth, pat.gender, mst.inPatient)						
+							FROM Appointment mst, AppointmentDetail dtl , Patient pat
+							WHERE mst.appointmentId = dtl.appointmentId
+							and mst.patientId = pat.patientId 
+							and dtl.entityStatus = :activeEntityStatus and mst.entityStatus = :activeEntityStatus
+							and dtl.equipmentDetailId =:equipmentDetailId
+							and mst.appointmentStatus = :appointmentStatus
+		]]>
+	</query>
+	<query name="findAppointmentByDateEquipmentId">
+		<![CDATA[
+				SELECT new com.iis.rims.domain.AppointmentView(
+							mst.appointmentId, mst.organizationId, mst.branchId, mst.serviceClassId, 
+							mst.patientPrescriptionId, mst.appointmentDate,	mst.appointmentStartTime,
+							mst.appointmentEndTime,	mst.patientId, mst.patientName,
+							mst.patientIc, mst.patientContactNo, mst.referringDoctorId,
+							mst.referringDoctorName, mst.referringClinicId,	mst.referringClinicName,
+							mst.referringClinicDetails,	mst.specialIndicationsToPatient, mst.appointmentStatus,
+							mst.loginBranchId, mst.remarks, mst.entityStatus,
+							mst.createdBy, mst.createdDate,	mst.lastUpdatedBy,
+							mst.lastUpdatedDate, dtl.appointmentDetailId, dtl.equipmentDetailId,
+							dtl.serviceId, dtl.procedureId,	dtl.numberOfSlots,
+							dtl.examinationStartTime, dtl.examinationEndTime, dtl.approximateMinutes,
+							dtl.entityStatus, dtl.createdBy, dtl.createdDate,
+							dtl.lastUpdatedBy, dtl.lastUpdatedDate,	pat.dateOfBirth, pat.gender, mst.inPatient)							
+							FROM Appointment mst, AppointmentDetail dtl , Patient pat
+							WHERE mst.appointmentId = dtl.appointmentId
+							and mst.patientId = pat.patientId 
+							and dtl.entityStatus = :activeEntityStatus and mst.entityStatus = :activeEntityStatus
+							and dtl.equipmentDetailId =:equipmentDetailId
+							and mst.appointmentStatus = :appointmentStatus
+							and mst.appointmentDate between :appointmentStartDate and :appointmentEndDate
+		]]>
+	</query> 	
+   <query name="findAppointment">
+		<![CDATA[
+				SELECT new com.iis.rims.domain.AppointmentView(
+							mst.appointmentId, mst.organizationId, mst.branchId, mst.serviceClassId, 
+							mst.patientPrescriptionId, mst.appointmentDate,	mst.appointmentStartTime,
+							mst.appointmentEndTime, mst.patientId, mst.patientName,	mst.patientIc,
+							mst.patientContactNo, mst.referringDoctorId, mst.referringDoctorName,
+							mst.referringClinicId, mst.referringClinicName,	mst.referringClinicDetails,						
+							mst.specialIndicationsToPatient, mst.appointmentStatus, mst.loginBranchId,
+							mst.remarks, mst.entityStatus, mst.createdBy, mst.createdDate,
+							mst.lastUpdatedBy, mst.lastUpdatedDate,	dtl.appointmentDetailId,						
+							dtl.equipmentDetailId, dtl.serviceId, dtl.procedureId,
+							dtl.numberOfSlots,	dtl.examinationStartTime, dtl.examinationEndTime, 							
+							dtl.approximateMinutes,	dtl.entityStatus, dtl.createdBy,
+							dtl.createdDate, dtl.lastUpdatedBy,	dtl.lastUpdatedDate,
+							pat.dateOfBirth, pat.gender, mst.inPatient)
+							FROM Appointment mst, AppointmentDetail dtl , Patient pat 							
+							WHERE mst.appointmentId = dtl.appointmentId 
+							and mst.patientId = pat.patientId 
+							and dtl.entityStatus = :activeEntityStatus and mst.entityStatus = :activeEntityStatus
+		]]>
+	</query> 	
+	
+	   <query name="findAppointmentDetails">
+		<![CDATA[
+							SELECT new com.iis.rims.domain.AppointmentDetailView(
+							mst.appointmentId, dtl.appointmentDetailId,	br.branchId,
+							br.branchName, dtl.serviceId, ser.serviceName,
+							dtl.equipmentDetailId, equip.equipmentDetailName, dtl.procedureId,
+							pro.procedureName, dtl.numberOfSlots, dtl.examinationStartTime, 
+							dtl.examinationEndTime,	dtl.approximateMinutes,	dtl.specialIndicationsToPatient,
+							dtl.entityStatus, dtl.createdBy, dtl.createdDate, dtl.lastUpdatedBy, dtl.lastUpdatedDate)			
+							FROM Appointment mst, AppointmentDetail dtl, Branch br, Service ser, EquipmentDetail equip, Procedure pro 
+							WHERE mst.appointmentId = :appointmentId 
+							and mst.appointmentId = dtl.appointmentId 
+							and mst.branchId = br.branchId 
+							and dtl.serviceId = ser.serviceId 
+							and dtl.equipmentDetailId = equip.equipmentDetailId
+							and dtl.procedureId = pro.procedureId 
+		]]>
+	</query> 	
+</hibernate-mapping>

@@ -1,8 +1,14 @@
 package com.iis.rims.lab.quantum;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import org.apache.commons.io.FileUtils;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,7 +21,13 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.tempuri.ArrayOfString;
 import org.tempuri.LISIntegrationWebserviceSoap;
 
+import com.iis.rims.common.SortDirection;
+import com.iis.rims.common.RIMSConstants.LabOrderStatus;
+import com.iis.rims.domain.LabOrderDetail;
+import com.iis.rims.hibernate.dao.LabOrderDetailDAO;
+import com.iis.rims.lab.quantum.handler.QuantumLabUploadHandler;
 import com.iis.rims.lab.quantum.message.EncodeMessage;
+import com.iis.rims.lab.quantum.orm.MSG;
 
 
 //@SpringBootApplication(scanBasePackages = {"hello", "spring.boot.example"})
@@ -52,9 +64,35 @@ public class SpringBootLabQuantumApplication extends SpringBootServletInitialize
 //					FileUtils.writeByteArrayToFile(new File("report2.pdf"), data);
 //				}
 				//String xmlData = "<![CDATA[" + EncodeMessage.encodeMsg() + "]]>";
-				String xmlData = EncodeMessage.encodeMsg();
-				String ret = integrationWebserviceSoap.pushOrder(xmlData , "RenalTeam", "renal@123");
-				System.err.println(ret);
+//				String xmlData = EncodeMessage.encodeMsg();
+//				String ret = integrationWebserviceSoap.pushOrder(xmlData , "RenalTeam", "renal@123");
+//				System.err.println(ret);
+				LabOrderDetailDAO labOrderDetailDAO = new LabOrderDetailDAO();
+				List<LabOrderDetail> list = labOrderDetailDAO.findByCriteria("labOrderDetailId", SortDirection.ASC,
+						Restrictions.eq("orderStatus", LabOrderStatus.PN.ordinal()),
+						Restrictions.eq("labCustomerId", 65),
+						Restrictions.isNull("labOrderNumber"));
+				System.err.println(list.size());
+				Map<Integer, List<LabOrderDetail>> orders = new LinkedHashMap<>();
+				// Split the order
+				for (LabOrderDetail detail : list) {
+					Integer labOrderId = detail.getLabOrderId();
+					List<LabOrderDetail> details = orders.get(labOrderId);
+					if (details == null) {
+						details = new ArrayList<>();
+						orders.put(labOrderId, details);
+					}
+					details.add(detail);
+				}
+				
+				System.err.println(orders.size());
+				
+				for (Entry<Integer, List<LabOrderDetail>> entry : orders.entrySet()) {
+					MSG orderMessage = QuantumLabUploadHandler.convertToOrderMessage(entry.getKey(), entry.getValue(), LabOrderStatus.PN);
+					String xmlData = EncodeMessage.encodeMsg(orderMessage);
+					String ret = integrationWebserviceSoap.pushOrder(xmlData , "RenalTeam", "renal@123");
+					System.err.println(ret);
+				}
 				
 			}
 		};

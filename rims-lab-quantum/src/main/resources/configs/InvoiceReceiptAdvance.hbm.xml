@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 22, 2014 11:04:52 AM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.InvoiceReceiptAdvance" table="tbl_InvoiceReceiptAdvance" schema="acc" catalog="RIMSDB_NEW">
+        <id name="invoiceReceiptAdvanceId" type="java.lang.Integer">
+            <column name="InvoiceReceiptAdvanceId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="invoiceReceiptId" type="int">
+            <column name="InvoiceReceiptId" not-null="false" />
+        </property>
+        <property name="statementReceiptId" type="int">
+            <column name="StatementReceiptId" not-null="false" />
+        </property>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="false" />
+        </property>
+        <property name="billToTypeId" type="int">
+            <column name="BillToTypeId" not-null="true" />
+        </property>
+        <property name="billToId" type="int">
+            <column name="BillToId" not-null="true" />
+        </property>
+        <property name="patientId" type="java.lang.Integer">
+            <column name="PatientId" />
+        </property>
+        <property name="advanceAmount" type="big_decimal">
+            <column name="AdvanceAmount" precision="12" not-null="true" />
+        </property>
+        <property name="advanceBalance" type="big_decimal">
+            <column name="AdvanceBalance" precision="12" not-null="true" />
+        </property>
+        <property name="gstpercent" type="big_decimal">
+            <column name="GSTPercent" precision="12" />
+        </property>
+        <property name="gstamount" type="big_decimal">
+            <column name="GSTAmount" precision="12" />
+        </property>
+        <property name="receiptDate" type="timestamp">
+            <column name="ReceiptDate" length="23" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="advanceType" type="int">
+            <column name="AdvanceType" not-null="true" />
+        </property>
+        <property name="ardownPaymentInvoiceDocumentId" type="int">
+            <column name="ARDownPaymentInvoiceDocumentId" not-null="true" />
+        </property>
+        <property name="ardownPaymentInvoicePostedTime" type="timestamp">
+            <column name="ARDownPaymentInvoicePostedTime" length="23" not-null="true" />
+        </property>
+        <property name="ardownPaymentIncomingPaymentDocumentId" type="int">
+            <column name="ARDownPaymentIncomingPaymentDocumentId" not-null="true" />
+        </property>
+        <property name="ardownPaymentIncomingPaymentPostedTime" type="timestamp">
+            <column name="ARDownPaymentIncomingPaymentPostedTime" length="23" not-null="true" />
+        </property>
+        <property name="advanceCustomerType" type="int">
+            <column name="AdvanceCustomerType" not-null="false" />
+        </property>
+        <property name="paymentStatementDetailId" type="int">
+            <column name="PaymentStatementDetailId" not-null="false" />
+        </property>
+        <property name="detailCustomerId" type="int">
+            <column name="DetailCustomerId" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 29, 2013 5:36:07 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.SecurityPrevilege" table="tbl_SecurityPrevilege" schema="ssp" catalog="RIMSDB_NEW">
+        <id name="securityPrevilegeId" type="java.lang.Integer">
+            <column name="SecurityPrevilegeId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="previlegeName" type="string">
+            <column name="PrevilegeName" length="50" />
+        </property>
+        <property name="previlegeDescription" type="string">
+            <column name="PrevilegeDescription" length="100" />
+        </property>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="createdBy" type="java.lang.Integer" update="false">
+            <column name="CreatedBy" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" />
+        </property>
+        <property name="lastUpdatedBy" type="java.lang.Integer">
+            <column name="LastModifiedBy" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastModifiedDate" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

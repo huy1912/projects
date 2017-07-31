@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 13, 2013 2:36:23 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.ProcedureCustomerBranchPrice" table="tbl_ProcedureCustomerBranchPrice" schema="mst" catalog="RIMSDB_NEW">
+        <id name="customerBranchPriceId" type="java.lang.Integer">
+            <column name="CustomerBranchPriceId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="customerId" type="int">
+            <column name="CustomerId" not-null="true" />
+        </property>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+        <property name="serviceId" type="int">
+            <column name="ServiceId" not-null="true" />
+        </property>
+        <property name="procedureId" type="int">
+            <column name="ProcedureId" not-null="true" />
+        </property>
+        <property name="billingPrice" type="big_decimal">
+            <column name="BillingPrice" scale="4" not-null="true" />
+        </property>
+        <property name="cashPrice" type="big_decimal">
+            <column name="CashPrice" scale="4" not-null="true" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

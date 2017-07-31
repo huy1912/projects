@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.Notification" table="tbl_Notification" schema="cmn" catalog="RIMSDB_NEW">
+        <id name="notificationId" type="int">
+            <column name="NotificationId" />
+            <generator class="native"></generator>
+        </id>
+         <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="reminderStatus" type="int">
+            <column name="ReminderStatus" not-null="true" />
+        </property>
+        <property name="nricNumber" type="string">
+            <column name="NricNumber" length="40" />
+        </property>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+        <property name="patientId" type="int">
+            <column name="PatientId" not-null="true" />
+        </property>
+       
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="printCount" type="int">
+            <column name="PrintCount" not-null="true" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" length="40" />
+        </property>
+    </class>
+</hibernate-mapping>

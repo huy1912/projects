@@ -34,6 +34,15 @@ public class EncodeMessage {
 		return xmlData;
 	}
 	
+	public static String encodeMsg(MSG msg) throws Exception {
+		StringWriter stringWriter = new StringWriter();
+		JAXB.marshal(msg, stringWriter);
+		String xmlData = stringWriter.toString();
+		xmlData = xmlData.substring(xmlData.indexOf("\n") + 1);
+		
+		return xmlData;
+	}
+	
 	public static String encodeMsg(SubmitOrder order) throws Exception {
 		Date today = new Date();
 		MSG msg = new MSG();
@@ -71,13 +80,7 @@ public class EncodeMessage {
 		obr.setOBRPlacerOrderNumber(order.getObrOrderNumber());
 		observationRequest.getOBR().add(obr);
 		msg.setObservationRequest(observationRequest);
-//		msg = JAXB.unmarshal(new File("ORM_sample.xml"), MSG.class);
-		StringWriter stringWriter = new StringWriter();
-		JAXB.marshal(msg, stringWriter);
-		String xmlData = stringWriter.toString();
-		xmlData = xmlData.substring(xmlData.indexOf("\n") + 1);
-		
-		return xmlData;
+		return encodeMsg(msg);
 	}
 	
 	public static void main(String[] args) throws Exception {

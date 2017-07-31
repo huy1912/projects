@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.SystemModule" table="tbl_SystemModule" schema="ssp" catalog="RIMSDB_NEW">
+        <id name="systemModuleId" type="int">
+            <column name="SystemModuleId" />
+            <generator class="assigned" />
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="moduleName" type="string">
+            <column name="ModuleName" length="100" not-null="true" />
+        </property>
+        <property name="moduleDescription" type="string">
+            <column name="ModuleDescription" length="256" />
+        </property>
+        <property name="moduleGroupId" type="java.lang.Integer">
+            <column name="ModuleGroupID" />
+        </property>
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="createdBy" type="java.lang.Integer" update="false">
+            <column name="CreatedBy" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" />
+        </property>
+        <property name="lastModifiedBy" type="java.lang.Integer">
+            <column name="LastModifiedBy" />
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="LastModifiedDate" length="23" />
+        </property>
+    </class>
+</hibernate-mapping>

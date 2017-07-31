@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 20, 2013 6:50:53 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+	<class name="com.iis.rims.domain.dto.InventoryItemDTO" schema="cmn" catalog="RIMSDB_NEW" table="tbl_InventoryItem">
+		<id name="inventoryItemId" type="java.lang.Integer">
+			<column name="InventoryItemId" />
+			<generator class="native"></generator>
+		</id>
+		<property name="organizationId" type="java.lang.Integer">
+			<column name="OrganizationId" />
+		</property>
+		<property name="branchId" type="java.lang.Integer">
+			<column name="BranchId" />
+		</property>
+		<property name="serviceId" type="java.lang.Integer">
+			<column name="ServiceId" />
+		</property>
+		<property name="serviceName" type="string">
+			<column name="ServiceName" length="50" />
+		</property>
+		<property name="procedureId" type="java.lang.Integer">
+			<column name="ProcedureId" />
+		</property>
+		<property name="procedureName" type="string">
+			<column name="ProcedureName" length="50" />
+		</property>
+		<property name="detailCount" type="java.lang.Integer">
+			<column name="DetailCount" />
+		</property>
+		<property name="consumedQuantity" type="java.lang.Double">
+			<column name="ConsumedQuantity" precision="18" scale="2" />
+		</property>
+		<property name="dialyzer" type="java.lang.Integer">
+			<column name="Dialyzer" />
+		</property>
+		<property name="dialyzerName" type="string">
+			<column name="dialyzerName" length="100" />
+		</property>
+		<!-- SAPB1 Integration -->
+		<property name="sapb1InventoryItemCode" type="string">
+			<column name="sapb1InventoryItemCode" length="30" />
+		</property>
+		<property name="sapb1InventoryItemRemarks" type="string">
+			<column name="sapb1InventoryItemRemarks" length="250" />
+		</property>
+		<property name="sapb1Posted" type="java.lang.Boolean">
+			<column name="sapb1Posted" />
+		</property>
+		<property name="sapb1PostedDate" type="timestamp">
+			<column name="sapb1PostedDate" length="23" />
+		</property>
+		<property name="sapb1ReferenceRemarks" type="string">
+			<column name="sapb1ReferenceRemarks" length="50" />
+		</property>
+		<property name="confirmed" type="java.lang.Boolean">
+			<column name="Confirmed" />
+		</property>
+		<property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+	</class>
+	 <sql-query name="RIMS_SP_Get_InventoryItemList">
+		<![CDATA[
+			{ call dbo.RIMS_SP_Get_InventoryItemList(:organizationId, :branchId) }
+		]]>
+	</sql-query>
+</hibernate-mapping>

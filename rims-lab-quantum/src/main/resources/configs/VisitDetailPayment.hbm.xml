@@ -1,0 +1,272 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 10, 2013 7:51:32 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.VisitDetailPayment" table="tbl_VisitDetailPayment" schema="his" catalog="RIMSDB_NEW">
+        <id name="visitDetailPaymentId" type="int">
+            <column name="VisitDetailPaymentId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="visitDetailId" type="int">
+            <column name="VisitDetailId" not-null="true" />
+        </property>
+        <property name="accessionNumber" type="string">
+            <column name="AccessionNumber" length="20" not-null="true" />
+        </property>
+        <property name="billToType" type="int">
+            <column name="BillToType" not-null="true" />
+        </property>
+        <property name="billToId" type="int">
+            <column name="BillToId" not-null="true" />
+        </property>
+        <property name="procedureId" type="int">
+            <column name="ProcedureId" not-null="true" />
+        </property>
+        <property name="procedureName" type="string">
+            <column name="ProcedureName" length="150" not-null="true" />
+        </property>
+        <property name="priceBasedOn" type="java.lang.Integer">
+            <column name="PriceBasedOn" />
+        </property>
+        <property name="listedBillPrice" type="big_decimal">
+            <column name="ListedBillPrice" precision="12" />
+        </property>
+        <property name="listedCashPrice" type="big_decimal">
+            <column name="ListedCashPrice" precision="12" />
+        </property>
+        <property name="packageTypeApplied" type="java.lang.Integer">
+            <column name="PackageTypeApplied" />
+        </property>
+        <property name="referringPackegeId" type="java.lang.Integer">
+            <column name="ReferringPackegeId" />
+        </property>
+        <property name="referringPackageDetailId" type="java.lang.Integer">
+            <column name="ReferringPackageDetailId" />
+        </property>
+        <property name="packageDiscountType" type="java.lang.Integer">
+            <column name="PackageDiscountType" />
+        </property>
+        <property name="packageDiscountValue" type="big_decimal">
+            <column name="PackageDiscountValue" precision="12" />
+        </property>
+        <property name="packageDiscountAmount" type="big_decimal">
+            <column name="PackageDiscountAmount" precision="12" />
+        </property>
+        <property name="packageCashPrice" type="big_decimal">
+            <column name="PackageCashPrice" precision="12" />
+        </property>
+        <property name="packageBillPrice" type="big_decimal">
+            <column name="PackageBillPrice" precision="12" />
+        </property>
+        <property name="cashDiscountValue" type="big_decimal">
+            <column name="CashDiscountValue" precision="12" />
+        </property>
+        <property name="billDiscountValue" type="big_decimal">
+            <column name="BillDiscountValue" precision="12" />
+        </property>
+        <property name="procedurePrice" type="big_decimal">
+            <column name="ProcedurePrice" precision="12" />
+        </property>
+        <property name="patientMustPay" type="string">
+            <column name="PatientMustPay" length="1" />
+        </property>
+        <property name="patientDiscountType" type="java.lang.Integer">
+            <column name="PatientDiscountType" />
+        </property>
+        <property name="discountType" type="java.lang.Integer">
+            <column name="DiscountType" />
+        </property>
+        <property name="manualDiscountType" type="java.lang.Integer">
+            <column name="ManualDiscountType" />
+        </property>
+        <property name="manualDiscountValue" type="big_decimal">
+            <column name="ManualDiscountValue" precision="12" />
+        </property>
+        <property name="manualDiscountAmount" type="big_decimal">
+            <column name="ManualDiscountAmount" precision="12" />
+        </property>
+        <property name="manualDiscountApproveRequestedBy" type="java.lang.Integer">
+            <column name="ManualDiscountApproveRequestedBy" />
+        </property>
+        <property name="manualDiscountApprovedBy" type="java.lang.Integer">
+            <column name="ManualDiscountApprovedBy" />
+        </property>
+        <property name="manualDiscountReason" type="string">
+            <column name="ManualDiscountReason" length="250" />
+        </property>
+        <property name="quantity" type="int">
+            <column name="Quantity" not-null="true" />
+        </property>
+        <property name="netAmount" type="big_decimal">
+            <column name="NetAmount" precision="12" not-null="true" />
+        </property>
+        <property name="netAmountSign" type="int">
+            <column name="NetAmountSign" not-null="true" />
+        </property>
+        <property name="documentType" type="string">
+            <column name="DocumentType" length="10" />
+        </property>
+        <property name="documentInvoiceNumber" type="string">
+            <column name="DocumentInvoiceNumber" length="20" />
+        </property>
+        <property name="documentReceiptNumber" type="string">
+            <column name="DocumentReceiptNumber" length="20" />
+        </property>
+        <property name="referringDocumentType" type="string">
+            <column name="ReferringDocumentType" length="10" />
+        </property>
+        <property name="referringDocumentInvoiceNumber" type="string">
+            <column name="ReferringDocumentInvoiceNumber" length="20" />
+        </property>
+        <property name="batchId" type="string">
+            <column name="BatchId" length="20" />
+        </property>
+        <property name="recordLock" type="boolean">
+            <column name="RecordLock" not-null="true" />
+        </property>
+        <property name="confirmed" type="boolean">
+            <column name="Confirmed" not-null="true" />
+        </property>
+        <property name="paymentStatus" type="int">
+            <column name="PaymentStatus" not-null="true" />
+        </property>
+        <property name="paymentIncluded" type="boolean">
+            <column name="paymentIncluded" not-null="true" />
+        </property>
+        <property name="gstIncluded" type="boolean">
+            <column name="GstIncluded" not-null="true" />
+        </property>
+        <property name="paymentAmount" type="big_decimal">
+            <column name="PaymentAmount" precision="12" not-null="true" />
+        </property>
+        <property name="outstandingGst" type="big_decimal">
+            <column name="OutstandingGst" precision="12" not-null="true" />
+        </property>
+        <property name="outstandingBalance" type="big_decimal">
+            <column name="OutstandingBalance" precision="12" not-null="true" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="equipmentDetailId" type="java.lang.Integer">
+            <column name="EquipmentDetailId" />
+        </property>
+        <property name="equipmentDetailName" type="string">
+            <column name="EquipmentDetailName" length="50" />
+        </property>
+        <property name="serviceId" type="java.lang.Integer">
+            <column name="ServiceId" />
+        </property>
+        <property name="serviceName" type="string">
+            <column name="ServiceName" length="50" />
+        </property>
+        <property name="paymentSponsors" type="string">
+            <column name="PaymentSponsors" length="10" />
+        </property>
+        <property name="gstAmount" type="big_decimal">
+            <column name="GSTAmount" precision="12" not-null="true" />
+        </property>
+        <property name="gstPercent" type="big_decimal">
+            <column name="GSTPercent" precision="12" not-null="true" />
+        </property>
+        <property name="sapb1InvoiceDocumentId" type="java.lang.Long">
+            <column name="sapb1InvoiceDocumentId" />
+        </property>
+        <property name="sapb1PostedDate" type="timestamp">
+            <column name="sapb1PostedDate" length="23" />
+        </property>
+        <property name="sapb1Posted" type="java.lang.Boolean">
+            <column name="sapb1Posted" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+    <query name="paymentByVisitId">
+     	<![CDATA[SELECT p FROM VisitDetailPayment p, VisitDetail v 
+     	WHERE p.visitDetailId = v.visitDetailId AND v.visitId = :visitId ]]>
+     </query>
+     <!-- Update with store procedure -->
+     <query name="getVisitProcedure">
+		<![CDATA[
+				SELECT visit, prod.paymentSponsors
+				FROM VisitDetail visit, Procedure prod
+				WHERE visit.visitId=:visitId
+				AND visit.procedureId = prod.procedureId
+		]]>
+    </query>
+    
+    <sql-query name="RIMS_SP_PatientVisitPayment">
+    	<!-- 
+		<return alias="visitDetailPaymentEx" class="com.iis.rims.domain.VisitDetailPaymentEx"/>
+    	 -->
+    	<return-scalar column="visitDetailPaymentId" type="int" />
+		<return-scalar column="visitDetailId" type="int" />
+		<return-scalar column="accessionNumber" type="java.lang.String" />
+		<return-scalar column="billToType" type="int" />
+		<return-scalar column="billToId" type="int" />
+		<return-scalar column="serviceId" type="java.lang.Integer" />
+		<return-scalar column="serviceName" type="java.lang.String" />
+		<return-scalar column="procedureId" type="int" />
+		<return-scalar column="procedureName" type="java.lang.String" />
+		<return-scalar column="equipmentDetailId" type="int" />
+		<return-scalar column="equipmentDetailName" type="java.lang.String" />
+		<return-scalar column="priceBasedOn" type="java.lang.Integer" />
+		<return-scalar column="listedBillPrice" type="java.math.BigDecimal" />
+		<return-scalar column="listedCashPrice" type="java.math.BigDecimal" />
+		<return-scalar column="paymentSponsors" type="java.lang.String" />
+		<return-scalar column="quantity" type="int" />
+		<return-scalar column="netAmount" type="java.math.BigDecimal" />
+		<return-scalar column="netAmountSign" type="int" />
+		<return-scalar column="recordLock" type="boolean" />
+		<return-scalar column="confirmed" type="boolean" />
+		<return-scalar column="paymentStatus" type="int" />
+		<return-scalar column="entityStatus" type="boolean" />
+		<return-scalar column="outstandingGst" type="java.math.BigDecimal" />
+		<return-scalar column="outstandingBalance" type="java.math.BigDecimal" />
+		<return-scalar column="paymentAmount" type="java.math.BigDecimal" />
+		<return-scalar column="paymentIncluded" type="boolean" />
+		<return-scalar column="gstIncluded" type="boolean" />
+		<return-scalar column="gstAmount" type="java.math.BigDecimal" />
+		<return-scalar column="gstPercent" type="java.math.BigDecimal" />
+		<![CDATA[
+			{call dbo.RIMS_SP_PatientVisitPayment(:patientId, :visitId, :excludeUnpaid, :visitDate, :serviceId, :epoServiceId, :medicationServiceId) }
+		]]>
+    </sql-query>
+  
+    <query name="paymentByVisitDetailId">
+     	<![CDATA[SELECT p FROM VisitDetailPayment p, VisitDetail v 
+     	WHERE p.visitDetailId = v.visitDetailId AND  p.visitDetailId = :visitDetailId ]]>
+    </query>
+   
+    <sql-query name="outstandingPaymentForNonHD">
+     	<![CDATA[
+     	SELECT dbo.GET_PAYMENT_PROCEDURE(vdp.PaymentSponsors, :paymentSponsors) PaymentSponsors, vdp.OutstandingBalance,
+     		vdp.ProcedureName, vdp.ServiceId, vdp.ListedBillPrice
+     	FROM his.tbl_VisitDetailPayment vdp, his.tbl_VisitDetail vd, acc.tbl_Invoice invoice, mst.tbl_PatientPaymentPlanProcedure prod
+		WHERE vdp.VisitDetailId = vd.VisitDetailId AND vd.VisitId = :visitId
+			AND vdp.ServiceId <> :serviceId AND vdp.DocumentType = 'IN'
+			AND invoice.VisitId = vd.VisitId
+			AND invoice.PatientPaymentPlanId = prod.PatientPaymentPlanId
+			AND vdp.ProcedureId = prod.ProcedureId
+		]]>
+    </sql-query>
+    <sql-query name="RIMS_SP_InPatientVisitPayment">
+    	<![CDATA[
+    		{call dbo.RIMS_SP_InPatientVisitPayment(:patientId, :invoiceId, :fromDate, :toDate, :isReceipt) }
+    	]]>
+    </sql-query>
+</hibernate-mapping>

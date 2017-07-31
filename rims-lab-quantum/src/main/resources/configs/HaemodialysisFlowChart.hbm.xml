@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 20, 2013 6:50:53 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.dto.HaemodialysisFlowChart" table="view_HaemodialysisFlowChart" schema="dbo" catalog="RIMSDB_NEW">
+        <id name="haemodialysisFlowChartId" type="java.lang.Integer">
+            <column name="HaemodialysisFlowChartId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="patientId" type="java.lang.Integer">
+            <column name="PatientId" />
+        </property>
+        <property name="patientName" type="string">
+            <column name="PatientName" length="100" />
+        </property>
+        <property name="nricFinNumber" type="string">
+            <column name="NricFinNumber" length="50" />
+        </property>
+        <property name="dateOfBirth" type="timestamp">
+            <column name="DateOfBirth" length="23" />
+        </property>
+        <property name="processedDate" type="timestamp">
+            <column name="ProcessedDate" length="23" />
+        </property>
+        <property name="gender" type="string">
+            <column name="Gender" length="50" />
+        </property>
+        <property name="patientAge" type="java.lang.Integer">
+            <column name="PatientAge" />
+        </property>       
+        <property name="reuseNumber" type="big_decimal">
+            <column name="ReuseNumber" precision="4" />
+        </property>
+        <property name="dryWeight" type="big_decimal">
+            <column name="DryWeight" precision="4" />
+        </property>
+        <property name="preWeight" type="big_decimal">
+            <column name="PreWeight" precision="4" />
+        </property>
+        <property name="postWeight" type="big_decimal">
+            <column name="postWeight" precision="4" />
+        </property>
+        <property name="weightGain" type="big_decimal">
+            <column name="weightGain" precision="4" />
+        </property>
+        <property name="preBp" type="string">
+            <column name="PreBp" length="50" />
+        </property>
+        <property name="postBp" type="string">
+            <column name="PostBp" length="50" />
+        </property>
+        <property name="ap" type="java.lang.Integer">
+            <column name="ap" />
+        </property>        
+        <property name="vp" type="java.lang.Integer">
+            <column name="vp" />
+        </property>        
+        <property name="qb" type="java.lang.Integer">
+            <column name="qb" />
+        </property>        
+        <property name="qd" type="java.lang.Integer">
+            <column name="qd" />
+        </property>        
+        <property name="ocm" type="string">
+            <column name="ocm" length="50" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

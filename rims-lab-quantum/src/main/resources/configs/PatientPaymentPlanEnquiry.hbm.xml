@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 20, 2013 8:42:52 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.PatientPaymentPlanEnquiry" table="tbl_PatientPaymentPlanEnquiry" schema="mst" catalog="RIMSDB_NEW">
+        <id name="patientPaymentPlanEnquiryId" type="java.lang.Integer">
+            <column name="PatientPaymentPlanEnquiryId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="patientPaymentPlanId" type="int">
+            <column name="PatientPaymentPlanId" not-null="true" />
+        </property>
+        <property name="notificationType" type="int">
+            <column name="NotificationType" not-null="true" />
+        </property>
+        <property name="recipients" type="string">
+            <column name="Recipients" length="250" not-null="true" />
+        </property>
+        <property name="recipientsCc" type="string">
+            <column name="RecipientsCC" length="250" />
+        </property>
+        <property name="subject" type="string">
+            <column name="Subject" length="250" />
+        </property>
+        <property name="mailMessageDetail" type="string">
+            <column name="MailMessageDetail" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>        
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="false" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,115 @@
+        <id name="planDetailId" type="java.lang.Integer">
+            <column name="PlanDetailId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="patientPaymentPlanId" type="int">
+            <column name="PatientPaymentPlanId" not-null="true" />
+        </property>
+        <property name="paymentPlanSupportType" type="int">
+            <column name="PaymentPlanSupportType" not-null="true" />
+        </property>
+        <property name="customerId" type="int">
+            <column name="CustomerId" not-null="true" />
+        </property>
+        <property name="referringCustomerId" type="int">
+            <column name="ReferringCustomerId" not-null="true" />
+        </property>
+        <property name="cpfclaimFromPatient" type="java.lang.Boolean">
+            <column name="CPFClaimFromPatient" />
+        </property>
+        <property name="cpftype" type="java.lang.Integer">
+            <column name="CPFType" />
+        </property>
+        <property name="cpfpayerName" type="string">
+            <column name="CPFPayerName" length="100" />
+        </property>
+        <property name="cpfaccountNumber" type="string">
+            <column name="CPFAccountNumber" length="30" />
+        </property>
+        <property name="cpfenquiryOnDate" type="timestamp">
+            <column name="CPFEnquiryOnDate" length="23" />
+        </property>
+        <property name="cpfcurrentBalance" type="big_decimal">
+            <column name="CPFCurrentBalance" precision="8" />
+        </property>
+        <property name="policyStartDate" type="timestamp">
+            <column name="PolicyStartDate" length="23" />
+        </property>
+        <property name="policyEndDate" type="timestamp">
+            <column name="PolicyEndDate" length="23" />
+        </property>
+        <property name="fundType" type="java.lang.Integer">
+            <column name="FundType" />
+        </property>
+        <property name="insuranceType" type="java.lang.Integer">
+            <column name="InsuranceType" />
+        </property>
+        <property name="companyType" type="java.lang.Integer">
+            <column name="CompanyType" />
+        </property>
+        <property name="supportStartDate" type="timestamp">
+            <column name="SupportStartDate" length="23" />
+        </property>
+        <property name="supportEndDate" type="timestamp">
+            <column name="SupportEndDate" length="23" />
+        </property>
+        <property name="amountPayableBy" type="int">
+            <column name="AmountPayableBy" not-null="true" />
+        </property>
+        <property name="amountPayable" type="big_decimal">
+            <column name="AmountPayable" precision="8" not-null="true" />
+        </property>
+        <property name="gstincludedPrice" type="boolean">
+            <column name="GSTIncludedPrice" not-null="true" />
+        </property>
+        <property name="amountValue" type="big_decimal">
+            <column name="AmountValue" precision="8" not-null="true" />
+        </property>
+        <property name="totalNumberOfDialysis" type="int">
+            <column name="TotalNumberOfDialysis" not-null="true" />
+        </property>
+        <property name="totalProcedurePrice" type="big_decimal">
+            <column name="TotalProcedurePrice" precision="8" not-null="true" />
+        </property>
+        <property name="totalGstamount" type="big_decimal">
+            <column name="TotalGSTAmount" precision="8" not-null="true" />
+        </property>
+        <property name="anyExclusion" type="string">
+            <column name="AnyExclusion" length="50" />
+        </property>
+        <property name="anyExclusionClause" type="string">
+            <column name="AnyExclusionClause" length="50" />
+        </property>
+        <property name="collectionMode" type="java.lang.Integer">
+            <column name="CollectionMode" />
+        </property>
+        <property name="collectionAmountPercentage" type="big_decimal">
+            <column name="collectionAmountPercentage" precision="8" />
+        </property>
+        <property name="collectionAmountPayable" type="big_decimal">
+            <column name="CollectionAmountPayable" precision="8" />
+        </property>
+        <property name="collectionCapAmount" type="big_decimal">
+            <column name="CollectionCapAmount" precision="8" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="priority" type="int">
+            <column name="Priority" />
+        </property>
+        <property name="integratedInsurancePlan" type="java.lang.Boolean">
+            <column name="IntegratedInsurancePlan" not-null="false" />
+        </property>

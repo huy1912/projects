@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.PatientInvestigationRecordDetail" table="tbl_PatientInvestigationRecordDetail" schema="his" catalog="RIMSDB_NEW">
+        <id name="investigationRecordDetailId" type="int">
+            <column name="InvestigationRecordDetailId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="investigationRecordId" type="int">
+            <column name="InvestigationRecordId" not-null="true" />
+        </property>
+        <property name="labProcedureDetailId" type="int">
+            <column name="LabProcedureDetailId" not-null="true" />
+        </property>
+        <property name="labProcedureResult" type="string">
+            <column name="LabProcedureResult" length="30" not-null="true" />
+        </property>
+        <property name="investigationDescription" type="string">
+            <column name="InvestigationDescription" length="500" not-null="true" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 4, 2015 10:33:42 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.PayerDetail" table="tbl_PayerDetail" schema="medinet" catalog="RIMSDB_NEW">
+        <id name="payerDetailId" type="java.lang.Integer">
+            <column name="PayerDetailId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="claimId" type="int">
+            <column name="ClaimId" not-null="true" />
+        </property>
+        <property name="customerName" type="string">
+            <column name="CustomerName" length="100" not-null="true" />
+        </property>
+        <property name="payerType" type="string">
+            <column name="PayerType" not-null="true" />
+        </property>
+        <property name="identificationType" type="string">
+            <column name="IdentificationType" length="10" not-null="true" />
+        </property>
+        <property name="identificationNo" type="string">
+            <column name="IdentificationNo" length="50" not-null="true" />
+        </property>
+        <property name="absoluteAmount" type="big_decimal">
+            <column name="AbsoluteAmount" precision="12" />
+        </property>
+        <property name="claimableAmountInPercentage" type="big_decimal">
+            <column name="ClaimableAmountInPercentage" precision="12" />
+        </property>
+        <property name="cpfaccountNumber" type="string">
+            <column name="CPFAccountNumber" length="30" />
+        </property>
+        <property name="dateOfBirth" type="timestamp">
+            <column name="DateOfBirth" length="23" />
+        </property>
+        <property name="patientIsPayer" type="string">
+            <column name="PatientIsPayer" />
+        </property>
+        <property name="addressType" type="string">
+            <column name="AddressType" length="20" />
+        </property>
+        <property name="address" type="string">
+            <column name="Address" length="250" />
+        </property>
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="payerStatus" type="string">
+            <column name="PayerStatus" length="2" />
+        </property>
+        <property name="payerError" type="string">
+            <column name="PayerError" length="6" />
+        </property>
+        <property name="deductDate" type="timestamp">
+            <column name="DeductDate" length="23" />
+        </property>
+        
+        <property name="customerId" type="java.lang.Integer">
+            <column name="CustomerId" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

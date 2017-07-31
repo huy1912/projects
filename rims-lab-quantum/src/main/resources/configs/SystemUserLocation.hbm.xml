@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.SystemUserLocation" table="tbl_SystemUserLocation" schema="ssp" catalog="RIMSDB_NEW">
+        <id name="userLocationId" type="int">
+            <column name="UserLocationID" />
+            <generator class="native"></generator>
+        </id>
+        <property name="userId" type="int">
+            <column name="UserID" />
+        </property>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+         <property name="canAccess" type="java.lang.Boolean">
+            <column name="CanAccess" />
+        </property>
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+         <property name="deleted" type="java.lang.Boolean">
+            <column name="Deleted" />
+        </property>
+        <property name="createdBy" type="java.lang.Integer" update="false">
+            <column name="CreatedBy" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" />
+        </property>
+        <property name="lastUpdatedBy" type="java.lang.Integer">
+            <column name="LastModifiedBy" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastModifiedDate" length="23" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 20, 2013 11:25:34 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.RunningNumberSet" table="tbl_RunningNumberSet" schema="ssp" catalog="RIMSDB_NEW">
+        <id name="runningNumberSetId" type="java.lang.Integer">
+            <column name="RunningNumberSetId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="false" />
+        </property>
+        <property name="runningNumberType" type="string">
+            <column name="RunningNumberType" length="50" not-null="true" />
+        </property>
+        <property name="isCountryCodeSet" type="java.lang.Boolean">
+            <column name="IsCountryCodeSet" />
+        </property>
+        <property name="isOrganizationCodeSet" type="java.lang.Boolean">
+            <column name="IsOrganizationCodeSet" />
+        </property>
+        <property name="isBranchCodeSet" type="java.lang.Boolean">
+            <column name="IsBranchCodeSet" />
+        </property>
+        <property name="isServiceClassCodeSet" type="java.lang.Boolean">
+            <column name="IsServiceClassCodeSet" />
+        </property>
+        <property name="isServiceCodeSet" type="java.lang.Boolean">
+            <column name="IsServiceCodeSet" />
+        </property>
+        <property name="isServicePrefixCodeSet" type="java.lang.Boolean">
+            <column name="IsServicePrefixCodeSet" />
+        </property>
+        <property name="isYearSet" type="java.lang.Boolean">
+            <column name="IsYearSet" />
+        </property>
+        <property name="isMonthSet" type="java.lang.Boolean">
+            <column name="IsMonthSet" />
+        </property>
+        <property name="isDateSet" type="java.lang.Boolean">
+            <column name="IsDateSet" />
+        </property>
+        <property name="isStartTimeSet" type="java.lang.Boolean">
+            <column name="IsStartTimeSet" />
+        </property>
+        <property name="setStartRunningNumber" type="java.lang.Boolean">
+            <column name="SetStartRunningNumber" />
+        </property>
+        <property name="startRunningNumber" type="java.lang.Integer">
+            <column name="StartRunningNumber" />
+        </property>
+        <property name="startDigits" type="java.lang.Integer">
+            <column name="StartDigits" />
+        </property>
+        <property name="isDaySet" type="java.lang.Boolean">
+            <column name="IsDaySet" />
+        </property>
+        <property name="isSeparatorCharSet" type="java.lang.Boolean">
+            <column name="IsSeparatorCharSet" />
+        </property>
+        <property name="isYearRollSet" type="java.lang.Boolean">
+            <column name="IsYearRollSet" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

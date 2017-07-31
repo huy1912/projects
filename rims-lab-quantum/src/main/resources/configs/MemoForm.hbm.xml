@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.MemoForm" table="tbl_MemoForm" schema="his" catalog="RIMSDB_NEW">
+        <id name="memoId" type="int">
+            <column name="MemoId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+        <property name="memoDate" type="timestamp">
+            <column name="MemoDate" length="23" not-null="true" />
+        </property>
+        <property name="memoTime" type="string">
+            <column name="MemoTime" length="10" not-null="true" />
+        </property>
+        <property name="patientId" type="int">
+            <column name="PatientId" not-null="true" />
+        </property>
+        <property name="patientName" type="string">
+            <column name="PatientName" length="100" not-null="true"/>
+        </property>
+        <property name="toDoctor" type="string">
+            <column name="ToDoctor" length="100" not-null="true"/>
+        </property>
+        <property name="patientIc" type="string">
+            <column name="PatientIc" length="20" not-null="true"/>
+        </property>
+        <property name="attachedMedication" type="java.lang.Boolean">
+            <column name="AttachedMedication" not-null="true"/>
+        </property>
+        <property name="attachedBloodResult" type="java.lang.Boolean">
+            <column name="AttachedBloodResult" not-null="true"/>
+        </property>
+        <property name="others" type="string">
+            <column name="Others" length="255" />
+        </property>
+        <property name="memoNote" type="string">
+            <column name="MemoNote" length="1000" not-null="true"/>
+        </property>
+        <property name="createdBy" type="int">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property> 
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

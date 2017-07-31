@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.BankAccountMapping" table="tbl_BankAccountMapping" schema="acc" catalog="RIMSDB_NEW">
+        <id name="bankAccountMappingId" type="int">
+            <column name="BankAccountMappingId" />
+            <generator class="native" />
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="false" />
+        </property>
+        <property name="paymentMode" type="int">
+            <column name="PaymentMode" not-null="true" />
+        </property>
+        <property name="customerType" type="int">
+            <column name="CustomerType" not-null="false" />
+        </property>
+        <property name="customerId" type="int">
+            <column name="CustomerId" not-null="false" />
+        </property>
+        <property name="customerName" type="string">
+            <column name="CustomerName" length="100" not-null="false" unique="true" />
+        </property>
+         <property name="controlAccountNumber" type="string">
+            <column name="ControlAccount" length="50" not-null="true" unique="true" />
+        </property>
+        <property name="bankPaymentMode" type="int">
+            <column name="BankPaymentMode" not-null="false" />
+        </property>
+        <property name="bankAccountNumber" type="string">
+            <column name="BankAccount" length="50" not-null="false" unique="true" />
+        </property>
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastupdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastupdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

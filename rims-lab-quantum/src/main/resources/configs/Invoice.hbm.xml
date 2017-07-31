@@ -1,0 +1,238 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.Invoice" table="tbl_Invoice" schema="acc" catalog="RIMSDB_NEW">
+        <id name="invoiceId" type="int">
+            <column name="InvoiceId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="visitId" type="java.lang.Integer">
+            <column name="VisitId" />
+        </property>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+        <property name="billToType" type="int">
+            <column name="BillToType" not-null="true" />
+        </property>
+        <property name="billToId" type="int">
+            <column name="BillToId" not-null="true" />
+        </property>
+        <property name="documentTypeId" type="int">
+            <column name="DocumentTypeId" not-null="true" />
+        </property>
+        <property name="documentType" type="string">
+            <column name="DocumentType" length="3" not-null="true" />
+        </property>
+        <property name="documentNumber" type="string">
+            <column name="DocumentNumber" length="20" not-null="true" />
+        </property>
+        <property name="documentDate" type="timestamp">
+            <column name="DocumentDate" length="23" />
+        </property>
+        <property name="refDocumentTypeId" type="int">
+            <column name="RefDocumentTypeId" not-null="true" />
+        </property>
+        <property name="refDocumentType" type="string">
+            <column name="RefDocumentType" length="3" />
+        </property>
+        <property name="refdocumentNumber" type="string">
+            <column name="RefdocumentNumber" length="20" />
+        </property>
+        <property name="refDocumentDate" type="timestamp">
+            <column name="RefDocumentDate" length="23" />
+        </property>
+        <property name="batchId" type="string">
+            <column name="BatchId" length="20" />
+        </property>
+        <property name="recordLock" type="java.lang.Boolean">
+            <column name="RecordLock" />
+        </property>
+        <property name="importExportStatus" type="java.lang.Integer">
+            <column name="ImportExportStatus" />
+        </property>
+        <property name="posted" type="java.lang.Boolean">
+            <column name="Posted" />
+        </property>
+        <property name="grossAmount" type="big_decimal">
+            <column name="GrossAmount" precision="12" />
+        </property>
+        <property name="gstPercentage" type="big_decimal">
+            <column name="GstPercentage" precision="12" />
+        </property>
+        <property name="gstAmount" type="big_decimal">
+            <column name="GstAmount" precision="12" />
+        </property>
+        <property name="netSalesAmount" type="big_decimal">
+            <column name="NetSalesAmount" precision="12" />
+        </property>
+        <property name="salesAmountSign" type="int">
+            <column name="SalesAmountSign" not-null="true" />
+        </property>
+        <property name="paymentAmount" type="big_decimal">
+            <column name="PaymentAmount" precision="12" />
+        </property>
+        <property name="receiptDue" type="big_decimal">
+            <column name="ReceiptDue" precision="12" />
+        </property>
+        <property name="balanceAmount" type="big_decimal">
+            <column name="BalanceAmount" precision="12" />
+        </property>
+        <property name="creditAmount" type="big_decimal">
+            <column name="CreditAmount" precision="12" />
+        </property>
+        <property name="refundAmount" type="big_decimal">
+            <column name="RefundAmount" precision="12" />
+        </property>
+        <property name="collectedAmount" type="big_decimal">
+            <column name="CollectedAmount" precision="12" />
+        </property>
+        <property name="changeReturned" type="big_decimal">
+            <column name="ChangeReturned" precision="12" />
+        </property>
+        <property name="creditTerm" type="java.lang.Integer">
+            <column name="CreditTerm" />
+        </property>
+        <property name="printCount" type="java.lang.Integer">
+            <column name="PrintCount" />
+        </property>
+        <property name="splitPayment" type="int">
+            <column name="SplitPayment" not-null="true" />
+        </property>
+        <property name="paymentStatus" type="int">
+            <column name="PaymentStatus" not-null="true" />
+        </property>
+        <property name="advancePaid" type="boolean">
+            <column name="AdvancePaid" not-null="true" />
+        </property>
+        <property name="advanceBalance" type="big_decimal">
+            <column name="AdvanceBalance" precision="12" />
+        </property>
+        <property name="transferToDocumentId" type="java.lang.Integer">
+            <column name="TransferToDocumentId" />
+        </property>
+        <property name="transferAmount" type="big_decimal">
+            <column name="TransferAmount" precision="12" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="paymentSponsors" type="string">
+            <column name="PaymentSponsors" length="10" />
+        </property>
+        <property name="patientPaymentPlanId" type="java.lang.Integer">
+            <column name="PatientPaymentPlanId" />
+        </property>
+        <property name="sapb1InvoiceDocumentId" type="java.lang.Integer">
+            <column name="sapb1InvoiceDocumentId" />
+        </property>
+        <property name="sapb1PostedDate" type="timestamp">
+            <column name="sapb1PostedDate" length="23" />
+        </property>
+        <property name="sapb1Posted" type="java.lang.Boolean">
+            <column name="sapb1Posted" />
+        </property>
+        <property name="invoiceType" type="int" update="false">
+            <column name="InvoiceType" not-null="false" />
+        </property>
+        <property name="patientId" type="java.lang.Integer" update="false">
+            <column name="PatientId" not-null="false" />
+        </property>
+        
+        <property name="fundingOrgReconAmount" type="big_decimal">
+            <column name="FundingOrgReconAmount" precision="12" />
+        </property>
+        <property name="advanceAmount" type="big_decimal">
+            <column name="AdvanceAmount" precision="12" />
+        </property>
+    </class>
+   
+    <!-- <query name="findInvoiceByPatientId">
+     	<![CDATA[
+     	SELECT invoice FROM Invoice invoice, Visit visit, Registration reg
+     	WHERE reg.patientId = :patientId AND visit.registrationId = reg.registrationId
+     	AND invoice.visitId = visit.visitId AND invoice.documentDate <= :currentDate
+     	AND (invoice.recordLock is NULL OR invoice.recordLock = 0)
+     	ORDER BY invoice.documentDate
+     	]]>
+     </query> -->
+     
+     <sql-query name="RIMS_SP_PatientInvoiceList">
+		<![CDATA[
+			{call dbo.RIMS_SP_PatientInvoiceList(:patientId, :currentDate, :paymentStatmentId, :organizationId, :branchId) }
+		]]>
+    </sql-query>
+    <sql-query name="RIMS_SP_InvoiceWithoutPaymentPlan">
+		<![CDATA[
+			{call dbo.RIMS_SP_InvoiceWithoutPaymentPlan(:patientId, :procedureId) }
+		]]>
+    </sql-query>
+    <sql-query name="RIMS_SP_InvoiceForPaymentPlan">
+		<![CDATA[
+			{call dbo.RIMS_SP_InvoiceForPaymentPlan(:patientId, :procedureId, :fromDate, :toDate, :hdServiceId) }
+		]]>
+    </sql-query>
+    <sql-query name="RIMS_SP_PatientCollectionOnReceiptId">
+		<![CDATA[
+			{ call dbo.RIMS_SP_PatientCollectionOnReceiptId(:billToId, :invoiceReceiptId)}
+		]]>
+	</sql-query> 
+	<sql-query name="RIMS_SP_INCNDN_Listing_Patient">
+		<![CDATA[
+			{ call dbo.RIMS_SP_INCNDN_Listing_Patient(:organizationId,:branchId, :nricFinNumber, :patientName, :fromDate, :toDate, :documentType)}
+		]]>
+	</sql-query> 
+    <!-- <sql-query name="RIMS_SP_SearchInvoicedPatients">
+		<![CDATA[
+			{ call dbo.RIMS_SP_SearchInvoicedPatients(:branchId,:nricFinNumber, :patientName, :fromDate,:toDate)}
+		]]>
+	</sql-query> -->
+	 <sql-query name="RIMS_SP_SearchInvoiceList">
+		<![CDATA[
+			{ call dbo.RIMS_SP_SearchInvoiceList(:billToId, :fromDate, :toDate)}
+		]]>
+	</sql-query>
+    <sql-query name="GET_PAYMENT_SPONSORS">
+		<![CDATA[
+			SELECT dbo.GET_PAYMENT_SPONSORS(:patientId, :visitDate, :patientPaymentPlanId)
+		]]>
+    </sql-query>
+    
+    <query name="getFirstInvoice">
+    	<![CDATA[
+    		SELECT i1 FROM Invoice i1
+    		WHERE i1.invoiceId = (
+    		SELECT min(i.invoiceId)
+    		FROM Invoice i, PaymentStatementInvoice psi, PaymentStatementDetail psd, PaymentStatement ps
+    		WHERE i.invoiceId = psi.invoiceId
+    			 AND psi.paymentStatementDetailId = psd.paymentStatementDetailId
+    			 AND psd.paymentStatementId = ps.paymentStatementId
+    			 AND ps.paymentStatementId = :paymentStatementId
+    		)
+    	]]>
+    </query>
+    
+    <!--  In Patient -->
+    <sql-query name="RIMS_SP_SearchInPatientCustomerList">
+		<![CDATA[
+			{ call dbo.RIMS_SP_SearchInPatientCustomerList(:branchId, :customerId, :nricFinNumber, :patientName, :fromDate, :toDate)}
+		]]>
+	</sql-query>
+</hibernate-mapping>

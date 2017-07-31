@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.Service" table="tbl_Service" schema="com" catalog="RIMSDB_NEW">
+        <id name="serviceId" type="int">
+            <column name="ServiceId" />
+            <generator class="native"/>
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" />
+        </property>
+        <property name="serviceClassId" type="int">
+            <column name="ServiceClassId" not-null="true" />
+        </property>
+        <property name="serviceCode" type="string">
+            <column name="ServiceCode" length="5" />
+        </property>
+        <property name="serviceName" type="string">
+            <column name="ServiceName" length="150" not-null="true" />
+        </property>
+        <property name="serviceDescription" type="string">
+            <column name="ServiceDescription" length="250" />
+        </property>
+        <property name="appointmentEnabled" type="java.lang.Boolean">
+            <column name="AppointmentEnabled" />
+        </property>
+        <property name="defaultSlotTime" type="java.lang.Integer">
+            <column name="DefaultSlotTime" />
+        </property>
+        <property name="defaultSlotNumber" type="java.lang.Integer">
+            <column name="DefaultSlotNumber" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" length="250" />
+        </property>
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

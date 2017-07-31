@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 20, 2013 11:25:34 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.RunningNumber" table="tbl_RunningNumber" schema="ssp" catalog="RIMSDB_NEW">
+        <id name="runningNumberId" type="java.lang.Integer">
+            <column name="RunningNumberId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+        <property name="runningNumberName" type="string">
+            <column name="RunningNumberName" length="50" not-null="true" />
+        </property>
+        <property name="runningNumberCode" type="string">
+            <column name="RunningNumberCode" length="20" not-null="true" />
+        </property>
+        <property name="startRunningNumber" type="int">
+            <column name="StartRunningNumber" not-null="true" />
+        </property>
+        <property name="latestRunningNumber" type="int">
+            <column name="LatestRunningNumber" not-null="true" />
+        </property>
+        <property name="nextRunningNumber" type="int">
+            <column name="NextRunningNumber" not-null="true" />
+        </property>
+        <property name="isYearRolled" type="java.lang.Boolean">
+            <column name="IsYearRolled" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="rollingYear" type="int" >
+            <column name="RollingYear" not-null="false" />
+        </property>
+    </class>
+    <sql-query name="getRunningNumber">
+        <return-scalar column="runningNumberCode" type="string" />
+        <return-scalar column="latestRunningNumber" type="java.lang.Integer" />
+        { call RIMS_SP_GenerateRunningNumber(:organizationId, :branchId, :runningNumberType, :serviceClassId, :serviceId, :servicePrefixId, :updateImmediate, :invoiceDate, :IsYearRolled ) }
+    </sql-query>  
+    <sql-query name="validateRunningNumber">
+        <return-scalar column="runningNumberCode" type="string" />
+        <return-scalar column="latestRunningNumber" type="java.lang.Integer" />
+        { call RIMS_SP_ValidateAndUpdateRunningNumber(:organizationId, :branchId, :runningNumberType, :serviceClassId, :serviceId, :servicePrefixId, :IsYearRolled, :nextRunningNumberIn) }
+    </sql-query>
+</hibernate-mapping>

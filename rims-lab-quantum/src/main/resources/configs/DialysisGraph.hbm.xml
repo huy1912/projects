@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 31, 2013 4:11:27 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.DialysisGraph" table="view_DialysisGraph" schema="dbo" catalog="RIMSDB_NEW">
+        <id name="bbraunReadingId" type="java.lang.Integer">
+            <column name="BBraunReadingId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="organizationId" type="java.lang.Integer">
+            <column name="OrganizationId" />
+        </property>
+        <property name="branchId" type="java.lang.Integer">
+            <column name="BranchId"  />
+        </property>
+        <property name="createdTime" type="timestamp">
+            <column name="CreatedTime" length="23"  />
+        </property>
+        <property name="dialogSerialNumber" type="string">
+            <column name="DialogSerialNumber" />
+        </property>
+        <property name="patientName" type="string">
+            <column name="PatientName" />
+        </property>
+        <property name="patientId" type="string">
+            <column name="PatientId" />
+        </property>
+         <property name="actualTherapyTime" type="java.lang.Integer">
+            <column name="ActualTherapyTime" />
+        </property>
+        <property name="actualKtvEquilibrated" type="java.lang.Double">
+            <column name="ActualKtvEquilibrated" precision="53" scale="0" />
+        </property>
+        <property name="actualUrrEquilibrated" type="java.lang.Integer">
+            <column name="ActualUrrEquilibrated" />
+        </property>
+        <property name="targetKtv" type="java.lang.Double">
+            <column name="TargetKtv" precision="53" scale="0" />
+        </property>
+        <property name="patientWeight" type="java.lang.Double">
+            <column name="PatientWeight" precision="53" scale="0" />
+        </property>
+        <property name="actualAverageBloodFlow" type="java.lang.Integer">
+            <column name="ActualAverageBloodFlow" />
+        </property>
+        <property name="actualAverageDialysate" type="java.lang.Integer">
+            <column name="ActualAverageDialysate" />
+        </property>
+        <property name="nibpSystolicPress" type="java.lang.Integer">
+            <column name="NibpSystolicPress" />
+        </property>
+        <property name="nibpDiastolicPress" type="java.lang.Integer">
+            <column name="NibpDiastolicPress" />
+        </property>
+        <property name="nibpPulseRate" type="java.lang.Integer">
+            <column name="nibpPulseRate" />
+        </property>
+        <property name="actualVenPressure" type="java.lang.Integer">
+            <column name="actualVenPressure" />
+        </property>
+        <property name="actualArtPressure" type="java.lang.Integer">
+            <column name="actualArtPressure" />
+        </property>
+        <property name="actualTmp" type="java.lang.Integer">
+            <column name="actualTmp" />
+        </property>
+        <property name="bloodPumpSpeed" type="java.lang.Integer">
+            <column name="bloodPumpSpeed" />
+        </property>
+        <property name="actualDialFlow" type="java.lang.Integer">
+            <column name="actualDialFlow" />
+        </property>
+         <property name="actualUfRate" type="java.lang.Integer">
+            <column name="actualUfRate" />
+        </property>
+         <property name="actualUfRemoved" type="java.lang.Integer">
+            <column name="actualUfRemoved" />
+        </property>
+        
+        <property name="heparinRate" type="java.lang.Double">
+            <column name="heparinRate" precision="53" scale="0" />
+        </property>
+        <property name="actualDialFinalCond" type="java.lang.Double">
+            <column name="actualDialFinalCond" precision="53" scale="0" />
+        </property>
+        <property name="actualDialTemparature" type="java.lang.Double">
+            <column name="actualDialTemparature" precision="53" scale="0" />
+        </property>
+    </class>
+   <sql-query name="findDialysisGraphData">
+     	<return alias="findDialysisGraphData" class="com.iis.rims.domain.DialysisGraph"/>
+     	<!-- Only the data in THERAPY phase will be uploaded to the server. -->
+    	<![CDATA[
+    		SELECT bb.BBraunReadingId,  bb.OrganizationId,  bb.BranchId,  bb.PatientId,  bb.PatientName,  bb.PatientWeight,  
+					bb.DialogSerialNumber,  bb.CreatedTime,  bb.TargetKtv,  bb.ActualKtvEquilibrated,  bb.ActualUrrEquilibrated,  
+					bb.ActualTherapyTime,  bb.ActualAverageDialysate,  bb.ActualAverageBloodFlow, bb.nibpSystolicPress, 
+					bb.nibpDiastolicPress, bb.nibpPulseRate, bb.actualVenPressure, bb.actualArtPressure, bb.actualTmp, bb.heparinRate, 
+					bb.bloodPumpSpeed, bb.actualDialFlow, bb.actualUfRate, bb.actualUfRemoved, bb.actualDialFinalCond, bb.actualDialTemparature 
+    		FROM dis.tbl_BBraunReadings bb
+    			INNER JOIN mst.tbl_EquipmentDetail cs 
+    				ON bb.DialogSerialNumber = cs.SerialNumber 
+    					AND cs.SerialNumber = :dialogSerialNumber
+    					AND bb.CreatedTime BETWEEN :fromTime AND :toTime
+    					AND bb.BranchId = :branchId
+						AND bb.MainPhase IN (:byPass, :mainFlow)
+						AND bb.ActualKtvEquilibrated > 0
+						AND bb.DialSide = 1
+    		ORDER BY bb.CreatedTime ASC
+    	]]>
+    </sql-query>
+    <sql-query name="findPatientStation">
+     	<return alias="findPatientStation" class="com.iis.rims.domain.DialysisGraph"/>
+    	<![CDATA[
+    		{call dbo.FindPatientStation(:appointmentDate, :branchId, :byPass, :mainFlow) }				
+    	]]>
+    </sql-query>
+     <sql-query name="findFirstRecord">
+     	<return alias="findFirstRecord" class="com.iis.rims.domain.DialysisGraph"/>
+    	<![CDATA[
+    		SELECT  br.BBraunReadingId,   br.OrganizationId,   br.BranchId,   br.PatientId,   br.PatientName,   br.PatientWeight,  
+					 br.DialogSerialNumber,   br.CreatedTime,   br.TargetKtv,   br.ActualKtvEquilibrated,   br.ActualUrrEquilibrated,  
+					 br.ActualTherapyTime,   br.ActualAverageDialysate,   br.ActualAverageBloodFlow,  br.nibpSystolicPress, 
+					 br.nibpDiastolicPress,  br.nibpPulseRate,  br.actualVenPressure,  br.actualArtPressure,  br.actualTmp,  br.heparinRate, 
+					 br.bloodPumpSpeed,  br.actualDialFlow,  br.actualUfRate,  br.actualUfRemoved,  br.actualDialFinalCond,  br.actualDialTemparature
+			FROM dis.tbl_BBraunReadings br INNER JOIN (
+					SELECT	MIN(M.CreatedTime) as CreatedTime, M.PatientId, M.DialogSerialNumber
+					FROM dis.tbl_BBraunReadings M
+					WHERE exists (
+							SELECT bb.DialogSerialNumber, bb.PatientId, MAX(bb.CreatedTime)
+							FROM dis.tbl_BBraunReadings bb
+							where CONVERT(VARCHAR(10),bb.createdtime,101) = CONVERT(VARCHAR(10), :date, 101)
+								
+								AND bb.PatientId = :patientId
+								AND bb.BranchId = :branchId
+								AND bb.MainPhase IN (:byPass, :mainFlow)
+								AND bb.DialSide = 1
+								AND bb.ActualKtvEquilibrated > 0
+								AND bb.BBraunReadingId = M.BBraunReadingId
+							GROUP BY bb.DialogSerialNumber, bb.PatientId
+						)
+						
+					GROUP BY M.PatientId, M.DialogSerialNumber
+				) T ON T.CreatedTime = br.CreatedTime 
+					AND T.DialogSerialNumber = br.DialogSerialNumber
+					AND T.PatientId = br.PatientId 			   	
+    	]]>
+    </sql-query>
+    <sql-query name="findPatientList">
+     	<return alias="findPatientList" class="com.iis.rims.domain.DialysisGraph"/>
+    	<![CDATA[
+    		SELECT  M.BBraunReadingId,   M.OrganizationId,   M.BranchId,   M.PatientId,   M.PatientName,   M.PatientWeight,  
+					 M.DialogSerialNumber,   M.CreatedTime,   M.TargetKtv,   M.ActualKtvEquilibrated,   M.ActualUrrEquilibrated,  
+					 M.ActualTherapyTime,   M.ActualAverageDialysate,   M.ActualAverageBloodFlow,  M.nibpSystolicPress, 
+					 M.nibpDiastolicPress,  M.nibpPulseRate,  M.actualVenPressure,  M.actualArtPressure,  M.actualTmp,  M.heparinRate, 
+					 M.bloodPumpSpeed,  M.actualDialFlow,  M.actualUfRate,  M.actualUfRemoved,  M.actualDialFinalCond,  M.actualDialTemparature 
+    		FROM dis.tbl_BBraunReadings M INNER JOIN (
+					SELECT bb.PatientId, MAX(bb.BBraunReadingId) AS BBraunReadingId
+					FROM dis.tbl_BBraunReadings bb
+					WHERE CONVERT(VARCHAR(10),bb.createdtime,101) = CONVERT(VARCHAR(10), :date, 101) 
+						AND bb.DialogSerialNumber = :dialogSerialNumber
+						AND bb.MainPhase in (:byPass, :mainFlow)
+						AND bb.DialSide = 1
+						AND bb.ActualKtvEquilibrated > 0
+						AND bb.BranchId = :branchId
+					GROUP BY bb.PatientId
+				) T ON M.BBraunReadingId = T.BBraunReadingId
+				ORDER BY M.BBraunReadingId DESC
+    	]]>
+    </sql-query>
+    
+  	<sql-query name="findLatestReadings">
+		<return alias="findLatestReadings" class="com.iis.rims.domain.DialysisGraph" />
+		 	<![CDATA[
+				SELECT M.BBraunReadingId,   M.OrganizationId,   M.BranchId,   M.PatientId,   M.PatientName,   M.PatientWeight, 
+				M.DialogSerialNumber,   M.CreatedTime,   M.TargetKtv,   M.ActualKtvEquilibrated,   M.ActualUrrEquilibrated, 
+				M.ActualTherapyTime,   M.ActualAverageDialysate,   M.ActualAverageBloodFlow,  M.nibpSystolicPress, 
+				M.nibpDiastolicPress,  M.nibpPulseRate,  M.actualVenPressure,  M.actualArtPressure,  M.actualTmp,  M.heparinRate, 
+				M.bloodPumpSpeed,  M.actualDialFlow,  M.actualUfRate,  M.actualUfRemoved,  M.actualDialFinalCond,  
+				M.actualDialTemparature FROM dis.tbl_BBraunReadings M 
+				INNER JOIN ( SELECT OrganizationId, BranchId, MAX(CreatedTime) AS MaxCreatedTime, DialogSerialNumber 
+				FROM dis.tbl_BBraunReadings 
+				WHERE CONVERT(VARCHAR, CreatedTime, 103) = CONVERT(VARCHAR, GETDATE(), 103)	
+				AND MainPhase in (:byPass, :mainFlow)
+				AND DialSide = 1 AND ActualKtvEquilibrated > 0 
+				AND OrganizationId = :OrganizationId AND BranchId = :BranchId
+				GROUP BY OrganizationId, BranchId, DialogSerialNumber) T
+				ON M.CreatedTime = T.MaxCreatedTime 
+				AND M.DialogSerialNumber = T.DialogSerialNumber
+				AND M.BranchId = T.BranchId
+				AND M.OrganizationId = T.OrganizationId
+		]]>
+	</sql-query>
+</hibernate-mapping>

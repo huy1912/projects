@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 19, 2013 1:12:08 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="CustomerGroup" table="tbl_CustomerGroup" schema="mst" catalog="RIMSDB_NEW">
+        <id name="customerGroupId" type="int">
+            <column name="CustomerGroupId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="customerGroupName" type="string">
+            <column name="CustomerGroupName" length="100" not-null="true" />
+        </property>
+        <property name="speciality" type="int">
+            <column name="Speciality" not-null="true" />
+        </property>
+        <property name="customerGroupDescription" type="string">
+            <column name="CustomerGroupDescription" length="250" not-null="true" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

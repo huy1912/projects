@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 19, 2013 5:09:20 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.PaymentStatementInvoice" table="tbl_PaymentStatementInvoice" schema="acc" catalog="RIMSDB_NEW">
+        <id name="paymentStatementInvoiceId" type="java.lang.Integer">
+            <column name="PaymentStatementInvoiceId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="paymentStatementDetailId" type="int">
+            <column name="PaymentStatementDetailId" not-null="true" />
+        </property>
+        <property name="invoiceId" type="int">
+            <column name="InvoiceId" not-null="true" />
+        </property>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+        <property name="patientId" type="int">
+            <column name="PatientId" not-null="true" />
+        </property>
+        <property name="customerId" type="int">
+            <column name="CustomerId" not-null="true" />
+        </property>
+        <property name="invoiceAmount" type="big_decimal">
+            <column name="InvoiceAmount" precision="18"  not-null="true" />
+        </property>
+        <property name="invoiceAmountOutstanding" type="big_decimal">
+            <column name="InvoiceAmountOutstanding" precision="18" not-null="true" />
+        </property>
+        <property name="invoiceAmountPaid" type="big_decimal">
+            <column name="InvoiceAmountPaid" precision="18"  />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="includeNonHd" type="boolean">
+            <column name="IncludeNonHD" not-null="false" />
+        </property>
+        <property name="invoiceAmountDue" type="big_decimal">
+            <column name="InvoiceAmountDue" precision="18"  />
+        </property>
+        <property name="advanceAmount" type="big_decimal">
+            <column name="AdvanceAmount" precision="18"  />
+        </property>
+        <property name="sapb1JournalEntryDocumentId" type="java.lang.Long">
+            <column name="sapb1JournalEntryDocumentId" />
+        </property>
+        <property name="sapb1PostedDate" type="timestamp">
+            <column name="sapb1PostedDate" length="23" />
+        </property>
+        <property name="sapb1Posted" type="java.lang.Boolean">
+            <column name="sapb1Posted" />
+        </property>
+    </class>
+    
+    <query name="deletePaymentStatementByInvoiceId">
+		<![CDATA[
+			delete from PaymentStatementInvoice invoice where invoice.invoiceId = :invoiceId
+		]]>
+    </query>
+    <query name="getStatementInvoice">
+		<![CDATA[
+			SELECT psi.paymentStatementInvoiceId AS paymentStatementInvoiceId, psi.invoiceId AS invoiceId, psi.invoiceAmount AS invoiceAmount, i.documentNumber AS documentNumber,
+					psi.includeNonHd AS includeNonHd, i.documentDate as documentDate, 
+					psi.invoiceAmountDue as dueAmount, psi.advanceAmount as advanceAmount
+			FROM PaymentStatementInvoice psi, Invoice i
+			WHERE psi.paymentStatementDetailId = :paymentStatementDetailId AND psi.invoiceId = i.invoiceId
+		]]>
+    </query>
+    <sql-query name="RIMS_SP_PatientPaymentStatementInvoiceReport">
+		<!-- <return alias="paymentStatementDetail" class="com.iis.rims.domain.PaymentStatementDetail"/> -->
+		<![CDATA[
+			{ call dbo.RIMS_SP_PatientPaymentStatementReport(:paymentStatementDetailId)}
+		]]>
+	</sql-query>
+</hibernate-mapping>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 20, 2013 6:50:53 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+	<class name="com.iis.rims.domain.dto.MultipleInvoice" schema="dbo"
+		catalog="RIMSDB_NEW">
+
+		<id name="patientId" type="java.lang.Integer">
+			<column name="PatientId" />
+			<generator class="native"></generator>
+		</id>
+		<property name="patientName" type="string">
+			<column name="PatientName" length="100" />
+		</property>
+		<property name="nricFinNumber" type="string">
+			<column name="NricFinNumber" length="50" />
+		</property>
+		<property name="dateOfBirth" type="timestamp">
+			<column name="DateOfBirth" length="23" />
+		</property>
+		<property name="visitDate" type="timestamp">
+			<column name="visitDate" length="23" />
+		</property>
+
+
+
+		<property name="branchId" type="java.lang.Integer">
+			<column name="BranchId" />
+		</property>
+
+	</class>
+
+	<!-- <sql-query name="findInvoicedPatient"> <return alias="findInvoicedPatient" 
+		class="com.iis.rims.domain.dto.MultipleInvoice" /> Only the data in THERAPY 
+		phase will be uploaded to the server. <![CDATA[ SELECT distinct patient.PatientId, 
+		patient.PatientName, patient.DateOfBirth,patient.NricFinNumber, visit.BranchId 
+		FROM his.tbl_Visit visit INNER JOIN his.tbl_Registration reg ON visit.RegistrationId 
+		= reg.RegistrationId INNER JOIN mst.tbl_Patient patient ON reg.PatientId 
+		= patient.PatientId INNER JOIN acc.tbl_Invoice invoice ON visit.visitId = 
+		invoice.visitId and VisitDate between :startDate and :toDate and visit.BranchId 
+		= :branchId ]]> </sql-query> -->
+</hibernate-mapping>

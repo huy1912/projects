@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 31, 2013 4:11:27 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.BBraunReadings" table="tbl_BBraunReadings" schema="dis" catalog="RIMSDB_NEW">
+        <id name="bbraunReadingId" type="java.lang.Integer">
+            <column name="BBraunReadingId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+        <property name="createdTime" type="timestamp" update="false">
+            <column name="CreatedTime" length="23" not-null="true" />
+        </property>
+        <property name="dialogVersionNumber" type="serializable">
+            <column name="DialogVersionNumber" not-null="true" />
+        </property>
+        <property name="tlcVersionNumber" type="serializable">
+            <column name="TlcVersionNumber" not-null="true" />
+        </property>
+        <property name="dci" type="serializable">
+            <column name="Dci" />
+        </property>
+        <property name="nibpVersionNumber" type="serializable">
+            <column name="NibpVersionNumber" />
+        </property>
+        <property name="dialogSerialNumber" type="serializable">
+            <column name="DialogSerialNumber" />
+        </property>
+        <property name="patientName" type="serializable">
+            <column name="PatientName" />
+        </property>
+        <property name="patientId" type="serializable">
+            <column name="PatientId" />
+        </property>
+        <property name="dialogState" type="java.lang.Integer">
+            <column name="DialogState" />
+        </property>
+        <property name="mainPhase" type="java.lang.Integer">
+            <column name="MainPhase" />
+        </property>
+        <property name="dialSide" type="java.lang.Integer">
+            <column name="DialSide" />
+        </property>
+        <property name="minUf" type="java.lang.Integer">
+            <column name="MinUf" />
+        </property>
+        <property name="bloodPump" type="java.lang.Integer">
+            <column name="BloodPump" />
+        </property>
+        <property name="dciInteger" type="java.lang.Integer">
+            <column name="DciInteger" />
+        </property>
+        <property name="conditionUnit" type="java.lang.Integer">
+            <column name="ConditionUnit" />
+        </property>
+        <property name="helpUnit" type="java.lang.Integer">
+            <column name="HelpUnit" />
+        </property>
+        <property name="tempUnit" type="java.lang.Integer">
+            <column name="TempUnit" />
+        </property>
+        <property name="numberOfDialogAlarms" type="java.lang.Integer">
+            <column name="NumberOfDialogAlarms" />
+        </property>
+        <property name="numberOfDialogWarnings" type="java.lang.Integer">
+            <column name="NumberOfDialogWarnings" />
+        </property>
+        <property name="therapyTime" type="java.lang.Integer">
+            <column name="TherapyTime" />
+        </property>
+        <property name="ufVolume" type="java.lang.Integer">
+            <column name="UfVolume" />
+        </property>
+        <property name="bloodPumpSpeed" type="java.lang.Integer">
+            <column name="BloodPumpSpeed" />
+        </property>
+        <property name="heparinRate" type="java.lang.Double">
+            <column name="HeparinRate" precision="53" scale="0" />
+        </property>
+        <property name="minPressureLimit" type="java.lang.Integer">
+            <column name="MinPressureLimit" />
+        </property>
+        <property name="maxPressureLimit" type="java.lang.Integer">
+            <column name="MaxPressureLimit" />
+        </property>
+        <property name="lowDeviationLimit" type="java.lang.Integer">
+            <column name="LowDeviationLimit" />
+        </property>
+        <property name="highDeviationLimit" type="java.lang.Integer">
+            <column name="HighDeviationLimit" />
+        </property>
+        <property name="minSystolicLimit" type="java.lang.Integer">
+            <column name="MinSystolicLimit" />
+        </property>
+        <property name="maxSystolicLimit" type="java.lang.Integer">
+            <column name="MaxSystolicLimit" />
+        </property>
+        <property name="minDiastolicLimit" type="java.lang.Integer">
+            <column name="MinDiastolicLimit" />
+        </property>
+        <property name="maxDiastolicLimit" type="java.lang.Integer">
+            <column name="MaxDiastolicLimit" />
+        </property>
+        <property name="minPulseRate" type="java.lang.Integer">
+            <column name="MinPulseRate" />
+        </property>
+        <property name="maxPulseRate" type="java.lang.Integer">
+            <column name="MaxPulseRate" />
+        </property>
+        <property name="actualTherapyTime" type="java.lang.Integer">
+            <column name="ActualTherapyTime" />
+        </property>
+        <property name="actualUfRemoved" type="java.lang.Integer">
+            <column name="ActualUfRemoved" />
+        </property>
+        <property name="actualUfRate" type="java.lang.Integer">
+            <column name="ActualUfRate" />
+        </property>
+        <property name="bloodVolumeProcessed" type="java.lang.Double">
+            <column name="BloodVolumeProcessed" precision="53" scale="0" />
+        </property>
+        <property name="actualHeparinVolume" type="java.lang.Double">
+            <column name="ActualHeparinVolume" precision="53" scale="0" />
+        </property>
+        <property name="actualArtPressure" type="java.lang.Integer">
+            <column name="ActualArtPressure" />
+        </property>
+        <property name="actualVenPressure" type="java.lang.Integer">
+            <column name="ActualVenPressure" />
+        </property>
+        <property name="actualTmp" type="java.lang.Integer">
+            <column name="ActualTmp" />
+        </property>
+        <property name="actualDialTemparature" type="java.lang.Double">
+            <column name="ActualDialTemparature" precision="53" scale="0" />
+        </property>
+        <property name="actualDialFlow" type="java.lang.Integer">
+            <column name="ActualDialFlow" />
+        </property>
+        <property name="actualDialFinalCond" type="java.lang.Double">
+            <column name="ActualDialFinalCond" precision="53" scale="0" />
+        </property>
+        <property name="actualDialBicCond" type="java.lang.Double">
+            <column name="ActualDialBicCond" precision="53" scale="0" />
+        </property>
+        <property name="nibpSystolicPress" type="java.lang.Integer">
+            <column name="NibpSystolicPress" />
+        </property>
+        <property name="nibpDiastolicPress" type="java.lang.Integer">
+            <column name="NibpDiastolicPress" />
+        </property>
+        <property name="nibpPulseRate" type="java.lang.Integer">
+            <column name="NibpPulseRate" />
+        </property>
+        <property name="nibpLastReadingTime" type="java.lang.Integer">
+            <column name="NibpLastReadingTime" />
+        </property>
+        <property name="ktvUvCorrectionMode" type="java.lang.Integer">
+            <column name="KtvUvCorrectionMode" />
+        </property>
+        <property name="actualKtvEquilibrated" type="java.lang.Double">
+            <column name="ActualKtvEquilibrated" precision="53" scale="0" />
+        </property>
+        <property name="actualUrrEquilibrated" type="java.lang.Integer">
+            <column name="ActualUrrEquilibrated" />
+        </property>
+        <property name="actualKtvSinglePool" type="java.lang.Double">
+            <column name="ActualKtvSinglePool" precision="53" scale="0" />
+        </property>
+        <property name="actualUrrSinglePool" type="java.lang.Integer">
+            <column name="ActualUrrSinglePool" />
+        </property>
+        <property name="targetKtv" type="java.lang.Double">
+            <column name="TargetKtv" precision="53" scale="0" />
+        </property>
+        <property name="patientWeight" type="java.lang.Double">
+            <column name="PatientWeight" precision="53" scale="0" />
+        </property>
+        <property name="actualAverageBloodFlow" type="java.lang.Integer">
+            <column name="ActualAverageBloodFlow" />
+        </property>
+        <property name="actualAverageDialysate" type="java.lang.Integer">
+            <column name="ActualAverageDialysate" />
+        </property>
+        <property name="actualHct" type="java.lang.Double">
+            <column name="ActualHct" precision="53" scale="0" />
+        </property>
+        <property name="deltaBloodVolume" type="java.lang.Integer">
+            <column name="DeltaBloodVolume" />
+        </property>
+        <property name="oxygenSaturation" type="java.lang.Double">
+            <column name="OxygenSaturation" precision="53" scale="0" />
+        </property>
+        <property name="recirculation" type="java.lang.Double">
+            <column name="Recirculation" precision="53" scale="0" />
+        </property>
+        <property name="initialHct" type="java.lang.Double">
+            <column name="InitialHct" precision="53" scale="0" />
+        </property>
+        <property name="toPrint" type="boolean">
+            <column name="ToPrint" not-null="true" />
+        </property>
+        <property name="heparinPresent" type="boolean">
+            <column name="HeparinPresent" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

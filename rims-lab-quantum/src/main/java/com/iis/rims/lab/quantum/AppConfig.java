@@ -61,8 +61,8 @@ public class AppConfig {
 	
 	@Bean
 	public LISIntegrationWebserviceSoap createLISIntegrationService() {
-		return createService(LISIntegrationWebserviceSoap.class, "http://52.187.20.127/LISIntegrationtesting/LisIntegrationWebservice.asmx?wsdl");
-//		return createService(LISIntegrationWebserviceSoap.class, lisWsdl);
+//		return createService(LISIntegrationWebserviceSoap.class, "http://52.187.20.127/LISIntegrationtesting/LisIntegrationWebservice.asmx?wsdl");
+		return createService(LISIntegrationWebserviceSoap.class, lisWsdl);
 	}
 	
 	private <T> T createService(Class<T> clazz, String address) {

@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.Attachment" table="tbl_Attachment" schema="cmn" catalog="RIMSDB_NEW">
+        <id name="attachmentId" type="java.lang.Integer">
+            <column name="AttachmentID" />
+            <generator class="native"></generator>
+        </id>
+        <property name="documentTypeId" type="java.lang.Integer">
+            <column name="DocumentTypeId" />
+        </property>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>        
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+        <property name="masterId" type="int">
+            <column name="MasterId" not-null="true" />
+        </property>
+        <property name="moduleType" type="string">
+            <column name="ModuleType" not-null="true" length="100" />
+        </property>
+        <property name="fileName" type="string">
+            <column name="FileName" length="256" not-null="true" />
+        </property>
+        <property name="format" type="string">
+            <column name="Format" length="20" not-null="true" />
+        </property>
+        <property name="size" type="long">
+            <column name="Size" />
+        </property>
+        <property name="content" type="binary">
+            <column name="Content" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

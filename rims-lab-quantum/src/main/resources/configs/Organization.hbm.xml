@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.Organization" table="tbl_Organization" schema="ssp" catalog="RIMSDB_NEW">
+        <id name="organizationId" type="int">
+            <column name="OrganizationId" />
+            <generator class="native" />
+        </id>
+        <property name="organizationName" type="string">
+            <column name="OrganizationName" length="100" not-null="true" unique="true" />
+        </property>
+        <property name="organizationCode" type="string">
+            <column name="OrganizationCode" length="2" not-null="false" unique="true" />
+        </property>
+        <property name="businessRegistrationNumber" type="string">
+            <column name="BusinessRegistrationNumber" length="20" />
+        </property>
+        <property name="businessRegisteredDate" type="timestamp">
+            <column name="BusinessRegisteredDate" length="23" />
+        </property>
+        <property name="businessIncorporatedIn" type="java.lang.Integer">
+            <column name="BusinessIncorporatedIn" />
+        </property>
+        <property name="primaryContact" type="string">
+            <column name="PrimaryContact" length="100" />
+        </property>
+        <property name="defaultCurrency" type="java.lang.Integer">
+            <column name="DefaultCurrency" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" length="500" />
+        </property>
+        <property name="letterHeadRequired" type="boolean">
+            <column name="LetterHeadRequired" not-null="true" />
+        </property>
+        <property name="taxApplicable" type="boolean">
+            <column name="TaxApplicable" />
+        </property>
+        <property name="taxRegistrationNumber" type="string">
+            <column name="TaxRegistrationNumber" length="20" />
+        </property>
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

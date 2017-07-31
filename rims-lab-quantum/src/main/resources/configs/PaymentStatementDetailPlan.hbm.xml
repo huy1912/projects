@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"
+[
+<!ENTITY paymentStatementDetailShared SYSTEM "classpath://configs/PaymentStatementDetailShared.hbm.xml">
+]>
+<!-- Generated Oct 19, 2013 5:09:20 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.PaymentStatementDetailPlan">
+    	&paymentStatementDetailShared;
+        <property name="customerName" type="string">
+            <column name="CustomerName" length="100" not-null="true" />
+        </property>
+        <!-- <property name="collectionAmountPayable" type="big_decimal">
+            <column name="CollectionAmountPayable" precision="18" not-null="true" />
+        </property> -->
+        <property name="collectionAmountPercentage" type="big_decimal">
+            <column name="CollectionAmountPercentage" precision="18" not-null="true" />
+        </property>
+        <property name="paymentStatementStatus" type="int">
+            <column name="PaymentStatementStatus" />
+        </property>
+        <property name="gstIncludePrice" type="boolean">
+            <column name="GSTIncludedPrice" />
+        </property>
+    </class>
+    
+    <sql-query name="RIMS_SP_PatientPaymentStatementList">
+		<return alias="paymentStatementDetailPlan" class="com.iis.rims.domain.PaymentStatementDetailPlan"/>
+		<![CDATA[
+			{call dbo.RIMS_SP_PatientPaymentStatementList(:patientId, :paymentStatmentId, :statementDate) }
+		]]>
+    </sql-query>
+    
+</hibernate-mapping>

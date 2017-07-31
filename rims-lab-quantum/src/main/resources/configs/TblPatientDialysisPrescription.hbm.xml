@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 3:53:12 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.TblPatientDialysisPrescription" table="tbl_PatientDialysisPrescription" catalog="RIMSDB_NEW">
+        <id name="dialysisPrescriptionId" type="int">
+            <column name="DialysisPrescriptionId" />
+            <generator class="assigned" />
+        </id>
+        <property name="registrationId" type="int">
+            <column name="RegistrationId" not-null="true" />
+        </property>
+        <property name="visitId" type="java.lang.Integer">
+            <column name="VisitId" />
+        </property>
+        <property name="doctorId" type="java.lang.Integer">
+            <column name="DoctorId" />
+        </property>
+        <property name="doctorName" type="string">
+            <column name="DoctorName" length="50" />
+        </property>
+        <property name="prescriptionDate" type="timestamp">
+            <column name="PrescriptionDate" length="23" not-null="true" />
+        </property>
+        <property name="dialysisFrequency" type="int">
+            <column name="DialysisFrequency" not-null="true" />
+        </property>
+        <property name="dialysisFrequencyType" type="int">
+            <column name="DialysisFrequencyType" not-null="true" />
+        </property>
+        <property name="dialysisDuration" type="big_decimal">
+            <column name="DialysisDuration" precision="4" not-null="true" />
+        </property>
+        <property name="ak" type="string">
+            <column name="AK" length="10" />
+        </property>
+        <property name="dialysate" type="int">
+            <column name="Dialysate" not-null="true" />
+        </property>
+        <property name="qb" type="string">
+            <column name="QB" length="1" />
+        </property>
+        <property name="qd" type="string">
+            <column name="QD" length="1" />
+        </property>
+        <property name="dryWeight" type="big_decimal">
+            <column name="DryWeight" precision="4" not-null="true" />
+        </property>
+        <property name="antiCoagulantInitial" type="string">
+            <column name="AntiCoagulantInitial" length="1" />
+        </property>
+        <property name="antiCoagulantHourly" type="string">
+            <column name="AntiCoagulantHourly" length="1" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" length="150" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

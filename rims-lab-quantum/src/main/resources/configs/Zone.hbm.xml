@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.Zone" table="tbl_Zone" schema="com" catalog="RIMSDB_NEW">
+        <id name="zoneId" type="int">
+            <column name="ZoneId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="countryId" type="int">
+            <column name="CountryId" not-null="true" />
+        </property>
+        <property name="zoneName" type="string">
+            <column name="ZoneName" length="50" not-null="true" />
+        </property>
+        <property name="zoneDescription" type="string">
+            <column name="ZoneDescription" length="100" />
+        </property>
+        <property name="zoneDistricts" type="string">
+            <column name="ZoneDistricts" length="250" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 25, 2013 7:00:28 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.StatementReceiptItemReference" table="tbl_StatementReceiptItemReference" schema="acc" catalog="RIMSDB_NEW">
+        <id name="statementReceiptItemRefecenceId" type="java.lang.Integer">
+            <column name="StatementReceiptItemRefecenceId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="receiptItemId" type="int">
+            <column name="ReceiptItemId" not-null="true" />
+        </property>
+        <property name="referenceDocumentType" type="string">
+            <column name="ReferenceDocumentType" length="20" />
+        </property>
+        <property name="referenceDocumentId" type="int">
+            <column name="ReferenceDocumentId" not-null="true" />
+        </property>
+        <property name="referenceDocumentNumber" type="string">
+            <column name="ReferenceDocumentNumber" length="250" />
+        </property>
+        <property name="paymentAmount" type="big_decimal">
+            <column name="PaymentAmount" precision="12" />
+        </property>
+        <property name="referenceDocumentAmountPaid" type="big_decimal">
+            <column name="ReferenceDocumentAmountPaid" precision="12" />
+        </property>
+        <property name="accpackInvoiceNumber" type="string">
+            <column name="AccpackInvoiceNumber" length="20" />
+        </property>
+        <property name="batchId" type="string">
+            <column name="BatchId" length="20" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="updatedDate" type="timestamp">
+            <column name="UpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="updatedBy" type="int">
+            <column name="UpdatedBy" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

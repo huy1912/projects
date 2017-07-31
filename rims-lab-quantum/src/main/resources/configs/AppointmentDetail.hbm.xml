@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.AppointmentDetail" table="tbl_AppointmentDetail" schema="his" catalog="RIMSDB_NEW">
+        <id name="appointmentDetailId" type="int">
+            <column name="AppointmentDetailId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="appointmentId" type="int">
+            <column name="AppointmentId" not-null="true" />
+        </property>
+        <property name="equipmentDetailId" type="int">
+            <column name="EquipmentDetailId" not-null="true" />
+        </property>
+        <property name="serviceId" type="int">
+            <column name="ServiceId" not-null="true" />
+        </property>
+        <property name="procedureId" type="int">
+            <column name="ProcedureId" not-null="true" />
+        </property>
+        <property name="numberOfSlots" type="int">
+            <column name="NumberOfSlots" not-null="true" />
+        </property>
+        <property name="examinationStartTime" type="timestamp">
+            <column name="ExaminationStartTime" length="23" not-null="true" />
+        </property>
+        <property name="examinationEndTime" type="timestamp">
+            <column name="ExaminationEndTime" length="23" not-null="true" />
+        </property>
+        <property name="approximateMinutes" type="java.lang.Integer">
+            <column name="ApproximateMinutes" />
+        </property>
+        <property name="specialIndicationsToPatient" type="string">
+            <column name="SpecialIndicationsToPatient" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="session" type="string">
+            <column name="Session" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+        <property name="epoEnable" type="java.lang.Boolean">
+            <column name="EpoEnable" />
+        </property>
+        <property name="epoProcedureId" type="string">
+            <column name="EpoProcedureId" />
+        </property>
+        <property name="medicationEnable" type="java.lang.Boolean">
+            <column name="MedicationEnable" />
+        </property>
+        <property name="medicationProcedureId" type="string">
+            <column name="MedicationProcedureId" />
+        </property>
+    </class>
+
+    <query name="getByEquipment">
+		<![CDATA[SELECT apptDetail FROM AppointmentDetail apptDetail, Appointment  appt
+			 WHERE apptDetail.appointmentId = appt.appointmentId 
+				and apptDetail.examinationEndTime > :startAppointTime 
+				and apptDetail.examinationStartTime < :endAppointTime
+				and apptDetail.equipmentDetailId = :equipmentDetailId
+				and appt.branchId = :branchId
+				and appt.organizationId = :organizationId 				
+				and appt.appointmentStatus = :appointStatus]]>
+	</query>
+	
+	<query name="getBookedAppointment">
+		<![CDATA[
+			SELECT apptDetail FROM AppointmentDetail apptDetail, Appointment  appt
+			 WHERE apptDetail.appointmentId = appt.appointmentId 			
+				and appt.appointmentStatus = :appointStatus
+				and appt.patientId = :patientId
+				and appt.branchId = :branchId
+				and appt.organizationId = :organizationId
+				and apptDetail.examinationStartTime >= :currentTime
+				ORDER BY equipmentDetailId ASC
+		]]>
+	</query>
+	
+	<query name="getBookedAppointmentByAppointmentDate">
+		<![CDATA[
+			SELECT appt FROM AppointmentDetail apptDetail, Appointment  appt 
+			 WHERE apptDetail.appointmentId = appt.appointmentId 			
+				AND appt.appointmentStatus = :appointStatus 
+				AND appt.patientId = :patientId 
+				AND appt.appointmentDate = :appointmentDate 
+				AND appt.entityStatus= :entityStatus AND appt.branchId= :branchId 
+				AND appt.organizationId= :organizationId 
+		]]>
+	</query>
+	
+	<query name="getBookedAppointmentDetail">
+		<![CDATA[		
+			SELECT a.appointmentId as appointmentId,a.appointmentDate as appointmentDate,d.session as session,
+			d.approximateMinutes as aproximatedMinutes,e.equipmentDetailName as equipmentDetailName,
+			s.serviceName as serviceName, p.procedureName as procedureName 
+			FROM AppointmentDetail d ,Appointment a, Service s, EquipmentDetail e, Procedure p  
+			WHERE d.appointmentId=a.appointmentId AND s.serviceId = d.serviceId  
+			AND e.equipmentDetailId=d.equipmentDetailId  AND p.procedureId=d.procedureId 
+			AND a.patientId= :patientId 
+			AND a.entityStatus= :entityStatus AND a.branchId= :branchId 
+			AND a.appointmentStatus = :appointStatus 
+			AND a.organizationId= :organizationId AND d.examinationStartTime >= :currentTime 
+			ORDER BY a.appointmentDate ASC
+		]]>
+	</query>
+	
+	<query name="findBookedApptDetailByEquipmentAndApptDate">
+		<![CDATA[		
+			SELECT d				 
+			FROM AppointmentDetail d, Appointment a  
+			WHERE d.appointmentId = a.appointmentId 
+				AND d.equipmentDetailId= :equipmentDetailId
+				AND a.entityStatus= :entityStatus AND a.branchId= :branchId 
+				AND a.appointmentStatus = :appointStatus 
+				AND a.organizationId= :organizationId 
+				AND CONVERT(VARCHAR(10), a.appointmentDate, 101) = CONVERT(VARCHAR(10), :appointmentDate, 101) 
+			ORDER BY a.appointmentDate ASC
+		]]>
+	</query>
+	
+	<!-- Use sql query instead of query for left join with equipment detail table -->
+	<query name="getAppointmentForVisit">
+		<![CDATA[
+			SELECT s.serviceId as serviceId, s.serviceName as serviceName, p.procedureId as procedureId,
+			p.procedureName as procedureName, p.listCashPrice as listCashPrice, 1 as quantity, 
+			p.listCashPrice as totalPrice, e.equipmentDetailId as equipmentDetailId, 
+			e.equipmentDetailName as equipmentDetailName, apt.organizationId as organizationId , apt.branchId as branchId
+			FROM AppointmentDetail d, Service s, Procedure p, EquipmentDetail e, Appointment apt
+			WHERE d.appointmentId = :appointmentId AND apt.appointmentId = d.appointmentId
+			AND d.serviceId = s.serviceId AND d.procedureId = p.procedureId 
+			AND d.equipmentDetailId = e.equipmentDetailId
+		]]>
+	</query>
+	
+	<query name="findOverlapApptDetailForNew1">
+		<![CDATA[
+			SELECT dtl 
+					FROM AppointmentDetail dtl, Appointment appt 					      
+					WHERE dtl.equipmentDetailId = :equipmentDetailId 
+					and dtl.entityStatus = 0 
+					and appt.organizationId = :organizationId
+					and appt.branchId = :branchId
+					and appt.appointmentStatus <> :appointmentStatusCanceled
+					and appt.appointmentStatus <> :appointmentStatusDeleted
+					and dtl.appointmentId = appt.appointmentId
+					and (dtl.examinationStartTime <= :startTime1 and dtl.examinationEndTime > :startTime2) 
+		]]>
+	</query>
+	
+    <query name="findOverlapApptDetailForNew2">
+		<![CDATA[
+			SELECT dtl 
+					FROM AppointmentDetail dtl, Appointment appt 					      
+					WHERE dtl.equipmentDetailId = :equipmentDetailId 
+					and dtl.entityStatus = 0
+					and appt.organizationId = :organizationId
+					and appt.branchId = :branchId 
+					and appt.appointmentStatus <> :appointmentStatusCanceled
+					and appt.appointmentStatus <> :appointmentStatusDeleted
+					and dtl.appointmentId = appt.appointmentId
+					and (dtl.examinationStartTime >= :startTime and dtl.examinationStartTime < :endTime) 
+		]]>
+	</query>
+ 
+	<query name="findOverlapApptDetailForUpdate1">
+		<![CDATA[
+			SELECT dtl 
+					FROM AppointmentDetail dtl, Appointment appt 					      
+					WHERE dtl.equipmentDetailId = :equipmentDetailId 
+					and dtl.entityStatus = 0 
+					and appt.organizationId = :organizationId
+					and appt.branchId = :branchId
+					and appt.appointmentStatus <> :appointmentStatusCanceled
+					and appt.appointmentStatus <> :appointmentStatusDeleted
+					and dtl.appointmentId = appt.appointmentId
+					and appt.appointmentId <> :appointmentId 
+					and (dtl.examinationStartTime <= :startTime1 and dtl.examinationEndTime > :startTime2) 
+		]]>
+	</query>
+	
+    <query name="findOverlapApptDetailForUpdate2">
+		<![CDATA[
+			SELECT dtl 
+					FROM AppointmentDetail dtl, Appointment appt 					      
+					WHERE dtl.equipmentDetailId = :equipmentDetailId 
+					and dtl.entityStatus = 0 
+					and appt.organizationId = :organizationId
+					and appt.branchId = :branchId
+					and appt.appointmentStatus <> :appointmentStatusCanceled
+					and appt.appointmentStatus <> :appointmentStatusDeleted
+					and dtl.appointmentId = appt.appointmentId
+					and appt.appointmentId <> :appointmentId 
+					and (dtl.examinationStartTime >= :startTime and dtl.examinationStartTime < :endTime) 
+		]]>
+	</query> 
+	
+	<query name="findCurrentAppointmentForPatient">
+		<![CDATA[
+			SELECT dtl.appointmentId
+			FROM AppointmentDetail dtl, Appointment appt
+			WHERE dtl.appointmentId = appt.appointmentId
+				AND appt.patientId = :patientId 
+				AND appt.organizationId = :organizationId
+				AND appt.branchId = :branchId
+				AND appt.entityStatus = 0
+				AND appt.appointmentStatus = 5
+				AND appt.appointmentDate >= :currentDate AND appt.appointmentDate < :nextDate
+				AND appt.appointmentId <> :appointmentId
+		]]>
+	</query>
+	
+	<query name="getBookedAppointmentByEquipmentAndAppointmentDate">
+		<![CDATA[
+			SELECT appt FROM AppointmentDetail apptDetail, Appointment  appt 
+			 WHERE apptDetail.appointmentId = appt.appointmentId 			
+				AND appt.appointmentStatus = :appointmentStatus 
+				AND appt.appointmentDate >= :startDate AND appt.appointmentDate < :endDate
+				AND appt.entityStatus = :entityStatus 
+				AND appt.branchId = :branchId 
+				AND appt.organizationId = :organizationId 
+				AND apptDetail.equipmentDetailId = :equipmentId
+		]]>
+	</query>
+	
+	<sql-query name="RIMS_SP_AddonProcedureFromAppointment">
+		<![CDATA[
+			{call dbo.RIMS_SP_AddonProcedureFromAppointment(:appointmentId) }
+		]]>
+    </sql-query>
+    
+    <sql-query name="RIMS_SP_ScheduleProcedure">
+		<![CDATA[
+			{call dbo.RIMS_SP_ScheduleProcedure(:procedureIds, :procedureType, :visitId) }
+		]]>
+    </sql-query>
+</hibernate-mapping>

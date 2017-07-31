@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<!-- 
+ -->
+<hibernate-mapping>
+	<class name="com.iis.rims.domain.MainDashBoardView" table="MainDashBoardView"
+		schema="dbo" catalog="RIMSDB_NEW">
+		<property name="appointmentId" type="int">
+			<column name="AppointmentId" />
+		</property>
+		<property name="patientId" type="int">
+			<column name="PatientId" not-null="true" />
+		</property>
+		 <property name="nricFinNumber" type="string">
+            <column name="NricFinNumber" length="50" not-null="true" />
+        </property>
+		<property name="patientName" type="string">
+            <column name="PatientName" length="100" not-null="true" />
+        </property>
+		<property name="dateOfBirth" type="timestamp">
+            <column name="DateOfBirth" length="23" not-null="true" />
+        </property>
+        <property name="gender" type="int">
+            <column name="Gender" not-null="true" />
+        </property>
+		<property name="appointmentDate" type="timestamp">
+            <column name="AppointmentDate" length="23" not-null="true" />
+        </property>
+        <property name="appointmentStartTime" type="string">
+            <column name="AppointmentStartTime" length="10" not-null="true" />
+        </property>
+        <property name="appointmentEndTime" type="string">
+            <column name="AppointmentEndTime" length="10" not-null="true" />
+        </property>
+		<property name="appointmentStatus" type="int">
+            <column name="AppointmentStatus" not-null="true" />
+        </property>
+        <property name="visitId" type="int">
+            <column name="VisitId" />
+        </property>
+		 <property name="visitType" type="int">
+            <column name="VisitType" not-null="true" />
+        </property>
+        <property name="visitStatus" type="int">
+            <column name="VisitStatus" not-null="true" />
+        </property>
+		<property name="registrationId" type="int">
+            <column name="RegistrationId" />
+        </property>
+		<property name="organizationId" type="int">
+            <column name="OrganizationId" />
+        </property>
+		<property name="branchId" type="int">
+			<column name="BranchId" not-null="true" />
+		</property>
+		<property name="equipmentDetailId" type="int">
+			<column name="EquipmentDetailId" not-null="true" />
+		</property>
+		<property name="equipmentDetailName" type="string">
+            <column name="EquipmentDetailName" length="100" not-null="true" />
+        </property>
+        <property name="aeTitle" type="string">
+            <column name="AeTitle" />
+        </property>
+        <property name="stationName" type="string">
+            <column name="StationName" />
+        </property>
+        <property name="appointmentDetailId" type="int">
+			<column name="AppointmentDetailId" />
+		</property>
+        <property name="registrationStatus" type="int">
+            <column name="RegistrationStatus" not-null="true" />
+        </property>
+	</class>
+	<sql-query name="findMainDashBoardViewSQL">
+		<![CDATA[SELECT his.tbl_Appointment.AppointmentId, 
+					  mst.tbl_Patient.PatientId, 
+					  mst.tbl_Patient.NricFinNumber, 
+					  mst.tbl_Patient.PatientName, 
+					  mst.tbl_Patient.DateOfBirth, 
+                      mst.tbl_Patient.Gender, 
+                      his.tbl_Appointment.AppointmentDate, 
+                      his.tbl_Appointment.AppointmentStartTime, 
+                      his.tbl_Appointment.AppointmentEndTime, 
+                      his.tbl_Appointment.AppointmentStatus, 
+                      his.tbl_Visit.VisitStatus, 
+                      his.tbl_Visit.VisitType, 
+                      his.tbl_Visit.VisitId, 
+                      his.tbl_Registration.RegistrationId, 
+                      his.tbl_Appointment.OrganizationId, 
+                      his.tbl_Appointment.BranchId, 
+                      his.tbl_AppointmentDetail.EquipmentDetailId, 
+                      mst.tbl_EquipmentDetail.EquipmentDetailName, 
+                      mst.tbl_EquipmentDetail.StationName, 
+                      mst.tbl_EquipmentDetail.AeTitle, 
+                      his.tbl_Registration.RegistrationStatus, 
+                      his.tbl_AppointmentDetail.AppointmentDetailId
+FROM       his.tbl_Appointment 
+INNER JOIN his.tbl_AppointmentDetail ON his.tbl_Appointment.AppointmentId = his.tbl_AppointmentDetail.AppointmentId 
+INNER JOIN mst.tbl_Patient ON his.tbl_Appointment.PatientId = mst.tbl_Patient.PatientId 
+INNER JOIN mst.tbl_EquipmentDetail ON his.tbl_AppointmentDetail.EquipmentDetailId = mst.tbl_EquipmentDetail.EquipmentDetailId 
+INNER JOIN his.tbl_Registration ON his.tbl_Appointment.AppointmentId = his.tbl_Registration.AppointmentId 
+INNER JOIN his.tbl_Visit ON his.tbl_Registration.RegistrationId = his.tbl_Visit.RegistrationId
+		]]>
+	</sql-query>
+</hibernate-mapping>

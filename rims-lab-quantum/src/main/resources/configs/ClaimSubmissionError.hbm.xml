@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 19, 2015 12:31:04 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.ClaimSubmissionError" table="tbl_ClaimSubmissionError" schema="medinet" catalog="RIMSDB_NEW">
+        <id name="errorId" type="java.lang.Integer">
+            <column name="ErrorId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="claimId" type="int">
+            <column name="ClaimId" not-null="true" />
+        </property>
+        <property name="errorCode" type="string">
+            <column name="ErrorCode" length="6" not-null="true" />
+        </property>
+        <property name="errorDescription" type="string">
+            <column name="ErrorDescription" length="70" not-null="true" />
+        </property>
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="createdBy" type="int">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

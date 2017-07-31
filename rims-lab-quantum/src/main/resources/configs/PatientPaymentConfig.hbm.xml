@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 10, 2013 9:42:12 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.PatientPaymentConfig" table="tbl_PatientPaymentConfig" schema="mst" catalog="RIMSDB_NEW">
+        <id name="paymentConfigId" type="java.lang.Integer">
+            <column name="PaymentConfigId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="registrationId" type="java.lang.Integer">
+            <column name="RegistrationId" not-null="true" />
+        </property>
+        <property name="patientPaymentPlanId" type="java.lang.Integer">
+            <column name="PatientPaymentPlanId" not-null="true" />
+        </property>
+        <property name="patientId" type="java.lang.Integer">
+            <column name="PatientId" not-null="true" />
+        </property>
+        <property name="claimDate" type="timestamp">
+            <column name="ClaimDate" length="23" not-null="true" />
+        </property>
+        <property name="claimAmount" type="big_decimal">
+            <column name="ClaimAmount" precision="10" />
+        </property>
+        <property name="createdBy" type="java.lang.Integer" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="java.lang.Integer">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+    <!-- 
+    <query name="countPaymentConfig1">
+     	<![CDATA[SELECT count(c) FROM PatientPaymentConfig c, PatientPaymentPlan p 
+     	WHERE p.patientNric = :patientNric AND c.patientPaymentPlanId = p.patientPaymentPlanId]]>
+    </query>
+     -->
+    
+    <query name="countPaymentConfig">
+     	<![CDATA[SELECT count(c) FROM PatientPaymentConfig c 
+     	WHERE c.patientPaymentPlanId = :patientPaymentPlanId]]>
+     </query>
+</hibernate-mapping>

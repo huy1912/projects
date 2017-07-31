@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 30, 2015 11:13:55 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.LabOrderDetailSummary" table="LabOrderDetailSummary" schema="dbo" catalog="RIMSDB_NEW">
+        <id name="labOrderDetailId" type="java.lang.Integer">
+            <column name="LabOrderDetailId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="labOrderId" type="int">
+            <column name="LabOrderId" not-null="true" />
+        </property>
+        <property name="orderDate" type="timestamp">
+            <column name="OrderDate" length="23" not-null="true" />
+        </property>
+        <property name="nricFinNumber" type="string">
+            <column name="NricFinNumber" length="20" not-null="true" />
+        </property>
+        <property name="orderStatus" type="int">
+            <column name="OrderStatus" not-null="true" />
+        </property>
+        <property name="orderHl7status" type="int">
+            <column name="OrderHL7Status" not-null="true" />
+        </property>
+        <property name="orderHl7message" type="string">
+            <column name="OrderHL7Message" />
+        </property>
+        <property name="orderPaymentStatus" type="java.lang.Integer">
+            <column name="OrderPaymentStatus" />
+        </property>
+        <property name="procedureName" type="string">
+            <column name="ProcedureName" length="150" not-null="true" />
+        </property>
+        <property name="listedCashPrice" type="big_decimal">
+            <column name="ListedCashPrice" precision="12" />
+        </property>
+        <property name="paymentStatus" type="int">
+            <column name="PaymentStatus" not-null="true" />
+        </property>
+        <property name="orderReportStatus" type="java.lang.Integer">
+            <column name="OrderReportStatus" />
+        </property>
+        <!-- <property name="orderReportAttached" type="binary">
+            <column name="OrderReportAttached" />
+        </property> -->
+        <property name="visitNumber" type="string">
+            <column name="VisitNumber" length="20" not-null="true" />
+        </property>
+        <property name="hasReportAttached" type="boolean">
+            <column name="HasReportAttached" not-null="true" />
+        </property>
+        <property name="accessionNumber" type="string">
+            <column name="AccessionNumber" not-null="true" />
+        </property>
+        <property name="labCustomerId" type="java.lang.Integer">
+            <column name="LabCustomerId" />
+        </property>
+        <property name="labCustomerName" type="string">
+            <column name="LabCustomerName" />
+        </property>
+        <property name="patientName" type="string">
+            <column name="PatientName" />
+        </property>
+        <property name="uploadStatus" type="java.lang.Integer">
+            <column name="UploadStatus" />
+        </property>
+        <property name="branchId" type="java.lang.Integer">
+            <column name="BranchId" />
+        </property>
+        <property name="procedureId" type="java.lang.Integer">
+            <column name="ProcedureId" />
+        </property>
+        <property name="detailType" type="java.lang.Integer">
+            <column name="DetailType" />
+        </property>
+        <property name="labOrderNumber" type="string">
+            <column name="LabOrderNumber" length="20" />
+        </property>
+        <property name="errorMessage" type="string">
+            <column name="ErrorMessage" />
+        </property>
+        <property name="failedOrderPath" type="string">
+            <column name="FailedOrderPath" />
+        </property>
+    </class>
+</hibernate-mapping>

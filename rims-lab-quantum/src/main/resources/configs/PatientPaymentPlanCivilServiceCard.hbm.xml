@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 30, 2013 8:31:34 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.PatientPaymentPlanCivilServiceCard" table="tbl_PatientPaymentPlanCivilServiceCard" schema="mst" catalog="RIMSDB_NEW">
+        <id name="planCivilServiceCardId" type="java.lang.Integer">
+            <column name="PlanCivilServiceCardId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="patientPaymentPlanId" type="int">
+            <column name="PatientPaymentPlanId" not-null="true" />
+        </property>
+        <property name="civilServiceCardNumber" type="string">
+            <column name="CivilServiceCardNumber" length="20" not-null="true" />
+        </property>
+        <property name="civilServicePersonName" type="string">
+            <column name="CivilServicePersonName" length="100" not-null="true" />
+        </property>
+        <property name="amountPayableBy" type="int">
+            <column name="AmountPayableBy" not-null="true" />
+        </property>
+        <property name="amountPayable" type="big_decimal">
+            <column name="AmountPayable" precision="8" not-null="true" />
+        </property>
+        <property name="gstincludedPrice" type="java.lang.Boolean">
+            <column name="GSTIncludedPrice" />
+        </property>
+        <property name="amountValue" type="big_decimal">
+            <column name="AmountValue" precision="8" not-null="true" />
+        </property>        
+         <property name="totalNumberOfDialysis" type="int">
+            <column name="TotalNumberOfDialysis" not-null="true" />
+        </property>
+        <property name="totalProcedurePrice" type="big_decimal">
+            <column name="TotalProcedurePrice" precision="8" not-null="true" />
+        </property>
+        <property name="totalGSTAmount" type="big_decimal">
+            <column name="TotalGSTAmount" precision="8" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

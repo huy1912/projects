@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 31, 2013 4:11:27 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.ConcentratorStation" table="tbl_ConcentratorStation" schema="ssp" catalog="RIMSDB_NEW">
+        <id name="concentratorStationId" type="java.lang.Integer">
+            <column name="ConcentratorStationId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+        <property name="serviceId" type="int">
+            <column name="ServiceId" not-null="true" />
+        </property>
+        <property name="stationName" type="string">
+            <column name="StationName" length="100" not-null="true" />
+        </property>
+        <property name="stationDescription" type="string">
+            <column name="StationDescription" length="250" />
+        </property>
+        <property name="dianetAddress" type="int">
+            <column name="DianetAddress" not-null="true" />
+        </property>
+        <property name="serialNumber" type="string">
+            <column name="SerialNumber" length="20" not-null="true" />
+        </property>
+        <property name="brandName" type="string">
+            <column name="BrandName" length="100" not-null="true" />
+        </property>
+        <property name="communcationType" type="java.lang.Integer">
+            <column name="CommuncationType" />
+        </property>
+        <property name="networkAddress" type="string">
+            <column name="NetworkAddress" length="15" />
+        </property>
+        <property name="networkPort" type="java.lang.Integer">
+            <column name="NetworkPort" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" length="250" />
+        </property>
+        <property name="entityStatus" type="byte">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.VisitDetail" table="tbl_VisitDetail" schema="his" catalog="RIMSDB_NEW">
+        <id name="visitDetailId" type="int">
+            <column name="VisitDetailId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="visitId" type="int">
+            <column name="VisitId" not-null="true" />
+        </property>
+        <property name="accessionNumber" type="string">
+            <column name="AccessionNumber" length="20" not-null="true" />
+        </property>
+        <property name="billToType" type="int">
+            <column name="BillToType" not-null="true" />
+        </property>
+        <property name="billToId" type="int">
+            <column name="BillToId" not-null="true" />
+        </property>
+        <property name="serviceId" type="java.lang.Integer">
+            <column name="ServiceId" not-null="true" />
+        </property>
+        <property name="serviceName" type="string">
+            <column name="serviceName" length="50" not-null="true" />
+        </property>
+        <property name="procedureId" type="int">
+            <column name="ProcedureId" not-null="true" />
+        </property>
+        <property name="procedureName" type="string">
+            <column name="ProcedureName" length="150" not-null="true" />
+        </property>
+        <property name="equipmentDetailId" type="int">
+            <column name="EquipmentDetailId" />
+        </property>
+        <property name="equipmentDetailName" type="string">
+            <column name="EquipmentDetailName" length="150" />
+        </property>
+        <property name="priceBasedOn" type="java.lang.Integer">
+            <column name="PriceBasedOn" />
+        </property>
+        <property name="listedBillPrice" type="java.math.BigDecimal">
+            <column name="ListedBillPrice" precision="12" />
+        </property>
+        <property name="listedCashPrice" type="java.math.BigDecimal">
+            <column name="ListedCashPrice" precision="12" />
+        </property>
+        <property name="packageCashPrice" type="java.math.BigDecimal">
+            <column name="PackageCashPrice" precision="12" />
+        </property>
+         <property name="packageTotalCashPrice" type="java.math.BigDecimal">
+            <column name="PackageTotalCashPrice"/>
+        </property>
+        <property name="packageId" type="int">
+            <column name="PackageId" />
+        </property>
+        <property name="packageDetailId" type="int">
+            <column name="PackageDetailId"/>
+        </property>
+        <property name="quantity" type="int">
+            <column name="Quantity" not-null="true" />
+        </property>
+        <property name="netAmount" type="java.math.BigDecimal">
+            <column name="NetAmount" precision="12" not-null="true" />
+        </property>
+        <property name="netAmountSign" type="int">
+            <column name="NetAmountSign" not-null="true" />
+        </property>
+        <property name="recordLock" type="boolean">
+            <column name="RecordLock" not-null="true" />
+        </property>
+        <property name="confirmed" type="boolean">
+            <column name="Confirmed" not-null="true" />
+        </property>
+        <property name="paymentStatus" type="int">
+            <column name="PaymentStatus" not-null="true" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="remark" type="string">
+            <column name="Remark" length="255" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+        <property name="labCustomerId" type="java.lang.Integer">
+            <column name="LabCustomerId" />
+        </property>
+    </class>
+    <sql-query name="RIMS_SP_SearchVisitDetailList">
+		<![CDATA[
+			{ call dbo.RIMS_SP_SearchVisitDetailList(:branchId, :nricFinNumber, :patientName, :fromDate, :toDate)}
+		]]>
+	</sql-query>
+	<sql-query name="RIMS_SP_SearchVisitInvoiceRegList">
+		<![CDATA[
+			{ call dbo.RIMS_SP_SearchVisitInvoiceRegList(:branchId, :nricFinNumber, :patientName, :fromDate, :toDate)}
+		]]>
+	</sql-query>
+    <!-- TODO Need to double check with Kumar to remove the payment status in the visit detail as it's already in the visit detail payment -->
+    <sql-query name="getRegistrationProcedure">
+    	<return-scalar column="visitDetailId" type="int" />
+    	<return-scalar column="serviceId" type="int" />
+        <return-scalar column="serviceName" type="string" />
+    	<return-scalar column="procedureId" type="int" />
+        <return-scalar column="procedureName" type="string" />
+        <return-scalar column="quantity" type="int" />
+        <return-scalar column="listBillPrice" type="java.math.BigDecimal" />
+        <return-scalar column="listCashPrice" type="java.math.BigDecimal" />
+        <return-scalar column="cashWave" type="java.math.BigDecimal" />
+        <return-scalar column="totalPrice" type="java.math.BigDecimal" />
+        <return-scalar column="equipmentDetailId" type="java.lang.Integer" />
+        <return-scalar column="equipmentDetailName" type="string" />
+        <return-scalar column="paymentStatus" type="int" />
+        <return-scalar column="packageId" type="java.lang.Integer" />
+        <return-scalar column="remark" type="string" />
+        <return-scalar column="createdDate" type="java.util.Date" />
+        <return-scalar column="labCustomerId" type="java.lang.Integer" />
+		<![CDATA[
+			select
+		        visitDetail.VisitDetailId,
+		        visitDetail.ServiceId,
+		        visitDetail.ServiceName,
+		        visitDetail.ProcedureId,
+		        visitDetail.ProcedureName,
+		        visitDetail.EquipmentDetailId,
+		        visitDetail.EquipmentDetailName,
+		        visitDetail.ListedBillPrice as ListBillPrice,
+		        visitDetail.ListedCashPrice as ListCashPrice,
+		        visitDetail.Quantity,
+		        visitDetail.NetAmount as TotalPrice,
+		        visitDetail.PackageCashPrice as cashWave,
+		        visitDetail.PackageId as packageId,
+		        ISNULL(visitDetailPayment.PaymentStatus, 0) as PaymentStatus,
+		        visitDetail.Remark,
+		        visitDetail.CreatedDate,
+		        visitDetail.LabCustomerId
+		    from
+		        his.tbl_VisitDetail visitDetail LEFT JOIN his.tbl_VisitDetailPayment visitDetailPayment ON visitDetail.visitDetailId = visitDetailPayment.visitDetailId 
+		        AND visitDetailPayment.documentType = 'IN' AND visitDetailPayment.entityStatus = 1
+		    where visitDetail.VisitId= :visitId 
+		        
+		]]>
+    </sql-query>
+</hibernate-mapping>

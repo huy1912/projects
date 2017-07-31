@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.PatientDialysisPrescription" 
+    table="tbl_PatientDialysisPrescription" schema="dis" catalog="RIMSDB_NEW">
+        <id name="dialysisPrescriptionId" type="int">
+            <column name="DialysisPrescriptionId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="registrationId" type="int">
+            <column name="RegistrationId" not-null="true" />
+        </property>
+        <property name="patientId" type="int">
+            <column name="PatientId" not-null="false" />
+        </property>
+        <property name="visitId" type="java.lang.Integer">
+            <column name="VisitId" />
+        </property>        
+        <property name="doctorType" type="java.lang.Integer">
+            <column name="DoctorType" />
+        </property>
+        <property name="doctorId" type="java.lang.Integer">
+            <column name="DoctorId" />
+        </property>
+        <property name="doctorName" type="string">
+            <column name="DoctorName" length="50" />
+        </property>
+        <property name="prescriptionDate" type="timestamp">
+            <column name="PrescriptionDate" length="23" not-null="true" />
+        </property>
+        <property name="dialysisFrequency" type="int">
+            <column name="DialysisFrequency" not-null="true" />
+        </property>
+        <property name="dialysisFrequencyType" type="int">
+            <column name="DialysisFrequencyType" not-null="true" />
+        </property>
+        <property name="dialysisDuration" type="big_decimal">
+            <column name="DialysisDuration" precision="4" not-null="true" />
+        </property>
+        <property name="dialsateTemprature" type="big_decimal">
+            <column name="DialsateTemprature" />
+        </property>
+        <property name="washback" type="big_decimal">
+            <column name="Washback" />
+        </property>
+        <property name="ak" type="int">
+            <column name="AK" />
+        </property>
+        <property name="dialysate" type="int">
+            <column name="Dialysate" not-null="true" />
+        </property>
+        <property name="dialyzerType" type="int">
+            <column name="DialyzerType" not-null="false" />
+        </property>
+        <property name="qb" type="int">
+            <column name="QB" length="1" />
+        </property>
+        <property name="qd" type="int">
+            <column name="QD" length="1" />
+        </property>
+        <property name="ap" type="int">
+            <column name="AP" length="1" />
+        </property>
+        <property name="vp" type="int">
+            <column name="VP" length="1" />
+        </property>
+        <property name="dryWeight" type="big_decimal">
+            <column name="DryWeight" precision="4" not-null="true" />
+        </property>
+        <property name="antiCoagulantPrime" type="string">
+            <column name="AntiCoagulantPrime" length="20" />
+        </property>
+        <property name="antiCoagulantBolus" type="string">
+            <column name="AntiCoagulantBolus" length="20" />
+        </property>
+        <property name="antiCoagulantInitial" type="string">
+            <column name="AntiCoagulantInitial" length="20" />
+        </property>
+        <property name="antiCoagulantHourly" type="string">
+            <column name="AntiCoagulantHourly" length="20" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" length="150" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+        <property name="nurseId" type="java.lang.Integer">
+            <column name="NurseId" not-null="false" />
+        </property>
+    </class>
+    
+     <query name="getPrecriptionByPatientId">
+     	<![CDATA[select pres from PatientDialysisPrescription pres, Registration reg, Patient pat where pres.registrationId = reg.registrationId and reg.patientId = pat.patientId and pat.patientId = :patientId order by pres.visitId desc]]>
+     </query>
+     <query name="getRecentPrecriptionByPatientId">
+     	<![CDATA[select pres from PatientDialysisPrescription pres, Registration reg, Patient pat where pres.entityStatus = 1 and pres.deleted=0 and pres.registrationId = reg.registrationId and reg.patientId = pat.patientId and pat.patientId = :patientId order by pres.prescriptionDate desc]]>
+     </query>
+     <query name="getRecentPrecriptionByPatientIdDesc">
+     	<![CDATA[select pres from PatientDialysisPrescription pres, Registration reg, Patient pat where pres.entityStatus = 1 and pres.registrationId = reg.registrationId and reg.patientId = pat.patientId and pat.patientId = :patientId order by pres.prescriptionDate desc]]>
+     </query>
+     <!-- <query name="deletePrescriptionByIds">
+     	<![CDATA[update PatientDialysisPrescription set deleted = true, entityStatus = false where dialysisPrescriptionId = :dialysisPrescriptionId and registrationId = :registrationId and patientId = :patientId]]>
+     </query> -->
+</hibernate-mapping>

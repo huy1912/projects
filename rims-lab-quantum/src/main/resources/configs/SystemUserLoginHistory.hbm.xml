@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.SystemUserLoginHistory" table="tbl_SystemUserLoginHistory" schema="ssp" catalog="RIMSDB_NEW">
+        <id name="loginHistoryId" type="int">
+            <column name="LOGIN_HISTORY_ID" />
+            <generator class="native"></generator>
+        </id>
+        <property name="loginType" type="string">
+            <column name="LOGIN_TYPE" length="10" not-null="true" />
+        </property>
+        <property name="userId" type="int">
+            <column name="USER_ID" not-null="true" />
+        </property>
+        <property name="datetime" type="timestamp" update="false">
+            <column name="DATETIME" length="23" not-null="true" />
+        </property>
+        <property name="retries" type="int">
+            <column name="RETRIES" not-null="true" />
+        </property>
+        <property name="loginStatus" type="int">
+            <column name="LOGIN_STATUS" not-null="true" />
+        </property>
+        <property name="loginMessage" type="string">
+            <column name="LOGIN_MESSAGE" length="250" not-null="true" />
+        </property>
+        <property name="createdTime" type="timestamp">
+            <column name="CREATED_TIME" length="23" not-null="true" />
+        </property>
+        <property name="userName" type="string">
+            <column name="USER_NAME" length="20" not-null="false" />
+        </property>
+        <property name="ipAddress" type="string">
+            <column name="IP_ADDRESS" length="15" />
+        </property>
+        <property name="proxyAddress" type="string">
+            <column name="PROXY_ADDRESS" length="15" />
+        </property>
+        <property name="hostName" type="string">
+            <column name="HOST_NAME" length="20" />
+        </property>        
+        <property name="logoutStatus" type="int">
+            <column name="LOGOUT_STATUS" not-null="false" />
+        </property>
+         <property name="logoutMessage" type="string">
+            <column name="LOGOUT_MESSAGE" length="250"  not-null="false" />
+        </property>
+        <property name="logoutTime" type="timestamp">
+            <column name="LOGOUT_TIME" length="23"  not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

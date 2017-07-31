@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.Appointment" table="tbl_Appointment" schema="his" catalog="RIMSDB_NEW">
+        <id name="appointmentId" type="int">
+            <column name="AppointmentId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+        <property name="serviceClassId" type="int">
+            <column name="ServiceClassId" not-null="true" />
+        </property>
+        <property name="patientPrescriptionId" type="java.lang.Integer">
+            <column name="patientPrescriptionId" />
+        </property>
+        <property name="appointmentDate" type="timestamp">
+            <column name="AppointmentDate" length="23" not-null="true" />
+        </property>
+        <property name="appointmentStartTime" type="string">
+            <column name="AppointmentStartTime" length="10" not-null="true" />
+        </property>
+        <property name="appointmentEndTime" type="string">
+            <column name="AppointmentEndTime" length="10" not-null="true" />
+        </property>
+        <property name="patientId" type="java.lang.Integer">
+            <column name="PatientId" />
+        </property>
+        <property name="careplanId" type="java.lang.Integer">
+            <column name="CareplanId" />
+        </property>        
+        <property name="patientName" type="string">
+            <column name="PatientName" length="100" not-null="true" />
+        </property>
+        <property name="patientIc" type="string">
+            <column name="PatientIC" length="20" not-null="true" />
+        </property>
+        <property name="patientContactNo" type="string">
+            <column name="PatientContactNo" length="50" not-null="true" />
+        </property>
+        <property name="referringDoctorId" type="java.lang.Integer">
+            <column name="ReferringDoctorId" />
+        </property>
+        <property name="referringDoctorName" type="string">
+            <column name="ReferringDoctorName" length="100" />
+        </property>
+        <property name="referringClinicId" type="java.lang.Integer">
+            <column name="ReferringClinicID" />
+        </property>
+        <property name="referringClinicName" type="string">
+            <column name="ReferringClinicName" length="100" />
+        </property>
+        <property name="referringClinicDetails" type="string">
+            <column name="ReferringClinicDetails" />
+        </property>
+        <property name="specialIndicationsToPatient" type="string">
+            <column name="SpecialIndicationsToPatient" />
+        </property>
+        <property name="appointmentStatus" type="int">
+            <column name="AppointmentStatus" not-null="true" />
+        </property>
+        <property name="loginBranchId" type="int">
+            <column name="LoginBranchId" not-null="true" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+        <property name="inPatient" type="boolean">
+            <column name="InPatient" not-null="true" />
+        </property>
+    </class>
+    <sql-query name="findAppointmentByDate">
+		<return alias="findAppointmentByDate" class="com.iis.rims.domain.Appointment" />
+		 	<![CDATA[
+				SELECT appt.*
+				FROM his.tbl_Appointment appt 
+				WHERE appt.OrganizationId = :organizationId 
+						AND appt.BranchId = :branchId
+						AND appt.PatientId = :patientId
+						AND appt.AppointmentStatus = :appointmentStatus
+						AND appt.EntityStatus = :entityStatus
+						and CONVERT(VARCHAR, appt.AppointmentDate, 103) = CONVERT(VARCHAR, :appointmentDate,103)	
+		]]>
+	</sql-query>
+</hibernate-mapping>

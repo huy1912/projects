@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 13, 2013 7:38:13 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.HaemodialysisChartDetail" table="tbl_HaemodialysisChartDetail" schema="dis" catalog="RIMSDB_NEW">
+        <id name="haemodialysisChartDetailId" type="java.lang.Integer">
+            <column name="HaemodialysisChartDetailId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="haemodialysisChartId" type="int">
+            <column name="HaemodialysisChartId" not-null="true" />
+        </property>
+        <property name="bp" type="string">
+            <column name="BP" length="10" />
+        </property>
+        <property name="hr" type="string">
+            <column name="HR" length="10" />
+        </property>
+        <property name="ap" type="string">
+            <column name="AP" length="10" />
+        </property>
+        <property name="vp" type="string">
+            <column name="VP" length="10" />
+        </property>
+        <property name="tmp" type="string">
+            <column name="Tmp" length="10" />
+        </property>
+        <property name="ufr" type="string">
+            <column name="UFR" length="10" />
+        </property>
+        <property name="qb" type="string">
+            <column name="QB" length="10" />
+        </property>
+        <property name="qd" type="string">
+            <column name="QD" length="10" />
+        </property>
+        <property name="hep" type="string">
+            <column name="HEP" length="10" />
+        </property>
+        <property name="totalUf" type="big_decimal">
+            <column name="TotalUF" precision="5" scale="3" />
+        </property>
+        <property name="condition" type="string">
+            <column name="Condition" length="20" />
+        </property>
+        <property name="temp" type="string">
+            <column name="Temp" length="20" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" length="50" />
+        </property>
+        <property name="enteredBy" type="java.lang.Integer">
+            <column name="EnteredBy" />
+        </property>
+        <property name="enteredByName" type="string">
+            <column name="EnteredByName" length="50" />
+        </property>
+        <property name="readingTime" type="timestamp">
+            <column name="ReadingTime" length="23" not-null="true" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="patientWeight" type="java.lang.Double">
+            <column name="PatientWeight" precision="53" scale="0"/>
+        </property>
+        <property name="ktV" type="java.lang.Double">
+            <column name="KtV" precision="53" scale="0" />
+        </property>
+        <property name="uRR" type="java.lang.Integer">
+            <column name="URR" />
+        </property>
+        <property name="selected" type="boolean">
+            <column name="Selected" />
+        </property>
+        <property name="mainPhase" type="int">
+            <column name="MainPhase" />
+        </property>
+        <property name="dialSide" type="int">
+            <column name="DialSide" />
+        </property>
+        <property name="readingType" type="int">
+            <column name="ReadingType" />
+        </property>
+        <property name="cumulativeUf" type="big_decimal">
+            <column name="CumulativeUF" precision="8" scale="2" />
+        </property>
+        <property name="heparinRate" type="big_decimal">
+            <column name="HeparinRate" precision="8" scale="2"/>
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+    <query name="getHaemodialysisChartDetail">
+     	<![CDATA[select dialysis from HaemodialysisChartDetail dialysis where dialysis.haemodialysisChartId = :haemodialysisChartId order by dialysis.selected desc, dialysis.readingTime desc]]>
+    </query>
+</hibernate-mapping>

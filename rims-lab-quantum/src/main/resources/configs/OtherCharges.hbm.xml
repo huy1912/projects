@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.iis.rims.domain.OtherCharges" table="tbl_OtherCharges"
+		schema="medinet" catalog="RIMSDB_NEW">
+		<id name="chargeId" type="int">
+			<column name="ChargeId" />
+			<generator class="native"></generator>
+		</id>
+		
+		<property name="claimId" type="int">
+			<column name="ClaimId" not-null="true" />
+		</property>
+		<property name="typeOfCharge" type="string">
+			<column name="TypeOfCharge" length="10" not-null="true" />
+		</property>
+		<property name="amount" type="big_decimal">
+			<column name="Amount" precision="12" not-null="true" />
+		</property>
+		<property name="noOfTreatment" type="java.lang.Integer">
+			<column name="NoOfTreatment" />
+		</property>
+						
+		<property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+	</class>
+</hibernate-mapping>

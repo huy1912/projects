@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 20, 2013 6:50:53 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.dto.CareplanAutomate" schema="dbo" catalog="RIMSDB_NEW">
+        <id name="patientId" type="java.lang.Integer">
+            <column name="PatientId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="patientName" type="string">
+            <column name="PatientName" length="100" />
+        </property>
+        <property name="nricFinNumber" type="string">
+            <column name="NricFinNumber" length="50" />
+        </property>
+        <property name="dateOfBirth" type="timestamp">
+            <column name="DateOfBirth" length="23" />
+        </property>
+        <property name="gender" type="string">
+            <column name="Gender" length="50" />
+        </property>
+        <property name="patientAge" type="java.lang.Integer">
+            <column name="PatientAge" />
+        </property>       
+        <property name="checked" type="java.lang.Boolean">
+            <column name="Checked" />
+        </property>        
+        <property name="appointmentDate" type="timestamp">
+            <column name="AppointmentDate" length="23" />
+        </property>
+        <property name="startDate" type="timestamp" update="false">
+            <column name="StartDate" length="23" />
+        </property>
+        <property name="endDate" type="timestamp">
+            <column name="EndDate" length="23" />
+        </property>      
+        <property name="session" type="string">
+            <column name="Session" length="50" />
+        </property>
+        <property name="numOfLeft" type="java.lang.Integer">
+            <column name="NumOfLeft" />
+        </property> 
+        <property name="careplanId" type="java.lang.Integer">
+            <column name="CareplanId" />
+        </property> 
+        <property name="organizationId" type="java.lang.Integer">
+            <column name="OrganizationId" />
+        </property> 
+        <property name="branchId" type="java.lang.Integer">
+            <column name="BranchId" />
+        </property> 
+        <property name="equipmentDetailId" type="java.lang.Integer">
+            <column name="EquipmentDetailId" />
+        </property> 
+        <property name="equipmentDetailName" type="string">
+            <column name="EquipmentDetailName" length="50" />
+        </property>
+        <property name="pattern" type="string">
+            <column name="Pattern" length="50" />
+        </property>        
+        <property name="serviceId" type="java.lang.Integer">
+            <column name="ServiceId" />
+        </property> 
+        <property name="serviceName" type="string">
+            <column name="ServiceName" length="50" />
+        </property>
+        <property name="procedureId" type="java.lang.Integer">
+            <column name="ProcedureId" />
+        </property> 
+        <property name="procedureName" type="string">
+            <column name="ProcedureName" length="50" />
+        </property>
+
+    </class>
+    
+<!-- *************************************** -->    
+<!-- it is replaced by view CareplanAutomate --> 
+<!-- *************************************** -->
+<!--    
+    <sql-query name="getCareplanAutomate">
+		<return alias="careplan" class="com.iis.rims.domain.dto.CareplanAutomate"/>
+		<![CDATA[
+		SELECT tbl.*,
+		1 Checked,
+		CASE WHEN tbl.AppointmentDate < CURRENT_TIMESTAMP
+			THEN CURRENT_TIMESTAMP
+			ELSE tbl.AppointmentDate 
+		END StartDate,
+		CASE WHEN tbl.AppointmentDate < CURRENT_TIMESTAMP
+			THEN DATEADD(MONTH,:numOfMonth,CURRENT_TIMESTAMP) 
+			ELSE DATEADD(MONTH,:numOfMonth,tbl.AppointmentDate) 
+		END EndDate,	
+		care.Session,
+		care.OrganizationId,
+		care.BranchId,
+		eqDtl.EquipmentDetailId,
+		eqDtl.EquipmentDetailName,
+		srv.ServiceId, 
+		srv.ServiceName,
+		pro.ProcedureId,
+		pro.ProcedureName,
+		ptn.Pattern
+FROM (
+		SELECT pat.PatientId, 
+			pat.PatientName, 
+			pat.NricFinNumber, 
+			pat.DateOfBirth, 
+			lk.LookupDetailName Gender, 
+			CONVERT(INT, ROUND(DATEDIFF(HOUR, pat.DateOfBirth, GETDATE()) / 8766.0, 0)) AS PatientAge,
+			MAX(appt.AppointmentDate) AppointmentDate, 
+			(SELECT TOP 1 CarePlanId FROM dis.tbl_CarePlan care
+				WHERE care.PatientId = pat.PatientId
+				ORDER BY CarePlanId DESC) CareplanId,
+			COUNT(appt.AppointmentId) Num,
+			SUM( CASE WHEN appt.AppointmentDate > GETDATE() THEN 1 ELSE 0 END) NumOfLeft
+			
+		FROM mst.tbl_Patient pat
+		INNER JOIN his.tbl_Appointment appt ON pat.PatientId = appt.PatientId
+		INNER JOIN his.tbl_AppointmentDetail apptDtl on appt.AppointmentId = apptDtl.AppointmentId
+		LEFT JOIN cmn.tbl_LookupDetail lk ON pat.Gender = lk.LookupDetailValue AND lk.lookupHeaderId = 5
+		WHERE appt.CareplanId IS NOT NULL 
+			AND appt.OrganizationId = :organizationId
+			AND appt.BranchId = :branchId
+		GROUP BY pat.PatientId, 
+			pat.PatientName, 
+			pat.NricFinNumber, 
+			pat.DateOfBirth,
+			lk.LookupDetailName
+	) tbl	
+	INNER JOIN dis.tbl_CarePlan care ON care.CarePlanId = tbl.CareplanId
+	INNER JOIN mst.tbl_EquipmentDetail eqDtl ON eqDtl.EquipmentDetailId = care.ReferEquipmentId 
+	INNER JOIN com.tbl_Service srv ON srv.ServiceId = care.ServiceId	
+	INNER JOIN mst.tbl_Procedure pro ON pro.ProcedureId = care.ProcedureId	
+	INNER JOIN com.tbl_TimePattern ptn ON ptn.PatternId = care.PatternId
+WHERE NumOfLeft <=:numOfLeft	
+ORDER BY PatientName ASC
+
+	]]>
+    </sql-query>
+-->    
+</hibernate-mapping>

@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.PatientVirologyResult" table="tbl_PatientVirologyResult" schema="dis" catalog="RIMSDB_NEW">
+        <id name="virologyRecordId" type="java.lang.Integer">
+            <column name="VirologyRecordId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="visitId" type="int">
+            <column name="VisitId" not-null="true" />
+        </property>
+        <property name="virologyRecordDate" type="timestamp">
+            <column name="VirologyRecordDate" length="23" />
+        </property>
+        <property name="hbsag" type="string">
+            <column name="HBSAg" length="20" />
+        </property>
+        <property name="hbsab" type="string">
+            <column name="HBSAb" length="20" />
+        </property>
+        <property name="antiHcv" type="string">
+            <column name="`ANTI-HCV`" length="20" />
+        </property>
+        <property name="antiHiv" type="string">
+            <column name="`ANTI-HIV`" length="20" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="patientId" type="int">
+            <column name="PatientId" not-null="false" />
+        </property>
+        <property name="registrationId" type="int">
+            <column name="RegistrationId" not-null="false" />
+        </property>
+        <property name="hbsagType" type="int">
+            <column name="hbsagType" not-null="false" />
+        </property>
+        <property name="hbsabType" type="int">
+            <column name="hbsabType" not-null="false" />
+        </property>
+        <property name="antihcvType" type="int">
+            <column name="antihcvType" not-null="false" />
+        </property>
+        <property name="antihivType" type="int">
+            <column name="antihivType" not-null="false" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

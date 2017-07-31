@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+		<!-- <property name="hibernate.connection.url">jdbc:sqlserver://192.168.85.186:1433;databaseName=RIMSDB_NEW</property>
+		<property name="hibernate.connection.password">P0pc0rn!)!)</property> -->
+		<!-- <property name="hibernate.connection.url">jdbc:sqlserver://192.168.85.176:1433;databaseName=RIMSDB_NEW</property>  --> 
+		<property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=RIMSDB_NEW</property>
+		<property name="hibernate.connection.password">P0pc0rn)*)*</property>
+		<property name="hibernate.connection.username">sa</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">false</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+		<property name="hibernate.search.autoregister_listeners">false</property>
+		<property name="hibernate.jdbc.use_get_generated_keys">true</property>
+		<property name="hibernate.c3p0.min_size">5</property>
+		<property name="hibernate.c3p0.max_size">30</property>
+
+		<mapping resource="configs/Branch.hbm.xml" />
+		<!-- <mapping resource="configs/Organization.hbm.xml" />
+		<mapping resource="configs/ServiceClass.hbm.xml" />
+		<mapping resource="configs/Service.hbm.xml" />
+		<mapping resource="configs/ServicePrefix.hbm.xml" />
+		<mapping resource="configs/Procedure.hbm.xml" />
+		<mapping resource="configs/EquipmentDetail.hbm.xml" />
+		<mapping resource="configs/CareplanAutomate.hbm.xml" />
+        <mapping resource="configs/MultipleInvoices.hbm.xml" />
+		<mapping resource="configs/Appointment.hbm.xml" />
+		<mapping resource="configs/AppointmentDetail.hbm.xml" />
+		<mapping resource="configs/HaemodialysisChart.hbm.xml" />
+		<mapping resource="configs/HaemodialysisChartDetail.hbm.xml" />
+		<mapping resource="configs/HaemodialysisFlowChart.hbm.xml" />
+
+
+		<mapping resource="configs/AppointmentView.hbm.xml" />
+        <mapping resource="configs/Notification.hbm.xml" />
+		<mapping resource="configs/Currency.hbm.xml" />
+		<mapping resource="configs/Country.hbm.xml" />
+		<mapping resource="configs/LookupHeader.hbm.xml" />
+		<mapping resource="configs/Customer.hbm.xml" />
+		<mapping class="com.iis.rims.domain.TimePattern" />
+		<mapping class="com.iis.rims.domain.CarePlan" />
+		<mapping resource="configs/ContactInfo.hbm.xml" />
+		<mapping resource="configs/Registration.hbm.xml" />
+		<mapping resource="configs/VisitDetail.hbm.xml" />
+		<mapping resource="configs/Address.hbm.xml" />
+		<mapping resource="configs/ClinicDoctorLink.hbm.xml" />
+		<mapping resource="configs/Invoice.hbm.xml" />
+		<mapping resource="configs/InvoiceReceipt.hbm.xml" />
+		<mapping resource="configs/InvoiceReceiptItem.hbm.xml" />
+		<mapping resource="configs/InvoiceReceiptItemReference.hbm.xml" />
+		<mapping resource="configs/InvoiceReceiptAdvance.hbm.xml" />
+		<mapping resource="configs/InvoiceReceiptAdvancePayment.hbm.xml" />
+		<mapping resource="configs/PatientMedicalRecord.hbm.xml" />
+		<mapping resource="configs/PatientNextOfKin.hbm.xml" />
+		<mapping resource="configs/SystemUserSecurityRole.hbm.xml" />
+		<mapping resource="configs/SecurityRole.hbm.xml" />
+		<mapping resource="configs/SecurityPrevilege.hbm.xml" />
+		<mapping resource="configs/SecurityRolePermission.hbm.xml" />
+		<mapping resource="configs/PatientDialysisPrescription.hbm.xml" />
+		<mapping resource="configs/PatientMedicationChart.hbm.xml" />
+		<mapping resource="configs/SecurityDesignationAccess.hbm.xml" />
+		<mapping resource="configs/SystemUserLoginHistory.hbm.xml" />
+		<mapping resource="configs/LabProcedure.hbm.xml" />
+		<mapping resource="configs/LabProfile.hbm.xml" />
+		<mapping resource="configs/LabTestCode.hbm.xml" />
+		<mapping resource="configs/LabOrderDetailSummary.hbm.xml" />
+		<mapping resource="configs/LabRTTestCodeNote.hbm.xml" />
+		
+		<mapping resource="configs/PatientInvestigationRecord.hbm.xml" />
+		<mapping resource="configs/PatientInvestigationRecordDetail.hbm.xml" />
+		<mapping resource="configs/PatientVascularAccess.hbm.xml" />
+		<mapping resource="configs/PatientVirologyResult.hbm.xml" />
+
+		<mapping resource="configs/PatientPaymentPlan.hbm.xml" />
+		<mapping resource="configs/PatientPaymentPlanDetail.hbm.xml" />
+		<mapping resource="configs/PatientPaymentPlanDetailEx.hbm.xml" />
+
+		<mapping resource="configs/PatientPaymentPlanEnquiry.hbm.xml" />
+		<mapping resource="configs/PatientPaymentPlanEnquiryAttachment.hbm.xml" />
+		<mapping resource="configs/PatientPaymentPlanCheckDTO.hbm.xml" />
+		<mapping resource="configs/VisitDetailPayment.hbm.xml" />
+
+		<mapping resource="configs/PaymentStatement.hbm.xml" />
+		<mapping resource="configs/PaymentStatementDetail.hbm.xml" />
+		<mapping resource="configs/PaymentStatementDetailPlan.hbm.xml" />
+		<mapping resource="configs/PaymentStatementInvoice.hbm.xml" />
+		<mapping resource="configs/PatientSponsorInvoice.hbm.xml" />
+		<mapping resource="configs/StatementReceipt.hbm.xml" />
+		<mapping resource="configs/StatementReceiptItem.hbm.xml" />
+		<mapping resource="configs/StatementReceiptItemReference.hbm.xml" />
+		<mapping resource="configs/StatementReceiptAdvance.hbm.xml" />
+		<mapping resource="configs/StatementReceiptAdvancePayment.hbm.xml" />
+
+		<mapping resource="configs/CustomerProcedurePackage.hbm.xml" />
+		<mapping resource="configs/ProcedurePackage.hbm.xml" />
+		<mapping resource="configs/ProcedurePackageDetail.hbm.xml" />
+		<mapping resource="configs/DialysisGraph.hbm.xml" />
+		
+		<mapping resource="configs/MemoForm.hbm.xml" />
+		<mapping resource="configs/HospitalizationForm.hbm.xml" />
+		<mapping resource="configs/MortalityForm.hbm.xml" />
+		<mapping resource="configs/IncidentForm.hbm.xml" />
+		<mapping resource="configs/LabForm.hbm.xml" />
+		<mapping resource="configs/EnquiryForm.hbm.xml" />
+		
+		<mapping resource="configs/SystemUserLocation.hbm.xml" />
+		<mapping resource="configs/CustomerTemplate.hbm.xml" />
+		<mapping resource="configs/BankMapping.hbm.xml" />
+		<mapping resource="configs/MessageException.hbm.xml" />
+		<mapping resource="configs/SystemProperty.hbm.xml" />
+		<mapping resource="configs/SystemPropertyExternalConnection.hbm.xml" />
+		<mapping resource="configs/BankAccountMapping.hbm.xml" />
+		
+		<mapping resource="configs/PrePostClinicalAssesment.hbm.xml" />
+		<mapping resource="configs/Medication.hbm.xml" />
+		<mapping resource="configs/SystemTemplate.hbm.xml" />
+		<mapping resource="configs/InventoryItem.hbm.xml" />
+		
+		
+		 -->
+		<mapping resource="configs/LookupHeader.hbm.xml" />
+		<mapping resource="configs/LookupDetail.hbm.xml" />
+		<mapping resource="configs/Doctor.hbm.xml" />
+		<mapping resource="configs/Patient.hbm.xml" />
+		<mapping resource="configs/Address.hbm.xml" />
+		<mapping resource="configs/Visit.hbm.xml" />
+		<mapping resource="configs/SystemUser.hbm.xml" />
+		<mapping resource="configs/RunningNumberSet.hbm.xml" />
+		<mapping resource="configs/RunningNumber.hbm.xml" />
+		<mapping resource="configs/LabOrder.hbm.xml" />
+		<mapping resource="configs/LabOrderDetail.hbm.xml" />
+		<mapping resource="configs/LabProcedure.hbm.xml" />
+		<mapping resource="configs/LabProfile.hbm.xml" />
+
+		
+
+		
+	</session-factory>
+</hibernate-configuration>

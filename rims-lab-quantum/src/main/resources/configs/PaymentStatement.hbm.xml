@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 19, 2013 5:09:20 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.PaymentStatement" table="tbl_PaymentStatement" schema="acc" catalog="RIMSDB_NEW">
+        <id name="paymentStatementId" type="java.lang.Integer">
+            <column name="PaymentStatementId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+        <property name="patientId" type="int">
+            <column name="PatientId" not-null="true" />
+        </property>
+        <property name="statementNumber" type="string">
+            <column name="StatementNumber" length="20" not-null="true" />
+        </property>
+        <property name="statementDate" type="timestamp">
+            <column name="StatementDate" length="23" not-null="true" />
+        </property>
+        <property name="statementAmount" type="big_decimal">
+            <column name="StatementAmount" precision="18" scale="0" not-null="true" />
+        </property>
+        <property name="statementAmountGst" type="big_decimal">
+            <column name="StatementAmountGST" precision="12" />
+        </property>
+        <property name="gstPercentage" type="big_decimal">
+            <column name="GSTPercentage" precision="12" />
+        </property>        
+        <property name="paymentStatementStatus" type="int">
+            <column name="PaymentStatementStatus" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" not-null="true" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+    </class>
+    <sql-query name="RIMS_SP_ClaimSummary">
+        { call RIMS_SP_ClaimSummary(:paymentStatementId) }
+    </sql-query>
+</hibernate-mapping>

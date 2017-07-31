@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.Procedure" table="tbl_Procedure" schema="mst" catalog="RIMSDB_NEW">
+        <id name="procedureId" type="int">
+            <column name="ProcedureId" />
+            <generator class="native" />
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" />
+        </property>
+        
+        <property name="serviceId" type="int">
+            <column name="ServiceId" not-null="true" />
+        </property>
+        <property name="servicePrefixId" type="int">
+            <column name="ServicePrefixId" not-null="true" />
+        </property>
+        <property name="procedureCode" type="string">
+            <column name="ProcedureCode" />
+        </property>
+        <property name="procedureName" type="string">
+            <column name="ProcedureName" not-null="true" />
+        </property>
+        <property name="procedureDescription" type="string">
+            <column name="ProcedureDescription" />
+        </property>
+        <property name="procedurePreprations" type="string">
+            <column name="ProcedurePreprations" />
+        </property>
+        <property name="procedureDuration" type="java.lang.Integer">
+            <column name="ProcedureDuration" />
+        </property>
+        <property name="worklistPosting" type="java.lang.Boolean">
+            <column name="WorklistPosting" />
+        </property>
+        <property name="filmRequired" type="java.lang.Boolean">
+            <column name="FilmRequired" />
+        </property>
+        <property name="transcriptRequired" type="java.lang.Boolean">
+            <column name="TranscriptRequired" />
+        </property>
+        <property name="informUserPrerequiste" type="java.lang.Boolean">
+            <column name="InformUserPrerequiste" />
+        </property>
+        <property name="listCashPrice" type="big_decimal">
+            <column name="ListCashPrice" scale="4" not-null="true" />
+        </property>
+        <property name="listBillPrice" type="big_decimal">
+            <column name="ListBillPrice" scale="4" not-null="true" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" />
+        </property>
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="paymentSponsors" type="string">
+            <column name="PaymentSponsors" />
+        </property>
+        <property name="dialyzerType" type="java.lang.Integer">
+            <column name="DialyzerType" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+        <!-- SAPB1 Integration -->
+        <property name="sapb1PostedDate" type="timestamp">
+            <column name="sapb1PostedDate" length="23" />
+        </property>
+        <property name="sapb1Frozen" type="java.lang.Boolean">
+            <column name="sapb1Frozen" />
+        </property>
+        <property name="sapb1Posted" type="java.lang.Boolean">
+            <column name="sapb1Posted" />
+        </property>
+        <property name="sapb1ReferenceRemarks" type="string">
+            <column name="sapb1ReferenceRemarks" length="50" />
+        </property>         
+        <property name="isInventoryItem" type="boolean">
+            <column name="IsInventoryItem" not-null="false" />
+        </property>
+        <property name="sapb1InventoryItemCode" type="string">
+            <column name="SAPB1InventoryItemCode" length="30" />
+        </property>
+        <property name="sapb1InventoryItemRemarks" type="string">
+            <column name="SAPB1InventoryItemRemarks" length="250" />
+        </property>
+        
+        <property name="prePostRequired" type="java.lang.Boolean">
+            <column name="prePostRequired" />
+        </property>
+        <property name="postType" type="java.lang.Boolean">
+            <column name="PostType" />
+        </property>
+        
+        <!-- <property name="nextRunningNumber" type="java.lang.Integer">
+            <column name="NextRunningNumber" />
+        </property> -->
+    </class>
+    <sql-query name="getRegistrationProcedurePackageDetail">
+		<![CDATA[
+				SELECT 
+				 	pa.ProcedureId as procedureId,
+			        pa.ProcedureName as procedureName,
+			        pa.ListCashPrice as listCashPrice,
+			        pr.CashPrice as cashWave,
+			        pr.PackageDetailId as packageDetailId
+			    from
+			        mst.tbl_Procedure pa
+			    left join
+			        mst.tbl_ProcedurePackageDetail pr
+			    on
+			        pr.ProcedureId=pa.ProcedureId 
+			        and pr.OrganizationId= :organizationId 
+			        and pr.PackageId= :packageId 
+			    where pa.ServiceId= :serviceId 
+			    and pa.entityStatus=1
+		]]>
+		<!-- and pr.BranchId= :branchId -->
+	</sql-query>
+</hibernate-mapping>

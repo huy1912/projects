@@ -1,0 +1,105 @@
+<PushOrder xmlns="http://tempuri.org/"><ws:acceptMessage>
+<arg0>
+<content><MSG>
+    <MSH>
+        <Sending_Application>RENAL</Sending_Application>
+        <Sending_Facility>RENAL</Sending_Facility>
+        <Receiving_Application>LIS</Receiving_Application>
+        <Receiving_Facility>LIS</Receiving_Facility>
+        <Message_Date_Time>20170803004201</Message_Date_Time>
+        <Message_Type>ORM</Message_Type>
+        <Message_Control_Id>10000006</Message_Control_Id>
+    </MSH>
+    <EVN>
+        <Event_Type_Code>O01</Event_Type_Code>
+        <Recorded_DateTime>20170803004201</Recorded_DateTime>
+    </EVN>
+    <PID>
+        <Patient_Id_Ext></Patient_Id_Ext>
+        <Patient_Id_Int>RNL00002908</Patient_Id_Int>
+        <Patient_Id_Type>NEW IC</Patient_Id_Type>
+        <Patient_Id_Number>430729-01-5427</Patient_Id_Number>
+        <Patient_Name>SAID BIN MOHAMED</Patient_Name>
+        <Date_Of_Birth>19430729</Date_Of_Birth>
+        <Gender_Code>M</Gender_Code>
+        <Race_code>MALAY</Race_code>
+        <Address1>355 &amp;amp; 356, JALAN KENANGA 29/9</Address1>
+        <Address2>BANDAR INDRAPURA</Address2>
+        <Address3></Address3>
+        <City></City>
+        <State></State>
+        <Postal_Code>81000</Postal_Code>
+        <Phone_Home>0</Phone_Home>
+        <Phone_Mobile>0</Phone_Mobile>
+        <Phone_Business>0</Phone_Business>
+        <Primary_Language></Primary_Language>
+        <Marital_Status_Code>MARRIED</Marital_Status_Code>
+        <Religion_Code>ISLAM</Religion_Code>
+        <Nationality_Code>MALAYSIA</Nationality_Code>
+    </PID>
+    <PV1>
+        <Patient_Type_Code>OP</Patient_Type_Code>
+        <Ward_Code></Ward_Code>
+        <Admission_Type></Admission_Type>
+        <Preadmit_Number></Preadmit_Number>
+        <Specialty_Code>SP_20</Specialty_Code>
+        <Attending_Doctor_Code></Attending_Doctor_Code>
+        <Attending_Doctor_Desc></Attending_Doctor_Desc>
+        <Referring_Doctor_Code></Referring_Doctor_Code>
+        <Referring_Doctor_Desc></Referring_Doctor_Desc>
+        <Consulting_Doctor_Code></Consulting_Doctor_Code>
+        <Consulting_Doctor_Desc></Consulting_Doctor_Desc>
+        <Admitting_Doctor_Code></Admitting_Doctor_Code>
+        <Admitting_Doctor_Desc></Admitting_Doctor_Desc>
+        <Patient_Class></Patient_Class>
+        <Visit_Number>2012017311132</Visit_Number>
+        <Financial_Class_Code>NA</Financial_Class_Code>
+        <Admit_DateTime>20170803004201</Admit_DateTime>
+    </PV1>
+    <ORC>
+        <Order_Control>NW</Order_Control>
+        <ORC_Placer_Order_Number>10000006</ORC_Placer_Order_Number>
+        <ORC_Filler_Order_Number></ORC_Filler_Order_Number>
+        <Placer_Group_Number></Placer_Group_Number>
+        <Order_Status_Code></Order_Status_Code>
+        <Response_Flag></Response_Flag>
+        <ORC_Quantity_Timing></ORC_Quantity_Timing>
+        <Parent></Parent>
+        <DateTime_Of_Transaction></DateTime_Of_Transaction>
+        <Entered_By_ID></Entered_By_ID>
+        <Entered_By_Name></Entered_By_Name>
+        <Verified_By_ID></Verified_By_ID>
+        <Verified_By_Name></Verified_By_Name>
+        <ORC_Ordering_Provider_ID>RPJ92</ORC_Ordering_Provider_ID>
+        <ORC_Ordering_Provider_Name>RenalTeam - ARA </ORC_Ordering_Provider_Name>
+        <Enter_Location></Enter_Location>
+        <Call_Back_Phone_Number></Call_Back_Phone_Number>
+        <Order_Effective_DateTime></Order_Effective_DateTime>
+        <Order_Control_Code_Reason></Order_Control_Code_Reason>
+        <Entering_Organization></Entering_Organization>
+        <Entering_Device></Entering_Device>
+        <Action_By></Action_By>
+        <Advanced_Beneficiary_Notice_Code></Advanced_Beneficiary_Notice_Code>
+        <Ordering_Facility_Code></Ordering_Facility_Code>
+        <Ordering_Facility_Name></Ordering_Facility_Name>
+    </ORC>
+    <Observation_Request>
+        <OBR>
+            <Set_Id_OBR>1</Set_Id_OBR>
+            <OBR_Placer_Order_Number>0120171204</OBR_Placer_Order_Number>
+            <Test_Code>RTD 1</Test_Code>
+            <Test_Name>Blood Test - RTD 1 - Non Diabetic 3 Monthly Profile </Test_Name>
+            <Requested_DateTime>20170803004201</Requested_DateTime>
+        </OBR>
+        <OBR>
+            <Set_Id_OBR>2</Set_Id_OBR>
+            <OBR_Placer_Order_Number>0120171205</OBR_Placer_Order_Number>
+            <Test_Code>RTD 2</Test_Code>
+            <Test_Name>Blood Test - RTD 2 - Non Diabetic 6 Monthly Profile</Test_Name>
+            <Requested_DateTime>20170803004201</Requested_DateTime>
+        </OBR>
+    </Observation_Request>
+</MSG>
+</content>
+</arg0>
+</ws:acceptMessage><userName>RenalTeam</userName><password>renal@123</password></PushOrder>

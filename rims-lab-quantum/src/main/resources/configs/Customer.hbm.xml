@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.Customer" table="tbl_Customer" schema="mst" catalog="RIMSDB_NEW">
+        <id name="customerId" type="int">
+            <column name="CustomerId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="true" />
+        </property>
+        <property name="customerType" type="int">
+            <column name="CustomerType" not-null="true" />
+        </property>
+        <property name="billToType" type="int">
+            <column name="BillToType" not-null="true" />
+        </property>
+        <property name="customerCategory" type="int">
+            <column name="CustomerCategory" not-null="true" />
+        </property>
+        <property name="customerGroup" type="java.lang.Integer">
+            <column name="CustomerGroup" />
+        </property>
+        <property name="speciality" type="int">
+            <column name="Speciality" not-null="true" />
+        </property>
+        <property name="customerHqId" type="java.lang.Integer">
+            <column name="CustomerHqId" />
+        </property>
+        <property name="customerAccountCode" type="string">
+            <column name="CustomerAccountCode" length="20" not-null="true" />
+        </property>
+        <property name="customerName" type="string">
+            <column name="CustomerName" length="150" not-null="true" />
+        </property>
+        <property name="customerDescription" type="string">
+            <column name="CustomerDescription" length="250" not-null="true" />
+        </property>
+        <property name="customerPreferences" type="string">
+            <column name="CustomerPreferences" />
+        </property>
+        <property name="weekOperatingHours" type="string">
+            <column name="WeekOperatingHours" length="20" />
+        </property>
+        <property name="weekendOperatingHours" type="string">
+            <column name="WeekendOperatingHours" length="20" />
+        </property>
+        <property name="billingType" type="int">
+            <column name="BillingType" not-null="true" />
+        </property>
+        <property name="billingPolicy" type="int">
+            <column name="BillingPolicy" />
+        </property>
+        <property name="customerGlcode" type="string">
+            <column name="CustomerGLCode" length="20" />
+        </property>
+        <property name="creditTerm" type="int">
+            <column name="CreditTerm" not-null="true" />
+        </property>
+        <property name="defaultBillToCustomerId" type="java.lang.Integer">
+            <column name="DefaultBillToCustomerId" />
+        </property>
+        <property name="defaultBillToCustomerType" type="java.lang.Integer">
+            <column name="DefaultBillToCustomerType" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" />
+        </property>
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="hasAccountTemplate" type="java.lang.Boolean">
+            <column name="HasAccountTemplate" />
+        </property>
+        <property name="excelTemplate" type="string">
+            <column name="ExcelTemplate" />
+        </property>
+        <property name="sapb1PostedDate" type="timestamp">
+            <column name="sapb1PostedDate" length="23" />
+        </property>
+        <property name="sapb1Posted" type="java.lang.Boolean">
+            <column name="sapb1Posted" />
+        </property>
+        <property name="sapb1Frozen" type="java.lang.Boolean">
+            <column name="sapb1Frozen" />
+        </property>
+        <property name="sapb1ReferenceRemarks" type="string">
+            <column name="sapb1ReferenceRemarks" length="50" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

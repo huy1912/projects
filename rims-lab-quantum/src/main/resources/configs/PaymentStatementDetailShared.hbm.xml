@@ -1,0 +1,89 @@
+		<id name="paymentStatementDetailId" type="java.lang.Integer">
+            <column name="PaymentStatementDetailId" />
+            <generator class="native"></generator>
+        </id>
+		<property name="organizationId" type="int">
+            <column name="OrganizationId" not-null="false" />
+        </property>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="false" />
+        </property>
+        <property name="paymentStatementId" type="int">
+            <column name="PaymentStatementId" not-null="true" />
+        </property>
+        <property name="patientId" type="int">
+            <column name="PatientId" not-null="true" />
+        </property>
+        <property name="customerType" type="int">
+            <column name="CustomerType" not-null="true" />
+        </property>
+        <property name="masterCustomerType" type="int">
+            <column name="MasterCustomerType" not-null="false" />
+        </property>
+        <property name="customerId" type="int">
+            <column name="CustomerId" not-null="true" />
+        </property>
+        <property name="referringCustomerId" type="java.lang.Integer">
+            <column name="ReferringCustomerId" />
+        </property>
+        <property name="collectionMode" type="int">
+            <column name="CollectionMode" not-null="true" />
+        </property>
+        <property name="collectionCapAmount" type="big_decimal">
+            <column name="CollectionCapAmount" precision="18" not-null="true" />
+        </property>
+        <property name="numberOfTimes" type="int">
+            <column name="NumberOfTimes" not-null="true" />
+        </property>
+        <property name="statementAmount" type="big_decimal">
+            <column name="StatementAmount" precision="18" not-null="true" />
+        </property>
+        <property name="statementAmountGst" type="big_decimal">
+            <column name="StatementAmountGST" precision="12" />
+        </property>
+        <property name="gstPercentage" type="big_decimal">
+            <column name="GSTPercentage" precision="12" />
+        </property>
+        <property name="statementExpectedAmount" type="big_decimal">
+            <column name="StatementExpectedAmount" precision="18" not-null="true" />
+        </property>
+        <property name="statementDetailNumber" type="string">
+            <column name="StatementDetailNumber" length="20" not-null="true" />
+        </property>
+        <property name="fundingInchargeId" type="java.lang.Integer">
+            <column name="FundingInchargeId" />
+        </property>
+        <property name="fundingInchargeName" type="string">
+            <column name="FundingInchargeName" length="100" />
+        </property>
+        
+        <property name="statementAmountPerInvoice" type="big_decimal">
+            <column name="StatementAmountPerInvoice" precision="18" not-null="true" />
+        </property>
+        <property name="statementApprovedAmount" type="big_decimal">
+            <column name="StatementApprovedAmount" precision="18" not-null="true" />
+        </property>
+        <property name="statementApprovedAmountPerInvoice" type="big_decimal">
+            <column name="StatementApprovedAmountPerInvoice" precision="18" not-null="true" />
+        </property>
+        <property name="statementPaidAmount" type="big_decimal">
+            <column name="StatementPaidAmount" precision="18" not-null="true" />
+        </property>
+        <property name="patientPaymentPlanId" type="java.lang.Integer">
+            <column name="PatientPaymentPlanId" />
+        </property>
+        <property name="collectionAmountPayable" type="big_decimal">
+            <column name="CollectionAmountPayable" precision="18" not-null="true" />
+        </property>
+        <property name="defaultPaymentCustomerTemplateId" type="int">
+            <column name="DefaultPaymentCustomerTemplateId" not-null="true" />
+        </property>
+        <property name="patientName" type="string">
+            <column name="PatientName" not-null="true" />
+        </property>
+        <property name="nricNumber" type="string">
+            <column name="NricNumber" not-null="true" />
+        </property>
+        <property name="statementDetailType" type="java.lang.Integer">
+            <column name="StatementDetailType" not-null="true" />
+        </property>

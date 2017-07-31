@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.EquipmentDetail" table="tbl_EquipmentDetail" schema="mst" catalog="RIMSDB_NEW">
+        <id name="equipmentDetailId" type="int">
+            <column name="EquipmentDetailId" />
+            <generator class="native" />
+        </id>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+        <property name="serviceId" type="int">
+            <column name="ServiceId" not-null="true" />
+        </property>
+        <property name="equipmentDetailName" type="string">
+            <column name="EquipmentDetailName" length="100" not-null="true" />
+        </property>
+        <property name="equipmentDescription" type="string">
+            <column name="EquipmentDescription" length="250" />
+        </property>
+        <property name="softwareDetails" type="string">
+            <column name="SoftwareDetails" length="250" />
+        </property>
+        <property name="operatingSystemDetails" type="string">
+            <column name="OperatingSystemDetails" length="250" />
+        </property>
+        <property name="serialNumber" type="string">
+            <column name="SerialNumber" length="20" />
+        </property>
+        <property name="brandName" type="string">
+            <column name="BrandName" length="100" />
+        </property>
+        <property name="model" type="string">
+            <column name="Model" length="50" />
+        </property>
+        <property name="supplierId" type="java.lang.Integer">
+            <column name="SupplierId" />
+        </property>
+        <property name="universalProductCode" type="string">
+            <column name="UniversalProductCode" length="20" />
+        </property>
+        <property name="commissionedDate" type="timestamp">
+            <column name="CommissionedDate" length="23" />
+        </property>
+        <property name="underWarrenty" type="java.lang.Boolean">
+            <column name="UnderWarrenty" />
+        </property>
+        <property name="warrentyStartDate" type="timestamp">
+            <column name="WarrentyStartDate" length="23" />
+        </property>
+        <property name="warrentyExpiryDate" type="timestamp">
+            <column name="WarrentyExpiryDate" length="23" />
+        </property>
+        <property name="underMaintenance" type="java.lang.Boolean">
+            <column name="UnderMaintenance" />
+        </property>
+        <property name="maintenanceStartDate" type="timestamp">
+            <column name="MaintenanceStartDate" length="23" />
+        </property>
+        <property name="maintenanceEndDate" type="timestamp">
+            <column name="MaintenanceEndDate" length="23" />
+        </property>
+        <property name="communcationType" type="java.lang.Integer">
+            <column name="CommuncationType" />
+        </property>
+        <property name="networkAddress" type="string">
+            <column name="NetworkAddress" length="15" />
+        </property>
+        <property name="networkPort" type="java.lang.Integer">
+            <column name="NetworkPort" />
+        </property>
+        <property name="serverCommuncationType" type="java.lang.Integer">
+            <column name="ServerCommuncationType" />
+        </property>
+        <property name="serverNetworkAddress" type="string">
+            <column name="ServerNetworkAddress" length="15" />
+        </property>
+        <property name="serverNetworkPort" type="java.lang.Integer">
+            <column name="ServerNetworkPort" />
+        </property>
+        <property name="aeTitle" type="string">
+            <column name="AeTitle" />
+        </property>
+        <property name="stationName" type="string">
+            <column name="StationName" />
+        </property>
+        <property name="numberOfSlot" type="java.lang.Integer">
+            <column name="NumberOfSlot" />
+        </property>
+        <property name="appointmentEnabled" type="java.lang.Boolean">
+            <column name="AppointmentEnabled" />
+        </property>
+        <property name="dicomWorklistStatus" type="java.lang.Boolean">
+            <column name="DicomWorklistStatus" />
+        </property>
+        <property name="mppsEnabled" type="java.lang.Boolean">
+            <column name="MppsEnabled" />
+        </property>
+        <property name="dicomStatus" type="java.lang.Boolean">
+            <column name="DicomStatus" />
+        </property>
+        <property name="appointmentStartTime" type="string">
+            <column name="AppointmentStartTime" length="10" not-null="true" />
+        </property>
+        <property name="appointmentEndTime" type="string">
+            <column name="AppointmentEndTime" length="10" not-null="true" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" length="250" />
+        </property>
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="colorId" type="java.lang.Integer">
+            <column name="ColorId" />
+        </property>
+         <property name="ktvBgColorCode" type="string">
+            <column name="KtvBgColorCode" length="10" />
+        </property>
+        <property name="urrBgColorCode" type="string">
+            <column name="UrrBgColorCode" length="10" />
+        </property>
+        <property name="ktvLineColorCode" type="string">
+            <column name="KtvLineColorCode" length="10" />
+        </property>
+        <property name="urrLineColorCode" type="string">
+            <column name="UrrLineColorCode" length="10" />
+        </property>
+        <property name="hdInfectionStatus" type="java.lang.Integer">
+            <column name="HDInfectionStatus" not-null="false" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+        <property name="sortingOrder" type="java.lang.Integer">
+            <column name="SortingOrder" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

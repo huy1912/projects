@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"
+[
+<!ENTITY patientPaymentPlanDetailShared SYSTEM "classpath://configs/PatientPaymentPlanDetailShared.hbm.xml">
+]>
+<!-- Generated Aug 1, 2013 10:14:32 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.PatientPaymentPlanDetailEx"  table="tbl_PatientPaymentPlanDetailEx" schema="mst" catalog="RIMSDB_NEW">
+        &patientPaymentPlanDetailShared;
+        <property name="description" type="string" update="false" insert="false">
+            <column name="Description" length="50" />
+        </property>
+    </class>
+    <sql-query name="RIMS_SP_PatientPaymentPlanPerVisit">
+		<return alias="patientPaymentPlanDetailEx" class="com.iis.rims.domain.PatientPaymentPlanDetailEx"/>
+		<![CDATA[
+			{call dbo.RIMS_SP_PatientPaymentPlanPerVisit(:patientId, :amountPerVisit, :visitDate, :patientPaymentPlanId) }
+		]]>
+    </sql-query>
+</hibernate-mapping>

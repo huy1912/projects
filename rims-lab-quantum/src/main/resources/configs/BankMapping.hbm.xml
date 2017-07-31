@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.BankMapping" table="tbl_BankMapping" schema="ssp" catalog="RIMSDB_NEW">
+        <id name="bankMappingId" type="int">
+            <column name="BankMappingId" />
+            <generator class="native" />
+        </id>
+        <property name="branchId" type="int">
+            <column name="BranchId" not-null="true" />
+        </property>
+         <property name="controlAccount" type="string">
+            <column name="ControlAccount" length="50" not-null="true" unique="true" />
+        </property>
+        <property name="cashAccount" type="string">
+            <column name="CashAccount" length="50" not-null="true" unique="true" />
+        </property>
+       <property name="checkAccount" type="string">
+            <column name="CheckAccount" length="50" not-null="true" unique="true" />
+        </property>
+        <property name="creditCard" type="string">
+            <column name="CreditCard" length="50" not-null="true" unique="true" />
+        </property>
+        <property name="bankTransfer" type="string">
+            <column name="BankTransfer" length="50" not-null="true" unique="true" />
+        </property>
+        <property name="networkElectronicTransfer" type="string">
+            <column name="NetworkElectronicTransfer" length="50" not-null="true" unique="true" />
+        </property>
+        <property name="privateInsuranceAccount" type="string">
+            <column name="PrivateInsuranceAccount" length="50" not-null="true" unique="true" />
+        </property>
+        <property name="cpfMedishieldAccount" type="string">
+            <column name="CPFMedishieldAccount" length="50" not-null="true" unique="true" />
+        </property>
+        <property name="cpfMedisaveAccount" type="string">
+            <column name="CPFMedisaveAccount" length="50" not-null="true" unique="true" />
+        </property>
+        <property name="advanceDownpaymentAccount" type="string">
+            <column name="AdvanceDownpaymentAccount" length="20" not-null="true" unique="true" />
+        </property>
+        <property name="entityStatus" type="java.lang.Boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastupdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastupdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

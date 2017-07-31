@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2013 4:00:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.iis.rims.domain.PatientMedicationChart" table="tbl_PatientMedicationChart" schema="his" catalog="RIMSDB_NEW">
+        <id name="medicationChartId" type="int">
+            <column name="MedicationChartId" />
+            <generator class="native"></generator>
+        </id>
+        <property name="registrationId" type="int">
+            <column name="RegistrationId" not-null="true" />
+        </property>
+        <property name="patientId" type="int">
+            <column name="PatientId" not-null="true" />
+        </property>
+        <property name="startDate" type="timestamp">
+            <column name="StartDate" length="23" not-null="true" />
+        </property>
+        <property name="nameOfDrug" type="string">
+            <column name="NameOfDrug" length="150" not-null="true" />
+        </property>
+        <property name="dosageType" type="int">
+            <column name="DosageType" not-null="true" />
+        </property>
+        <property name="typeOfDrugId" type="java.lang.Integer">
+            <column name="TypeOfDrugId" />
+        </property>    
+        <property name="dosageTypeDescription" type="string">
+            <column name="DosageTypeDescription" length="50" not-null="true" />
+        </property>
+        <property name="frequency" type="string">
+            <column name="Frequency" length="20" />
+        </property>
+        <property name="discountinuedDate" type="timestamp">
+            <column name="DiscountinuedDate" length="23" />
+        </property>
+        <property name="doctorId" type="java.lang.Integer">
+            <column name="DoctorId" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" length="250" />
+        </property>
+        <property name="HEPBImmunizationRequired" type="boolean">
+            <column name="HEPBImmunizationRequired" />
+        </property>
+        <property name="boosterDose" type="boolean">
+            <column name="BoosterDose" />
+        </property>
+        <property name="immunizedClinicName" type="string">
+            <column name="ImmunizedClinicName" length="100" />
+        </property>
+        <property name="entityStatus" type="boolean">
+            <column name="EntityStatus" />
+        </property>
+        <property name="createdBy" type="int" update="false">
+            <column name="CreatedBy" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="CreatedDate" length="23" not-null="true" />
+        </property>
+        <property name="lastUpdatedBy" type="int">
+            <column name="LastUpdatedBy" not-null="true" />
+        </property>
+        <property name="lastUpdatedDate" type="timestamp">
+            <column name="LastUpdatedDate" length="23" not-null="true" />
+        </property>
+        <property name="dosageFrequency" type="int">
+            <column name="DosageFrequency" not-null="false" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

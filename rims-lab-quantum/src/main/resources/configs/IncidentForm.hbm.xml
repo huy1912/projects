@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.iis.rims.domain.IncidentForm" table="tbl_IncidentForm" schema="his" catalog="RIMSDB_NEW">
+		<id name="incidentFormId" type="java.lang.Integer">
+			<column name="IncidentFormId" />
+			<generator class="native"></generator>
+		</id>
+		<property name="organizationId" type="java.lang.Integer">
+			<column name="OrganizationId" not-null="true" />
+		</property>
+		<property name="branchId" type="java.lang.Integer">
+			<column name="BranchId" not-null="true" />
+		</property>
+		<property name="patientId" type="java.lang.Integer">
+			<column name="PatientId" not-null="true" />
+		</property>
+		<property name="patientName" type="string">
+			<column name="PatientName" length="100" not-null="true"/>
+		</property>
+		<property name="patientIc" type="string">
+			<column name="PatientIc" length="20" not-null="true"/>
+		</property>
+		<property name="patientDOB" type="timestamp">
+			<column name="PatientDOB" length="23" not-null="true" />
+		</property>
+		<property name="patientGender" type="string">
+			<column name="PatientGender" length="10" not-null="true"/>
+		</property>
+		<property name="patientPhone" type="string">
+			<column name="PatientPhone" length="20" not-null="true"/>
+		</property>
+		<property name="personAffected" type="java.lang.Integer">
+			<column name="PersonAffected" not-null="true" />
+		</property>
+		<property name="incidentType" type="java.lang.Integer">
+			<column name="IncidentType" not-null="true" />
+		</property>
+		<property name="incidentDate" type="timestamp">
+			<column name="IncidentDate" length="23" not-null="true" />
+		</property>
+		<property name="incidentTime" type="string">
+			<column name="IncidentTime" length="10" not-null="true"/>
+		</property>
+		<property name="incidentLocation" type="string">
+			<column name="IncidentLocation" length="255" not-null="true"/>
+		</property>
+		<property name="incidentDescription" type="string">
+			<column name="IncidentDescription" length="1000" not-null="true"/>
+		</property>
+		<property name="reportedById" type="java.lang.Integer">
+			<column name="ReportedById" not-null="true"/>
+		</property>
+		<property name="reportedByName" type="string">
+			<column name="ReportedByName" length="255" not-null="true"/>
+		</property>
+		<property name="designation" type="string">
+			<column name="Designation" length="255"/>
+		</property>
+		<property name="witness" type="string">
+			<column name="Witness" length="255"/>
+		</property>
+		<property name="staffOnDuty" type="string">
+			<column name="StaffOnDuty" length="255"/>
+		</property>
+		<property name="reportedByDate" type="timestamp">
+			<column name="ReportedByDate" length="23" not-null="true" />
+		</property>
+		<property name="reportedToId" type="java.lang.Integer">
+			<column name="ReportedToId" />
+		</property>
+			<property name="reportedToName" type="string">
+			<column name="ReportedToName" length="255"/>
+		</property>
+		<property name="reportedToDate" type="timestamp">
+			<column name="ReportedToDate" length="23"/>
+		</property>
+		<property name="reportedToTime" type="string">
+			<column name="ReportedToTime" length="10"/>
+		</property>
+		<property name="assessment" type="string">
+			<column name="Assessment" length="1000"/>
+		</property>
+		<property name="medicalDirectorId" type="java.lang.Integer">
+			<column name="MedicalDirectorId" length="255"/>
+		</property>
+		<property name="medicalDirectorName" type="string">
+			<column name="MedicalDirectorName" length="255"/>
+		</property>
+		<property name="mDNotified" type="java.lang.Integer">
+			<column name="MDNotified" not-null="true"/>
+		</property>
+		<property name="mDNotifiedDate" type="timestamp">
+			<column name="MDNotifiedDate" length="23"/>
+		</property>
+		<property name="mDNotifiedTime" type="string">
+			<column name="MDNotifiedTime" length="10"/>
+		</property>
+		<property name="mDComment" type="string">
+			<column name="MDComment" length="255"/>
+		</property>
+		<property name="mDSignatureDate" type="timestamp">
+			<column name="MDSignatureDate" length="23"/>
+		</property>
+		<property name="patientOutcome" type="string">
+			<column name="PatientOutcome" length="1000"/>
+		</property>
+		<property name="completedById" type="java.lang.Integer">
+			<column name="CompletedById" />
+		</property>
+		<property name="completedByName" type="string">
+			<column name="CompletedByName" length="255"/>
+		</property>
+		<property name="completedSignatureDate" type="timestamp">
+			<column name="CompletedSignatureDate" length="23"/>
+		</property>
+		<property name="managerId" type="java.lang.Integer">
+			<column name="ManagerId" />
+		</property>
+		<property name="managerName" type="string">
+			<column name="ManagerName" length="255"/>
+		</property>
+		<property name="managerReceivedDate" type="timestamp">
+			<column name="ManagerReceivedDate" length="23"/>
+		</property>
+		<property name="managerComment" type="string">
+			<column name="ManagerComment" length="1000"/>
+		</property>
+		<property name="managerSignatureDate" type="timestamp">
+			<column name="ManagerSignatureDate" length="23"/>
+		</property>
+		<property name="createdBy" type="java.lang.Integer">
+			<column name="CreatedBy" not-null="true" />
+		</property>
+		<property name="createdDate" type="timestamp">
+			<column name="CreatedDate" length="23" not-null="true" />
+		</property>
+		<property name="lastUpdatedBy" type="java.lang.Integer">
+			<column name="LastUpdatedBy" not-null="true" />
+		</property>
+		<property name="lastUpdatedDate" type="timestamp">
+			<column name="LastUpdatedDate" length="23" not-null="true" />
+		</property> 
+		<property name="entityStatus" type="java.lang.Boolean">
+			<column name="EntityStatus" />
+		</property>
+        <property name="deleted" type="boolean">
+            <column name="Deleted" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>
