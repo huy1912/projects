@@ -1,4 +1,4 @@
-package com.iis.rims.lab.quantum.scheduler;
+package com.iis.rims.lab.quantum.service;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -10,7 +10,7 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.tempuri.LISIntegrationWebserviceSoap;
 
 import com.iis.rims.common.RIMSConstants.LabOrderStatus;
@@ -18,17 +18,13 @@ import com.iis.rims.common.SortDirection;
 import com.iis.rims.domain.LabOrderDetail;
 import com.iis.rims.hibernate.dao.LabOrderDetailDAO;
 import com.iis.rims.lab.quantum.AppConfig;
-import com.iis.rims.lab.quantum.EmailService;
 import com.iis.rims.lab.quantum.handler.QuantumLabUploadHandler;
 import com.iis.rims.lab.quantum.message.EncodeMessage;
 import com.iis.rims.lab.quantum.orm.MSG;
 
-@Component
-public class OrderStatus {
+@Service
+public class OrderService {
 
-	@Autowired
-	private EmailService emailService;
-	
 	@Autowired
 	private LISIntegrationWebserviceSoap integrationWebserviceSoap;
 	
@@ -41,11 +37,10 @@ public class OrderStatus {
 	@Value("${labCustomerId}")
 	private int labCustomerId;
 	
-	public OrderStatus() {
-		AppConfig.LOGGER.info("construct order status....");
+	public OrderService() {
+		AppConfig.LOGGER.info("construct order service....");
 	}
 	
-	@Scheduled(cron = "0/30 * * * * *")
 	public void pushOrders() throws Exception {
 		AppConfig.LOGGER.info("push orders");
 		LabOrderDetailDAO labOrderDetailDAO = new LabOrderDetailDAO();
@@ -54,6 +49,11 @@ public class OrderStatus {
 				Restrictions.eq("labCustomerId", labCustomerId),
 				Restrictions.or(Restrictions.isNull("labOrderNumber"), Restrictions.in("uploadStatus", new Integer[] {null, 2}))
 				); // 2 : FAILED upload
+		submitOrders(labOrderDetailDAO, list);
+		AppConfig.LOGGER.info("Finished pushing orders...");
+	}
+
+	public void submitOrders(LabOrderDetailDAO labOrderDetailDAO, List<LabOrderDetail> list) throws Exception {
 		Map<Integer, List<LabOrderDetail>> orders = new LinkedHashMap<>();
 		// Split the order
 		for (LabOrderDetail detail : list) {
@@ -93,18 +93,5 @@ public class OrderStatus {
 				}
 			}
 		}
-		AppConfig.LOGGER.info("Finished pushing orders...");
-	}
-	
-//	@Scheduled(cron = "0/5 * * * * *")
-	public void checkOrderStatus() {
-		AppConfig.LOGGER.info("Check order status");
-//		emailService.sendEmail();
-		AppConfig.LOGGER.info("Finished email...");
-	}
-	
-//	@Scheduled(cron = "0/10 * * * * *")
-	public void checkReportStatus() {
-		AppConfig.LOGGER.info("Check report status");
 	}
 }
