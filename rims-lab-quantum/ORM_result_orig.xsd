@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+	<xs:element name="content" type="content"/>
+	<xs:complexType name="MSH">
+		<xs:sequence>
+			<xs:element type="xs:string" name="Sending_Application"/>
+			<xs:element type="xs:string" name="Sending_Facility"/>
+			<xs:element type="xs:string" name="Receiving_Application"/>
+			<xs:element type="xs:string" name="Receiving_Facility"/>
+			<xs:element type="xs:string" name="Message_Date_Time"/>
+			<xs:element type="xs:string" name="Message_Type"/>
+			<xs:element type="xs:string" name="Message_Control_Id"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EVN">
+		<xs:sequence>
+			<xs:element type="xs:string" name="Event_Type_Code"/>
+			<xs:element type="xs:string" name="Recorded_DateTime"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PID">
+		<xs:sequence>
+			<xs:element type="xs:string" name="Patient_Id_Ext"/>
+			<xs:element type="xs:string" name="Patient_Id_Int"/>
+			<xs:element type="xs:string" name="Patient_Id_Type"/>
+			<xs:element type="xs:string" name="Patient_Id_Number"/>
+			<xs:element type="xs:string" name="Patient_Name"/>
+			<xs:element type="xs:string" name="Date_Of_Birth"/>
+			<xs:element type="xs:string" name="Gender_Code"/>
+			<xs:element type="xs:string" name="Race_code"/>
+			<xs:element type="xs:string" name="Address1"/>
+			<xs:element type="xs:string" name="Address2"/>
+			<xs:element type="xs:string" name="Address3"/>
+			<xs:element type="xs:string" name="City"/>
+			<xs:element type="xs:string" name="State"/>
+			<xs:element type="xs:string" name="Postal_Code"/>
+			<xs:element type="xs:string" name="Country_Code"/>
+			<xs:element type="xs:string" name="Phone_Home"/>
+			<xs:element type="xs:string" name="Phone_Mobile"/>
+			<xs:element type="xs:string" name="Phone_Business"/>
+			<xs:element type="xs:string" name="Primary_Language"/>
+			<xs:element type="xs:string" name="Marital_Status_Code"/>
+			<xs:element type="xs:string" name="Religion_Code"/>
+			<xs:element type="xs:string" name="Nationality_Code"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PV1">
+		<xs:sequence>
+			<xs:element type="xs:string" name="Patient_Type_Code"/>
+			<xs:element type="xs:string" name="Ward_Code"/>
+			<xs:element type="xs:string" name="Admission_Type"/>
+			<xs:element type="xs:string" name="Preadmit_Number"/>
+			<xs:element type="xs:string" name="Specialty_Code"/>
+			<xs:element type="xs:string" name="Referring_Doctor_Code"/>
+			<xs:element type="xs:string" name="Referring_Doctor_Desc"/>
+			<xs:element type="xs:string" name="Consulting_Doctor_Code"/>
+			<xs:element type="xs:string" name="Consulting_Doctor_Desc"/>
+			<xs:element type="xs:string" name="Admitting_Doctor_Code"/>
+			<xs:element type="xs:string" name="Admitting_Doctor_Desc"/>
+			<xs:element type="xs:string" name="Patient_Class"/>
+			<xs:element type="xs:string" name="Financial_Class_Code"/>
+			<xs:element type="xs:string" name="Admit_DateTime"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ORC">
+		<xs:sequence>
+			<xs:element type="xs:string" name="Order_Control"/>
+			<xs:element type="xs:string" name="ORC_Placer_Order_Number"/>
+			<xs:element type="xs:string" name="ORC_Filler_Order_Number"/>
+			<xs:element type="xs:string" name="Placer_Group_Number"/>
+			<xs:element type="xs:string" name="Order_Status_Code"/>
+			<xs:element type="xs:string" name="Response_Flag"/>
+			<xs:element type="xs:string" name="ORC_Quantity_Timing"/>
+			<xs:element type="xs:string" name="Parent"/>
+			<xs:element type="xs:string" name="DateTime_Of_Transaction"/>
+			<xs:element type="xs:string" name="Entered_By_ID"/>
+			<xs:element type="xs:string" name="Entered_By_Name"/>
+			<xs:element type="xs:string" name="Verified_By_ID"/>
+			<xs:element type="xs:string" name="Verified_By_Name"/>
+			<xs:element type="xs:string" name="ORC_Ordering_Provider_ID"/>
+			<xs:element type="xs:string" name="ORC_Ordering_Provider_Name"/>
+			<xs:element type="xs:string" name="Enter_Location"/>
+			<xs:element type="xs:string" name="Call_Back_Phone_Number"/>
+			<xs:element type="xs:string" name="Order_Effective_DateTime"/>
+			<xs:element type="xs:string" name="Order_Control_Code_Reason"/>
+			<xs:element type="xs:string" name="Entering_Organization"/>
+			<xs:element type="xs:string" name="Entering_Device"/>
+			<xs:element type="xs:string" name="Action_By"/>
+			<xs:element type="xs:string" name="Advanced_Beneficiary_Notice_Code"/>
+			<xs:element type="xs:string" name="Ordering_Facility_Code"/>
+			<xs:element type="xs:string" name="Ordering_Facility_Name"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OBR">
+		<xs:sequence>
+			<xs:element type="xs:string" name="Set_Id_OBR"/>
+			<xs:element type="xs:string" name="OBR_Placer_Order_Number"/>
+			<xs:element type="xs:string" name="OBR_Filler_Order_Number"/>
+			<xs:element type="xs:string" name="Package_Code"/>
+			<xs:element type="xs:string" name="Package_Description"/>
+			<xs:element type="xs:string" name="Test_Code"/>
+			<xs:element type="xs:string" name="Test_Name"/>
+			<xs:element type="xs:string" name="Priority_Code"/>
+			<xs:element type="xs:string" name="Requested_DateTime"/>
+			<xs:element type="xs:string" name="Observation_DateTime"/>
+			<xs:element type="xs:string" name="Observation_End_DateTime"/>
+			<xs:element type="xs:string" name="Specimen_Received_DateTime"/>
+			<xs:element type="xs:string" name="Specimen_Source_Code"/>
+			<xs:element type="xs:string" name="Specimen_Source_Desc"/>
+			<xs:element type="xs:string" name="OBR_Ordering_Provider_ID"/>
+			<xs:element type="xs:string" name="OBR_Ordering_Provider_Name"/>
+			<xs:element type="xs:string" name="Placer_Field1"/>
+			<xs:element type="xs:string" name="Placer_Field2"/>
+			<xs:element type="xs:string" name="Filler_Field1"/>
+			<xs:element type="xs:string" name="Filler_Field2"/>
+			<xs:element type="xs:string" name="Status_Change_DateTime"/>
+			<xs:element type="xs:string" name="Charge_To_Practice"/>
+			<xs:element type="xs:string" name="Diagnostic_Serv_Sect_Code"/>
+			<xs:element type="xs:string" name="Diagnostic_Serv_Sect_Desc"/>
+			<xs:element type="xs:string" name="Parent_Result"/>
+			<xs:element type="xs:string" name="OBR_Quantity_Timing"/>
+			<xs:element type="xs:string" name="Unit_Code"/>
+			<xs:element type="xs:string" name="Cancel_Reason_Code"/>
+			<xs:element type="xs:string" name="Cancel_Reason_Desc"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OBX">
+		<xs:sequence>
+			<xs:element type="xs:string" name="SET_ID"/>
+			<xs:element type="xs:string" name="Observation_Value_Type"/>
+			<xs:element type="xs:string" name="Observation_Identifier"/>
+			<xs:element type="xs:string" name="Observation_Value"/>
+			<xs:element type="xs:string" name="ObservationResultsStatus"/>
+			<xs:element type="xs:string" name="Observation_Date_Time"/>
+			<xs:element type="xs:string" name="Units"/>
+			<xs:element type="xs:string" name="ReferenceRange"/>
+			<xs:element type="xs:string" name="MedicalRemarks"/>
+			<xs:element type="xs:string" name="IsAbnormalflag"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Observation">
+		<xs:sequence>
+			<xs:element type="OBX" name="OBX" maxOccurs="unbounded" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ObservationRequest">
+		<xs:sequence>
+			<xs:element type="OBR" name="OBR"/>
+			<xs:element type="Observation" name="Observation"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MSG">
+		<xs:sequence>
+			<xs:element type="xs:string" name="VN"/>
+			<xs:element type="xs:string" name="OrgId"/>
+			<xs:element type="xs:string" name="LastUpdate"/>
+			<xs:element type="MSH" name="MSH"/>
+			<xs:element type="EVN" name="EVN"/>
+			<xs:element type="PID" name="PID"/>
+			<xs:element type="PV1" name="PV1"/>
+			<xs:element type="ORC" name="ORC"/>
+			<xs:element type="ObservationRequest" name="Observation_Request"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="content">
+		<xs:sequence>
+			<xs:element type="MSG" name="MSG"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -56,10 +56,8 @@ public class QuantumLabUploadHandler {
 	private static final String RECEIVING_APPLICATION_FACILITY = "LIS";
 	private static final String SENDING_APPLICATION_NAME = "RENAL";
 	private static final String SENDING_APPLICATION_FACILITY = "RENAL";
-	private static final String PROCESSING_ID = "P";
 	private static final FastDateFormat LAB_DATE_TIME_FORMATTER = FastDateFormat.getInstance("yyyyMMddHHmmss");
 	private static final FastDateFormat ORDER_REF_YEAR_FORMATTER = FastDateFormat.getInstance("yy");
-	private static final DecimalFormat ORDER_NUMBER_FORMATTER = new DecimalFormat("00");
 	
 	private static final BranchDAO BRANCH_DAO = new BranchDAO();
 	private static final PatientDAO PATIENT_DAO = new PatientDAO();
@@ -115,15 +113,7 @@ public class QuantumLabUploadHandler {
 			orderMessage.setPID(createPatient(patient));
 			orderMessage.setPV1(createVisit(branch, visit, doctor, systemUser, dateTime));
 			orderMessage.setORC(createOrder(branch, labOrder, labOrderDetails, labOrderStatus, today, messageHeader));
-			orderMessage.setObservationRequest(createRequest(branch, labOrderDetails, dateTime));
-			
-			// Update the Lab Order Number in order to save to database after uploaded.
-			for (LabOrderDetail labOrderDetail : labOrderDetails) {
-				labOrderNumber = orderMessage.getMSH().getMessageControlId();
-				labOrderDetail.setLabOrderNumber(labOrderNumber);
-				labOrderDetail.setOrderNumberRef(labOrderNumber + "/" + ORDER_REF_YEAR_FORMATTER.format(today));
-//				LAB_ORDER_DETAIL_DAO.update(labOrderDetail);
-			}
+			orderMessage.getObservationRequest().add(createRequest(branch, labOrderDetails, dateTime));
 			return orderMessage;
 		}
 		return null;
@@ -361,7 +351,7 @@ public class QuantumLabUploadHandler {
 			obr.setCancelReasonDesc("");
 //			obr.setTestCode(labOrderDetailUpload.getProfileName());
 //			obr.setTestName(labOrderDetailUpload.getProcedureDescription());
-			observationRequest.getOBR().add(obr);
+			observationRequest.setOBR(obr);
 		}
 		return observationRequest;
 	}
