@@ -26,6 +26,7 @@ import com.iis.rims.common.RIMSConstants.LabOrderStatus;
 import com.iis.rims.domain.LabOrderDetail;
 import com.iis.rims.hibernate.dao.LabOrderDetailDAO;
 import com.iis.rims.lab.quantum.handler.QuantumLabUploadHandler;
+import com.iis.rims.lab.quantum.message.DecodeMessage;
 import com.iis.rims.lab.quantum.message.EncodeMessage;
 import com.iis.rims.lab.quantum.orm.MSG;
 
@@ -56,12 +57,22 @@ public class SpringBootLabQuantumApplication extends SpringBootServletInitialize
 			
 			@Override
 			public void run(String... args) throws Exception {
-//				ArrayOfString results = integrationWebserviceSoap.getResultValues("161004337");
-//				System.err.println(results);
-//				byte[] data = integrationWebserviceSoap.getReportPDF("161004337", "RenalTeam", "renal@123");
-//				if (data != null & data.length > 0) {
-//					FileUtils.writeByteArrayToFile(new File("report2.pdf"), data);
-//				}
+				ArrayOfString results = integrationWebserviceSoap.getResultValues("10000006");
+				if (results != null && !results.getString().isEmpty()) {
+					for (String s : results.getString()) {
+						MSG msg = DecodeMessage.decodeResults(s);
+						System.err.println(msg);
+					}
+				}
+				System.err.println(results);
+				byte[] data = integrationWebserviceSoap.getReportPDF("10000007", "RenalTeam", "renal@123");
+				if (data != null & data.length > 0) {
+					FileUtils.writeByteArrayToFile(new File("report2.pdf"), data);
+				}
+				
+				if (true) {
+					return;
+				}
 				//String xmlData = "<![CDATA[" + EncodeMessage.encodeMsg() + "]]>";
 //				String xmlData = EncodeMessage.encodeMsg();
 //				String ret = integrationWebserviceSoap.pushOrder(xmlData , "RenalTeam", "renal@123");

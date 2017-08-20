@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="content" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="content" msdata:IsDataSet="true" msdata:Locale="en-US">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="MSG">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="VN" type="xs:string" minOccurs="0" />
+              <xs:element name="OrgId" type="xs:string" minOccurs="0" />
+              <xs:element name="LastUpdate" type="xs:string" minOccurs="0" />
+              <xs:element name="MSH">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Sending_Application" type="xs:string" minOccurs="0" />
+                    <xs:element name="Sending_Facility" type="xs:string" minOccurs="0" />
+                    <xs:element name="Receiving_Application" type="xs:string" minOccurs="0" />
+                    <xs:element name="Receiving_Facility" type="xs:string" minOccurs="0" />
+                    <xs:element name="Message_Date_Time" type="xs:string" minOccurs="0" />
+                    <xs:element name="Message_Type" type="xs:string" minOccurs="0" />
+                    <xs:element name="Message_Control_Id" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="EVN">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Event_Type_Code" type="xs:string" minOccurs="0" />
+                    <xs:element name="Recorded_DateTime" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PID">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Patient_Id_Ext" type="xs:string" minOccurs="0" />
+                    <xs:element name="Patient_Id_Int" type="xs:string" minOccurs="0" />
+                    <xs:element name="Patient_Id_Type" type="xs:string" minOccurs="0" />
+                    <xs:element name="Patient_Id_Number" type="xs:string" minOccurs="0" />
+                    <xs:element name="Patient_Name" type="xs:string" minOccurs="0" />
+                    <xs:element name="Date_Of_Birth" type="xs:string" minOccurs="0" />
+                    <xs:element name="Gender_Code" type="xs:string" minOccurs="0" />
+                    <xs:element name="Race_code" type="xs:string" minOccurs="0" />
+                    <xs:element name="Address1" type="xs:string" minOccurs="0" />
+                    <xs:element name="Address2" type="xs:string" minOccurs="0" />
+                    <xs:element name="Address3" type="xs:string" minOccurs="0" />
+                    <xs:element name="City" type="xs:string" minOccurs="0" />
+                    <xs:element name="State" type="xs:string" minOccurs="0" />
+                    <xs:element name="Postal_Code" type="xs:string" minOccurs="0" />
+                    <xs:element name="Country_Code" type="xs:string" minOccurs="0" />
+                    <xs:element name="Phone_Home" type="xs:string" minOccurs="0" />
+                    <xs:element name="Phone_Mobile" type="xs:string" minOccurs="0" />
+                    <xs:element name="Phone_Business" type="xs:string" minOccurs="0" />
+                    <xs:element name="Primary_Language" type="xs:string" minOccurs="0" />
+                    <xs:element name="Marital_Status_Code" type="xs:string" minOccurs="0" />
+                    <xs:element name="Religion_Code" type="xs:string" minOccurs="0" />
+                    <xs:element name="Nationality_Code" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PV1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Patient_Type_Code" type="xs:string" minOccurs="0" />
+                    <xs:element name="Ward_Code" type="xs:string" minOccurs="0" />
+                    <xs:element name="Admission_Type" type="xs:string" minOccurs="0" />
+                    <xs:element name="Preadmit_Number" type="xs:string" minOccurs="0" />
+                    <xs:element name="Specialty_Code" type="xs:string" minOccurs="0" />
+                    <xs:element name="Referring_Doctor_Code" type="xs:string" minOccurs="0" />
+                    <xs:element name="Referring_Doctor_Desc" type="xs:string" minOccurs="0" />
+                    <xs:element name="Consulting_Doctor_Code" type="xs:string" minOccurs="0" />
+                    <xs:element name="Consulting_Doctor_Desc" type="xs:string" minOccurs="0" />
+                    <xs:element name="Admitting_Doctor_Code" type="xs:string" minOccurs="0" />
+                    <xs:element name="Admitting_Doctor_Desc" type="xs:string" minOccurs="0" />
+                    <xs:element name="Patient_Class" type="xs:string" minOccurs="0" />
+                    <xs:element name="Financial_Class_Code" type="xs:string" minOccurs="0" />
+                    <xs:element name="Admit_DateTime" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ORC">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Order_Control" type="xs:string" minOccurs="0" />
+                    <xs:element name="ORC_Placer_Order_Number" type="xs:string" minOccurs="0" />
+                    <xs:element name="ORC_Filler_Order_Number" type="xs:string" minOccurs="0" />
+                    <xs:element name="Placer_Group_Number" type="xs:string" minOccurs="0" />
+                    <xs:element name="Order_Status_Code" type="xs:string" minOccurs="0" />
+                    <xs:element name="Response_Flag" type="xs:string" minOccurs="0" />
+                    <xs:element name="ORC_Quantity_Timing" type="xs:string" minOccurs="0" />
+                    <xs:element name="Parent" type="xs:string" minOccurs="0" />
+                    <xs:element name="DateTime_Of_Transaction" type="xs:string" minOccurs="0" />
+                    <xs:element name="Entered_By_ID" type="xs:string" minOccurs="0" />
+                    <xs:element name="Entered_By_Name" type="xs:string" minOccurs="0" />
+                    <xs:element name="Verified_By_ID" type="xs:string" minOccurs="0" />
+                    <xs:element name="Verified_By_Name" type="xs:string" minOccurs="0" />
+                    <xs:element name="ORC_Ordering_Provider_ID" type="xs:string" minOccurs="0" />
+                    <xs:element name="ORC_Ordering_Provider_Name" type="xs:string" minOccurs="0" />
+                    <xs:element name="Enter_Location" type="xs:string" minOccurs="0" />
+                    <xs:element name="Call_Back_Phone_Number" type="xs:string" minOccurs="0" />
+                    <xs:element name="Order_Effective_DateTime" type="xs:string" minOccurs="0" />
+                    <xs:element name="Order_Control_Code_Reason" type="xs:string" minOccurs="0" />
+                    <xs:element name="Entering_Organization" type="xs:string" minOccurs="0" />
+                    <xs:element name="Entering_Device" type="xs:string" minOccurs="0" />
+                    <xs:element name="Action_By" type="xs:string" minOccurs="0" />
+                    <xs:element name="Advanced_Beneficiary_Notice_Code" type="xs:string" minOccurs="0" />
+                    <xs:element name="Ordering_Facility_Code" type="xs:string" minOccurs="0" />
+                    <xs:element name="Ordering_Facility_Name" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Observation_Request" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="OBR">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Set_Id_OBR" type="xs:string" minOccurs="0" />
+                          <xs:element name="OBR_Placer_Order_Number" type="xs:string" minOccurs="0" />
+                          <xs:element name="OBR_Filler_Order_Number" type="xs:string" minOccurs="0" />
+                          <xs:element name="Package_Code" type="xs:string" minOccurs="0" />
+                          <xs:element name="Package_Description" type="xs:string" minOccurs="0" />
+                          <xs:element name="Test_Code" type="xs:string" minOccurs="0" />
+                          <xs:element name="Test_Name" type="xs:string" minOccurs="0" />
+                          <xs:element name="Priority_Code" type="xs:string" minOccurs="0" />
+                          <xs:element name="Requested_DateTime" type="xs:string" minOccurs="0" />
+                          <xs:element name="Observation_DateTime" type="xs:string" minOccurs="0" />
+                          <xs:element name="Observation_End_DateTime" type="xs:string" minOccurs="0" />
+                          <xs:element name="Specimen_Received_DateTime" type="xs:string" minOccurs="0" />
+                          <xs:element name="Specimen_Source_Code" type="xs:string" minOccurs="0" />
+                          <xs:element name="Specimen_Source_Desc" type="xs:string" minOccurs="0" />
+                          <xs:element name="OBR_Ordering_Provider_ID" type="xs:string" minOccurs="0" />
+                          <xs:element name="OBR_Ordering_Provider_Name" type="xs:string" minOccurs="0" />
+                          <xs:element name="Placer_Field1" type="xs:string" minOccurs="0" />
+                          <xs:element name="Placer_Field2" type="xs:string" minOccurs="0" />
+                          <xs:element name="Filler_Field1" type="xs:string" minOccurs="0" />
+                          <xs:element name="Filler_Field2" type="xs:string" minOccurs="0" />
+                          <xs:element name="Status_Change_DateTime" type="xs:string" minOccurs="0" />
+                          <xs:element name="Charge_To_Practice" type="xs:string" minOccurs="0" />
+                          <xs:element name="Diagnostic_Serv_Sect_Code" type="xs:string" minOccurs="0" />
+                          <xs:element name="Diagnostic_Serv_Sect_Desc" type="xs:string" minOccurs="0" />
+                          <xs:element name="Parent_Result" type="xs:string" minOccurs="0" />
+                          <xs:element name="OBR_Quantity_Timing" type="xs:string" minOccurs="0" />
+                          <xs:element name="Unit_Code" type="xs:string" minOccurs="0" />
+                          <xs:element name="Cancel_Reason_Code" type="xs:string" minOccurs="0" />
+                          <xs:element name="Cancel_Reason_Desc" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Observation">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="OBX" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="SET_ID" type="xs:string" minOccurs="0" />
+                                <xs:element name="Observation_Value_Type" type="xs:string" minOccurs="0" />
+                                <xs:element name="Observation_Identifier" type="xs:string" minOccurs="0" />
+                                <xs:element name="Observation_Value" type="xs:string" minOccurs="0" />
+                                <xs:element name="ObservationResultsStatus" type="xs:string" minOccurs="0" />
+                                <xs:element name="Observation_Date_Time" type="xs:string" minOccurs="0" />
+                                <xs:element name="Units" type="xs:string" minOccurs="0" />
+                                <xs:element name="ReferenceRange" type="xs:string" minOccurs="0" />
+                                <xs:element name="MedicalRemarks" type="xs:string" minOccurs="0" />
+                                <xs:element name="IsAbnormalflag" type="xs:string" minOccurs="0" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

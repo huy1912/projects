@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="MSG">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="MSH">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Sending_Application" type="xsd:string" />
+              <xsd:element name="Sending_Facility" type="xsd:string" />
+              <xsd:element name="Receiving_Application" type="xsd:string" />
+              <xsd:element name="Receiving_Facility" type="xsd:string" />
+              <xsd:element name="Message_Date_Time" type="xsd:string" />
+              <xsd:element name="Message_Type" type="xsd:string" />
+              <xsd:element name="Message_Control_Id" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="EVN">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Event_Type_Code" type="xsd:string" />
+              <xsd:element name="Recorded_DateTime" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="PID">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Patient_Id_Ext" type="xsd:string" />
+              <xsd:element name="Patient_Id_Int" type="xsd:string" />
+              <xsd:element name="Patient_Id_Type" type="xsd:string" />
+              <xsd:element name="Patient_Id_Number" type="xsd:string" />
+              <xsd:element name="Patient_Name" type="xsd:string" />
+              <xsd:element name="Date_Of_Birth" type="xsd:string" />
+              <xsd:element name="Gender_Code" type="xsd:string" />
+              <xsd:element name="Race_code" type="xsd:string" />
+              <xsd:element name="Address1" type="xsd:string" />
+              <xsd:element name="Address2" type="xsd:string" />
+              <xsd:element name="Address3" type="xsd:string" />
+              <xsd:element name="City" type="xsd:string" />
+              <xsd:element name="State" type="xsd:string" />
+              <xsd:element name="Postal_Code" type="xsd:string" />
+              <xsd:element name="Country_Code" type="xsd:string" />
+              <xsd:element name="Phone_Home" type="xsd:string" />
+              <xsd:element name="Phone_Mobile" type="xsd:string" />
+              <xsd:element name="Phone_Business" type="xsd:string" />
+              <xsd:element name="Primary_Language" type="xsd:string" />
+              <xsd:element name="Marital_Status_Code" type="xsd:string" />
+              <xsd:element name="Religion_Code" type="xsd:string" />
+              <xsd:element name="Nationality_Code" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="PV1">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Patient_Type_Code" type="xsd:string" />
+              <xsd:element name="Ward_Code" type="xsd:string" />
+              <xsd:element name="Admission_Type" type="xsd:string" />
+              <xsd:element name="Preadmit_Number" type="xsd:string" />
+              <xsd:element name="Specialty_Code" type="xsd:string" />
+              <xsd:element name="Attending_Doctor_Code" type="xsd:string" />
+              <xsd:element name="Attending_Doctor_Desc" type="xsd:string" />
+              <xsd:element name="Referring_Doctor_Code" type="xsd:string" />
+              <xsd:element name="Referring_Doctor_Desc" type="xsd:string" />
+              <xsd:element name="Consulting_Doctor_Code" type="xsd:string" />
+              <xsd:element name="Consulting_Doctor_Desc" type="xsd:string" />
+              <xsd:element name="Admitting_Doctor_Code" type="xsd:string" />
+              <xsd:element name="Admitting_Doctor_Desc" type="xsd:string" />
+              <xsd:element name="Patient_Class" type="xsd:string" />
+              <xsd:element name="Visit_Number" type="xsd:string" />
+              <xsd:element name="Financial_Class_Code" type="xsd:string" />
+              <xsd:element name="Admit_DateTime" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="ORC">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Order_Control" type="xsd:string" />
+              <xsd:element name="ORC_Placer_Order_Number" type="xsd:string" />
+              <xsd:element name="ORC_Filler_Order_Number" type="xsd:string" />
+              <xsd:element name="Placer_Group_Number" type="xsd:string" />
+              <xsd:element name="Order_Status_Code" type="xsd:string" />
+              <xsd:element name="Response_Flag" type="xsd:string" />
+              <xsd:element name="ORC_Quantity_Timing" type="xsd:string" />
+              <xsd:element name="Parent" type="xsd:string" />
+              <xsd:element name="DateTime_Of_Transaction" type="xsd:string" />
+              <xsd:element name="Entered_By_ID" type="xsd:string" />
+              <xsd:element name="Entered_By_Name" type="xsd:string" />
+              <xsd:element name="Verified_By_ID" type="xsd:string" />
+              <xsd:element name="Verified_By_Name" type="xsd:string" />
+              <xsd:element name="ORC_Ordering_Provider_ID" type="xsd:string" />
+              <xsd:element name="ORC_Ordering_Provider_Name" type="xsd:string" />
+              <xsd:element name="Enter_Location" type="xsd:string" />
+              <xsd:element name="Call_Back_Phone_Number" type="xsd:string" />
+              <xsd:element name="Order_Effective_DateTime" type="xsd:string" />
+              <xsd:element name="Order_Control_Code_Reason" type="xsd:string" />
+              <xsd:element name="Entering_Organization" type="xsd:string" />
+              <xsd:element name="Entering_Device" type="xsd:string" />
+              <xsd:element name="Action_By" type="xsd:string" />
+              <xsd:element name="Advanced_Beneficiary_Notice_Code" type="xsd:string" />
+              <xsd:element name="Ordering_Facility_Code" type="xsd:string" />
+              <xsd:element name="Ordering_Facility_Name" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="Observation_Request" maxOccurs="unbounded" minOccurs="1">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="OBR">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="Set_Id_OBR" type="xsd:string" />
+                    <xsd:element name="OBR_Placer_Order_Number" type="xsd:string" />
+                    <xsd:element name="OBR_Filler_Order_Number" type="xsd:string" />
+                    <xsd:element name="Package_Code" type="xsd:string" />
+                    <xsd:element name="Package_Description" type="xsd:string" />
+                    <xsd:element name="Test_Code" type="xsd:string" />
+                    <xsd:element name="Test_Name" type="xsd:string" />
+                    <xsd:element name="Priority_Code" type="xsd:string" />
+                    <xsd:element name="Priority_Desc" type="xsd:string" />
+                    <xsd:element name="Requested_DateTime" type="xsd:string" />
+                    <xsd:element name="Observation_DateTime" type="xsd:string" />
+                    <xsd:element name="Observation_End_DateTime" type="xsd:string" />
+                    <xsd:element name="Collection_Volume" type="xsd:string" />
+                    <xsd:element name="Collector_Identifier" type="xsd:string" />
+                    <xsd:element name="Specimen_Action_Code" type="xsd:string" />
+                    <xsd:element name="Danger_Code" type="xsd:string" />
+                    <xsd:element name="Relevant_Clinical_Info" type="xsd:string" />
+                    <xsd:element name="Specimen_Received_DateTime" type="xsd:string" />
+                    <xsd:element name="Specimen_Source_Code" type="xsd:string" />
+                    <xsd:element name="Specimen_Source_Desc" type="xsd:string" />
+                    <xsd:element name="OBR_Ordering_Provider_ID" type="xsd:string" />
+                    <xsd:element name="OBR_Ordering_Provider_Name" type="xsd:string" />
+                    <xsd:element name="Order_Callback_Phone_Number" type="xsd:string" />
+                    <xsd:element name="Placer_Field1" type="xsd:string" />
+                    <xsd:element name="Placer_Field2" type="xsd:string" />
+                    <xsd:element name="Filler_Field1" type="xsd:string" />
+                    <xsd:element name="Filler_Field2" type="xsd:string" />
+                    <xsd:element name="Status_Change_DateTime" type="xsd:string" />
+                    <xsd:element name="Charge_To_Practice" type="xsd:string" />
+                    <xsd:element name="Diagnostic_Serv_Sect_Code" type="xsd:string" />
+                    <xsd:element name="Diagnostic_Serv_Sect_Desc" type="xsd:string" />
+                    <xsd:element name="Result_Status" type="xsd:string" />
+                    <xsd:element name="Parent_Result" type="xsd:string" />
+                    <xsd:element name="OBR_Quantity_Timing" type="xsd:string" />
+                    <xsd:element name="Unit_Code" type="xsd:string" />
+                    <xsd:element name="Unit_Desc" type="xsd:string" />
+                    <xsd:element name="Result_Copies_To" type="xsd:string" />
+                    <xsd:element name="Transportation_Mode" type="xsd:string" />
+                    <xsd:element name="Reason_For_Study" type="xsd:string" />
+                    <xsd:element name="Principal_Result_Interpreter" type="xsd:string" />
+                    <xsd:element name="Assistant_Result_Interpreter" type="xsd:string" />
+                    <xsd:element name="Technician" type="xsd:string" />
+                    <xsd:element name="Transcriptionist" type="xsd:string" />
+                    <xsd:element name="Scheduled_DateTime" type="xsd:string" />
+                    <xsd:element name="Number_Of_Sample_Containers" type="xsd:string" />
+                    <xsd:element name="Transport_Logistics_Of_Collected_Sample" type="xsd:string" />
+                    <xsd:element name="Collector_Comment" type="xsd:string" />
+                    <xsd:element name="Transport_Arrangement_Responsibility" type="xsd:string" />
+                    <xsd:element name="Transport_Arranged" type="xsd:string" />
+                    <xsd:element name="Escort_Required" type="xsd:string" />
+                    <xsd:element name="Planned_Patient_Transport_Comment" type="xsd:string" />
+                    <xsd:element name="Procedure_Code" type="xsd:string" />
+                    <xsd:element name="Procedure_Code_Modifier" type="xsd:string" />
+                    <xsd:element name="Placer_Supplemental_Service" type="xsd:string" />
+                    <xsd:element name="Filler_Supplemental_Service" type="xsd:string" />
+                    <xsd:element name="Cancel_Reason_Code" type="xsd:string" />
+                    <xsd:element name="Cancel_Reason_Desc" type="xsd:string" />
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="Observation" minOccurs="0">
+                 <xsd:complexType>
+                   <xsd:sequence>
+                     <xsd:element name="OBX" minOccurs="0" maxOccurs="unbounded">
+                       <xsd:complexType>
+                         <xsd:sequence>
+                           <xsd:element name="SET_ID" type="xsd:string" minOccurs="0" />
+                           <xsd:element name="Observation_Value_Type" type="xsd:string" minOccurs="0" />
+                           <xsd:element name="Observation_Identifier" type="xsd:string" minOccurs="0" />
+                           <xsd:element name="Observation_Value" type="xsd:string" minOccurs="0" />
+                           <xsd:element name="ObservationResultsStatus" type="xsd:string" minOccurs="0" />
+                           <xsd:element name="Observation_Date_Time" type="xsd:string" minOccurs="0" />
+                           <xsd:element name="Units" type="xsd:string" minOccurs="0" />
+                           <xsd:element name="ReferenceRange" type="xsd:string" minOccurs="0" />
+                           <xsd:element name="MedicalRemarks" type="xsd:string" minOccurs="0" />
+                           <xsd:element name="IsAbnormalflag" type="xsd:string" minOccurs="0" />
+                         </xsd:sequence>
+                       </xsd:complexType>
+                     </xsd:element>
+                   </xsd:sequence>
+                 </xsd:complexType>
+               </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

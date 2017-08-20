@@ -1,6 +1,7 @@
 package com.iis.rims.lab.quantum.message;
 
 import java.io.File;
+import java.io.StringReader;
 import java.io.StringWriter;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -9,6 +10,12 @@ import java.util.Date;
 import javax.xml.bind.JAXB;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
 
 import com.iis.rims.lab.quantum.controller.SubmitOrder;
 import com.iis.rims.lab.quantum.orm.MSG;
@@ -24,25 +31,6 @@ public class EncodeMessage {
 	private static final SimpleDateFormat FORMATTER = new SimpleDateFormat("yyyyMMddHHmmss");
 	private static final DecimalFormat DECIMAL_FORMATTER = new DecimalFormat("00000000000");
 	private static final String EMPTY_ELEMENT_REGEX = "<([A-Za-z_]+)></([A-Za-z_]+)>";
-	private static int COUNTER = 0;
-	@Deprecated
-	public static String encodeMsg() throws Exception {
-		MSG msg = new MSG();
-		msg = JAXB.unmarshal(new File("ORM_sample.xml"), MSG.class);
-		StringWriter stringWriter = new StringWriter();
-		JAXBContext jc = JAXBContext.newInstance(MSG.class);
-		Marshaller marshaller = jc.createMarshaller();
-		marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-		marshaller.marshal(msg, stringWriter);
-		
-		String xmlData = stringWriter.toString();
-		
-		xmlData = xmlData.substring(xmlData.indexOf("\n") + 1);
-		xmlData = xmlData.replaceAll(EMPTY_ELEMENT_REGEX, "<$1/>");
-		xmlData = xmlData.replace("<MSG>", "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soapenv:Header/><soapenv:Body><ws:acceptMessage><arg0><content><MSG>");
-		xmlData = xmlData.replace("</MSG>", "</MSG></content></arg0></ws:acceptMessage></soapenv:Body></soap:Envelope>");
-		return xmlData;
-	}
 	
 	public static String encodeMsg(MSG msg) throws Exception {
 		StringWriter stringWriter = new StringWriter();
@@ -66,7 +54,7 @@ public class EncodeMessage {
 		msh.setReceivingFacility("XXX");
 		msh.setMessageDateTime(FORMATTER.format(today));
 		msh.setMessageType("ORM");
-		msh.setMessageControlId(DECIMAL_FORMATTER.format(++COUNTER));
+		msh.setMessageControlId(DECIMAL_FORMATTER.format(1));
 		msg.setMSH(msh);
 		EVN evn = new EVN();
 		evn.setEventTypeCode("O01");
@@ -91,12 +79,8 @@ public class EncodeMessage {
 		obr.setSetIdOBR("1");
 		obr.setRequestedDateTime(FORMATTER.format(today));
 		obr.setOBRPlacerOrderNumber(order.getObrOrderNumber());
-		observationRequest.getOBR().add(obr);
-		msg.setObservationRequest(observationRequest);
+		observationRequest.setOBR(obr);
+		msg.getObservationRequest().add(observationRequest);
 		return encodeMsg(msg);
-	}
-	
-	public static void main(String[] args) throws Exception {
-		System.err.println(encodeMsg());
 	}
 }

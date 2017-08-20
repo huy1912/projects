@@ -33,6 +33,7 @@ public class DecodeMessage {
 		StringReader reader = new StringReader(xmlData);
 		T msg = JAXB.unmarshal(reader, clazz);
 		reader.close();
+		
 		return msg;
 	}
 }
