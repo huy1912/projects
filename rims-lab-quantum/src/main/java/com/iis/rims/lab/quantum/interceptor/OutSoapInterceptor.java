@@ -13,7 +13,8 @@ import org.apache.cxf.phase.Phase;
 
 public class OutSoapInterceptor extends AbstractSoapInterceptor {
 	public OutSoapInterceptor() {
-		super(Phase.SEND);
+		super(Phase.PRE_STREAM_ENDING);
+//		super(Phase.RECEIVE);
 	}
 	
 	@Override
@@ -40,7 +41,6 @@ public class OutSoapInterceptor extends AbstractSoapInterceptor {
             ByteArrayOutputStream byteArrayOutputStream = (ByteArrayOutputStream) os.getOut();
             byteArrayOutputStream.reset();
             byteArrayOutputStream.write(res.getBytes());
-
             os.flush();
             message.setContent(OutputStream.class, os);
             IOUtils.closeQuietly(os);
@@ -53,8 +53,8 @@ public class OutSoapInterceptor extends AbstractSoapInterceptor {
 	private String changeOutboundMessage(String value) {
 		String s = value.replace("&lt;", "<");
 		s = s.replace("&gt;", ">");
-		s = s.replace("<xmlData>", "<ws:acceptMessage>\n<arg0>\n<content>");
-		s = s.replace("</xmlData>", "</content>\r</arg0>\r</ws:acceptMessage>");
+		s = s.replace("<xmlData>", "<acceptMessage>\n<arg0>\n<content>");
+		s = s.replace("</xmlData>", "</content>\r</arg0>\r</acceptMessage>");
 		return s;
 	}
 }
