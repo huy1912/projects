@@ -1,12 +1,21 @@
 package com.iis.rims.lab.quantum.message;
 
 import java.io.File;
+import java.io.StringReader;
 import java.io.StringWriter;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.xml.bind.JAXB;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Marshaller;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
 
 import com.iis.rims.lab.quantum.controller.SubmitOrder;
 import com.iis.rims.lab.quantum.orm.MSG;
@@ -21,16 +30,30 @@ import com.iis.rims.lab.quantum.orm.MSG.PV1;
 public class EncodeMessage {
 	private static final SimpleDateFormat FORMATTER = new SimpleDateFormat("yyyyMMddHHmmss");
 	private static final DecimalFormat DECIMAL_FORMATTER = new DecimalFormat("00000000000");
+	private static final String EMPTY_ELEMENT_REGEX = "<([A-Za-z_]+)></([A-Za-z_]+)>";
 	private static int COUNTER = 0;
 	public static String encodeMsg() throws Exception {
 		MSG msg = new MSG();
 		msg = JAXB.unmarshal(new File("ORM_sample.xml"), MSG.class);
 		StringWriter stringWriter = new StringWriter();
-		JAXB.marshal(msg, stringWriter);
+		JAXBContext jc = JAXBContext.newInstance(MSG.class);
+		Marshaller marshaller = jc.createMarshaller();
+		marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+		marshaller.marshal(msg, stringWriter);
+		
 		String xmlData = stringWriter.toString();
 		
-		xmlData = xmlData.substring(xmlData.indexOf("\n") + 1);
+//		xmlData = xmlData.substring(xmlData.indexOf("\n") + 1);
+		xmlData = xmlData.replaceAll(EMPTY_ELEMENT_REGEX, "<$1/>");
+//		String LINE_SEPARATOR = System.getProperty("line.separator");
+		//xmlData = xmlData.replaceAll("(\\s</?[A-Za-z])", "\t\t\t\t\t\t$1");
+//		xmlData = xmlData.replaceAll("(\\s{4})", "\t\t\t\t\t\t$1");
+//		xmlData = xmlData.replace("<MSG>", String.format("<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">%s\t<soapenv:Header/>%s\t<soapenv:Body>%s\t\t<ws:acceptMessage>%s\t\t\t<arg0>%s\t\t\t\t<content>%s\t\t\t\t\t<MSG>", LINE_SEPARATOR, LINE_SEPARATOR, LINE_SEPARATOR, LINE_SEPARATOR, LINE_SEPARATOR, LINE_SEPARATOR));
+//		xmlData = xmlData.replace("</MSG>", String.format("\t\t\t\t\t</MSG>%s\t\t\t\t</content>%s\t\t\t</arg0>%s\t\t</ws:acceptMessage>%s\t</soapenv:Body>%s</soap:Envelope>", LINE_SEPARATOR, LINE_SEPARATOR, LINE_SEPARATOR, LINE_SEPARATOR, LINE_SEPARATOR));
+		xmlData = xmlData.replace("<MSG>", "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soapenv:Header/><soapenv:Body><ws:acceptMessage><arg0><content><MSG>");
+		xmlData = xmlData.replace("</MSG>", "</MSG></content></arg0></ws:acceptMessage></soapenv:Body></soap:Envelope>");
 		
+//		xmlData = prettyFormat(xmlData);
 		return xmlData;
 	}
 	
@@ -38,8 +61,10 @@ public class EncodeMessage {
 		StringWriter stringWriter = new StringWriter();
 		JAXB.marshal(msg, stringWriter);
 		String xmlData = stringWriter.toString();
-		xmlData = xmlData.substring(xmlData.indexOf("\n") + 1);
-		
+//		xmlData = xmlData.substring(xmlData.indexOf("\n") + 1);
+		xmlData = xmlData.replaceAll(EMPTY_ELEMENT_REGEX, "<$1/>");
+		xmlData = xmlData.replace("<MSG>", "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soapenv:Header/><soapenv:Body><ws:acceptMessage><arg0><content><MSG>");
+		xmlData = xmlData.replace("</MSG>", "</MSG></content></arg0></ws:acceptMessage></soapenv:Body></soap:Envelope>");
 		return xmlData;
 	}
 	
@@ -84,24 +109,26 @@ public class EncodeMessage {
 	}
 	
 	public static void main(String[] args) throws Exception {
-		MSG msg = new MSG();
-		msg = JAXB.unmarshal(new File("ORM_sample.xml"), MSG.class);
-//		PID pid = new PID();
-//		pid.setAddress1("AAA");
-//		msg.setPID(pid);
-		StringWriter stringWriter = new StringWriter();
-		JAXB.marshal(msg, stringWriter);
-		String xmlData = stringWriter.toString();
-		xmlData = xmlData.substring(xmlData.indexOf("\n") + 1);
-		System.err.println(xmlData);
-//		JAXBContext jc = JAXBContext.newInstance(MSG.class);
+		System.err.println(encodeMsg());
+	}
+	
+	public static String prettyFormat(String input, int indent) {
+	    try {
+	        Source xmlInput = new StreamSource(new StringReader(input));
+	        StringWriter stringWriter = new StringWriter();
+	        StreamResult xmlOutput = new StreamResult(stringWriter);
+	        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+	        transformerFactory.setAttribute("indent-number", indent);
+	        Transformer transformer = transformerFactory.newTransformer(); 
+	        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+	        transformer.transform(xmlInput, xmlOutput);
+	        return xmlOutput.getWriter().toString();
+	    } catch (Exception e) {
+	        throw new RuntimeException(e);
+	    }
+	}
 
-//        Unmarshaller unmarshaller = jc.createUnmarshaller();
-//        File xml = new File("src/forum18617998/input.xml");
-//        MSG root = (MSG) unmarshaller.unmarshal(xml);
-
-//        Marshaller marshaller = jc.createMarshaller();
-//        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-//        marshaller.marshal(msg, System.out);
+	public static String prettyFormat(String input) {
+	    return prettyFormat(input, 10);
 	}
 }

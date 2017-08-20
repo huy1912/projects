@@ -50,7 +50,6 @@ public class SpringBootLabQuantumApplication extends SpringBootServletInitialize
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
 		return builder.sources(SpringBootLabQuantumApplication.class);
 	}
-	/*
 	@Bean
 	public CommandLineRunner run(final LISIntegrationWebserviceSoap integrationWebserviceSoap) throws Exception {
 		return new CommandLineRunner() {
@@ -71,7 +70,8 @@ public class SpringBootLabQuantumApplication extends SpringBootServletInitialize
 				List<LabOrderDetail> list = labOrderDetailDAO.findByCriteria("labOrderDetailId", SortDirection.ASC,
 						Restrictions.eq("orderStatus", LabOrderStatus.PN.ordinal()),
 						Restrictions.eq("labCustomerId", 65),
-						Restrictions.isNull("labOrderNumber"));
+						Restrictions.or(Restrictions.isNull("labOrderNumber"), Restrictions.in("uploadStatus", new Integer[] {null, 2}))
+						); // 2 : FAILED upload
 				System.err.println(list.size());
 				Map<Integer, List<LabOrderDetail>> orders = new LinkedHashMap<>();
 				// Split the order
@@ -97,5 +97,4 @@ public class SpringBootLabQuantumApplication extends SpringBootServletInitialize
 			}
 		};
 	}
-	*/
 }

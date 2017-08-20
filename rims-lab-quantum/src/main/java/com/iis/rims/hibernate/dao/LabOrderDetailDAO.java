@@ -17,6 +17,10 @@ public class LabOrderDetailDAO extends BaseDAO<LabOrderDetail, Integer> {
 		return this.findByCriteria(Restrictions.eq("labOrderId", labOrderId));
 	}
 	
+	public List<LabOrderDetail> getLabOrderDetails(List<String> accessionNubmers) {
+		return this.findByCriteria(Restrictions.in("accessionNumber", accessionNubmers));
+	}
+	
 	public List<LabOrderDetailUploadDTO> getLabOrderDetailsForUpload(int labOrderId, int labCustomerId) {
 		ParameterBuilder parameterBuilder = new ParameterBuilder();
 		parameterBuilder.addParameter("labOrderId", labOrderId)
