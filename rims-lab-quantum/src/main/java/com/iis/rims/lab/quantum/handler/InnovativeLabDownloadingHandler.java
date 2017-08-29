@@ -1,40 +1,9 @@
 package com.iis.rims.lab.quantum.handler;
 
-import java.io.File;
-import java.io.IOException;
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
 
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.mutable.MutableObject;
 import org.apache.log4j.Logger;
-import org.springframework.util.CollectionUtils;
-
-import com.iis.rims.common.DateTimeFormatUtils;
-import com.iis.rims.common.RIMSConstants.LabOrderDetailType;
-import com.iis.rims.common.RIMSConstants.LabOrderStatus;
-import com.iis.rims.common.RIMSConstants.LabResult;
-import com.iis.rims.common.RIMSConstants.OrderReportStatus;
-import com.iis.rims.common.RIMSConstants.ResultInput;
-import com.iis.rims.domain.LabOrder;
-import com.iis.rims.domain.LabOrderDetail;
-import com.iis.rims.hibernate.dao.LabOrderDAO;
-import com.iis.rims.hibernate.dao.LabOrderDetailDAO;
-import com.iis.ris.report.domain.NoteAndComment;
-import com.iis.ris.report.domain.ObservationResult;
-import com.iis.ris.report.domain.ResultOrder;
-import com.iis.ris.report.identifier.CodedElementIdentifier;
-import com.iis.ris.report.message.OrderResultMessage;
 
 	
 public class InnovativeLabDownloadingHandler {
