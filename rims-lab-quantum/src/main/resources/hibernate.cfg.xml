@@ -135,7 +135,7 @@
 		<mapping resource="configs/LabOrderDetail.hbm.xml" />
 		<mapping resource="configs/LabProcedure.hbm.xml" />
 		<mapping resource="configs/LabProfile.hbm.xml" />
-
+		<mapping resource="configs/LabTestCode.hbm.xml" />
 		
 
 		
