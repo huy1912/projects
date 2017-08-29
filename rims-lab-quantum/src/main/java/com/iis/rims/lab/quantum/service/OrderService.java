@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.apache.commons.lang3.StringUtils;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.tempuri.LISIntegrationWebserviceSoap;
 
@@ -17,10 +17,13 @@ import com.iis.rims.common.RIMSConstants.LabOrderStatus;
 import com.iis.rims.common.SortDirection;
 import com.iis.rims.domain.LabOrderDetail;
 import com.iis.rims.hibernate.dao.LabOrderDetailDAO;
+import com.iis.rims.integration.UploadStatus;
 import com.iis.rims.lab.quantum.AppConfig;
 import com.iis.rims.lab.quantum.handler.QuantumLabUploadHandler;
+import com.iis.rims.lab.quantum.message.DecodeMessage;
 import com.iis.rims.lab.quantum.message.EncodeMessage;
 import com.iis.rims.lab.quantum.orm.MSG;
+import com.iis.rims.lab.quantum.orm.response.ResponseType;
 
 @Service
 public class OrderService {
@@ -47,7 +50,8 @@ public class OrderService {
 		List<LabOrderDetail> list = labOrderDetailDAO.findByCriteria("labOrderDetailId", SortDirection.ASC,
 				Restrictions.eq("orderStatus", LabOrderStatus.PN.ordinal()),
 				Restrictions.eq("labCustomerId", labCustomerId),
-				Restrictions.or(Restrictions.isNull("labOrderNumber"), Restrictions.in("uploadStatus", new Integer[] {null, 2}))
+				Restrictions.in("uploadStatus", new Integer[] {null, 2})
+//				Restrictions.or(Restrictions.isNull("labOrderNumber"), Restrictions.in("uploadStatus", new Integer[] {null, 2}))
 				); // 2 : FAILED upload
 		submitOrders(labOrderDetailDAO, list);
 		AppConfig.LOGGER.info("Finished pushing orders...");
@@ -78,10 +82,24 @@ public class OrderService {
 			try {
 				String ret = integrationWebserviceSoap.pushOrder(xmlData , username, password);
 				AppConfig.LOGGER.info("Upload result is " + ret);
-				for (LabOrderDetail detail : labOrderDetails) {
-					AppConfig.LOGGER.info("Uploaded successfully the order detail for " + detail.getAccessionNumber());
-					detail.setUploadStatus(1); // UPLOADED
-					labOrderDetailDAO.update(detail);
+				if (!StringUtils.isEmpty(ret)) {
+					ResponseType response = DecodeMessage.decodeMessage(ret, ResponseType.class);
+					for (LabOrderDetail detail : labOrderDetails) {
+						AppConfig.LOGGER.info("Uploaded successfully the order detail for " + detail.getAccessionNumber());
+						detail.setOrderNumberRef(response.getIntegrationHistoryID());
+						// Assume the upload status returns with 0
+						if ("0".equals(response.getStatus())) {
+						}
+						detail.setUploadStatus(UploadStatus.UPLOADED.ordinal());
+						labOrderDetailDAO.update(detail);
+					}
+				}
+				else {
+					for (LabOrderDetail detail : labOrderDetails) {
+						AppConfig.LOGGER.error("===Uploaded failed the order detail for " + detail.getAccessionNumber());
+						detail.setUploadStatus(UploadStatus.FAILED.ordinal());
+						labOrderDetailDAO.update(detail);
+					}
 				}
 				
 			}

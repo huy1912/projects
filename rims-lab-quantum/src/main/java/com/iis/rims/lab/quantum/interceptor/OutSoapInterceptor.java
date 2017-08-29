@@ -14,7 +14,6 @@ import org.apache.cxf.phase.Phase;
 public class OutSoapInterceptor extends AbstractSoapInterceptor {
 	public OutSoapInterceptor() {
 		super(Phase.PRE_STREAM_ENDING);
-//		super(Phase.RECEIVE);
 	}
 	
 	@Override

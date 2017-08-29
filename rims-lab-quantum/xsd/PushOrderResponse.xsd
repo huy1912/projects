@@ -3,8 +3,8 @@
   <xs:element name="Response" type="ResponseType"/>
   <xs:complexType name="ResponseType">
     <xs:sequence>
-      <xs:element type="xs:int" name="IntegrationHistoryID"/>
-      <xs:element type="xs:byte" name="Status"/>
+      <xs:element type="xs:string" name="IntegrationHistoryID"/>
+      <xs:element type="xs:string" name="Status"/>
     </xs:sequence>
   </xs:complexType>
 </xs:schema>
