@@ -1,7 +1,5 @@
 package com.iis.rims.lab.quantum.handler;
 
-import static org.junit.Assert.*;
-
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -16,12 +14,6 @@ import com.iis.rims.common.SortDirection;
 import com.iis.rims.domain.LabOrderDetail;
 import com.iis.rims.hibernate.dao.LabOrderDetailDAO;
 import com.iis.rims.lab.quantum.orm.MSG;
-import com.iis.rims.lab.quantum.orm.MSG.MSH;
-import com.iis.ris.report.message.HL7MessageFactory;
-import com.iis.ris.report.message.OrderMessage;
-
-import ca.uhn.hl7v2.model.Message;
-import ca.uhn.hl7v2.model.v231.message.ORM_O01;
 
 public class QuantumLabUploadHandlerTest {
 
