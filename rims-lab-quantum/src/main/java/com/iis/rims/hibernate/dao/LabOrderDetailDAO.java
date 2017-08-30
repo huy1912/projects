@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 
 import com.iis.rims.common.BaseDAO;
@@ -39,9 +40,9 @@ public class LabOrderDetailDAO extends BaseDAO<LabOrderDetail, Integer> {
 		return this.getNamedQueryUnique("RIMS_SP_LabOrderDetailUpload", parameterBuilder, LabOrderDetailUploadDTO.class);
 	}
 	
-	public LabOrderDetail getLabOrderDetail(String accessionNumber, int detailType) {
-		return findByUnique(Restrictions.eq("accessionNumber", accessionNumber),
-							Restrictions.eq("detailType", detailType));
+	public LabOrderDetail getLabOrderDetail(String labOrderNumber, String accessionNumber) {
+		return findByUnique(Restrictions.eq("labOrderNumber", labOrderNumber),
+				Restrictions.like("accessionNumber", accessionNumber, MatchMode.ANYWHERE));
 	}
 	
 	public LabOrderDetail getLabOrderDetailByOrderNumber(String labOrderNumber) {

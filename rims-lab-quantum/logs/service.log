@@ -3120,3 +3120,67 @@ Caused by: java.lang.NullPointerException: null
 32601 [restartedMain] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Inbound Message:
 <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><GetResultValuesResponse xmlns="http://tempuri.org/"><ApprovedResultVaues><string><?xml version="1.0" encoding="utf-8"?><content xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><MSG><VN></VN><OrgId></OrgId><LastUpdate>Aug 30 2017  2:28PM</LastUpdate><MSH><Sending_Application>LIS</Sending_Application><Sending_Facility>Attune</Sending_Facility><Receiving_Application>MYRENALTEAM</Receiving_Application><Receiving_Facility>MYRENALTEAM</Receiving_Facility><Message_Date_Time /><Message_Type>ORU</Message_Type><Message_Control_Id /></MSH><EVN><Event_Type_Code>R01</Event_Type_Code><Recorded_DateTime /></EVN><PID><Patient_Id_Ext /><Patient_Id_Int>470121-08-6071</Patient_Id_Int><Patient_Id_Type>NRIC Number</Patient_Id_Type><Patient_Id_Number>RNL00003227</Patient_Id_Number><Patient_Name>ABD HAMID BIN KAIL</Patient_Name><Date_Of_Birth>19470821000000</Date_Of_Birth><Gender_Code>M</Gender_Code><Race_code /><Address1 /><Address2 /><Address3>__Aug 30 2017  2:28PM</Address3><City /><State /><Postal_Code /><Country_Code /><Phone_Home /><Phone_Mobile /><Phone_Business /><Primary_Language /><Marital_Status_Code /><Religion_Code /><Nationality_Code>Malaysia</Nationality_Code></PID><PV1><Patient_Type_Code /><Ward_Code>Not Registered</Ward_Code><Admission_Type /><Preadmit_Number /><Specialty_Code /><Referring_Doctor_Code /><Referring_Doctor_Desc /><Consulting_Doctor_Code /><Consulting_Doctor_Desc /><Admitting_Doctor_Code /><Admitting_Doctor_Desc /><Patient_Class /><Financial_Class_Code /><Admit_DateTime>20170828180940</Admit_DateTime></PV1><ORC><Order_Control /><ORC_Placer_Order_Number>436436576</ORC_Placer_Order_Number><ORC_Filler_Order_Number /><Placer_Group_Number /><Order_Status_Code /><Response_Flag /><ORC_Quantity_Timing /><Parent /><DateTime_Of_Transaction /><Entered_By_ID>192384</Entered_By_ID><Entered_By_Name>LIVE SYSTEM TESTING - Sathishk</Entered_By_Name><Verified_By_ID /><Verified_By_Name /><ORC_Ordering_Provider_ID /><ORC_Ordering_Provider_Name /><Enter_Location /><Call_Back_Phone_Number /><Order_Effective_DateTime /><Order_Control_Code_Reason /><Entering_Organization /><Entering_Device /><Action_By /><Advanced_Beneficiary_Notice_Code /><Ordering_Facility_Code /><Ordering_Facility_Name /></ORC><Observation_Request><OBR><Set_Id_OBR /><OBR_Placer_Order_Number>220171152</OBR_Placer_Order_Number><OBR_Filler_Order_Number /><Package_Code /><Package_Description /><Test_Code>P.RFT</Test_Code><Test_Name>Renal Function </Test_Name><Priority_Code /><Requested_DateTime /><Observation_DateTime /><Observation_End_DateTime /><Specimen_Received_DateTime /><Specimen_Source_Code /><Specimen_Source_Desc /><OBR_Ordering_Provider_ID /><OBR_Ordering_Provider_Name /><Placer_Field1 /><Placer_Field2 /><Filler_Field1 /><Filler_Field2 /><Status_Change_DateTime /><Charge_To_Practice /><Diagnostic_Serv_Sect_Code /><Diagnostic_Serv_Sect_Desc /><Parent_Result>F</Parent_Result><OBR_Quantity_Timing /><Unit_Code /><Cancel_Reason_Code /><Cancel_Reason_Desc /></OBR><Observation><OBX><SET_ID /><Observation_Value_Type /><Observation_Identifier>CL^Chloride</Observation_Identifier><Observation_Value>108</Observation_Value><ObservationResultsStatus>F</ObservationResultsStatus><Observation_Date_Time>20170828181659</Observation_Date_Time><Units>mmol/L</Units><ReferenceRange>98-107</ReferenceRange><MedicalRemarks /><IsAbnormalflag>A</IsAbnormalflag></OBX><OBX><SET_ID /><Observation_Value_Type /><Observation_Identifier>CRE^Creatinine</Observation_Identifier><Observation_Value>63</Observation_Value><ObservationResultsStatus>F</ObservationResultsStatus><Observation_Date_Time>20170828181659</Observation_Date_Time><Units>umol/L</Units><ReferenceRange>62-110</ReferenceRange><MedicalRemarks /><IsAbnormalflag>N</IsAbnormalflag></OBX><OBX><SET_ID /><Observation_Value_Type /><Observation_Identifier>EGFR^eGFR</Observation_Identifier><Observation_Value>95</Observation_Value><ObservationResultsStatus>F</ObservationResultsStatus><Observation_Date_Time>20170828181659</Observation_Date_Time><Units>ml/min/1.73m²</Units><ReferenceRange>=&amp;gt; 60</ReferenceRange><MedicalRemarks>&amp;lt;br&amp;gt; Note: eGFR calculated using CKD-EPI formula effective on 22/02/2016.</MedicalRemarks><IsAbnormalflag>N</IsAbnormalflag></OBX><OBX><SET_ID /><Observation_Value_Type /><Observation_Identifier>K^Potassium</Observation_Identifier><Observation_Value>3.4</Observation_Value><ObservationResultsStatus>F</ObservationResultsStatus><Observation_Date_Time>20170828181659</Observation_Date_Time><Units>mmol/L</Units><ReferenceRange>3.5-5.1</ReferenceRange><MedicalRemarks /><IsAbnormalflag>L</IsAbnormalflag></OBX><OBX><SET_ID /><Observation_Value_Type /><Observation_Identifier>NA^Sodium</Observation_Identifier><Observation_Value>133</Observation_Value><ObservationResultsStatus>F</ObservationResultsStatus><Observation_Date_Time>20170828181659</Observation_Date_Time><Units>mmol/L</Units><ReferenceRange>132-146</ReferenceRange><MedicalRemarks /><IsAbnormalflag>N</IsAbnormalflag></OBX><OBX><SET_ID /><Observation_Value_Type /><Observation_Identifier>UA^Uric Acid</Observation_Identifier><Observation_Value>202</Observation_Value><ObservationResultsStatus>F</ObservationResultsStatus><Observation_Date_Time>20170828181659</Observation_Date_Time><Units>umol/L</Units><ReferenceRange>200-450</ReferenceRange><MedicalRemarks /><IsAbnormalflag>N</IsAbnormalflag></OBX><OBX><SET_ID /><Observation_Value_Type /><Observation_Identifier>UREA^Urea</Observation_Identifier><Observation_Value>3.0</Observation_Value><ObservationResultsStatus>F</ObservationResultsStatus><Observation_Date_Time>20170828181659</Observation_Date_Time><Units>mmol/L</Units><ReferenceRange>2.9-8.1</ReferenceRange><MedicalRemarks /><IsAbnormalflag>N</IsAbnormalflag></OBX></Observation></Observation_Request></MSG></content></string></ApprovedResultVaues></GetResultValuesResponse></soap:Body></soap:Envelope>
 36259 [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Started SpringBootLabQuantumApplication in 36.029 seconds (JVM running for 36.558)
+1247 [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Starting SpringBootLabQuantumApplication on LAPTOP-J5VT00AT with PID 21912 (C:\Users\HUY\git\labs\rims-lab-quantum\target\classes started by HUY in C:\Users\HUY\git\labs\rims-lab-quantum)
+1249 [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - No active profile set, falling back to default profiles: default
+4294 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+4296 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+4464 [localhost-startStop-1] INFO  o.a.c.c.C.[.[localhost].[/lab] - Initializing Spring embedded WebApplicationContext
+4679 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+4679 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+4679 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+5178 [restartedMain] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://tempuri.org/}LISIntegrationWebserviceSoapService from class org.tempuri.LISIntegrationWebserviceSoap
+5845 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order status....
+5855 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+8528 [restartedMain] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Outbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.connectors.connect.mirth.com"><soap:Body><GetResultValues xmlns="http://tempuri.org/"><OrderNo>10000006</OrderNo></GetResultValues></soap:Body></soap:Envelope>
+40835 [restartedMain] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Inbound Message:
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><soap:Fault><faultcode>soap:Server</faultcode><faultstring>Server was unable to process request. ---> Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index</faultstring><detail /></soap:Fault></soap:Body></soap:Envelope>
+41004 [restartedMain] ERROR o.s.boot.SpringApplication - Application startup failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:735)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:716)
+	at org.springframework.boot.SpringApplication.afterRefresh(SpringApplication.java:703)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.iis.rims.lab.quantum.SpringBootLabQuantumApplication.main(SpringBootLabQuantumApplication.java:41)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: javax.xml.ws.soap.SOAPFaultException: Server was unable to process request. ---> Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+	at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:161)
+	at com.sun.proxy.$Proxy106.getResultValues(Unknown Source)
+	at com.iis.rims.lab.quantum.SpringBootLabQuantumApplication$1.run(SpringBootLabQuantumApplication.java:60)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:732)
+	... 11 common frames omitted
+Caused by: org.apache.cxf.binding.soap.SoapFault: Server was unable to process request. ---> Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+	at org.apache.cxf.binding.soap.interceptor.Soap11FaultInInterceptor.unmarshalFault(Soap11FaultInInterceptor.java:86)
+	at org.apache.cxf.binding.soap.interceptor.Soap11FaultInInterceptor.handleMessage(Soap11FaultInInterceptor.java:52)
+	at org.apache.cxf.binding.soap.interceptor.Soap11FaultInInterceptor.handleMessage(Soap11FaultInInterceptor.java:41)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+	at org.apache.cxf.interceptor.AbstractFaultChainInitiatorObserver.onMessage(AbstractFaultChainInitiatorObserver.java:112)
+	at org.apache.cxf.binding.soap.interceptor.CheckFaultInterceptor.handleMessage(CheckFaultInterceptor.java:69)
+	at org.apache.cxf.binding.soap.interceptor.CheckFaultInterceptor.handleMessage(CheckFaultInterceptor.java:34)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+	at org.apache.cxf.endpoint.ClientImpl.onMessage(ClientImpl.java:801)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.handleResponseInternal(HTTPConduit.java:1680)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.handleResponse(HTTPConduit.java:1559)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.close(HTTPConduit.java:1356)
+	at org.apache.cxf.io.CacheAndWriteOutputStream.postClose(CacheAndWriteOutputStream.java:56)
+	at org.apache.cxf.io.CachedOutputStream.close(CachedOutputStream.java:216)
+	at org.apache.cxf.transport.AbstractConduit.close(AbstractConduit.java:56)
+	at org.apache.cxf.transport.http.HTTPConduit.close(HTTPConduit.java:653)
+	at org.apache.cxf.interceptor.MessageSenderInterceptor$MessageSenderEndingInterceptor.handleMessage(MessageSenderInterceptor.java:62)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+	at org.apache.cxf.endpoint.ClientImpl.doInvoke(ClientImpl.java:514)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:423)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:324)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:277)
+	at org.apache.cxf.frontend.ClientProxy.invokeSync(ClientProxy.java:96)
+	at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:139)
+	... 14 common frames omitted
