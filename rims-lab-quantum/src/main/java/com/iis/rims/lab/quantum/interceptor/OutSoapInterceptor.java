@@ -14,10 +14,6 @@ import org.apache.cxf.phase.Phase;
 public class OutSoapInterceptor extends AbstractSoapInterceptor {
 	public OutSoapInterceptor() {
 		super(Phase.PRE_STREAM_ENDING);
-<<<<<<< Upstream, based on origin/master
-=======
-//		super(Phase.RECEIVE);
->>>>>>> 29bf08f lab
 	}
 	
 	@Override

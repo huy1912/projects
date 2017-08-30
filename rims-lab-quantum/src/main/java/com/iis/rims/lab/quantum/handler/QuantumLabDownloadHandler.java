@@ -1,6 +1,5 @@
 package com.iis.rims.lab.quantum.handler;
 
-<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -27,41 +26,6 @@ import com.iis.rims.hibernate.dao.LabOrderDetailDAO;
 import com.iis.rims.hibernate.dao.LabRtTestCodeDAO;
 import com.iis.rims.hibernate.dao.LabTestCodeDAO;
 import com.iis.rims.lab.quantum.orm.MSG;
-=======
-import java.io.File;
-import java.io.IOException;
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.apache.commons.collections.CollectionUtils;
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.mutable.MutableObject;
-import org.apache.log4j.Logger;
-
-import com.iis.rims.common.DateTimeFormatUtils;
-import com.iis.rims.common.RIMSConstants.LabOrderDetailType;
-import com.iis.rims.common.RIMSConstants.LabOrderStatus;
-import com.iis.rims.common.RIMSConstants.LabResult;
-import com.iis.rims.common.RIMSConstants.OrderReportStatus;
-import com.iis.rims.common.RIMSConstants.ResultInput;
-import com.iis.rims.domain.LabOrder;
-import com.iis.rims.domain.LabOrderDetail;
-import com.iis.rims.domain.LabProcessResult;
-import com.iis.rims.hibernate.dao.LabOrderDAO;
-import com.iis.rims.hibernate.dao.LabOrderDetailDAO;
-import com.iis.rims.lab.quantum.orm.MSG;
-import com.iis.rims.lab.quantum.orm.MSG.ORC;
->>>>>>> branch 'master' of https://github.com/huy1912/projects.git
 import com.iis.rims.lab.quantum.orm.MSG.ObservationRequest;
 import com.iis.rims.lab.quantum.orm.MSG.ObservationRequest.Observation.OBX;
 
