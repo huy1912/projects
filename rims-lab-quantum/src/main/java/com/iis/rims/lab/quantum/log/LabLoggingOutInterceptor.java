@@ -39,7 +39,6 @@ public class LabLoggingOutInterceptor extends LoggingOutInterceptor {
 					FileUtils.writeStringToFile(new File(path) , outMessage, Charset.defaultCharset());
 				}
             	catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
             }

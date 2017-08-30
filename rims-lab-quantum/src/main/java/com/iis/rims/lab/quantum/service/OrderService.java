@@ -142,7 +142,6 @@ public class OrderService {
 				if (!resultList.isEmpty()) {
 					for (String result : resultList) {
 						// Log the raw file for processing in the case of FALIED.
-						//labLocalDir
 						String path = String.format("%s/%s.xml", labLocalDir + "/in", labOrderNumber);
 						try {
 							FileUtils.writeStringToFile(new File(path) , result, Charset.defaultCharset());
