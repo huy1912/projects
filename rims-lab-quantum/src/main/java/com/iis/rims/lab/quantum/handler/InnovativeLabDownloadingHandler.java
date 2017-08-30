@@ -307,30 +307,30 @@ public class InnovativeLabDownloadingHandler {
 //		return String.format("%s-%s.PDF", orderNumber, nricFinNumber);
 //	}
 //	
-//	/**
-//	 * @param labOrderDetail The {@link LabOrderDetail} object.
-//	 * @param pdfFileName The pdf file name.
-//	 * @return true if successful update, otherwise false.
-//	 */
-//	private boolean updateOrderReport(LabOrderDetail labOrderDetail, String pdfFileName) {
-//		String localPdfDir = String.format("%s/%s", SFTPClientSettingsManager.getClientSettings(labName).getLocalDir(), PDF_REPORT_FOLDER);
-//		String absolutePdfFileName = String.format("%s/%s", localPdfDir, pdfFileName);
-//		File pdfFile = new File(absolutePdfFileName);
-//		if (pdfFile.exists()) {
-//			try {
-//				byte[] content = FileUtils.readFileToByteArray(pdfFile);
-//				labOrderDetail.setOrderReportAttached(content);
-//				labOrderDetail.setOrderReportStatus(OrderReportStatus.RECEIVED.ordinal());
-//				
-//				File moveDir = new File(localPdfDir + "/" + ARCHIVED_ORDER_FOLDER);
-//				FileUtils.copyFileToDirectory(pdfFile, moveDir);
-//				FileUtils.forceDelete(pdfFile);
-//				return true;
-//			}
-//			catch (IOException e) {
-//				return false;
-//			}
-//		}
-//		return false;
-//	}
+	/**
+	 * @param labOrderDetail The {@link LabOrderDetail} object.
+	 * @param pdfFileName The pdf file name.
+	 * @return true if successful update, otherwise false.
+	 */
+	private boolean updateOrderReport(LabOrderDetail labOrderDetail, String pdfFileName) {
+		String localPdfDir = String.format("%s/%s", SFTPClientSettingsManager.getClientSettings(labName).getLocalDir(), PDF_REPORT_FOLDER);
+		String absolutePdfFileName = String.format("%s/%s", localPdfDir, pdfFileName);
+		File pdfFile = new File(absolutePdfFileName);
+		if (pdfFile.exists()) {
+			try {
+				byte[] content = FileUtils.readFileToByteArray(pdfFile);
+				labOrderDetail.setOrderReportAttached(content);
+				labOrderDetail.setOrderReportStatus(OrderReportStatus.RECEIVED.ordinal());
+				
+				File moveDir = new File(localPdfDir + "/" + ARCHIVED_ORDER_FOLDER);
+				FileUtils.copyFileToDirectory(pdfFile, moveDir);
+				FileUtils.forceDelete(pdfFile);
+				return true;
+			}
+			catch (IOException e) {
+				return false;
+			}
+		}
+		return false;
+	}
 }

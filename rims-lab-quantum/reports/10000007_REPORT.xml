@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<content xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<MSG>
 		<VN/>
 		<OrgId/>
@@ -19,7 +17,7 @@
 		</EVN>
 		<PID>
 			<Patient_Id_Ext />
-			<Patient_Id_Int>470121-08-6071</Patient_Id_Int>
+			<Patient_Id_Int>421126-10-5189</Patient_Id_Int>
 			<Patient_Id_Type>NRIC Number</Patient_Id_Type>
 			<Patient_Id_Number>RNL00003227</Patient_Id_Number>
 			<Patient_Name>ABD HAMID BIN KAIL</Patient_Name>
@@ -87,7 +85,7 @@
 		<Observation_Request>
 			<OBR>
 				<Set_Id_OBR />
-				<OBR_Placer_Order_Number>220171152</OBR_Placer_Order_Number>
+				<OBR_Placer_Order_Number>120174307</OBR_Placer_Order_Number>
 				<OBR_Filler_Order_Number />
 				<Package_Code />
 				<Package_Description />
@@ -204,4 +202,3 @@
 			</Observation>
 		</Observation_Request>
 	</MSG>
-</content>

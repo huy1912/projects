@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import org.apache.commons.collections.CollectionUtils;
@@ -18,11 +19,14 @@ import org.apache.log4j.Logger;
 import com.iis.rims.common.RIMSConstants.LabOrderDetailType;
 import com.iis.rims.common.RIMSConstants.LabOrderStatus;
 import com.iis.rims.common.RIMSConstants.LabResult;
+import com.iis.rims.common.RIMSConstants.OrderReportStatus;
 import com.iis.rims.common.RIMSConstants.ResultInput;
 import com.iis.rims.domain.LabOrder;
 import com.iis.rims.domain.LabOrderDetail;
+import com.iis.rims.domain.LabRTTestCodeNote;
 import com.iis.rims.hibernate.dao.LabOrderDAO;
 import com.iis.rims.hibernate.dao.LabOrderDetailDAO;
+import com.iis.rims.hibernate.dao.LabRTTestCodeNoteDAO;
 import com.iis.rims.hibernate.dao.LabRtTestCodeDAO;
 import com.iis.rims.hibernate.dao.LabTestCodeDAO;
 import com.iis.rims.lab.quantum.message.DecodeMessage;
@@ -40,7 +44,8 @@ public class QuantumLabDownloadHandler {
 		POST_TEST_CODE_MAPPING.put("CRE", "CREPOST");
 	}
 
-	public static void processResults(String messageText, String internalOrderNumber, String orderFile) {
+	public static void processResults(String messageText, String internalOrderNumber,
+			String orderFile, String pdfFile, byte[] pdfContent) {
 		try {
 			MSG msg = DecodeMessage.decodeResults(messageText);
 			
@@ -48,6 +53,7 @@ public class QuantumLabDownloadHandler {
 			LabOrderDetailDAO labOrderDetailDAO = new LabOrderDetailDAO();
 			LabTestCodeDAO labTestCodeDAO = new LabTestCodeDAO();
 			LabRtTestCodeDAO labRtTestCodeDAO = new LabRtTestCodeDAO();
+			LabRTTestCodeNoteDAO labRTTestCodeNoteDAO = new LabRTTestCodeNoteDAO();
 			MutableObject<LabOrderDetailType> detailTypeObject = new MutableObject<LabOrderDetailType>();
 
 			List<String> processPdfFiles = new ArrayList<String>();
@@ -59,16 +65,16 @@ public class QuantumLabDownloadHandler {
 			String nricFinNumber = msg.getPID().getPatientIdInt();
 			Date currentDate = new Date();
 			for (ObservationRequest observationRequest : msg.getObservationRequest()) {
-				String orderNumber = observationRequest.getOBR().getOBRPlacerOrderNumber();
+				String accessionNumber = observationRequest.getOBR().getOBRPlacerOrderNumber();
 				Map<String, String> testCodeResults = new LinkedHashMap<String, String>();
 				Map<String, String> testCodeNotes = new LinkedHashMap<String, String>();
-				LabOrderDetail labOrderDetail = labOrderDetailDAO.getLabOrderDetailByOrderNumber(orderNumber);
+				LabOrderDetail labOrderDetail = labOrderDetailDAO.getLabOrderDetail(internalOrderNumber, accessionNumber);
 				LabOrder labOrder = labOrderDAO.findById(labOrderDetail.getLabOrderId());
 				if (labOrder != null && labOrder.getNricFinNumber().equals(nricFinNumber)) {
 					int organizationId = labOrder.getOrganizationId();
 					// Insert into the result.
 					for (OBX obx : observationRequest.getObservation().getOBX()) {
-						String[] oi = obx.getObservationIdentifier().split("^");
+						String[] oi = obx.getObservationIdentifier().split("\\^");
 						String testCode = oi[0];
 						// FIXME review later
 						if (detailTypeObject.getValue() == LabOrderDetailType.POST) {
@@ -87,6 +93,9 @@ public class QuantumLabDownloadHandler {
 						String[] values = { value, unit, referenceRange, abnormalFlag, resultStatus };
 						String insertValue = StringUtils.join(values, '|');
 						testCodeResults.put(testCode, insertValue);
+						if (!StringUtils.isEmpty(obx.getMedicalRemarks())) {
+							testCodeNotes.put(testCode, obx.getMedicalRemarks());
+						}
 					}
 					if (!testCodeResults.isEmpty()) {
 						boolean okProcessed = true;
@@ -123,22 +132,41 @@ public class QuantumLabDownloadHandler {
 									labOrder.getBranchId(), labOrderDetail.getLabCustomerId(),
 									labOrderDetail.getLabOrderDetailId(), labOrder.getPatientId(),
 									labOrder.getNricFinNumber(), rtTestCodes, testCodeValues);
+							for (Entry<String, String> entry : testCodeNotes.entrySet()) {
+								String testCode = entry.getKey();
+								int testCodeIndex = insertTestCodes.indexOf(testCode);
+								if (testCodeIndex != -1) {
+									String rtTestCode = rtTestCodes.get(testCodeIndex);
+									LabRTTestCodeNote note = labRTTestCodeNoteDAO.getNote(labRtTestCodeId, rtTestCode);
+									if (note == null) {
+										note = new LabRTTestCodeNote();
+										note.setCreatedBy(LAB_USER_ID);
+										note.setCreatedDate(currentDate);
+										note.setRtTestCodeColumn(rtTestCode);
+										note.setLabRtTestCodeId(labRtTestCodeId);
+									}
+									note.setEntityStatus(true);
+									note.setLastUpdatedBy(LAB_USER_ID);
+									note.setLastUpdatedDate(currentDate);
+									String noteValue = entry.getValue();
+									noteValue = noteValue.replace("\\.br\\", "\r\n");
+									note.setNote(noteValue);
+									labRTTestCodeNoteDAO.saveOrUpdate(note);
+								}
+							}
 							labOrderDetail.setErrorMessage(null);
 							labOrderDetail.setOrderHl7status(LabResult.DONE.ordinal());
 							labOrderDetail.setOrderStatus(LabOrderStatus.PS.ordinal());
 						}
 						// Update the pdf report if it's existed.
-						String pdfFile = getPdfReportFile(orderNumberRef, nricFinNumber);
-						boolean pdfProcessed = updateOrderReport(labOrderDetail, pdfFile);
-						if (pdfProcessed) {
+						if (pdfContent != null) {
+							updateOrderReport(labOrderDetail, pdfContent);
 							processPdfFiles.add(pdfFile);
-						} else {
-							pdfFile = "";
 						}
 						labOrderDetail.setResultInput(ResultInput.LAB_AUTOMATION.ordinal());
 						labOrderDetail.setLastUpdatedBy(LAB_USER_ID);
 						labOrderDetail.setLastUpdatedDate(currentDate);
-						labOrderDetail.setLabResultDate(labResultDate);
+						labOrderDetail.setLabResultDate(currentDate); // FIXME visit later
 						labOrderDetail.setOrderHl7message(messageText);
 						labOrderDetailDAO.update(labOrderDetail);
 						if (okProcessed) {
@@ -166,14 +194,14 @@ public class QuantumLabDownloadHandler {
 			LOGGER.error(e.getMessage(), e);
 		}
 	}
-
-	private boolean isPdfReport(String file) {
-		String reportFile = file.toLowerCase();
-		return reportFile.lastIndexOf(".pdf") == reportFile.length() - 4;
-	}
-
-	private String getPdfReportFile(String orderNumberRef, String nricFinNumber) {
-		String orderNumber = orderNumberRef.replace("/", "_");
-		return String.format("%s-%s.PDF", orderNumber, nricFinNumber);
+	
+	private static void updateOrderReport(LabOrderDetail labOrderDetail, byte[] pdfContent) {
+		labOrderDetail.setOrderReportAttached(pdfContent);
+		labOrderDetail.setOrderReportStatus(OrderReportStatus.RECEIVED.ordinal());
+		
+//		File moveDir = new File(localPdfDir + "/" + ARCHIVED_ORDER_FOLDER);
+//		FileUtils.copyFileToDirectory(pdfFile, moveDir);
+//		FileUtils.forceDelete(pdfFile);
+//		return true;
 	}
 }

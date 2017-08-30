@@ -17,10 +17,6 @@ public class LabLoggingOutInterceptor extends LoggingOutInterceptor {
 	public LabLoggingOutInterceptor(String outputDir, ThreadLocal<String> orderNumberThreadLocal) {
 		this.outputDir = outputDir;
 		this.orderNumberThreadLocal = orderNumberThreadLocal;
-		File f = new File(outputDir);
-		if (!f.exists()) {
-    		f.mkdir();
-    	}
 	}
 	
 	@Override

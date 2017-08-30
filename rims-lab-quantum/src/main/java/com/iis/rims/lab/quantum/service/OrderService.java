@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import javax.annotation.PostConstruct;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.criterion.Restrictions;
@@ -49,8 +51,17 @@ public class OrderService {
 	@Value("${lab.local.dir}")
 	private String labLocalDir;
 	
+	private String labInLocalDir;
+	private String labPdfLocalDir;
+	
 	public OrderService() {
 		AppConfig.LOGGER.info("construct order service....");
+	}
+	
+	@PostConstruct
+	public void init() {
+		labInLocalDir = labInLocalDir + "/in";
+		labPdfLocalDir = labInLocalDir + "/pdf";
 	}
 	
 	public void pushOrders() throws Exception {
@@ -132,14 +143,29 @@ public class OrderService {
 				Restrictions.eq("orderStatus", LabOrderStatus.PN.ordinal()),
 				Restrictions.eq("labCustomerId", labCustomerId),
 				Restrictions.isNotNull("labOrderNumber"),
-				Restrictions.eq("uploadStatus", 1)
-				); // 2 : FAILED upload
+				Restrictions.eq("uploadStatus", UploadStatus.UPLOADED.ordinal())
+				);
 		for (LabOrderDetail labOrderDetail : list) {
 			String labOrderNumber = labOrderDetail.getLabOrderNumber();
 			ArrayOfString results = integrationWebserviceSoap.getResultValues(labOrderNumber);
 			if (results != null) {
 				List<String> resultList = results.getString();
 				if (!resultList.isEmpty()) {
+					// Get the report
+					byte[] data = null;
+					String pdfFileName = null;
+					try {
+						data = integrationWebserviceSoap.getReportPDF(labOrderNumber, username, password);
+						if (data != null & data.length > 0) {
+							pdfFileName = labOrderNumber + ".pdf";
+							String path = String.format("%s/%s", labPdfLocalDir + "/pdf", pdfFileName);
+							FileUtils.writeByteArrayToFile(new File(path), data);
+						}
+					}
+					catch (Exception ex) {
+						AppConfig.LOGGER.error(ex.getMessage(), ex);
+					}
+					
 					for (String result : resultList) {
 						// Log the raw file for processing in the case of FALIED.
 						String path = String.format("%s/%s.xml", labLocalDir + "/in", labOrderNumber);
@@ -149,7 +175,7 @@ public class OrderService {
 						catch (IOException e) {
 							e.printStackTrace();
 						}
-						QuantumLabDownloadHandler.processResults(result, labOrderNumber, path);
+						QuantumLabDownloadHandler.processResults(result, labOrderNumber, path, pdfFileName, data);
 					}
 				}
 			}

@@ -6,9 +6,10 @@
 		<property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
 		<!-- <property name="hibernate.connection.url">jdbc:sqlserver://192.168.85.186:1433;databaseName=RIMSDB_NEW</property>
 		<property name="hibernate.connection.password">P0pc0rn!)!)</property> -->
-		<!-- <property name="hibernate.connection.url">jdbc:sqlserver://192.168.85.176:1433;databaseName=RIMSDB_NEW</property>  --> 
-		<property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=RIMSDB_NEW</property>
-		<property name="hibernate.connection.password">P0pc0rn)*)*</property>
+		<property name="hibernate.connection.url">jdbc:sqlserver://192.168.85.176:1433;databaseName=RIMSDB_NEW</property>  
+		<property name="hibernate.connection.password">88((P0pc0rn</property>  
+		<!-- <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=RIMSDB_NEW</property>
+		<property name="hibernate.connection.password">P0pc0rn)*)*</property> -->
 		<property name="hibernate.connection.username">sa</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
 		<property name="hibernate.show_sql">true</property>
@@ -136,7 +137,7 @@
 		<mapping resource="configs/LabProcedure.hbm.xml" />
 		<mapping resource="configs/LabProfile.hbm.xml" />
 		<mapping resource="configs/LabTestCode.hbm.xml" />
-		
+		<mapping resource="configs/LabRTTestCodeNote.hbm.xml" />
 
 		
 	</session-factory>

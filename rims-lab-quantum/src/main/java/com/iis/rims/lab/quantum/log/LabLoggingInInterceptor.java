@@ -17,10 +17,6 @@ public class LabLoggingInInterceptor extends LoggingInInterceptor {
 	public LabLoggingInInterceptor(String inputDir, ThreadLocal<String> orderNumberThreadLocal) {
 		this.inputDir = inputDir;
 		this.orderNumberThreadLocal = orderNumberThreadLocal;
-		File f = new File(inputDir);
-		if (!f.exists()) {
-    		f.mkdir();
-    	}
 	}
 	
 	@Override

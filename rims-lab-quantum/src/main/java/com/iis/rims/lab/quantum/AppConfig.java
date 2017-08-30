@@ -1,8 +1,11 @@
 package com.iis.rims.lab.quantum;
 
+import java.io.File;
 import java.lang.invoke.MethodHandles;
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.annotation.PostConstruct;
 
 import org.apache.cxf.Bus;
 import org.apache.cxf.bus.spring.SpringBus;
@@ -34,6 +37,19 @@ public class AppConfig {
 	
 	private ThreadLocal<String> orderNumberThreadLocal = new ThreadLocal<>();
 	
+	@PostConstruct
+	public void init() {
+		mkdir(labLocalDir + "/out");
+		mkdir(labLocalDir + "/in");
+		mkdir(labLocalDir + "/pdf");
+	}
+	
+	private void mkdir(String dir) {
+		File f = new File(dir);
+		if (!f.exists()) {
+    		f.mkdir();
+    	}
+	}
 	/*
 	@Bean(name = Bus.DEFAULT_BUS_ID)
 	public SpringBus springBus() {
@@ -66,7 +82,6 @@ public class AppConfig {
 	
 	@Bean
 	public LISIntegrationWebserviceSoap createLISIntegrationService() {
-//		return createService(LISIntegrationWebserviceSoap.class, "http://52.187.20.127/LISIntegrationtesting/LisIntegrationWebservice.asmx?wsdl");
 		return createService(LISIntegrationWebserviceSoap.class, lisWsdl);
 	}
 	
