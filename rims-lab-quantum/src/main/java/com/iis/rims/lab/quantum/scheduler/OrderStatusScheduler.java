@@ -17,7 +17,7 @@ public class OrderStatusScheduler {
 		AppConfig.LOGGER.info("construct order status....");
 	}
 	
-	@Scheduled(cron = "${push.orders.cron}")
+//	@Scheduled(cron = "${push.orders.cron}")
 	public void pushOrders() throws Exception {
 		orderService.pushOrders();
 	}

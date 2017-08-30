@@ -35,4 +35,10 @@ public class DecodeMessage {
 		reader.close();
 		return msg;
 	}
+	
+	public static String decodeXml(String value) {
+		String xmlData = value.replace("&lt;", "<");
+		xmlData = xmlData.replace("&gt;", ">");
+		return xmlData;
+	}
 }

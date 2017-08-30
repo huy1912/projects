@@ -11,6 +11,8 @@ import org.apache.cxf.interceptor.Fault;
 import org.apache.cxf.io.CachedOutputStream;
 import org.apache.cxf.phase.Phase;
 
+import com.iis.rims.lab.quantum.message.DecodeMessage;
+
 public class OutSoapInterceptor extends AbstractSoapInterceptor {
 	public OutSoapInterceptor() {
 		super(Phase.PRE_STREAM_ENDING);
@@ -22,6 +24,9 @@ public class OutSoapInterceptor extends AbstractSoapInterceptor {
         try {
         	CachedOutputStream os = (CachedOutputStream) message.getContent(OutputStream.class);
         	String currentEnvelopeMessage = IOUtils.toString(os.getInputStream(), "UTF-8");
+        	if (currentEnvelopeMessage.indexOf("PushOrder") == -1) {
+        		return;
+        	}
         	
         	// Dummy cached stream for intercept.
         	CachedOutputStream dummyCachedStream = new CachedOutputStream();
@@ -50,10 +55,9 @@ public class OutSoapInterceptor extends AbstractSoapInterceptor {
 	}
 
 	private String changeOutboundMessage(String value) {
-		String s = value.replace("&lt;", "<");
-		s = s.replace("&gt;", ">");
-		s = s.replace("<xmlData>", "<acceptMessage>\n<arg0>\n<content>");
-		s = s.replace("</xmlData>", "</content>\r</arg0>\r</acceptMessage>");
-		return s;
+		String xmlData = DecodeMessage.decodeXml(value);
+		xmlData = xmlData.replace("<xmlData>", "<acceptMessage>\n<arg0>\n<content>");
+		xmlData = xmlData.replace("</xmlData>", "</content>\r</arg0>\r</acceptMessage>");
+		return xmlData;
 	}
 }

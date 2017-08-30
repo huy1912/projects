@@ -1,11 +1,14 @@
 package com.iis.rims.lab.quantum.message;
 
+import java.io.File;
 import java.io.StringWriter;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.xml.bind.JAXB;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Marshaller;
 
 import com.iis.rims.lab.quantum.controller.SubmitOrder;
 import com.iis.rims.lab.quantum.orm.MSG;
@@ -71,6 +74,13 @@ public class EncodeMessage {
 		obr.setOBRPlacerOrderNumber(order.getObrOrderNumber());
 		observationRequest.setOBR(obr);
 		msg.getObservationRequest().add(observationRequest);
+		return encodeMsg(msg);
+	}
+	
+	public static String encodeMsg() throws Exception {
+		MSG msg = new MSG();
+		msg = JAXB.unmarshal(new File("ORM_sample.xml"), MSG.class);
+
 		return encodeMsg(msg);
 	}
 }

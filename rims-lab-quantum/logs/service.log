@@ -1744,3 +1744,1379 @@ Caused by: java.io.IOException: Timed out waiting for response to operation {htt
       <userName>RenalTeam</userName>
       <password>renal@123</password>
     </PushOrder></soap:Body></soap:Envelope>
+873  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Starting SpringBootLabQuantumApplication on 30714L with PID 119460 (C:\Users\huyh\git\projects\rims-lab-quantum\target\classes started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+873  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - No active profile set, falling back to default profiles: default
+3495 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+3495 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+3636 [localhost-startStop-1] INFO  o.a.c.c.C.[.[localhost].[/lab] - Initializing Spring embedded WebApplicationContext
+3808 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3808 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3808 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+4201 [restartedMain] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://tempuri.org/}LISIntegrationWebserviceSoapService from class org.tempuri.LISIntegrationWebserviceSoap
+4779 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order status....
+4827 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+8785 [pool-1-thread-1] INFO  com.iis.rims.lab.quantum.AppConfig - push orders
+8942 [pool-1-thread-1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+8942 [pool-1-thread-1] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.2.1.Final}
+8958 [pool-1-thread-1] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+8958 [pool-1-thread-1] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+8973 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: /hibernate.cfg.xml
+8973 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: /hibernate.cfg.xml
+9005 [pool-1-thread-1] WARN  o.h.i.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+9020 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/Branch.hbm.xml
+9067 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/LookupHeader.hbm.xml
+9083 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/LookupDetail.hbm.xml
+9098 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/Doctor.hbm.xml
+9114 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/Patient.hbm.xml
+9114 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/Address.hbm.xml
+9129 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/Visit.hbm.xml
+9145 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/SystemUser.hbm.xml
+9161 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/RunningNumberSet.hbm.xml
+9161 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/RunningNumber.hbm.xml
+9176 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/LabOrder.hbm.xml
+9176 [pool-1-thread-1] WARN  o.h.i.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+9192 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/LabOrderDetail.hbm.xml
+9192 [pool-1-thread-1] WARN  o.h.i.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+9207 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/LabProcedure.hbm.xml
+9207 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/LabProfile.hbm.xml
+9223 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/LabTestCode.hbm.xml
+9223 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+9307 [pool-1-thread-1] WARN  o.h.s.j.c.i.ConnectionProviderInitiator - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+9338 [pool-1-thread-1] INFO  o.h.s.j.c.i.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+9354 [pool-1-thread-1] INFO  o.h.s.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20
+9354 [pool-1-thread-1] INFO  o.h.s.j.c.i.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+9354 [pool-1-thread-1] INFO  o.h.s.j.c.i.DriverManagerConnectionProviderImpl - HHH000401: using driver [com.microsoft.sqlserver.jdbc.SQLServerDriver] at URL [jdbc:sqlserver://localhost:1433;databaseName=RIMSDB_NEW]
+9354 [pool-1-thread-1] INFO  o.h.s.j.c.i.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=sa, password=****}
+22177 [restartedMain] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Outbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.connectors.connect.mirth.com"><soap:Body><GetResultValues xmlns="http://tempuri.org/"><OrderNo>10000006</OrderNo></GetResultValues></soap:Body></soap:Envelope>
+24070 [pool-1-thread-1] WARN  o.h.e.j.internal.JdbcServicesImpl - HHH000342: Could not obtain connection to query metadata : The TCP/IP connection to the host localhost, port 1433 has failed. Error: "Connection refused: connect. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+24071 [pool-1-thread-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
+24103 [pool-1-thread-1] INFO  o.h.e.j.internal.LobCreatorBuilder - HHH000422: Disabling contextual LOB creation as connection was null
+24134 [pool-1-thread-1] INFO  o.h.e.t.i.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+24134 [pool-1-thread-1] INFO  o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+673  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Starting SpringBootLabQuantumApplication on 30714L with PID 120268 (C:\Users\huyh\git\projects\rims-lab-quantum\target\classes started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+673  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - No active profile set, falling back to default profiles: default
+2755 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2755 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+2896 [localhost-startStop-1] INFO  o.a.c.c.C.[.[localhost].[/lab] - Initializing Spring embedded WebApplicationContext
+3068 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3068 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3068 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3433 [restartedMain] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://tempuri.org/}LISIntegrationWebserviceSoapService from class org.tempuri.LISIntegrationWebserviceSoap
+3963 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order status....
+3979 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+7861 [pool-1-thread-1] INFO  com.iis.rims.lab.quantum.AppConfig - push orders
+7987 [pool-1-thread-1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+8002 [pool-1-thread-1] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.2.1.Final}
+8002 [pool-1-thread-1] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+8002 [pool-1-thread-1] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+8018 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: /hibernate.cfg.xml
+8018 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: /hibernate.cfg.xml
+8034 [pool-1-thread-1] WARN  o.h.i.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+8049 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/Branch.hbm.xml
+8080 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/LookupHeader.hbm.xml
+8096 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/LookupDetail.hbm.xml
+8097 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/Doctor.hbm.xml
+8097 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/Patient.hbm.xml
+8106 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/Address.hbm.xml
+8113 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/Visit.hbm.xml
+8121 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/SystemUser.hbm.xml
+8127 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/RunningNumberSet.hbm.xml
+8159 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/RunningNumber.hbm.xml
+8159 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/LabOrder.hbm.xml
+8159 [pool-1-thread-1] WARN  o.h.i.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+8175 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/LabOrderDetail.hbm.xml
+8175 [pool-1-thread-1] WARN  o.h.i.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+8175 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/LabProcedure.hbm.xml
+8175 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/LabProfile.hbm.xml
+8190 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/LabTestCode.hbm.xml
+8190 [pool-1-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+8284 [pool-1-thread-1] WARN  o.h.s.j.c.i.ConnectionProviderInitiator - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+8284 [pool-1-thread-1] INFO  o.h.s.j.c.i.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+8315 [pool-1-thread-1] INFO  o.h.s.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20
+8315 [pool-1-thread-1] INFO  o.h.s.j.c.i.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+8315 [pool-1-thread-1] INFO  o.h.s.j.c.i.DriverManagerConnectionProviderImpl - HHH000401: using driver [com.microsoft.sqlserver.jdbc.SQLServerDriver] at URL [jdbc:sqlserver://localhost:1433;databaseName=RIMSDB_NEW]
+8315 [pool-1-thread-1] INFO  o.h.s.j.c.i.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=sa, password=****}
+23096 [pool-1-thread-1] WARN  o.h.e.j.internal.JdbcServicesImpl - HHH000342: Could not obtain connection to query metadata : The TCP/IP connection to the host localhost, port 1433 has failed. Error: "Connection refused: connect. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+23112 [pool-1-thread-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
+23113 [pool-1-thread-1] INFO  o.h.e.j.internal.LobCreatorBuilder - HHH000422: Disabling contextual LOB creation as connection was null
+23164 [pool-1-thread-1] INFO  o.h.e.t.i.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+23164 [pool-1-thread-1] INFO  o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+38594 [pool-1-thread-1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 08S01
+38594 [pool-1-thread-1] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - The TCP/IP connection to the host localhost, port 1433 has failed. Error: "Connection refused: connect. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+38594 [pool-1-thread-1] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task.
+org.hibernate.exception.JDBCConnectionException: Could not open connection
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:132)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:125)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:110)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:221)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.getConnection(LogicalConnectionImpl.java:157)
+	at org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doBegin(JdbcTransaction.java:67)
+	at org.hibernate.engine.transaction.spi.AbstractTransactionImpl.begin(AbstractTransactionImpl.java:160)
+	at com.iis.rims.common.BaseDAO.findByCriteria(BaseDAO.java:381)
+	at com.iis.rims.common.BaseDAO.findByCriteria(BaseDAO.java:362)
+	at com.iis.rims.lab.quantum.service.OrderService.pushOrders(OrderService.java:50)
+	at com.iis.rims.lab.quantum.scheduler.OrderStatusScheduler.pushOrders(OrderStatusScheduler.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host localhost, port 1433 has failed. Error: "Connection refused: connect. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:190)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.ConvertConnectExceptionToSQLServerException(SQLServerException.java:241)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2243)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:491)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:1309)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:991)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:827)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1012)
+	at org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl.getConnection(DriverManagerConnectionProviderImpl.java:204)
+	at org.hibernate.internal.AbstractSessionImpl$NonContextualJdbcConnectionAccess.obtainConnection(AbstractSessionImpl.java:292)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:214)
+	... 21 common frames omitted
+47870 [pool-1-thread-1] INFO  com.iis.rims.lab.quantum.AppConfig - push orders
+62625 [pool-1-thread-1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 08S01
+62625 [pool-1-thread-1] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - The TCP/IP connection to the host localhost, port 1433 has failed. Error: "Connection refused: connect. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+62625 [pool-1-thread-1] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task.
+org.hibernate.exception.JDBCConnectionException: Could not open connection
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:132)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:125)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:110)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:221)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.getConnection(LogicalConnectionImpl.java:157)
+	at org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doBegin(JdbcTransaction.java:67)
+	at org.hibernate.engine.transaction.spi.AbstractTransactionImpl.begin(AbstractTransactionImpl.java:160)
+	at com.iis.rims.common.BaseDAO.findByCriteria(BaseDAO.java:381)
+	at com.iis.rims.common.BaseDAO.findByCriteria(BaseDAO.java:362)
+	at com.iis.rims.lab.quantum.service.OrderService.pushOrders(OrderService.java:50)
+	at com.iis.rims.lab.quantum.scheduler.OrderStatusScheduler.pushOrders(OrderStatusScheduler.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host localhost, port 1433 has failed. Error: "Connection refused: connect. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:190)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.ConvertConnectExceptionToSQLServerException(SQLServerException.java:241)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2243)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:491)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:1309)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:991)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:827)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1012)
+	at org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl.getConnection(DriverManagerConnectionProviderImpl.java:204)
+	at org.hibernate.internal.AbstractSessionImpl$NonContextualJdbcConnectionAccess.obtainConnection(AbstractSessionImpl.java:292)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:214)
+	... 21 common frames omitted
+67869 [pool-1-thread-1] INFO  com.iis.rims.lab.quantum.AppConfig - push orders
+82592 [pool-1-thread-1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 08S01
+82592 [pool-1-thread-1] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - The TCP/IP connection to the host localhost, port 1433 has failed. Error: "Connection refused: connect. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+82592 [pool-1-thread-1] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task.
+org.hibernate.exception.JDBCConnectionException: Could not open connection
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:132)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:125)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:110)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:221)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.getConnection(LogicalConnectionImpl.java:157)
+	at org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doBegin(JdbcTransaction.java:67)
+	at org.hibernate.engine.transaction.spi.AbstractTransactionImpl.begin(AbstractTransactionImpl.java:160)
+	at com.iis.rims.common.BaseDAO.findByCriteria(BaseDAO.java:381)
+	at com.iis.rims.common.BaseDAO.findByCriteria(BaseDAO.java:362)
+	at com.iis.rims.lab.quantum.service.OrderService.pushOrders(OrderService.java:50)
+	at com.iis.rims.lab.quantum.scheduler.OrderStatusScheduler.pushOrders(OrderStatusScheduler.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host localhost, port 1433 has failed. Error: "Connection refused: connect. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:190)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.ConvertConnectExceptionToSQLServerException(SQLServerException.java:241)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2243)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:491)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:1309)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:991)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:827)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1012)
+	at org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl.getConnection(DriverManagerConnectionProviderImpl.java:204)
+	at org.hibernate.internal.AbstractSessionImpl$NonContextualJdbcConnectionAccess.obtainConnection(AbstractSessionImpl.java:292)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:214)
+	... 21 common frames omitted
+87867 [pool-1-thread-1] INFO  com.iis.rims.lab.quantum.AppConfig - push orders
+95118 [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Starting SpringBootLabQuantumApplication on 30714L with PID 120268 (C:\Users\huyh\git\projects\rims-lab-quantum\target\classes started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+95118 [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - No active profile set, falling back to default profiles: default
+95905 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+95905 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+95936 [localhost-startStop-1] INFO  o.a.c.c.C.[.[localhost].[/lab] - Initializing Spring embedded WebApplicationContext
+95983 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+95983 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+95983 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+96046 [restartedMain] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://tempuri.org/}LISIntegrationWebserviceSoapService from class org.tempuri.LISIntegrationWebserviceSoap
+96108 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order status....
+96108 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+97894 [pool-3-thread-1] INFO  com.iis.rims.lab.quantum.AppConfig - push orders
+97894 [pool-3-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: /hibernate.cfg.xml
+97894 [pool-3-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: /hibernate.cfg.xml
+97894 [pool-3-thread-1] WARN  o.h.i.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+97894 [pool-3-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/Branch.hbm.xml
+97910 [pool-3-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/LookupHeader.hbm.xml
+97910 [pool-3-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/LookupDetail.hbm.xml
+97910 [pool-3-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/Doctor.hbm.xml
+97925 [pool-3-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/Patient.hbm.xml
+97925 [pool-3-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/Address.hbm.xml
+97925 [pool-3-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/Visit.hbm.xml
+97941 [pool-3-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/SystemUser.hbm.xml
+97956 [pool-3-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/RunningNumberSet.hbm.xml
+97972 [pool-3-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/RunningNumber.hbm.xml
+97972 [pool-3-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/LabOrder.hbm.xml
+97972 [pool-3-thread-1] WARN  o.h.i.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+97972 [pool-3-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/LabOrderDetail.hbm.xml
+97973 [pool-3-thread-1] WARN  o.h.i.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+97973 [pool-3-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/LabProcedure.hbm.xml
+97989 [pool-3-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/LabProfile.hbm.xml
+98004 [pool-3-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000221: Reading mappings from resource: configs/LabTestCode.hbm.xml
+98004 [pool-3-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+98020 [pool-3-thread-1] WARN  o.h.s.j.c.i.ConnectionProviderInitiator - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+98020 [pool-3-thread-1] INFO  o.h.s.j.c.i.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+98020 [pool-3-thread-1] INFO  o.h.s.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20
+98020 [pool-3-thread-1] INFO  o.h.s.j.c.i.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+98020 [pool-3-thread-1] INFO  o.h.s.j.c.i.DriverManagerConnectionProviderImpl - HHH000401: using driver [com.microsoft.sqlserver.jdbc.SQLServerDriver] at URL [jdbc:sqlserver://localhost:1433;databaseName=RIMSDB_NEW]
+98020 [pool-3-thread-1] INFO  o.h.s.j.c.i.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=sa, password=****}
+101413 [restartedMain] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Outbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.connectors.connect.mirth.com"><soap:Body><GetResultValues xmlns="http://tempuri.org/"><OrderNo>10000006</OrderNo></GetResultValues></soap:Body></soap:Envelope>
+102871 [pool-1-thread-1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 08S01
+102871 [pool-1-thread-1] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - The TCP/IP connection to the host localhost, port 1433 has failed. Error: "connect timed out. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+102871 [pool-1-thread-1] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task.
+org.hibernate.exception.JDBCConnectionException: Could not open connection
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:132)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:125)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:110)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:221)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.getConnection(LogicalConnectionImpl.java:157)
+	at org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doBegin(JdbcTransaction.java:67)
+	at org.hibernate.engine.transaction.spi.AbstractTransactionImpl.begin(AbstractTransactionImpl.java:160)
+	at com.iis.rims.common.BaseDAO.findByCriteria(BaseDAO.java:381)
+	at com.iis.rims.common.BaseDAO.findByCriteria(BaseDAO.java:362)
+	at com.iis.rims.lab.quantum.service.OrderService.pushOrders(OrderService.java:50)
+	at com.iis.rims.lab.quantum.scheduler.OrderStatusScheduler.pushOrders(OrderStatusScheduler.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host localhost, port 1433 has failed. Error: "connect timed out. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:190)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.ConvertConnectExceptionToSQLServerException(SQLServerException.java:241)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2243)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:491)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:1309)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:991)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:827)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1012)
+	at org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl.getConnection(DriverManagerConnectionProviderImpl.java:204)
+	at org.hibernate.internal.AbstractSessionImpl$NonContextualJdbcConnectionAccess.obtainConnection(AbstractSessionImpl.java:292)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:214)
+	... 21 common frames omitted
+112771 [pool-3-thread-1] WARN  o.h.e.j.internal.JdbcServicesImpl - HHH000342: Could not obtain connection to query metadata : The TCP/IP connection to the host localhost, port 1433 has failed. Error: "Connection refused: connect. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+112771 [pool-3-thread-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
+112771 [pool-3-thread-1] INFO  o.h.e.j.internal.LobCreatorBuilder - HHH000422: Disabling contextual LOB creation as connection was null
+112771 [pool-3-thread-1] INFO  o.h.e.t.i.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+112771 [pool-3-thread-1] INFO  o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+122442 [restartedMain] WARN  o.a.cxf.phase.PhaseInterceptorChain - Interceptor for {http://tempuri.org/}LISIntegrationWebserviceSoapService#{http://tempuri.org/}GetResultValues has thrown exception, unwinding now
+org.apache.cxf.interceptor.Fault: Could not send Message.
+	at org.apache.cxf.interceptor.MessageSenderInterceptor$MessageSenderEndingInterceptor.handleMessage(MessageSenderInterceptor.java:64)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+	at org.apache.cxf.endpoint.ClientImpl.doInvoke(ClientImpl.java:514)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:423)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:324)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:277)
+	at org.apache.cxf.frontend.ClientProxy.invokeSync(ClientProxy.java:96)
+	at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:139)
+	at com.sun.proxy.$Proxy106.getResultValues(Unknown Source)
+	at com.iis.rims.lab.quantum.SpringBootLabQuantumApplication$1.run(SpringBootLabQuantumApplication.java:60)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:716)
+	at org.springframework.boot.SpringApplication.afterRefresh(SpringApplication.java:703)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.iis.rims.lab.quantum.SpringBootLabQuantumApplication.main(SpringBootLabQuantumApplication.java:41)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.net.ConnectException: ConnectException invoking http://52.187.20.127/LISIntegrationtesting/LisIntegrationWebservice.asmx?wsdl: Connection timed out: connect
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.mapException(HTTPConduit.java:1385)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.close(HTTPConduit.java:1369)
+	at org.apache.cxf.io.CacheAndWriteOutputStream.postClose(CacheAndWriteOutputStream.java:56)
+	at org.apache.cxf.io.CachedOutputStream.close(CachedOutputStream.java:216)
+	at org.apache.cxf.transport.AbstractConduit.close(AbstractConduit.java:56)
+	at org.apache.cxf.transport.http.HTTPConduit.close(HTTPConduit.java:653)
+	at org.apache.cxf.interceptor.MessageSenderInterceptor$MessageSenderEndingInterceptor.handleMessage(MessageSenderInterceptor.java:62)
+	... 21 common frames omitted
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:211)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:308)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:326)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1202)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1181)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1032)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:966)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream0(HttpURLConnection.java:1316)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1291)
+	at org.apache.cxf.transport.http.URLConnectionHTTPConduit$URLConnectionWrappedOutputStream.setupWrappedStream(URLConnectionHTTPConduit.java:273)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.handleHeadersTrustCaching(HTTPConduit.java:1328)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.onFirstWrite(HTTPConduit.java:1288)
+	at org.apache.cxf.transport.http.URLConnectionHTTPConduit$URLConnectionWrappedOutputStream.onFirstWrite(URLConnectionHTTPConduit.java:305)
+	at org.apache.cxf.io.AbstractWrappedOutputStream.write(AbstractWrappedOutputStream.java:47)
+	at org.apache.cxf.io.AbstractThresholdOutputStream.write(AbstractThresholdOutputStream.java:69)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.close(HTTPConduit.java:1341)
+	... 26 common frames omitted
+122442 [restartedMain] ERROR o.s.boot.SpringApplication - Application startup failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:735)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:716)
+	at org.springframework.boot.SpringApplication.afterRefresh(SpringApplication.java:703)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.iis.rims.lab.quantum.SpringBootLabQuantumApplication.main(SpringBootLabQuantumApplication.java:41)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.NullPointerException: null
+	at org.apache.cxf.jaxws.JaxWsClientProxy.addressChanged(JaxWsClientProxy.java:275)
+	at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:172)
+	at com.sun.proxy.$Proxy106.getResultValues(Unknown Source)
+	at com.iis.rims.lab.quantum.SpringBootLabQuantumApplication$1.run(SpringBootLabQuantumApplication.java:60)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:732)
+	... 11 common frames omitted
+127710 [pool-3-thread-1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 08S01
+127710 [pool-3-thread-1] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - The TCP/IP connection to the host localhost, port 1433 has failed. Error: "Connection refused: connect. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+127710 [pool-3-thread-1] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task.
+org.hibernate.exception.JDBCConnectionException: Could not open connection
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:132)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:125)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:110)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:221)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.getConnection(LogicalConnectionImpl.java:157)
+	at org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doBegin(JdbcTransaction.java:67)
+	at org.hibernate.engine.transaction.spi.AbstractTransactionImpl.begin(AbstractTransactionImpl.java:160)
+	at com.iis.rims.common.BaseDAO.findByCriteria(BaseDAO.java:381)
+	at com.iis.rims.common.BaseDAO.findByCriteria(BaseDAO.java:362)
+	at com.iis.rims.lab.quantum.service.OrderService.pushOrders(OrderService.java:50)
+	at com.iis.rims.lab.quantum.scheduler.OrderStatusScheduler.pushOrders(OrderStatusScheduler.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host localhost, port 1433 has failed. Error: "Connection refused: connect. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:190)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.ConvertConnectExceptionToSQLServerException(SQLServerException.java:241)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2243)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:491)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:1309)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:991)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:827)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1012)
+	at org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl.getConnection(DriverManagerConnectionProviderImpl.java:204)
+	at org.hibernate.internal.AbstractSessionImpl$NonContextualJdbcConnectionAccess.obtainConnection(AbstractSessionImpl.java:292)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:214)
+	... 21 common frames omitted
+127867 [pool-3-thread-1] INFO  com.iis.rims.lab.quantum.AppConfig - push orders
+142587 [pool-3-thread-1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 08S01
+142587 [pool-3-thread-1] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - The TCP/IP connection to the host localhost, port 1433 has failed. Error: "Connection refused: connect. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+142587 [pool-3-thread-1] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task.
+org.hibernate.exception.JDBCConnectionException: Could not open connection
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:132)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:125)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:110)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:221)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.getConnection(LogicalConnectionImpl.java:157)
+	at org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doBegin(JdbcTransaction.java:67)
+	at org.hibernate.engine.transaction.spi.AbstractTransactionImpl.begin(AbstractTransactionImpl.java:160)
+	at com.iis.rims.common.BaseDAO.findByCriteria(BaseDAO.java:381)
+	at com.iis.rims.common.BaseDAO.findByCriteria(BaseDAO.java:362)
+	at com.iis.rims.lab.quantum.service.OrderService.pushOrders(OrderService.java:50)
+	at com.iis.rims.lab.quantum.scheduler.OrderStatusScheduler.pushOrders(OrderStatusScheduler.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host localhost, port 1433 has failed. Error: "Connection refused: connect. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:190)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.ConvertConnectExceptionToSQLServerException(SQLServerException.java:241)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2243)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:491)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:1309)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:991)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:827)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1012)
+	at org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl.getConnection(DriverManagerConnectionProviderImpl.java:204)
+	at org.hibernate.internal.AbstractSessionImpl$NonContextualJdbcConnectionAccess.obtainConnection(AbstractSessionImpl.java:292)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:214)
+	... 21 common frames omitted
+147882 [pool-3-thread-1] INFO  com.iis.rims.lab.quantum.AppConfig - push orders
+152812 [restartedMain] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Outbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.connectors.connect.mirth.com"><soap:Body><GetResultValues xmlns="http://tempuri.org/"><OrderNo>10000006</OrderNo></GetResultValues></soap:Body></soap:Envelope>
+162593 [pool-3-thread-1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 08S01
+162593 [pool-3-thread-1] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - The TCP/IP connection to the host localhost, port 1433 has failed. Error: "Connection refused: connect. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+162593 [pool-3-thread-1] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task.
+org.hibernate.exception.JDBCConnectionException: Could not open connection
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:132)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:125)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:110)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:221)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.getConnection(LogicalConnectionImpl.java:157)
+	at org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doBegin(JdbcTransaction.java:67)
+	at org.hibernate.engine.transaction.spi.AbstractTransactionImpl.begin(AbstractTransactionImpl.java:160)
+	at com.iis.rims.common.BaseDAO.findByCriteria(BaseDAO.java:381)
+	at com.iis.rims.common.BaseDAO.findByCriteria(BaseDAO.java:362)
+	at com.iis.rims.lab.quantum.service.OrderService.pushOrders(OrderService.java:50)
+	at com.iis.rims.lab.quantum.scheduler.OrderStatusScheduler.pushOrders(OrderStatusScheduler.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host localhost, port 1433 has failed. Error: "Connection refused: connect. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:190)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.ConvertConnectExceptionToSQLServerException(SQLServerException.java:241)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2243)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:491)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:1309)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:991)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:827)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1012)
+	at org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl.getConnection(DriverManagerConnectionProviderImpl.java:204)
+	at org.hibernate.internal.AbstractSessionImpl$NonContextualJdbcConnectionAccess.obtainConnection(AbstractSessionImpl.java:292)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:214)
+	... 21 common frames omitted
+167870 [pool-3-thread-1] INFO  com.iis.rims.lab.quantum.AppConfig - push orders
+173842 [restartedMain] WARN  o.a.cxf.phase.PhaseInterceptorChain - Interceptor for {http://tempuri.org/}LISIntegrationWebserviceSoapService#{http://tempuri.org/}GetResultValues has thrown exception, unwinding now
+org.apache.cxf.interceptor.Fault: Could not send Message.
+	at org.apache.cxf.interceptor.MessageSenderInterceptor$MessageSenderEndingInterceptor.handleMessage(MessageSenderInterceptor.java:64)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+	at org.apache.cxf.endpoint.ClientImpl.doInvoke(ClientImpl.java:514)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:423)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:324)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:277)
+	at org.apache.cxf.frontend.ClientProxy.invokeSync(ClientProxy.java:96)
+	at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:139)
+	at com.sun.proxy.$Proxy131.getResultValues(Unknown Source)
+	at com.iis.rims.lab.quantum.SpringBootLabQuantumApplication$1.run(SpringBootLabQuantumApplication.java:60)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:716)
+	at org.springframework.boot.SpringApplication.afterRefresh(SpringApplication.java:703)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.iis.rims.lab.quantum.SpringBootLabQuantumApplication.main(SpringBootLabQuantumApplication.java:41)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.net.ConnectException: ConnectException invoking http://52.187.20.127/LISIntegrationtesting/LisIntegrationWebservice.asmx?wsdl: Connection timed out: connect
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.mapException(HTTPConduit.java:1385)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.close(HTTPConduit.java:1369)
+	at org.apache.cxf.io.CacheAndWriteOutputStream.postClose(CacheAndWriteOutputStream.java:56)
+	at org.apache.cxf.io.CachedOutputStream.close(CachedOutputStream.java:216)
+	at org.apache.cxf.transport.AbstractConduit.close(AbstractConduit.java:56)
+	at org.apache.cxf.transport.http.HTTPConduit.close(HTTPConduit.java:653)
+	at org.apache.cxf.interceptor.MessageSenderInterceptor$MessageSenderEndingInterceptor.handleMessage(MessageSenderInterceptor.java:62)
+	... 21 common frames omitted
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:211)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:308)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:326)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1202)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1181)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1032)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:966)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream0(HttpURLConnection.java:1316)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1291)
+	at org.apache.cxf.transport.http.URLConnectionHTTPConduit$URLConnectionWrappedOutputStream.setupWrappedStream(URLConnectionHTTPConduit.java:273)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.handleHeadersTrustCaching(HTTPConduit.java:1328)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.onFirstWrite(HTTPConduit.java:1288)
+	at org.apache.cxf.transport.http.URLConnectionHTTPConduit$URLConnectionWrappedOutputStream.onFirstWrite(URLConnectionHTTPConduit.java:305)
+	at org.apache.cxf.io.AbstractWrappedOutputStream.write(AbstractWrappedOutputStream.java:47)
+	at org.apache.cxf.io.AbstractThresholdOutputStream.write(AbstractThresholdOutputStream.java:69)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.close(HTTPConduit.java:1341)
+	... 26 common frames omitted
+173842 [restartedMain] ERROR o.s.boot.SpringApplication - Application startup failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:735)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:716)
+	at org.springframework.boot.SpringApplication.afterRefresh(SpringApplication.java:703)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.iis.rims.lab.quantum.SpringBootLabQuantumApplication.main(SpringBootLabQuantumApplication.java:41)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: javax.xml.ws.WebServiceException: Could not send Message.
+	at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:150)
+	at com.sun.proxy.$Proxy131.getResultValues(Unknown Source)
+	at com.iis.rims.lab.quantum.SpringBootLabQuantumApplication$1.run(SpringBootLabQuantumApplication.java:60)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:732)
+	... 11 common frames omitted
+Caused by: java.net.ConnectException: ConnectException invoking http://52.187.20.127/LISIntegrationtesting/LisIntegrationWebservice.asmx?wsdl: Connection timed out: connect
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.mapException(HTTPConduit.java:1385)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.close(HTTPConduit.java:1369)
+	at org.apache.cxf.io.CacheAndWriteOutputStream.postClose(CacheAndWriteOutputStream.java:56)
+	at org.apache.cxf.io.CachedOutputStream.close(CachedOutputStream.java:216)
+	at org.apache.cxf.transport.AbstractConduit.close(AbstractConduit.java:56)
+	at org.apache.cxf.transport.http.HTTPConduit.close(HTTPConduit.java:653)
+	at org.apache.cxf.interceptor.MessageSenderInterceptor$MessageSenderEndingInterceptor.handleMessage(MessageSenderInterceptor.java:62)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+	at org.apache.cxf.endpoint.ClientImpl.doInvoke(ClientImpl.java:514)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:423)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:324)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:277)
+	at org.apache.cxf.frontend.ClientProxy.invokeSync(ClientProxy.java:96)
+	at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:139)
+	... 14 common frames omitted
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:211)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:308)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:326)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1202)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1181)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1032)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:966)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream0(HttpURLConnection.java:1316)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1291)
+	at org.apache.cxf.transport.http.URLConnectionHTTPConduit$URLConnectionWrappedOutputStream.setupWrappedStream(URLConnectionHTTPConduit.java:273)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.handleHeadersTrustCaching(HTTPConduit.java:1328)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.onFirstWrite(HTTPConduit.java:1288)
+	at org.apache.cxf.transport.http.URLConnectionHTTPConduit$URLConnectionWrappedOutputStream.onFirstWrite(URLConnectionHTTPConduit.java:305)
+	at org.apache.cxf.io.AbstractWrappedOutputStream.write(AbstractWrappedOutputStream.java:47)
+	at org.apache.cxf.io.AbstractThresholdOutputStream.write(AbstractThresholdOutputStream.java:69)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.close(HTTPConduit.java:1341)
+	... 26 common frames omitted
+182874 [pool-3-thread-1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 08S01
+182874 [pool-3-thread-1] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - The TCP/IP connection to the host localhost, port 1433 has failed. Error: "connect timed out. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+182874 [pool-3-thread-1] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task.
+org.hibernate.exception.JDBCConnectionException: Could not open connection
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:132)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:125)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:110)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:221)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.getConnection(LogicalConnectionImpl.java:157)
+	at org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doBegin(JdbcTransaction.java:67)
+	at org.hibernate.engine.transaction.spi.AbstractTransactionImpl.begin(AbstractTransactionImpl.java:160)
+	at com.iis.rims.common.BaseDAO.findByCriteria(BaseDAO.java:381)
+	at com.iis.rims.common.BaseDAO.findByCriteria(BaseDAO.java:362)
+	at com.iis.rims.lab.quantum.service.OrderService.pushOrders(OrderService.java:50)
+	at com.iis.rims.lab.quantum.scheduler.OrderStatusScheduler.pushOrders(OrderStatusScheduler.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host localhost, port 1433 has failed. Error: "connect timed out. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:190)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.ConvertConnectExceptionToSQLServerException(SQLServerException.java:241)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2243)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:491)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:1309)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:991)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:827)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1012)
+	at org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl.getConnection(DriverManagerConnectionProviderImpl.java:204)
+	at org.hibernate.internal.AbstractSessionImpl$NonContextualJdbcConnectionAccess.obtainConnection(AbstractSessionImpl.java:292)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:214)
+	... 21 common frames omitted
+312843 [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Starting SpringBootLabQuantumApplication on 30714L with PID 120268 (C:\Users\huyh\git\projects\rims-lab-quantum\target\classes started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+312843 [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - No active profile set, falling back to default profiles: default
+313629 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+313629 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+313645 [localhost-startStop-1] INFO  o.a.c.c.C.[.[localhost].[/lab] - Initializing Spring embedded WebApplicationContext
+313676 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+313676 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+313676 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+313754 [restartedMain] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://tempuri.org/}LISIntegrationWebserviceSoapService from class org.tempuri.LISIntegrationWebserviceSoap
+313817 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order status....
+313817 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+317873 [pool-4-thread-1] INFO  com.iis.rims.lab.quantum.AppConfig - push orders
+317905 [pool-4-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: /hibernate.cfg.xml
+317905 [pool-4-thread-1] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: /hibernate.cfg.xml
+317905 [pool-4-thread-1] WARN  o.h.i.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+677  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Starting SpringBootLabQuantumApplication on 30714L with PID 97452 (C:\Users\huyh\git\projects\rims-lab-quantum\target\classes started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+677  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - No active profile set, falling back to default profiles: default
+2777 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2777 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+2935 [localhost-startStop-1] INFO  o.a.c.c.C.[.[localhost].[/lab] - Initializing Spring embedded WebApplicationContext
+3107 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3107 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3107 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3436 [restartedMain] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://tempuri.org/}LISIntegrationWebserviceSoapService from class org.tempuri.LISIntegrationWebserviceSoap
+3983 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order status....
+3983 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+671  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Starting SpringBootLabQuantumApplication on 30714L with PID 122140 (C:\Users\huyh\git\projects\rims-lab-quantum\target\classes started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+687  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - No active profile set, falling back to default profiles: default
+2779 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2779 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+2936 [localhost-startStop-1] INFO  o.a.c.c.C.[.[localhost].[/lab] - Initializing Spring embedded WebApplicationContext
+3092 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3092 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3092 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3418 [restartedMain] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://tempuri.org/}LISIntegrationWebserviceSoapService from class org.tempuri.LISIntegrationWebserviceSoap
+3948 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order status....
+3949 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+690  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Starting SpringBootLabQuantumApplication on 30714L with PID 121032 (C:\Users\huyh\git\projects\rims-lab-quantum\target\classes started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+690  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - No active profile set, falling back to default profiles: default
+2828 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2828 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+3000 [localhost-startStop-1] INFO  o.a.c.c.C.[.[localhost].[/lab] - Initializing Spring embedded WebApplicationContext
+3174 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3174 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3174 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3502 [restartedMain] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://tempuri.org/}LISIntegrationWebserviceSoapService from class org.tempuri.LISIntegrationWebserviceSoap
+4041 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order status....
+4073 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+33175 [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Starting SpringBootLabQuantumApplication on 30714L with PID 121032 (C:\Users\huyh\git\projects\rims-lab-quantum\target\classes started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+33175 [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - No active profile set, falling back to default profiles: default
+33910 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+33910 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+33926 [localhost-startStop-1] INFO  o.a.c.c.C.[.[localhost].[/lab] - Initializing Spring embedded WebApplicationContext
+33973 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+33973 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+33973 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+34021 [restartedMain] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://tempuri.org/}LISIntegrationWebserviceSoapService from class org.tempuri.LISIntegrationWebserviceSoap
+34126 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order status....
+34126 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+107632 [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Starting SpringBootLabQuantumApplication on 30714L with PID 121032 (C:\Users\huyh\git\projects\rims-lab-quantum\target\classes started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+107632 [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - No active profile set, falling back to default profiles: default
+108336 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+108336 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+108367 [localhost-startStop-1] INFO  o.a.c.c.C.[.[localhost].[/lab] - Initializing Spring embedded WebApplicationContext
+108398 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+108414 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+108414 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+108476 [restartedMain] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://tempuri.org/}LISIntegrationWebserviceSoapService from class org.tempuri.LISIntegrationWebserviceSoap
+108539 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order status....
+108539 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+579243 [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Starting SpringBootLabQuantumApplication on 30714L with PID 121032 (C:\Users\huyh\git\projects\rims-lab-quantum\target\classes started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+579243 [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - No active profile set, falling back to default profiles: default
+579980 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+579980 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+579991 [localhost-startStop-1] INFO  o.a.c.c.C.[.[localhost].[/lab] - Initializing Spring embedded WebApplicationContext
+580036 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+580037 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+580037 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+670  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Starting SpringBootLabQuantumApplication on 30714L with PID 120876 (C:\Users\huyh\git\projects\rims-lab-quantum\target\classes started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+670  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - No active profile set, falling back to default profiles: default
+2771 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2771 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+2912 [localhost-startStop-1] INFO  o.a.c.c.C.[.[localhost].[/lab] - Initializing Spring embedded WebApplicationContext
+3085 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3085 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3085 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3479 [restartedMain] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://tempuri.org/}LISIntegrationWebserviceSoapService from class org.tempuri.LISIntegrationWebserviceSoap
+4026 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order status....
+4041 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+760  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Starting SpringBootLabQuantumApplication on 30714L with PID 121956 (C:\Users\huyh\git\projects\rims-lab-quantum\target\classes started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+760  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - No active profile set, falling back to default profiles: default
+2833 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2833 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+2974 [localhost-startStop-1] INFO  o.a.c.c.C.[.[localhost].[/lab] - Initializing Spring embedded WebApplicationContext
+3130 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3130 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3130 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3475 [restartedMain] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://tempuri.org/}LISIntegrationWebserviceSoapService from class org.tempuri.LISIntegrationWebserviceSoap
+4018 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order status....
+4019 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+29507 [restartedMain] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Outbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.connectors.connect.mirth.com"><soap:Body><PushOrder xmlns="http://tempuri.org/"><acceptMessage>
+<arg0>
+<content><arg0><content><MSG>
+    <MSH>
+        <Sending_Application>Third Party</Sending_Application>
+        <Sending_Facility>JJJ</Sending_Facility>
+        <Receiving_Application>LIS</Receiving_Application>
+        <Receiving_Facility>JJJ</Receiving_Facility>
+        <Message_Date_Time>20160227084606</Message_Date_Time>
+        <Message_Type>ORM</Message_Type>
+        <Message_Control_Id>000877652</Message_Control_Id>
+    </MSH>
+    <EVN>
+        <Event_Type_Code>O01</Event_Type_Code>
+        <Recorded_DateTime>20160227084606</Recorded_DateTime>
+    </EVN>
+    <PID>
+        <Patient_Id_Ext/>
+        <Patient_Id_Int>JJJ87878787</Patient_Id_Int>
+        <Patient_Id_Type>NEW IC</Patient_Id_Type>
+        <Patient_Id_Number>510915105063</Patient_Id_Number>
+        <Patient_Name>Abraham</Patient_Name>
+        <Date_Of_Birth>19510915</Date_Of_Birth>
+        <Gender_Code>M</Gender_Code>
+        <Race_code>MALAYSIA</Race_code>
+        <Address1>NO 5</Address1>
+        <Address2> TMN LUYANG PHASE </Address2>
+        <Address3></Address3>
+        <City/>
+        <State/>
+        <Postal_Code>883400</Postal_Code>
+        <Country_Code>MALAYSIA</Country_Code>
+        <Phone_Home/>
+        <Phone_Mobile/>
+        <Phone_Business>0198202090</Phone_Business>
+        <Primary_Language/>
+        <Marital_Status_Code>MARRIED</Marital_Status_Code>
+        <Religion_Code>OTHERS</Religion_Code>
+        <Nationality_Code>MALAYSIA</Nationality_Code>
+    </PID>
+    <PV1>
+        <Patient_Type_Code>ED</Patient_Type_Code>
+        <Ward_Code/>
+        <Admission_Type/>
+        <Preadmit_Number/>
+        <Specialty_Code>SP_19</Specialty_Code>
+        <Attending_Doctor_Code/>
+        <Attending_Doctor_Desc/>
+        <Referring_Doctor_Code/>
+        <Referring_Doctor_Desc/>
+        <Consulting_Doctor_Code/>
+        <Consulting_Doctor_Desc/>
+        <Admitting_Doctor_Code>WRJFF</Admitting_Doctor_Code>
+        <Admitting_Doctor_Desc>WRJFF</Admitting_Doctor_Desc>
+        <Patient_Class/>
+        <Visit_Number>16ED00001102</Visit_Number>
+        <Financial_Class_Code>NA</Financial_Class_Code>
+        <Admit_DateTime>20160227080600</Admit_DateTime>
+    </PV1>
+    <ORC>
+        <Order_Control>NW</Order_Control>
+        <ORC_Placer_Order_Number>16017259</ORC_Placer_Order_Number>
+        <ORC_Filler_Order_Number/>
+        <Placer_Group_Number/>
+        <Order_Status_Code/>
+        <Response_Flag/>
+        <ORC_Quantity_Timing/>
+        <Parent/>
+        <DateTime_Of_Transaction/>
+        <Entered_By_ID/>
+        <Entered_By_Name/>
+        <Verified_By_ID/>
+        <Verified_By_Name/>
+        <ORC_Ordering_Provider_ID>WRJFF</ORC_Ordering_Provider_ID>
+        <ORC_Ordering_Provider_Name>DR Isanth Kumar</ORC_Ordering_Provider_Name>
+        <Enter_Location/>
+        <Call_Back_Phone_Number/>
+        <Order_Effective_DateTime/>
+        <Order_Control_Code_Reason/>
+        <Entering_Organization/>
+        <Entering_Device/>
+        <Action_By/>
+        <Advanced_Beneficiary_Notice_Code/>
+        <Ordering_Facility_Code/>
+        <Ordering_Facility_Name/>
+    </ORC>
+    <Observation_Request>
+        <OBR>
+            <Set_Id_OBR>1</Set_Id_OBR>
+            <OBR_Placer_Order_Number>218228</OBR_Placer_Order_Number>
+            <OBR_Filler_Order_Number/>
+            <Package_Code/>
+            <Package_Description/>
+            <Test_Code>P.QDN</Test_Code>
+            <Test_Name>QDN - Quantum General Screen</Test_Name>
+            <Priority_Code/>
+            <Priority_Desc/>
+            <Requested_DateTime>20160227084605</Requested_DateTime>
+            <Observation_DateTime/>
+            <Observation_End_DateTime/>
+            <Collection_Volume/>
+            <Collector_Identifier/>
+            <Specimen_Action_Code/>
+            <Danger_Code/>
+            <Relevant_Clinical_Info/>
+            <Specimen_Received_DateTime/>
+            <Specimen_Source_Code/>
+            <Specimen_Source_Desc/>
+            <OBR_Ordering_Provider_ID>WRJFF</OBR_Ordering_Provider_ID>
+            <OBR_Ordering_Provider_Name>DR Ishant Kumar</OBR_Ordering_Provider_Name>
+            <Order_Callback_Phone_Number/>
+            <Placer_Field1>LAB</Placer_Field1>
+            <Placer_Field2>LAB</Placer_Field2>
+            <Filler_Field1></Filler_Field1>
+            <Filler_Field2></Filler_Field2>
+            <Status_Change_DateTime/>
+            <Charge_To_Practice/>
+            <Diagnostic_Serv_Sect_Code>GENERALSCREENS</Diagnostic_Serv_Sect_Code>
+            <Diagnostic_Serv_Sect_Desc>GENERAL SCREENS</Diagnostic_Serv_Sect_Desc>
+            <Result_Status/>
+            <Parent_Result/>
+            <OBR_Quantity_Timing>1.00</OBR_Quantity_Timing>
+            <Unit_Code>UN</Unit_Code>
+            <Unit_Desc/>
+            <Result_Copies_To/>
+            <Transportation_Mode/>
+            <Reason_For_Study/>
+            <Principal_Result_Interpreter/>
+            <Assistant_Result_Interpreter/>
+            <Technician/>
+            <Transcriptionist/>
+            <Scheduled_DateTime/>
+            <Number_Of_Sample_Containers/>
+            <Transport_Logistics_Of_Collected_Sample/>
+            <Collector_Comment/>
+            <Transport_Arrangement_Responsibility/>
+            <Transport_Arranged/>
+            <Escort_Required/>
+            <Planned_Patient_Transport_Comment/>
+            <Procedure_Code/>
+            <Procedure_Code_Modifier/>
+            <Placer_Supplemental_Service/>
+            <Filler_Supplemental_Service/>
+            <Cancel_Reason_Code/>
+            <Cancel_Reason_Desc/>
+        </OBR>
+    </Observation_Request>
+</MSG></content></arg0>
+</content></arg0></acceptMessage><userName>RenalTeam</userName><password>renal@123</password></PushOrder></soap:Body></soap:Envelope>
+41601 [restartedMain] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Inbound Message:
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><PushOrderResponse xmlns="http://tempuri.org/"><Response /></PushOrderResponse></soap:Body></soap:Envelope>
+57685 [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Started SpringBootLabQuantumApplication in 57.435 seconds (JVM running for 57.978)
+672  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Starting SpringBootLabQuantumApplication on 30714L with PID 121408 (C:\Users\huyh\git\projects\rims-lab-quantum\target\classes started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+672  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - No active profile set, falling back to default profiles: default
+2743 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2743 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+2902 [localhost-startStop-1] INFO  o.a.c.c.C.[.[localhost].[/lab] - Initializing Spring embedded WebApplicationContext
+3058 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3058 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3058 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3386 [restartedMain] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://tempuri.org/}LISIntegrationWebserviceSoapService from class org.tempuri.LISIntegrationWebserviceSoap
+3934 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order status....
+3934 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+255752 [restartedMain] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Outbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.connectors.connect.mirth.com"><soap:Body><PushOrder xmlns="http://tempuri.org/"><acceptMessage>
+<arg0>
+<content><arg0><content><MSG>
+    <MSH>
+        <Sending_Application>Third Party</Sending_Application>
+        <Sending_Facility>JJJ</Sending_Facility>
+        <Receiving_Application>LIS</Receiving_Application>
+        <Receiving_Facility>JJJ</Receiving_Facility>
+        <Message_Date_Time>20160227084606</Message_Date_Time>
+        <Message_Type>ORM</Message_Type>
+        <Message_Control_Id>000877652</Message_Control_Id>
+    </MSH>
+    <EVN>
+        <Event_Type_Code>O01</Event_Type_Code>
+        <Recorded_DateTime>20160227084606</Recorded_DateTime>
+    </EVN>
+    <PID>
+        <Patient_Id_Ext/>
+        <Patient_Id_Int>JJJ87878787</Patient_Id_Int>
+        <Patient_Id_Type>NEW IC</Patient_Id_Type>
+        <Patient_Id_Number>510915105063</Patient_Id_Number>
+        <Patient_Name>Abraham</Patient_Name>
+        <Date_Of_Birth>19510915</Date_Of_Birth>
+        <Gender_Code>M</Gender_Code>
+        <Race_code>MALAYSIA</Race_code>
+        <Address1>NO 5</Address1>
+        <Address2> TMN LUYANG PHASE </Address2>
+        <Address3></Address3>
+        <City/>
+        <State/>
+        <Postal_Code>883400</Postal_Code>
+        <Country_Code>MALAYSIA</Country_Code>
+        <Phone_Home/>
+        <Phone_Mobile/>
+        <Phone_Business>0198202090</Phone_Business>
+        <Primary_Language/>
+        <Marital_Status_Code>MARRIED</Marital_Status_Code>
+        <Religion_Code>OTHERS</Religion_Code>
+        <Nationality_Code>MALAYSIA</Nationality_Code>
+    </PID>
+    <PV1>
+        <Patient_Type_Code>ED</Patient_Type_Code>
+        <Ward_Code/>
+        <Admission_Type/>
+        <Preadmit_Number/>
+        <Specialty_Code>SP_19</Specialty_Code>
+        <Attending_Doctor_Code/>
+        <Attending_Doctor_Desc/>
+        <Referring_Doctor_Code/>
+        <Referring_Doctor_Desc/>
+        <Consulting_Doctor_Code/>
+        <Consulting_Doctor_Desc/>
+        <Admitting_Doctor_Code>WRJFF</Admitting_Doctor_Code>
+        <Admitting_Doctor_Desc>WRJFF</Admitting_Doctor_Desc>
+        <Patient_Class/>
+        <Visit_Number>16ED00001102</Visit_Number>
+        <Financial_Class_Code>NA</Financial_Class_Code>
+        <Admit_DateTime>20160227080600</Admit_DateTime>
+    </PV1>
+    <ORC>
+        <Order_Control>NW</Order_Control>
+        <ORC_Placer_Order_Number>16017259</ORC_Placer_Order_Number>
+        <ORC_Filler_Order_Number/>
+        <Placer_Group_Number/>
+        <Order_Status_Code/>
+        <Response_Flag/>
+        <ORC_Quantity_Timing/>
+        <Parent/>
+        <DateTime_Of_Transaction/>
+        <Entered_By_ID/>
+        <Entered_By_Name/>
+        <Verified_By_ID/>
+        <Verified_By_Name/>
+        <ORC_Ordering_Provider_ID>WRJFF</ORC_Ordering_Provider_ID>
+        <ORC_Ordering_Provider_Name>DR Isanth Kumar</ORC_Ordering_Provider_Name>
+        <Enter_Location/>
+        <Call_Back_Phone_Number/>
+        <Order_Effective_DateTime/>
+        <Order_Control_Code_Reason/>
+        <Entering_Organization/>
+        <Entering_Device/>
+        <Action_By/>
+        <Advanced_Beneficiary_Notice_Code/>
+        <Ordering_Facility_Code/>
+        <Ordering_Facility_Name/>
+    </ORC>
+    <Observation_Request>
+        <OBR>
+            <Set_Id_OBR>1</Set_Id_OBR>
+            <OBR_Placer_Order_Number>218228</OBR_Placer_Order_Number>
+            <OBR_Filler_Order_Number/>
+            <Package_Code/>
+            <Package_Description/>
+            <Test_Code>P.QDN</Test_Code>
+            <Test_Name>QDN - Quantum General Screen</Test_Name>
+            <Priority_Code/>
+            <Priority_Desc/>
+            <Requested_DateTime>20160227084605</Requested_DateTime>
+            <Observation_DateTime/>
+            <Observation_End_DateTime/>
+            <Collection_Volume/>
+            <Collector_Identifier/>
+            <Specimen_Action_Code/>
+            <Danger_Code/>
+            <Relevant_Clinical_Info/>
+            <Specimen_Received_DateTime/>
+            <Specimen_Source_Code/>
+            <Specimen_Source_Desc/>
+            <OBR_Ordering_Provider_ID>WRJFF</OBR_Ordering_Provider_ID>
+            <OBR_Ordering_Provider_Name>DR Ishant Kumar</OBR_Ordering_Provider_Name>
+            <Order_Callback_Phone_Number/>
+            <Placer_Field1>LAB</Placer_Field1>
+            <Placer_Field2>LAB</Placer_Field2>
+            <Filler_Field1></Filler_Field1>
+            <Filler_Field2></Filler_Field2>
+            <Status_Change_DateTime/>
+            <Charge_To_Practice/>
+            <Diagnostic_Serv_Sect_Code>GENERALSCREENS</Diagnostic_Serv_Sect_Code>
+            <Diagnostic_Serv_Sect_Desc>GENERAL SCREENS</Diagnostic_Serv_Sect_Desc>
+            <Result_Status/>
+            <Parent_Result/>
+            <OBR_Quantity_Timing>1.00</OBR_Quantity_Timing>
+            <Unit_Code>UN</Unit_Code>
+            <Unit_Desc/>
+            <Result_Copies_To/>
+            <Transportation_Mode/>
+            <Reason_For_Study/>
+            <Principal_Result_Interpreter/>
+            <Assistant_Result_Interpreter/>
+            <Technician/>
+            <Transcriptionist/>
+            <Scheduled_DateTime/>
+            <Number_Of_Sample_Containers/>
+            <Transport_Logistics_Of_Collected_Sample/>
+            <Collector_Comment/>
+            <Transport_Arrangement_Responsibility/>
+            <Transport_Arranged/>
+            <Escort_Required/>
+            <Planned_Patient_Transport_Comment/>
+            <Procedure_Code/>
+            <Procedure_Code_Modifier/>
+            <Placer_Supplemental_Service/>
+            <Filler_Supplemental_Service/>
+            <Cancel_Reason_Code/>
+            <Cancel_Reason_Desc/>
+        </OBR>
+    </Observation_Request>
+</MSG></content></arg0>
+</content></arg0></acceptMessage><userName>RenalTeam</userName><password>renal@123</password></PushOrder></soap:Body></soap:Envelope>
+700  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Starting SpringBootLabQuantumApplication on 30714L with PID 121216 (C:\Users\huyh\git\projects\rims-lab-quantum\target\classes started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+700  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - No active profile set, falling back to default profiles: default
+2819 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2819 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+2945 [localhost-startStop-1] INFO  o.a.c.c.C.[.[localhost].[/lab] - Initializing Spring embedded WebApplicationContext
+3118 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3118 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3118 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3494 [restartedMain] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://tempuri.org/}LISIntegrationWebserviceSoapService from class org.tempuri.LISIntegrationWebserviceSoap
+4066 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order status....
+4066 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+12675 [restartedMain] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Outbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.connectors.connect.mirth.com"><soap:Body><GetResultValues xmlns="http://tempuri.org/"><OrderNo>10000006</OrderNo></GetResultValues></soap:Body></soap:Envelope>
+690  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Starting SpringBootLabQuantumApplication on 30714L with PID 118960 (C:\Users\huyh\git\projects\rims-lab-quantum\target\classes started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+690  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - No active profile set, falling back to default profiles: default
+2744 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2744 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+2885 [localhost-startStop-1] INFO  o.a.c.c.C.[.[localhost].[/lab] - Initializing Spring embedded WebApplicationContext
+3046 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3046 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3046 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3405 [restartedMain] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://tempuri.org/}LISIntegrationWebserviceSoapService from class org.tempuri.LISIntegrationWebserviceSoap
+3937 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order status....
+3937 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+14331 [restartedMain] WARN  o.a.cxf.phase.PhaseInterceptorChain - Interceptor for {http://tempuri.org/}LISIntegrationWebserviceSoapService#{http://tempuri.org/}GetResultValues has thrown exception, unwinding now
+java.lang.NullPointerException: null
+	at com.iis.rims.lab.quantum.log.LabLoggingOutInterceptor.formatLoggingMessage(LabLoggingOutInterceptor.java:34)
+	at org.apache.cxf.interceptor.LoggingOutInterceptor$LoggingCallback.onClose(LoggingOutInterceptor.java:252)
+	at org.apache.cxf.io.CachedOutputStream.close(CachedOutputStream.java:210)
+	at org.apache.cxf.transport.AbstractConduit.close(AbstractConduit.java:56)
+	at org.apache.cxf.transport.http.HTTPConduit.close(HTTPConduit.java:653)
+	at org.apache.cxf.interceptor.MessageSenderInterceptor$MessageSenderEndingInterceptor.handleMessage(MessageSenderInterceptor.java:62)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+	at org.apache.cxf.endpoint.ClientImpl.doInvoke(ClientImpl.java:514)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:423)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:324)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:277)
+	at org.apache.cxf.frontend.ClientProxy.invokeSync(ClientProxy.java:96)
+	at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:139)
+	at com.sun.proxy.$Proxy106.getResultValues(Unknown Source)
+	at com.iis.rims.lab.quantum.SpringBootLabQuantumApplication$1.run(SpringBootLabQuantumApplication.java:60)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:716)
+	at org.springframework.boot.SpringApplication.afterRefresh(SpringApplication.java:703)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.iis.rims.lab.quantum.SpringBootLabQuantumApplication.main(SpringBootLabQuantumApplication.java:41)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+17984 [restartedMain] ERROR o.s.boot.SpringApplication - Application startup failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:735)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:716)
+	at org.springframework.boot.SpringApplication.afterRefresh(SpringApplication.java:703)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.iis.rims.lab.quantum.SpringBootLabQuantumApplication.main(SpringBootLabQuantumApplication.java:41)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: javax.xml.ws.soap.SOAPFaultException: Fault string, and possibly fault code, not set
+	at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:161)
+	at com.sun.proxy.$Proxy106.getResultValues(Unknown Source)
+	at com.iis.rims.lab.quantum.SpringBootLabQuantumApplication$1.run(SpringBootLabQuantumApplication.java:60)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:732)
+	... 11 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.iis.rims.lab.quantum.log.LabLoggingOutInterceptor.formatLoggingMessage(LabLoggingOutInterceptor.java:34)
+	at org.apache.cxf.interceptor.LoggingOutInterceptor$LoggingCallback.onClose(LoggingOutInterceptor.java:252)
+	at org.apache.cxf.io.CachedOutputStream.close(CachedOutputStream.java:210)
+	at org.apache.cxf.transport.AbstractConduit.close(AbstractConduit.java:56)
+	at org.apache.cxf.transport.http.HTTPConduit.close(HTTPConduit.java:653)
+	at org.apache.cxf.interceptor.MessageSenderInterceptor$MessageSenderEndingInterceptor.handleMessage(MessageSenderInterceptor.java:62)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+	at org.apache.cxf.endpoint.ClientImpl.doInvoke(ClientImpl.java:514)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:423)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:324)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:277)
+	at org.apache.cxf.frontend.ClientProxy.invokeSync(ClientProxy.java:96)
+	at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:139)
+	... 14 common frames omitted
+688  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Starting SpringBootLabQuantumApplication on 30714L with PID 119368 (C:\Users\huyh\git\projects\rims-lab-quantum\target\classes started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+688  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - No active profile set, falling back to default profiles: default
+2752 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2752 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+2894 [localhost-startStop-1] INFO  o.a.c.c.C.[.[localhost].[/lab] - Initializing Spring embedded WebApplicationContext
+3050 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3050 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3050 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3426 [restartedMain] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://tempuri.org/}LISIntegrationWebserviceSoapService from class org.tempuri.LISIntegrationWebserviceSoap
+3943 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order status....
+3943 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+5635 [restartedMain] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Outbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.connectors.connect.mirth.com"><soap:Body><GetResultValues xmlns="http://tempuri.org/"><OrderNo>10000006</OrderNo></GetResultValues></soap:Body></soap:Envelope>
+87452 [restartedMain] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Inbound Message:
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><GetResultValuesResponse xmlns="http://tempuri.org/"><ApprovedResultVaues><string>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;content xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;&lt;MSG&gt;&lt;VN&gt;&lt;/VN&gt;&lt;OrgId&gt;&lt;/OrgId&gt;&lt;LastUpdate&gt;Aug 30 2017 11:49AM&lt;/LastUpdate&gt;&lt;MSH&gt;&lt;Sending_Application&gt;LIS&lt;/Sending_Application&gt;&lt;Sending_Facility&gt;Attune&lt;/Sending_Facility&gt;&lt;Receiving_Application&gt;MYRENALTEAM&lt;/Receiving_Application&gt;&lt;Receiving_Facility&gt;MYRENALTEAM&lt;/Receiving_Facility&gt;&lt;Message_Date_Time /&gt;&lt;Message_Type&gt;ORU&lt;/Message_Type&gt;&lt;Message_Control_Id /&gt;&lt;/MSH&gt;&lt;EVN&gt;&lt;Event_Type_Code&gt;R01&lt;/Event_Type_Code&gt;&lt;Recorded_DateTime /&gt;&lt;/EVN&gt;&lt;PID&gt;&lt;Patient_Id_Ext /&gt;&lt;Patient_Id_Int&gt;470121-08-6071&lt;/Patient_Id_Int&gt;&lt;Patient_Id_Type&gt;NRIC Number&lt;/Patient_Id_Type&gt;&lt;Patient_Id_Number&gt;RNL00003227&lt;/Patient_Id_Number&gt;&lt;Patient_Name&gt;ABD HAMID BIN KAIL&lt;/Patient_Name&gt;&lt;Date_Of_Birth&gt;19470821000000&lt;/Date_Of_Birth&gt;&lt;Gender_Code&gt;M&lt;/Gender_Code&gt;&lt;Race_code /&gt;&lt;Address1 /&gt;&lt;Address2 /&gt;&lt;Address3&gt;__Aug 30 2017 11:49AM&lt;/Address3&gt;&lt;City /&gt;&lt;State /&gt;&lt;Postal_Code /&gt;&lt;Country_Code /&gt;&lt;Phone_Home /&gt;&lt;Phone_Mobile /&gt;&lt;Phone_Business /&gt;&lt;Primary_Language /&gt;&lt;Marital_Status_Code /&gt;&lt;Religion_Code /&gt;&lt;Nationality_Code&gt;Malaysia&lt;/Nationality_Code&gt;&lt;/PID&gt;&lt;PV1&gt;&lt;Patient_Type_Code /&gt;&lt;Ward_Code&gt;Not Registered&lt;/Ward_Code&gt;&lt;Admission_Type /&gt;&lt;Preadmit_Number /&gt;&lt;Specialty_Code /&gt;&lt;Referring_Doctor_Code /&gt;&lt;Referring_Doctor_Desc /&gt;&lt;Consulting_Doctor_Code /&gt;&lt;Consulting_Doctor_Desc /&gt;&lt;Admitting_Doctor_Code /&gt;&lt;Admitting_Doctor_Desc /&gt;&lt;Patient_Class /&gt;&lt;Financial_Class_Code /&gt;&lt;Admit_DateTime&gt;20170828180940&lt;/Admit_DateTime&gt;&lt;/PV1&gt;&lt;ORC&gt;&lt;Order_Control /&gt;&lt;ORC_Placer_Order_Number&gt;436436576&lt;/ORC_Placer_Order_Number&gt;&lt;ORC_Filler_Order_Number /&gt;&lt;Placer_Group_Number /&gt;&lt;Order_Status_Code /&gt;&lt;Response_Flag /&gt;&lt;ORC_Quantity_Timing /&gt;&lt;Parent /&gt;&lt;DateTime_Of_Transaction /&gt;&lt;Entered_By_ID&gt;192384&lt;/Entered_By_ID&gt;&lt;Entered_By_Name&gt;LIVE SYSTEM TESTING - Sathishk&lt;/Entered_By_Name&gt;&lt;Verified_By_ID /&gt;&lt;Verified_By_Name /&gt;&lt;ORC_Ordering_Provider_ID /&gt;&lt;ORC_Ordering_Provider_Name /&gt;&lt;Enter_Location /&gt;&lt;Call_Back_Phone_Number /&gt;&lt;Order_Effective_DateTime /&gt;&lt;Order_Control_Code_Reason /&gt;&lt;Entering_Organization /&gt;&lt;Entering_Device /&gt;&lt;Action_By /&gt;&lt;Advanced_Beneficiary_Notice_Code /&gt;&lt;Ordering_Facility_Code /&gt;&lt;Ordering_Facility_Name /&gt;&lt;/ORC&gt;&lt;Observation_Request&gt;&lt;OBR&gt;&lt;Set_Id_OBR /&gt;&lt;OBR_Placer_Order_Number&gt;220171152&lt;/OBR_Placer_Order_Number&gt;&lt;OBR_Filler_Order_Number /&gt;&lt;Package_Code /&gt;&lt;Package_Description /&gt;&lt;Test_Code&gt;P.RFT&lt;/Test_Code&gt;&lt;Test_Name&gt;Renal Function &lt;/Test_Name&gt;&lt;Priority_Code /&gt;&lt;Requested_DateTime /&gt;&lt;Observation_DateTime /&gt;&lt;Observation_End_DateTime /&gt;&lt;Specimen_Received_DateTime /&gt;&lt;Specimen_Source_Code /&gt;&lt;Specimen_Source_Desc /&gt;&lt;OBR_Ordering_Provider_ID /&gt;&lt;OBR_Ordering_Provider_Name /&gt;&lt;Placer_Field1 /&gt;&lt;Placer_Field2 /&gt;&lt;Filler_Field1 /&gt;&lt;Filler_Field2 /&gt;&lt;Status_Change_DateTime /&gt;&lt;Charge_To_Practice /&gt;&lt;Diagnostic_Serv_Sect_Code /&gt;&lt;Diagnostic_Serv_Sect_Desc /&gt;&lt;Parent_Result&gt;F&lt;/Parent_Result&gt;&lt;OBR_Quantity_Timing /&gt;&lt;Unit_Code /&gt;&lt;Cancel_Reason_Code /&gt;&lt;Cancel_Reason_Desc /&gt;&lt;/OBR&gt;&lt;Observation&gt;&lt;OBX&gt;&lt;SET_ID /&gt;&lt;Observation_Value_Type /&gt;&lt;Observation_Identifier&gt;CL^Chloride&lt;/Observation_Identifier&gt;&lt;Observation_Value&gt;108&lt;/Observation_Value&gt;&lt;ObservationResultsStatus&gt;F&lt;/ObservationResultsStatus&gt;&lt;Observation_Date_Time&gt;20170828181659&lt;/Observation_Date_Time&gt;&lt;Units&gt;mmol/L&lt;/Units&gt;&lt;ReferenceRange&gt;98-107&lt;/ReferenceRange&gt;&lt;MedicalRemarks /&gt;&lt;IsAbnormalflag&gt;A&lt;/IsAbnormalflag&gt;&lt;/OBX&gt;&lt;OBX&gt;&lt;SET_ID /&gt;&lt;Observation_Value_Type /&gt;&lt;Observation_Identifier&gt;CRE^Creatinine&lt;/Observation_Identifier&gt;&lt;Observation_Value&gt;63&lt;/Observation_Value&gt;&lt;ObservationResultsStatus&gt;F&lt;/ObservationResultsStatus&gt;&lt;Observation_Date_Time&gt;20170828181659&lt;/Observation_Date_Time&gt;&lt;Units&gt;umol/L&lt;/Units&gt;&lt;ReferenceRange&gt;62-110&lt;/ReferenceRange&gt;&lt;MedicalRemarks /&gt;&lt;IsAbnormalflag&gt;N&lt;/IsAbnormalflag&gt;&lt;/OBX&gt;&lt;OBX&gt;&lt;SET_ID /&gt;&lt;Observation_Value_Type /&gt;&lt;Observation_Identifier&gt;EGFR^eGFR&lt;/Observation_Identifier&gt;&lt;Observation_Value&gt;95&lt;/Observation_Value&gt;&lt;ObservationResultsStatus&gt;F&lt;/ObservationResultsStatus&gt;&lt;Observation_Date_Time&gt;20170828181659&lt;/Observation_Date_Time&gt;&lt;Units&gt;ml/min/1.73m²&lt;/Units&gt;&lt;ReferenceRange&gt;=&amp;gt; 60&lt;/ReferenceRange&gt;&lt;MedicalRemarks&gt;&amp;lt;br&amp;gt; Note: eGFR calculated using CKD-EPI formula effective on 22/02/2016.&lt;/MedicalRemarks&gt;&lt;IsAbnormalflag&gt;N&lt;/IsAbnormalflag&gt;&lt;/OBX&gt;&lt;OBX&gt;&lt;SET_ID /&gt;&lt;Observation_Value_Type /&gt;&lt;Observation_Identifier&gt;K^Potassium&lt;/Observation_Identifier&gt;&lt;Observation_Value&gt;3.4&lt;/Observation_Value&gt;&lt;ObservationResultsStatus&gt;F&lt;/ObservationResultsStatus&gt;&lt;Observation_Date_Time&gt;20170828181659&lt;/Observation_Date_Time&gt;&lt;Units&gt;mmol/L&lt;/Units&gt;&lt;ReferenceRange&gt;3.5-5.1&lt;/ReferenceRange&gt;&lt;MedicalRemarks /&gt;&lt;IsAbnormalflag&gt;L&lt;/IsAbnormalflag&gt;&lt;/OBX&gt;&lt;OBX&gt;&lt;SET_ID /&gt;&lt;Observation_Value_Type /&gt;&lt;Observation_Identifier&gt;NA^Sodium&lt;/Observation_Identifier&gt;&lt;Observation_Value&gt;133&lt;/Observation_Value&gt;&lt;ObservationResultsStatus&gt;F&lt;/ObservationResultsStatus&gt;&lt;Observation_Date_Time&gt;20170828181659&lt;/Observation_Date_Time&gt;&lt;Units&gt;mmol/L&lt;/Units&gt;&lt;ReferenceRange&gt;132-146&lt;/ReferenceRange&gt;&lt;MedicalRemarks /&gt;&lt;IsAbnormalflag&gt;N&lt;/IsAbnormalflag&gt;&lt;/OBX&gt;&lt;OBX&gt;&lt;SET_ID /&gt;&lt;Observation_Value_Type /&gt;&lt;Observation_Identifier&gt;UA^Uric Acid&lt;/Observation_Identifier&gt;&lt;Observation_Value&gt;202&lt;/Observation_Value&gt;&lt;ObservationResultsStatus&gt;F&lt;/ObservationResultsStatus&gt;&lt;Observation_Date_Time&gt;20170828181659&lt;/Observation_Date_Time&gt;&lt;Units&gt;umol/L&lt;/Units&gt;&lt;ReferenceRange&gt;200-450&lt;/ReferenceRange&gt;&lt;MedicalRemarks /&gt;&lt;IsAbnormalflag&gt;N&lt;/IsAbnormalflag&gt;&lt;/OBX&gt;&lt;OBX&gt;&lt;SET_ID /&gt;&lt;Observation_Value_Type /&gt;&lt;Observation_Identifier&gt;UREA^Urea&lt;/Observation_Identifier&gt;&lt;Observation_Value&gt;3.0&lt;/Observation_Value&gt;&lt;ObservationResultsStatus&gt;F&lt;/ObservationResultsStatus&gt;&lt;Observation_Date_Time&gt;20170828181659&lt;/Observation_Date_Time&gt;&lt;Units&gt;mmol/L&lt;/Units&gt;&lt;ReferenceRange&gt;2.9-8.1&lt;/ReferenceRange&gt;&lt;MedicalRemarks /&gt;&lt;IsAbnormalflag&gt;N&lt;/IsAbnormalflag&gt;&lt;/OBX&gt;&lt;/Observation&gt;&lt;/Observation_Request&gt;&lt;/MSG&gt;&lt;/content&gt;</string></ApprovedResultVaues></GetResultValuesResponse></soap:Body></soap:Envelope>
+93551 [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Started SpringBootLabQuantumApplication in 93.317 seconds (JVM running for 93.847)
+674  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Starting SpringBootLabQuantumApplication on 30714L with PID 123660 (C:\Users\huyh\git\projects\rims-lab-quantum\target\classes started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+690  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - No active profile set, falling back to default profiles: default
+2773 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2773 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+2937 [localhost-startStop-1] INFO  o.a.c.c.C.[.[localhost].[/lab] - Initializing Spring embedded WebApplicationContext
+3093 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3108 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3108 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3423 [restartedMain] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://tempuri.org/}LISIntegrationWebserviceSoapService from class org.tempuri.LISIntegrationWebserviceSoap
+4004 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order status....
+4004 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+39493 [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Starting SpringBootLabQuantumApplication on 30714L with PID 123660 (C:\Users\huyh\git\projects\rims-lab-quantum\target\classes started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+39493 [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - No active profile set, falling back to default profiles: default
+40242 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+40242 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+40273 [localhost-startStop-1] INFO  o.a.c.c.C.[.[localhost].[/lab] - Initializing Spring embedded WebApplicationContext
+40304 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+40320 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+40320 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+40382 [restartedMain] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://tempuri.org/}LISIntegrationWebserviceSoapService from class org.tempuri.LISIntegrationWebserviceSoap
+40460 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order status....
+40460 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+55593 [restartedMain] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Outbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.connectors.connect.mirth.com"><soap:Body><GetResultValues xmlns="http://tempuri.org/"><OrderNo>10000006</OrderNo></GetResultValues></soap:Body></soap:Envelope>
+56752 [restartedMain] WARN  o.a.cxf.phase.PhaseInterceptorChain - Interceptor for {http://tempuri.org/}LISIntegrationWebserviceSoapService#{http://tempuri.org/}GetResultValues has thrown exception, unwinding now
+java.lang.IllegalStateException: IllegalStateException invoking http://52.187.20.127/LISIntegrationtesting/LisIntegrationWebservice.asmx?wsdl: Message received on a Client that has been closed or destroyed.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.mapException(HTTPConduit.java:1385)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.close(HTTPConduit.java:1374)
+	at org.apache.cxf.io.CacheAndWriteOutputStream.postClose(CacheAndWriteOutputStream.java:56)
+	at org.apache.cxf.io.CachedOutputStream.close(CachedOutputStream.java:216)
+	at org.apache.cxf.transport.AbstractConduit.close(AbstractConduit.java:56)
+	at org.apache.cxf.transport.http.HTTPConduit.close(HTTPConduit.java:653)
+	at org.apache.cxf.interceptor.MessageSenderInterceptor$MessageSenderEndingInterceptor.handleMessage(MessageSenderInterceptor.java:62)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+	at org.apache.cxf.endpoint.ClientImpl.doInvoke(ClientImpl.java:514)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:423)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:324)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:277)
+	at org.apache.cxf.frontend.ClientProxy.invokeSync(ClientProxy.java:96)
+	at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:139)
+	at com.sun.proxy.$Proxy106.getResultValues(Unknown Source)
+	at com.iis.rims.lab.quantum.SpringBootLabQuantumApplication$1.run(SpringBootLabQuantumApplication.java:60)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:716)
+	at org.springframework.boot.SpringApplication.afterRefresh(SpringApplication.java:703)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.iis.rims.lab.quantum.SpringBootLabQuantumApplication.main(SpringBootLabQuantumApplication.java:41)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalStateException: Message received on a Client that has been closed or destroyed.
+	at org.apache.cxf.endpoint.ClientImpl.onMessage(ClientImpl.java:701)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.handleResponseInternal(HTTPConduit.java:1680)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.handleResponse(HTTPConduit.java:1559)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.close(HTTPConduit.java:1356)
+	... 26 common frames omitted
+56767 [restartedMain] ERROR o.s.boot.SpringApplication - Application startup failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:735)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:716)
+	at org.springframework.boot.SpringApplication.afterRefresh(SpringApplication.java:703)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.iis.rims.lab.quantum.SpringBootLabQuantumApplication.main(SpringBootLabQuantumApplication.java:41)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.NullPointerException: null
+	at org.apache.cxf.jaxws.JaxWsClientProxy.addressChanged(JaxWsClientProxy.java:275)
+	at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:172)
+	at com.sun.proxy.$Proxy106.getResultValues(Unknown Source)
+	at com.iis.rims.lab.quantum.SpringBootLabQuantumApplication$1.run(SpringBootLabQuantumApplication.java:60)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:732)
+	... 11 common frames omitted
+704  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Starting SpringBootLabQuantumApplication on 30714L with PID 117752 (C:\Users\huyh\git\projects\rims-lab-quantum\target\classes started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+704  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - No active profile set, falling back to default profiles: default
+2790 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2790 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+2916 [localhost-startStop-1] INFO  o.a.c.c.C.[.[localhost].[/lab] - Initializing Spring embedded WebApplicationContext
+3089 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3089 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3089 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3450 [restartedMain] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://tempuri.org/}LISIntegrationWebserviceSoapService from class org.tempuri.LISIntegrationWebserviceSoap
+3995 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order status....
+3995 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+9649 [restartedMain] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Outbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.connectors.connect.mirth.com"><soap:Body><GetResultValues xmlns="http://tempuri.org/"><OrderNo>10000006</OrderNo></GetResultValues></soap:Body></soap:Envelope>
+7085997 [restartedMain] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Inbound Message:
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><GetResultValuesResponse xmlns="http://tempuri.org/"><ApprovedResultVaues><string>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;content xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;&lt;MSG&gt;&lt;VN&gt;&lt;/VN&gt;&lt;OrgId&gt;&lt;/OrgId&gt;&lt;LastUpdate&gt;Aug 30 2017 11:53AM&lt;/LastUpdate&gt;&lt;MSH&gt;&lt;Sending_Application&gt;LIS&lt;/Sending_Application&gt;&lt;Sending_Facility&gt;Attune&lt;/Sending_Facility&gt;&lt;Receiving_Application&gt;MYRENALTEAM&lt;/Receiving_Application&gt;&lt;Receiving_Facility&gt;MYRENALTEAM&lt;/Receiving_Facility&gt;&lt;Message_Date_Time /&gt;&lt;Message_Type&gt;ORU&lt;/Message_Type&gt;&lt;Message_Control_Id /&gt;&lt;/MSH&gt;&lt;EVN&gt;&lt;Event_Type_Code&gt;R01&lt;/Event_Type_Code&gt;&lt;Recorded_DateTime /&gt;&lt;/EVN&gt;&lt;PID&gt;&lt;Patient_Id_Ext /&gt;&lt;Patient_Id_Int&gt;470121-08-6071&lt;/Patient_Id_Int&gt;&lt;Patient_Id_Type&gt;NRIC Number&lt;/Patient_Id_Type&gt;&lt;Patient_Id_Number&gt;RNL00003227&lt;/Patient_Id_Number&gt;&lt;Patient_Name&gt;ABD HAMID BIN KAIL&lt;/Patient_Name&gt;&lt;Date_Of_Birth&gt;19470821000000&lt;/Date_Of_Birth&gt;&lt;Gender_Code&gt;M&lt;/Gender_Code&gt;&lt;Race_code /&gt;&lt;Address1 /&gt;&lt;Address2 /&gt;&lt;Address3&gt;__Aug 30 2017 11:53AM&lt;/Address3&gt;&lt;City /&gt;&lt;State /&gt;&lt;Postal_Code /&gt;&lt;Country_Code /&gt;&lt;Phone_Home /&gt;&lt;Phone_Mobile /&gt;&lt;Phone_Business /&gt;&lt;Primary_Language /&gt;&lt;Marital_Status_Code /&gt;&lt;Religion_Code /&gt;&lt;Nationality_Code&gt;Malaysia&lt;/Nationality_Code&gt;&lt;/PID&gt;&lt;PV1&gt;&lt;Patient_Type_Code /&gt;&lt;Ward_Code&gt;Not Registered&lt;/Ward_Code&gt;&lt;Admission_Type /&gt;&lt;Preadmit_Number /&gt;&lt;Specialty_Code /&gt;&lt;Referring_Doctor_Code /&gt;&lt;Referring_Doctor_Desc /&gt;&lt;Consulting_Doctor_Code /&gt;&lt;Consulting_Doctor_Desc /&gt;&lt;Admitting_Doctor_Code /&gt;&lt;Admitting_Doctor_Desc /&gt;&lt;Patient_Class /&gt;&lt;Financial_Class_Code /&gt;&lt;Admit_DateTime&gt;20170828180940&lt;/Admit_DateTime&gt;&lt;/PV1&gt;&lt;ORC&gt;&lt;Order_Control /&gt;&lt;ORC_Placer_Order_Number&gt;436436576&lt;/ORC_Placer_Order_Number&gt;&lt;ORC_Filler_Order_Number /&gt;&lt;Placer_Group_Number /&gt;&lt;Order_Status_Code /&gt;&lt;Response_Flag /&gt;&lt;ORC_Quantity_Timing /&gt;&lt;Parent /&gt;&lt;DateTime_Of_Transaction /&gt;&lt;Entered_By_ID&gt;192384&lt;/Entered_By_ID&gt;&lt;Entered_By_Name&gt;LIVE SYSTEM TESTING - Sathishk&lt;/Entered_By_Name&gt;&lt;Verified_By_ID /&gt;&lt;Verified_By_Name /&gt;&lt;ORC_Ordering_Provider_ID /&gt;&lt;ORC_Ordering_Provider_Name /&gt;&lt;Enter_Location /&gt;&lt;Call_Back_Phone_Number /&gt;&lt;Order_Effective_DateTime /&gt;&lt;Order_Control_Code_Reason /&gt;&lt;Entering_Organization /&gt;&lt;Entering_Device /&gt;&lt;Action_By /&gt;&lt;Advanced_Beneficiary_Notice_Code /&gt;&lt;Ordering_Facility_Code /&gt;&lt;Ordering_Facility_Name /&gt;&lt;/ORC&gt;&lt;Observation_Request&gt;&lt;OBR&gt;&lt;Set_Id_OBR /&gt;&lt;OBR_Placer_Order_Number&gt;220171152&lt;/OBR_Placer_Order_Number&gt;&lt;OBR_Filler_Order_Number /&gt;&lt;Package_Code /&gt;&lt;Package_Description /&gt;&lt;Test_Code&gt;P.RFT&lt;/Test_Code&gt;&lt;Test_Name&gt;Renal Function &lt;/Test_Name&gt;&lt;Priority_Code /&gt;&lt;Requested_DateTime /&gt;&lt;Observation_DateTime /&gt;&lt;Observation_End_DateTime /&gt;&lt;Specimen_Received_DateTime /&gt;&lt;Specimen_Source_Code /&gt;&lt;Specimen_Source_Desc /&gt;&lt;OBR_Ordering_Provider_ID /&gt;&lt;OBR_Ordering_Provider_Name /&gt;&lt;Placer_Field1 /&gt;&lt;Placer_Field2 /&gt;&lt;Filler_Field1 /&gt;&lt;Filler_Field2 /&gt;&lt;Status_Change_DateTime /&gt;&lt;Charge_To_Practice /&gt;&lt;Diagnostic_Serv_Sect_Code /&gt;&lt;Diagnostic_Serv_Sect_Desc /&gt;&lt;Parent_Result&gt;F&lt;/Parent_Result&gt;&lt;OBR_Quantity_Timing /&gt;&lt;Unit_Code /&gt;&lt;Cancel_Reason_Code /&gt;&lt;Cancel_Reason_Desc /&gt;&lt;/OBR&gt;&lt;Observation&gt;&lt;OBX&gt;&lt;SET_ID /&gt;&lt;Observation_Value_Type /&gt;&lt;Observation_Identifier&gt;CL^Chloride&lt;/Observation_Identifier&gt;&lt;Observation_Value&gt;108&lt;/Observation_Value&gt;&lt;ObservationResultsStatus&gt;F&lt;/ObservationResultsStatus&gt;&lt;Observation_Date_Time&gt;20170828181659&lt;/Observation_Date_Time&gt;&lt;Units&gt;mmol/L&lt;/Units&gt;&lt;ReferenceRange&gt;98-107&lt;/ReferenceRange&gt;&lt;MedicalRemarks /&gt;&lt;IsAbnormalflag&gt;A&lt;/IsAbnormalflag&gt;&lt;/OBX&gt;&lt;OBX&gt;&lt;SET_ID /&gt;&lt;Observation_Value_Type /&gt;&lt;Observation_Identifier&gt;CRE^Creatinine&lt;/Observation_Identifier&gt;&lt;Observation_Value&gt;63&lt;/Observation_Value&gt;&lt;ObservationResultsStatus&gt;F&lt;/ObservationResultsStatus&gt;&lt;Observation_Date_Time&gt;20170828181659&lt;/Observation_Date_Time&gt;&lt;Units&gt;umol/L&lt;/Units&gt;&lt;ReferenceRange&gt;62-110&lt;/ReferenceRange&gt;&lt;MedicalRemarks /&gt;&lt;IsAbnormalflag&gt;N&lt;/IsAbnormalflag&gt;&lt;/OBX&gt;&lt;OBX&gt;&lt;SET_ID /&gt;&lt;Observation_Value_Type /&gt;&lt;Observation_Identifier&gt;EGFR^eGFR&lt;/Observation_Identifier&gt;&lt;Observation_Value&gt;95&lt;/Observation_Value&gt;&lt;ObservationResultsStatus&gt;F&lt;/ObservationResultsStatus&gt;&lt;Observation_Date_Time&gt;20170828181659&lt;/Observation_Date_Time&gt;&lt;Units&gt;ml/min/1.73m²&lt;/Units&gt;&lt;ReferenceRange&gt;=&amp;gt; 60&lt;/ReferenceRange&gt;&lt;MedicalRemarks&gt;&amp;lt;br&amp;gt; Note: eGFR calculated using CKD-EPI formula effective on 22/02/2016.&lt;/MedicalRemarks&gt;&lt;IsAbnormalflag&gt;N&lt;/IsAbnormalflag&gt;&lt;/OBX&gt;&lt;OBX&gt;&lt;SET_ID /&gt;&lt;Observation_Value_Type /&gt;&lt;Observation_Identifier&gt;K^Potassium&lt;/Observation_Identifier&gt;&lt;Observation_Value&gt;3.4&lt;/Observation_Value&gt;&lt;ObservationResultsStatus&gt;F&lt;/ObservationResultsStatus&gt;&lt;Observation_Date_Time&gt;20170828181659&lt;/Observation_Date_Time&gt;&lt;Units&gt;mmol/L&lt;/Units&gt;&lt;ReferenceRange&gt;3.5-5.1&lt;/ReferenceRange&gt;&lt;MedicalRemarks /&gt;&lt;IsAbnormalflag&gt;L&lt;/IsAbnormalflag&gt;&lt;/OBX&gt;&lt;OBX&gt;&lt;SET_ID /&gt;&lt;Observation_Value_Type /&gt;&lt;Observation_Identifier&gt;NA^Sodium&lt;/Observation_Identifier&gt;&lt;Observation_Value&gt;133&lt;/Observation_Value&gt;&lt;ObservationResultsStatus&gt;F&lt;/ObservationResultsStatus&gt;&lt;Observation_Date_Time&gt;20170828181659&lt;/Observation_Date_Time&gt;&lt;Units&gt;mmol/L&lt;/Units&gt;&lt;ReferenceRange&gt;132-146&lt;/ReferenceRange&gt;&lt;MedicalRemarks /&gt;&lt;IsAbnormalflag&gt;N&lt;/IsAbnormalflag&gt;&lt;/OBX&gt;&lt;OBX&gt;&lt;SET_ID /&gt;&lt;Observation_Value_Type /&gt;&lt;Observation_Identifier&gt;UA^Uric Acid&lt;/Observation_Identifier&gt;&lt;Observation_Value&gt;202&lt;/Observation_Value&gt;&lt;ObservationResultsStatus&gt;F&lt;/ObservationResultsStatus&gt;&lt;Observation_Date_Time&gt;20170828181659&lt;/Observation_Date_Time&gt;&lt;Units&gt;umol/L&lt;/Units&gt;&lt;ReferenceRange&gt;200-450&lt;/ReferenceRange&gt;&lt;MedicalRemarks /&gt;&lt;IsAbnormalflag&gt;N&lt;/IsAbnormalflag&gt;&lt;/OBX&gt;&lt;OBX&gt;&lt;SET_ID /&gt;&lt;Observation_Value_Type /&gt;&lt;Observation_Identifier&gt;UREA^Urea&lt;/Observation_Identifier&gt;&lt;Observation_Value&gt;3.0&lt;/Observation_Value&gt;&lt;ObservationResultsStatus&gt;F&lt;/ObservationResultsStatus&gt;&lt;Observation_Date_Time&gt;20170828181659&lt;/Observation_Date_Time&gt;&lt;Units&gt;mmol/L&lt;/Units&gt;&lt;ReferenceRange&gt;2.9-8.1&lt;/ReferenceRange&gt;&lt;MedicalRemarks /&gt;&lt;IsAbnormalflag&gt;N&lt;/IsAbnormalflag&gt;&lt;/OBX&gt;&lt;/Observation&gt;&lt;/Observation_Request&gt;&lt;/MSG&gt;&lt;/content&gt;</string></ApprovedResultVaues></GetResultValuesResponse></soap:Body></soap:Envelope>
+686  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Starting SpringBootLabQuantumApplication on 30714L with PID 124820 (C:\Users\huyh\git\projects\rims-lab-quantum\target\classes started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+687  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - No active profile set, falling back to default profiles: default
+2812 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2814 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+2951 [localhost-startStop-1] INFO  o.a.c.c.C.[.[localhost].[/lab] - Initializing Spring embedded WebApplicationContext
+3122 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3123 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3123 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3513 [restartedMain] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://tempuri.org/}LISIntegrationWebserviceSoapService from class org.tempuri.LISIntegrationWebserviceSoap
+4075 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order status....
+4080 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+1534933 [restartedMain] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Outbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.connectors.connect.mirth.com"><soap:Body><GetResultValues xmlns="http://tempuri.org/"><OrderNo>10000006</OrderNo></GetResultValues></soap:Body></soap:Envelope>
+731  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Starting SpringBootLabQuantumApplication on 30714L with PID 125416 (C:\Users\huyh\git\projects\rims-lab-quantum\target\classes started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+732  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - No active profile set, falling back to default profiles: default
+2856 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2857 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+2984 [localhost-startStop-1] INFO  o.a.c.c.C.[.[localhost].[/lab] - Initializing Spring embedded WebApplicationContext
+3152 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3153 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3153 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3529 [restartedMain] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://tempuri.org/}LISIntegrationWebserviceSoapService from class org.tempuri.LISIntegrationWebserviceSoap
+4085 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order status....
+4091 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+689  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Starting SpringBootLabQuantumApplication on 30714L with PID 121844 (C:\Users\huyh\git\projects\rims-lab-quantum\target\classes started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+690  [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - No active profile set, falling back to default profiles: default
+2821 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2822 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+2957 [localhost-startStop-1] INFO  o.a.c.c.C.[.[localhost].[/lab] - Initializing Spring embedded WebApplicationContext
+3126 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3126 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3126 [localhost-startStop-1] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3498 [restartedMain] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://tempuri.org/}LISIntegrationWebserviceSoapService from class org.tempuri.LISIntegrationWebserviceSoap
+4050 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order status....
+4056 [restartedMain] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+10959 [restartedMain] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Outbound Message:
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.connectors.connect.mirth.com"><soap:Body><GetResultValues xmlns="http://tempuri.org/"><OrderNo>10000006</OrderNo></GetResultValues></soap:Body></soap:Envelope>
+32601 [restartedMain] INFO  o.a.c.s.L.L.LISIntegrationWebserviceSoap - Inbound Message:
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><GetResultValuesResponse xmlns="http://tempuri.org/"><ApprovedResultVaues><string><?xml version="1.0" encoding="utf-8"?><content xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><MSG><VN></VN><OrgId></OrgId><LastUpdate>Aug 30 2017  2:28PM</LastUpdate><MSH><Sending_Application>LIS</Sending_Application><Sending_Facility>Attune</Sending_Facility><Receiving_Application>MYRENALTEAM</Receiving_Application><Receiving_Facility>MYRENALTEAM</Receiving_Facility><Message_Date_Time /><Message_Type>ORU</Message_Type><Message_Control_Id /></MSH><EVN><Event_Type_Code>R01</Event_Type_Code><Recorded_DateTime /></EVN><PID><Patient_Id_Ext /><Patient_Id_Int>470121-08-6071</Patient_Id_Int><Patient_Id_Type>NRIC Number</Patient_Id_Type><Patient_Id_Number>RNL00003227</Patient_Id_Number><Patient_Name>ABD HAMID BIN KAIL</Patient_Name><Date_Of_Birth>19470821000000</Date_Of_Birth><Gender_Code>M</Gender_Code><Race_code /><Address1 /><Address2 /><Address3>__Aug 30 2017  2:28PM</Address3><City /><State /><Postal_Code /><Country_Code /><Phone_Home /><Phone_Mobile /><Phone_Business /><Primary_Language /><Marital_Status_Code /><Religion_Code /><Nationality_Code>Malaysia</Nationality_Code></PID><PV1><Patient_Type_Code /><Ward_Code>Not Registered</Ward_Code><Admission_Type /><Preadmit_Number /><Specialty_Code /><Referring_Doctor_Code /><Referring_Doctor_Desc /><Consulting_Doctor_Code /><Consulting_Doctor_Desc /><Admitting_Doctor_Code /><Admitting_Doctor_Desc /><Patient_Class /><Financial_Class_Code /><Admit_DateTime>20170828180940</Admit_DateTime></PV1><ORC><Order_Control /><ORC_Placer_Order_Number>436436576</ORC_Placer_Order_Number><ORC_Filler_Order_Number /><Placer_Group_Number /><Order_Status_Code /><Response_Flag /><ORC_Quantity_Timing /><Parent /><DateTime_Of_Transaction /><Entered_By_ID>192384</Entered_By_ID><Entered_By_Name>LIVE SYSTEM TESTING - Sathishk</Entered_By_Name><Verified_By_ID /><Verified_By_Name /><ORC_Ordering_Provider_ID /><ORC_Ordering_Provider_Name /><Enter_Location /><Call_Back_Phone_Number /><Order_Effective_DateTime /><Order_Control_Code_Reason /><Entering_Organization /><Entering_Device /><Action_By /><Advanced_Beneficiary_Notice_Code /><Ordering_Facility_Code /><Ordering_Facility_Name /></ORC><Observation_Request><OBR><Set_Id_OBR /><OBR_Placer_Order_Number>220171152</OBR_Placer_Order_Number><OBR_Filler_Order_Number /><Package_Code /><Package_Description /><Test_Code>P.RFT</Test_Code><Test_Name>Renal Function </Test_Name><Priority_Code /><Requested_DateTime /><Observation_DateTime /><Observation_End_DateTime /><Specimen_Received_DateTime /><Specimen_Source_Code /><Specimen_Source_Desc /><OBR_Ordering_Provider_ID /><OBR_Ordering_Provider_Name /><Placer_Field1 /><Placer_Field2 /><Filler_Field1 /><Filler_Field2 /><Status_Change_DateTime /><Charge_To_Practice /><Diagnostic_Serv_Sect_Code /><Diagnostic_Serv_Sect_Desc /><Parent_Result>F</Parent_Result><OBR_Quantity_Timing /><Unit_Code /><Cancel_Reason_Code /><Cancel_Reason_Desc /></OBR><Observation><OBX><SET_ID /><Observation_Value_Type /><Observation_Identifier>CL^Chloride</Observation_Identifier><Observation_Value>108</Observation_Value><ObservationResultsStatus>F</ObservationResultsStatus><Observation_Date_Time>20170828181659</Observation_Date_Time><Units>mmol/L</Units><ReferenceRange>98-107</ReferenceRange><MedicalRemarks /><IsAbnormalflag>A</IsAbnormalflag></OBX><OBX><SET_ID /><Observation_Value_Type /><Observation_Identifier>CRE^Creatinine</Observation_Identifier><Observation_Value>63</Observation_Value><ObservationResultsStatus>F</ObservationResultsStatus><Observation_Date_Time>20170828181659</Observation_Date_Time><Units>umol/L</Units><ReferenceRange>62-110</ReferenceRange><MedicalRemarks /><IsAbnormalflag>N</IsAbnormalflag></OBX><OBX><SET_ID /><Observation_Value_Type /><Observation_Identifier>EGFR^eGFR</Observation_Identifier><Observation_Value>95</Observation_Value><ObservationResultsStatus>F</ObservationResultsStatus><Observation_Date_Time>20170828181659</Observation_Date_Time><Units>ml/min/1.73m²</Units><ReferenceRange>=&amp;gt; 60</ReferenceRange><MedicalRemarks>&amp;lt;br&amp;gt; Note: eGFR calculated using CKD-EPI formula effective on 22/02/2016.</MedicalRemarks><IsAbnormalflag>N</IsAbnormalflag></OBX><OBX><SET_ID /><Observation_Value_Type /><Observation_Identifier>K^Potassium</Observation_Identifier><Observation_Value>3.4</Observation_Value><ObservationResultsStatus>F</ObservationResultsStatus><Observation_Date_Time>20170828181659</Observation_Date_Time><Units>mmol/L</Units><ReferenceRange>3.5-5.1</ReferenceRange><MedicalRemarks /><IsAbnormalflag>L</IsAbnormalflag></OBX><OBX><SET_ID /><Observation_Value_Type /><Observation_Identifier>NA^Sodium</Observation_Identifier><Observation_Value>133</Observation_Value><ObservationResultsStatus>F</ObservationResultsStatus><Observation_Date_Time>20170828181659</Observation_Date_Time><Units>mmol/L</Units><ReferenceRange>132-146</ReferenceRange><MedicalRemarks /><IsAbnormalflag>N</IsAbnormalflag></OBX><OBX><SET_ID /><Observation_Value_Type /><Observation_Identifier>UA^Uric Acid</Observation_Identifier><Observation_Value>202</Observation_Value><ObservationResultsStatus>F</ObservationResultsStatus><Observation_Date_Time>20170828181659</Observation_Date_Time><Units>umol/L</Units><ReferenceRange>200-450</ReferenceRange><MedicalRemarks /><IsAbnormalflag>N</IsAbnormalflag></OBX><OBX><SET_ID /><Observation_Value_Type /><Observation_Identifier>UREA^Urea</Observation_Identifier><Observation_Value>3.0</Observation_Value><ObservationResultsStatus>F</ObservationResultsStatus><Observation_Date_Time>20170828181659</Observation_Date_Time><Units>mmol/L</Units><ReferenceRange>2.9-8.1</ReferenceRange><MedicalRemarks /><IsAbnormalflag>N</IsAbnormalflag></OBX></Observation></Observation_Request></MSG></content></string></ApprovedResultVaues></GetResultValuesResponse></soap:Body></soap:Envelope>
+36259 [restartedMain] INFO  c.i.r.l.q.SpringBootLabQuantumApplication - Started SpringBootLabQuantumApplication in 36.029 seconds (JVM running for 36.558)
