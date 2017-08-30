@@ -107,15 +107,11 @@
 		<dependency>
 		    <groupId>commons-collections</groupId>
 		    <artifactId>commons-collections</artifactId>
-<<<<<<< Upstream, based on origin/master
 		</dependency>
 		
 		<dependency>
 		    <groupId>commons-beanutils</groupId>
 		    <artifactId>commons-beanutils</artifactId>
-=======
-		    <version>3.2.2</version>
->>>>>>> 29bf08f lab
 		</dependency>
 
 		<dependency>

@@ -106,10 +106,10 @@
             </xsd:sequence>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="Observation_Request">
+        <xsd:element name="Observation_Request" maxOccurs="unbounded" minOccurs="1">
           <xsd:complexType>
             <xsd:sequence>
-              <xsd:element name="OBR" maxOccurs="unbounded" minOccurs="0">
+              <xsd:element name="OBR">
                 <xsd:complexType>
                   <xsd:sequence>
                     <xsd:element name="Set_Id_OBR" type="xsd:string" />
@@ -172,6 +172,28 @@
                   </xsd:sequence>
                 </xsd:complexType>
               </xsd:element>
+              <xsd:element name="Observation" minOccurs="0">
+                 <xsd:complexType>
+                   <xsd:sequence>
+                     <xsd:element name="OBX" minOccurs="0" maxOccurs="unbounded">
+                       <xsd:complexType>
+                         <xsd:sequence>
+                           <xsd:element name="SET_ID" type="xsd:string" minOccurs="0" />
+                           <xsd:element name="Observation_Value_Type" type="xsd:string" minOccurs="0" />
+                           <xsd:element name="Observation_Identifier" type="xsd:string" minOccurs="0" />
+                           <xsd:element name="Observation_Value" type="xsd:string" minOccurs="0" />
+                           <xsd:element name="ObservationResultsStatus" type="xsd:string" minOccurs="0" />
+                           <xsd:element name="Observation_Date_Time" type="xsd:string" minOccurs="0" />
+                           <xsd:element name="Units" type="xsd:string" minOccurs="0" />
+                           <xsd:element name="ReferenceRange" type="xsd:string" minOccurs="0" />
+                           <xsd:element name="MedicalRemarks" type="xsd:string" minOccurs="0" />
+                           <xsd:element name="IsAbnormalflag" type="xsd:string" minOccurs="0" />
+                         </xsd:sequence>
+                       </xsd:complexType>
+                     </xsd:element>
+                   </xsd:sequence>
+                 </xsd:complexType>
+               </xsd:element>
             </xsd:sequence>
           </xsd:complexType>
         </xsd:element>
