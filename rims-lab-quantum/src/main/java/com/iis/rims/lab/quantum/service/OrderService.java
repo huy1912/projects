@@ -60,8 +60,8 @@ public class OrderService {
 	
 	@PostConstruct
 	public void init() {
-		labInLocalDir = labInLocalDir + "/in";
-		labPdfLocalDir = labInLocalDir + "/pdf";
+		labInLocalDir = labLocalDir + "/in";
+		labPdfLocalDir = labLocalDir + "/pdf";
 	}
 	
 	public void pushOrders() throws Exception {
@@ -158,7 +158,7 @@ public class OrderService {
 						data = integrationWebserviceSoap.getReportPDF(labOrderNumber, username, password);
 						if (data != null & data.length > 0) {
 							pdfFileName = labOrderNumber + ".pdf";
-							String path = String.format("%s/%s", labPdfLocalDir + "/pdf", pdfFileName);
+							String path = String.format("%s/%s", labPdfLocalDir, pdfFileName);
 							FileUtils.writeByteArrayToFile(new File(path), data);
 						}
 					}
@@ -168,7 +168,7 @@ public class OrderService {
 					
 					for (String result : resultList) {
 						// Log the raw file for processing in the case of FALIED.
-						String path = String.format("%s/%s.xml", labLocalDir + "/in", labOrderNumber);
+						String path = String.format("%s/%s.xml", labInLocalDir, labOrderNumber);
 						try {
 							FileUtils.writeStringToFile(new File(path) , result, Charset.defaultCharset());
 						}
