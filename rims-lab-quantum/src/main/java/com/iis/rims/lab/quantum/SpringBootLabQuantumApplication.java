@@ -64,18 +64,21 @@ public class SpringBootLabQuantumApplication extends SpringBootServletInitialize
 						System.err.println(msg);
 					}
 				}
-				System.err.println(results);
-				byte[] data = integrationWebserviceSoap.getReportPDF("10000007", "RenalTeam", "renal@123");
-				if (data != null & data.length > 0) {
-					FileUtils.writeByteArrayToFile(new File("report2.pdf"), data);
-				}
+//				System.err.println(results);
+//				byte[] data = integrationWebserviceSoap.getReportPDF("10000007", "RenalTeam", "renal@123");
+//				if (data != null & data.length > 0) {
+//					FileUtils.writeByteArrayToFile(new File("report2.pdf"), data);
+//				}
 				
 				if (true) {
 					return;
 				}
 				//String xmlData = "<![CDATA[" + EncodeMessage.encodeMsg() + "]]>";
-//				String xmlData = EncodeMessage.encodeMsg();
-//				String ret = integrationWebserviceSoap.pushOrder(xmlData , "RenalTeam", "renal@123");
+				String xmlData = EncodeMessage.encodeMsg();
+				String ret = integrationWebserviceSoap.pushOrder(xmlData , "RenalTeam", "renal@123");
+				if (true) {
+					return;
+				}
 //				System.err.println(ret);
 				LabOrderDetailDAO labOrderDetailDAO = new LabOrderDetailDAO();
 				List<LabOrderDetail> list = labOrderDetailDAO.findByCriteria("labOrderDetailId", SortDirection.ASC,
@@ -96,14 +99,14 @@ public class SpringBootLabQuantumApplication extends SpringBootServletInitialize
 					details.add(detail);
 				}
 				
-				System.err.println(orders.size());
-				
-				for (Entry<Integer, List<LabOrderDetail>> entry : orders.entrySet()) {
-					MSG orderMessage = QuantumLabUploadHandler.convertToOrderMessage(entry.getKey(), entry.getValue(), LabOrderStatus.PN);
-					String xmlData = EncodeMessage.encodeMsg(orderMessage);
-					String ret = integrationWebserviceSoap.pushOrder(xmlData , "RenalTeam", "renal@123");
-					System.err.println(ret);
-				}
+//				System.err.println(orders.size());
+//				
+//				for (Entry<Integer, List<LabOrderDetail>> entry : orders.entrySet()) {
+//					MSG orderMessage = QuantumLabUploadHandler.convertToOrderMessage(entry.getKey(), entry.getValue(), LabOrderStatus.PN);
+//					String xmlData = EncodeMessage.encodeMsg(orderMessage);
+//					String ret = integrationWebserviceSoap.pushOrder(xmlData , "RenalTeam", "renal@123");
+//					System.err.println(ret);
+//				}
 				
 			}
 		};

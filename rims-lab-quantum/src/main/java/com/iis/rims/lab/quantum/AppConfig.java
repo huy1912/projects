@@ -29,6 +29,11 @@ public class AppConfig {
 	@Value("${lis.wsdl}")
 	private String lisWsdl;
 	
+	@Value("${lab.local.dir}")
+	private String labLocalDir;
+	
+	private ThreadLocal<String> orderNumberThreadLocal = new ThreadLocal<>();
+	
 	/*
 	@Bean(name = Bus.DEFAULT_BUS_ID)
 	public SpringBus springBus() {
@@ -47,14 +52,14 @@ public class AppConfig {
 	
 //	@Bean
 	public AbstractLoggingInterceptor logOutInterceptor() {
-	    LoggingOutInterceptor logOutInterceptor = new LabLoggingOutInterceptor();
+	    LoggingOutInterceptor logOutInterceptor = new LabLoggingOutInterceptor(labLocalDir + "/out", orderNumberThreadLocal);
 //	    logOutInterceptor.setPrettyLogging(true);
 	    return logOutInterceptor;
 	}
 	
 //	@Bean
 	public AbstractLoggingInterceptor logInInterceptor() {
-	    LoggingInInterceptor logInInterceptor = new LabLoggingInInterceptor();
+	    LoggingInInterceptor logInInterceptor = new LabLoggingInInterceptor(labLocalDir + "/in", orderNumberThreadLocal);
 //	    logInInterceptor.setPrettyLogging(true);
 	    return logInInterceptor;
 	}

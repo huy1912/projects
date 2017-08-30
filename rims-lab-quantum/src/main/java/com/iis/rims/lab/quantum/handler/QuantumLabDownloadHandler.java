@@ -25,6 +25,7 @@ import com.iis.rims.hibernate.dao.LabOrderDAO;
 import com.iis.rims.hibernate.dao.LabOrderDetailDAO;
 import com.iis.rims.hibernate.dao.LabRtTestCodeDAO;
 import com.iis.rims.hibernate.dao.LabTestCodeDAO;
+import com.iis.rims.lab.quantum.message.DecodeMessage;
 import com.iis.rims.lab.quantum.orm.MSG;
 import com.iis.rims.lab.quantum.orm.MSG.ObservationRequest;
 import com.iis.rims.lab.quantum.orm.MSG.ObservationRequest.Observation.OBX;
@@ -39,8 +40,10 @@ public class QuantumLabDownloadHandler {
 		POST_TEST_CODE_MAPPING.put("CRE", "CREPOST");
 	}
 
-	protected void processResults(MSG msg, String messageText) {
+	public static void processResults(String messageText, String internalOrderNumber, String orderFile) {
 		try {
+			MSG msg = DecodeMessage.decodeResults(messageText);
+			
 			LabOrderDAO labOrderDAO = new LabOrderDAO();
 			LabOrderDetailDAO labOrderDetailDAO = new LabOrderDetailDAO();
 			LabTestCodeDAO labTestCodeDAO = new LabTestCodeDAO();
@@ -86,6 +89,7 @@ public class QuantumLabDownloadHandler {
 						testCodeResults.put(testCode, insertValue);
 					}
 					if (!testCodeResults.isEmpty()) {
+						boolean okProcessed = true;
 						Set<String> testCodeKeys = testCodeResults.keySet();
 						// The mapping will return 1 to 1 mapping between
 						// test code and RT test code.
@@ -107,13 +111,11 @@ public class QuantumLabDownloadHandler {
 							// Don't need to create the failed order file
 							// again if the file already existed.
 							if (labOrderDetail.getFailedOrderPath() == null) {
-								String failedFileName = file; // String.format("%s.%s",
-																// file,
-																// DateTimeFormatUtils.toDate(currentDate));
-								String failedOrderPath = String.format("%s/%s", FAIL_ORDER_FOLDER, failedFileName);
-								labOrderDetail.setFailedOrderPath(failedOrderPath);
+//								String failedFileName = orderFile;
+//								String failedOrderPath = String.format("%s/%s", FAIL_ORDER_FOLDER, failedFileName);
+								labOrderDetail.setFailedOrderPath(orderFile);
 							}
-							failedOrderFile = orderFile;
+							okProcessed = false;
 						}
 						else {
 							List<String> rtTestCodes = rtTestCodeMapping.get(0);
@@ -139,19 +141,18 @@ public class QuantumLabDownloadHandler {
 						labOrderDetail.setLabResultDate(labResultDate);
 						labOrderDetail.setOrderHl7message(messageText);
 						labOrderDetailDAO.update(labOrderDetail);
-						if (failedOrderFile == null) {
-							successfulList.add(new LabProcessResult().build(labOrderDetail.getLabOrderNumber(),
-									labOrderDetail.getOrderNumberRef(), file, pdfFile));
+						if (okProcessed) {
+							successfulList.add(new LabProcessResult().build(internalOrderNumber,
+									labOrderDetail.getOrderNumberRef(), orderFile, pdfFile));
 						} else {
-							missingErrorCodeList.add(new LabProcessResult().build(labOrderDetail.getLabOrderNumber(),
-									labOrderDetail.getOrderNumberRef(), file, pdfFile));
+							missingErrorCodeList.add(new LabProcessResult().build(internalOrderNumber,
+									labOrderDetail.getOrderNumberRef(), orderFile, pdfFile));
 						}
 
 					}
 				} else {
-					LOGGER.error(String.format("Invalid result HL7 lab order %s. Please contact the lab.", file));
-					cannotProcessList.add(new LabProcessResult().buildOruFileName(file));
-					failedOrderFile = orderFile;
+					LOGGER.error(String.format("Invalid lab result %s. Please contact the lab.", internalOrderNumber));
+					cannotProcessList.add(new LabProcessResult().buildOruFileName(internalOrderNumber));
 				}
 			}
 

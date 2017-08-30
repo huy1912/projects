@@ -1,16 +1,21 @@
 package com.iis.rims.lab.quantum.service;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.tempuri.ArrayOfString;
 import org.tempuri.LISIntegrationWebserviceSoap;
 
 import com.iis.rims.common.RIMSConstants.LabOrderStatus;
@@ -19,6 +24,7 @@ import com.iis.rims.domain.LabOrderDetail;
 import com.iis.rims.hibernate.dao.LabOrderDetailDAO;
 import com.iis.rims.integration.UploadStatus;
 import com.iis.rims.lab.quantum.AppConfig;
+import com.iis.rims.lab.quantum.handler.QuantumLabDownloadHandler;
 import com.iis.rims.lab.quantum.handler.QuantumLabUploadHandler;
 import com.iis.rims.lab.quantum.message.DecodeMessage;
 import com.iis.rims.lab.quantum.message.EncodeMessage;
@@ -39,6 +45,9 @@ public class OrderService {
 	
 	@Value("${labCustomerId}")
 	private int labCustomerId;
+	
+	@Value("${lab.local.dir}")
+	private String labLocalDir;
 	
 	public OrderService() {
 		AppConfig.LOGGER.info("construct order service....");
@@ -106,10 +115,46 @@ public class OrderService {
 			catch (Exception ex) {
 				for (LabOrderDetail detail : labOrderDetails) {
 					AppConfig.LOGGER.error("Uploaded failed the order detail for " + detail.getAccessionNumber());
-					detail.setUploadStatus(2); // FAILED
+					detail.setUploadStatus(UploadStatus.FAILED.ordinal());
 					labOrderDetailDAO.update(detail);
 				}
 			}
 		}
+	}
+	
+	/**
+	 * Get results
+	 */
+	public void getResults() {
+		AppConfig.LOGGER.info("Start getting results");
+		LabOrderDetailDAO labOrderDetailDAO = new LabOrderDetailDAO();
+		List<LabOrderDetail> list = labOrderDetailDAO.findByCriteria("labOrderDetailId", SortDirection.ASC,
+				Restrictions.eq("orderStatus", LabOrderStatus.PN.ordinal()),
+				Restrictions.eq("labCustomerId", labCustomerId),
+				Restrictions.isNotNull("labOrderNumber"),
+				Restrictions.eq("uploadStatus", 1)
+				); // 2 : FAILED upload
+		for (LabOrderDetail labOrderDetail : list) {
+			String labOrderNumber = labOrderDetail.getLabOrderNumber();
+			ArrayOfString results = integrationWebserviceSoap.getResultValues(labOrderNumber);
+			if (results != null) {
+				List<String> resultList = results.getString();
+				if (!resultList.isEmpty()) {
+					for (String result : resultList) {
+						// Log the raw file for processing in the case of FALIED.
+						//labLocalDir
+						String path = String.format("%s/%s.xml", labLocalDir + "/in", labOrderNumber);
+						try {
+							FileUtils.writeStringToFile(new File(path) , result, Charset.defaultCharset());
+						}
+						catch (IOException e) {
+							e.printStackTrace();
+						}
+						QuantumLabDownloadHandler.processResults(result, labOrderNumber, path);
+					}
+				}
+			}
+		}
+		AppConfig.LOGGER.info("Finished getting results...");
 	}
 }
