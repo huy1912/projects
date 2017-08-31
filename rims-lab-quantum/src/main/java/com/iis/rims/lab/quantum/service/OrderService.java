@@ -147,37 +147,48 @@ public class OrderService {
 				);
 		for (LabOrderDetail labOrderDetail : list) {
 			String labOrderNumber = labOrderDetail.getLabOrderNumber();
-			ArrayOfString results = integrationWebserviceSoap.getResultValues(labOrderNumber);
-			if (results != null) {
-				List<String> resultList = results.getString();
-				if (!resultList.isEmpty()) {
-					// Get the report
-					byte[] data = null;
-					String pdfFileName = null;
-					try {
-						data = integrationWebserviceSoap.getReportPDF(labOrderNumber, username, password);
-						if (data != null & data.length > 0) {
-							pdfFileName = labOrderNumber + ".pdf";
-							String path = String.format("%s/%s", labPdfLocalDir, pdfFileName);
-							FileUtils.writeByteArrayToFile(new File(path), data);
-						}
-					}
-					catch (Exception ex) {
-						AppConfig.LOGGER.error(ex.getMessage(), ex);
-					}
-					
-					for (String result : resultList) {
-						// Log the raw file for processing in the case of FALIED.
-						String path = String.format("%s/%s.xml", labInLocalDir, labOrderNumber);
+			AppConfig.LOGGER.info("Getting result of " + labOrderNumber);
+			try {
+				ArrayOfString results = integrationWebserviceSoap.getResultValues(labOrderNumber);
+				if (results != null) {
+					List<String> resultList = results.getString();
+					if (!resultList.isEmpty()) {
+						// Get the report
+						byte[] data = null;
+						String pdfFileName = null;
 						try {
-							FileUtils.writeStringToFile(new File(path) , result, Charset.defaultCharset());
+							AppConfig.LOGGER.info("Getting pdf report of " + labOrderNumber);
+							data = integrationWebserviceSoap.getReportPDF(labOrderNumber, username, password);
+							if (data != null & data.length > 0) {
+								pdfFileName = labOrderNumber + ".pdf";
+								String path = String.format("%s/%s", labPdfLocalDir, pdfFileName);
+								FileUtils.writeByteArrayToFile(new File(path), data);
+							}
 						}
-						catch (IOException e) {
-							e.printStackTrace();
+						catch (Exception ex) {
+							AppConfig.LOGGER.error(ex.getMessage(), ex);
 						}
-						QuantumLabDownloadHandler.processResults(result, labOrderNumber, path, pdfFileName, data);
+						
+						for (String result : resultList) {
+							// Log the raw file for processing in the case of FALIED.
+							String path = String.format("%s/%s.xml", labInLocalDir, labOrderNumber);
+							try {
+								FileUtils.writeStringToFile(new File(path) , result, Charset.defaultCharset());
+							}
+							catch (IOException e) {
+								e.printStackTrace();
+							}
+							QuantumLabDownloadHandler.processResults(result, labOrderNumber, path, pdfFileName, data);
+						}
 					}
 				}
+				else {
+					AppConfig.LOGGER.info("Result of " + labOrderNumber + " not available.");
+				}
+			}
+			catch (Exception ex) {
+				AppConfig.LOGGER.error("Can't get the result of " + labOrderNumber);
+				AppConfig.LOGGER.error(labOrderNumber, ex);
 			}
 		}
 		AppConfig.LOGGER.info("Finished getting results...");

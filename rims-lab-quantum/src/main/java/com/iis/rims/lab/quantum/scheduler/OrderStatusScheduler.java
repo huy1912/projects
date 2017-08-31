@@ -22,9 +22,9 @@ public class OrderStatusScheduler {
 		orderService.pushOrders();
 	}
 
-//	@Scheduled(cron = "0/5 * * * * *")
+	@Scheduled(cron = "${getresults.orders.cron}")
 	public void retrieveResults() {
-		AppConfig.LOGGER.info("Check order status");
+		orderService.getResults();
 	}
 	
 //	@Scheduled(cron = "0/10 * * * * *")
