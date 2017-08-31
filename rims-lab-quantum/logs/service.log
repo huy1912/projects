@@ -3184,3 +3184,121 @@ Parameter name: index
 	at org.apache.cxf.frontend.ClientProxy.invokeSync(ClientProxy.java:96)
 	at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:139)
 	... 14 common frames omitted
+1010 [main] INFO  c.i.r.l.q.service.OrderServiceTest - Starting OrderServiceTest on 30714L with PID 139700 (started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+1011 [main] INFO  c.i.r.l.q.service.OrderServiceTest - No active profile set, falling back to default profiles: default
+2585 [main] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+2592 [main] WARN  o.s.w.c.s.GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'orderService': Unsatisfied dependency expressed through field 'integrationWebserviceSoap'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.tempuri.LISIntegrationWebserviceSoap' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2796 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field integrationWebserviceSoap in com.iis.rims.lab.quantum.service.OrderService required a bean of type 'org.tempuri.LISIntegrationWebserviceSoap' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.tempuri.LISIntegrationWebserviceSoap' in your configuration.
+
+2803 [main] ERROR o.s.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@1910fd6] to prepare test instance [com.iis.rims.lab.quantum.service.OrderServiceTest@17a84fe]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'orderService': Unsatisfied dependency expressed through field 'integrationWebserviceSoap'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.tempuri.LISIntegrationWebserviceSoap' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 25 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.tempuri.LISIntegrationWebserviceSoap' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1493)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1104)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	... 43 common frames omitted
+860  [main] INFO  c.i.r.l.q.service.OrderServiceTest - Starting OrderServiceTest on 30714L with PID 134168 (started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+860  [main] INFO  c.i.r.l.q.service.OrderServiceTest - No active profile set, falling back to default profiles: default
+2250 [main] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+3352 [main] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3352 [main] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3352 [main] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+4385 [main] INFO  c.i.r.l.q.service.OrderServiceTest - Started OrderServiceTest in 3.947 seconds (JVM running for 4.761)
+7633 [main] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+862  [main] INFO  c.i.r.l.q.service.OrderServiceTest - Starting OrderServiceTest on 30714L with PID 139552 (started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+863  [main] INFO  c.i.r.l.q.service.OrderServiceTest - No active profile set, falling back to default profiles: default
+2247 [main] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+3325 [main] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3326 [main] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3326 [main] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+4332 [main] INFO  c.i.r.l.q.service.OrderServiceTest - Started OrderServiceTest in 3.898 seconds (JVM running for 4.698)
+4352 [main] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+868  [main] INFO  c.i.r.l.q.service.OrderServiceTest - Starting OrderServiceTest on 30714L with PID 135436 (started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+869  [main] INFO  c.i.r.l.q.service.OrderServiceTest - No active profile set, falling back to default profiles: default
+2249 [main] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+3315 [main] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3315 [main] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3316 [main] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+4326 [main] INFO  c.i.r.l.q.service.OrderServiceTest - Started OrderServiceTest in 3.891 seconds (JVM running for 4.69)
+865  [main] INFO  c.i.r.l.q.service.OrderServiceTest - Starting OrderServiceTest on 30714L with PID 135372 (started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+867  [main] INFO  c.i.r.l.q.service.OrderServiceTest - No active profile set, falling back to default profiles: default
+2224 [main] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+3296 [main] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3297 [main] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3297 [main] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+4354 [main] INFO  c.i.r.l.q.service.OrderServiceTest - Started OrderServiceTest in 3.921 seconds (JVM running for 4.714)
+873  [main] INFO  c.i.r.l.q.service.OrderServiceTest - Starting OrderServiceTest on 30714L with PID 139208 (started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+874  [main] INFO  c.i.r.l.q.service.OrderServiceTest - No active profile set, falling back to default profiles: default
+2213 [main] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+3266 [main] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3266 [main] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3266 [main] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+4337 [main] INFO  c.i.r.l.q.service.OrderServiceTest - Started OrderServiceTest in 3.9 seconds (JVM running for 4.699)
+912  [main] INFO  c.i.r.l.q.service.OrderServiceTest - Starting OrderServiceTest on 30714L with PID 126536 (started by huyh in C:\Users\huyh\git\projects\rims-lab-quantum)
+913  [main] INFO  c.i.r.l.q.service.OrderServiceTest - No active profile set, falling back to default profiles: default
+2280 [main] INFO  com.iis.rims.lab.quantum.AppConfig - construct order service....
+3352 [main] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3352 [main] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+3352 [main] WARN  o.s.b.c.p.ConfigurationPropertiesBindingPostProcessor - The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.
+4353 [main] INFO  c.i.r.l.q.service.OrderServiceTest - Started OrderServiceTest in 3.881 seconds (JVM running for 4.807)
