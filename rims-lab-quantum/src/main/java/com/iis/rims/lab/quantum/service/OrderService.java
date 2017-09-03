@@ -70,7 +70,8 @@ public class OrderService {
 		List<LabOrderDetail> list = labOrderDetailDAO.findByCriteria("labOrderDetailId", SortDirection.ASC,
 				Restrictions.eq("orderStatus", LabOrderStatus.PN.ordinal()),
 				Restrictions.eq("labCustomerId", labCustomerId),
-				Restrictions.in("uploadStatus", new Integer[] {null, 2})
+				Restrictions.or(Restrictions.isNull("uploadStatus"), Restrictions.eq("uploadStatus", 2))
+//				Restrictions.in("uploadStatus", new Integer[] {null, 2})
 //				Restrictions.or(Restrictions.isNull("labOrderNumber"), Restrictions.in("uploadStatus", new Integer[] {null, 2}))
 				); // 2 : FAILED upload
 		submitOrders(labOrderDetailDAO, list);
