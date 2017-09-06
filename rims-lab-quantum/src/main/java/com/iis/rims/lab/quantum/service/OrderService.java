@@ -111,7 +111,8 @@ public class OrderService {
 						// Assume the upload status returns with 0
 						if ("0".equals(response.getStatus())) {
 						}
-						detail.setUploadStatus(UploadStatus.UPLOADED.ordinal());
+						detail.setUploadStatus(UploadStatus.SUCCESSFUL.ordinal());
+						detail.setOrderStatus(LabOrderStatus.PN.ordinal());
 						labOrderDetailDAO.update(detail);
 					}
 				}

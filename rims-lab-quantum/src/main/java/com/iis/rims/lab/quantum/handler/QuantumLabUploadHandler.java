@@ -9,7 +9,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.FastDateFormat;
 
 import com.iis.rims.common.DateTimeFormatUtils;
-import com.iis.rims.common.RIMSConstants.LabOrderDetailType;
 import com.iis.rims.common.RIMSConstants.LabOrderStatus;
 import com.iis.rims.common.RIMSConstants.RunningNumber;
 import com.iis.rims.domain.Address;
@@ -24,14 +23,12 @@ import com.iis.rims.domain.LookupHeader;
 import com.iis.rims.domain.Patient;
 import com.iis.rims.domain.SystemUser;
 import com.iis.rims.domain.Visit;
-import com.iis.rims.domain.dto.LabOrderDetailUploadDTO;
 import com.iis.rims.domain.dto.RunningNumberDTO;
 import com.iis.rims.hibernate.dao.AddressDAO;
 import com.iis.rims.hibernate.dao.BranchDAO;
 import com.iis.rims.hibernate.dao.ContactInfoDAO;
 import com.iis.rims.hibernate.dao.DoctorDAO;
 import com.iis.rims.hibernate.dao.LabOrderDAO;
-import com.iis.rims.hibernate.dao.LabOrderDetailDAO;
 import com.iis.rims.hibernate.dao.LabProfileDAO;
 import com.iis.rims.hibernate.dao.LookupDetailDAO;
 import com.iis.rims.hibernate.dao.LookupHeaderDAO;
@@ -48,16 +45,14 @@ import com.iis.rims.lab.quantum.orm.MSG.ObservationRequest;
 import com.iis.rims.lab.quantum.orm.MSG.ObservationRequest.OBR;
 import com.iis.rims.lab.quantum.orm.MSG.PID;
 import com.iis.rims.lab.quantum.orm.MSG.PV1;
-import com.iis.rims.settings.OrganizationSettingsManager;
 
 public class QuantumLabUploadHandler {
 	private static final String ORDER_MESSAGE_TYPE = "ORM";
 	private static final String RECEIVING_APPLICATION_NAME = "LIS";
 	private static final String RECEIVING_APPLICATION_FACILITY = "LIS";
-	private static final String SENDING_APPLICATION_NAME = "RENAL";
-	private static final String SENDING_APPLICATION_FACILITY = "RENAL";
+	private static final String SENDING_APPLICATION_NAME = "MYRENALTEAM";
+	private static final String SENDING_APPLICATION_FACILITY = "MYRENALTEAM";
 	private static final FastDateFormat LAB_DATE_TIME_FORMATTER = FastDateFormat.getInstance("yyyyMMddHHmmss");
-	private static final FastDateFormat ORDER_REF_YEAR_FORMATTER = FastDateFormat.getInstance("yy");
 	
 	private static final BranchDAO BRANCH_DAO = new BranchDAO();
 	private static final PatientDAO PATIENT_DAO = new PatientDAO();
@@ -65,7 +60,6 @@ public class QuantumLabUploadHandler {
 	private static final ContactInfoDAO CONTACT_INFO_DAO = new ContactInfoDAO();
 	private static final SystemUserDAO SYSTEM_USER_DAO = new SystemUserDAO();
 	private static final LabOrderDAO LAB_ORDER_DAO = new LabOrderDAO();
-	private static final LabOrderDetailDAO LAB_ORDER_DETAIL_DAO = new LabOrderDetailDAO();
 	private static final LabProfileDAO LAB_PROFILE_DAO = new LabProfileDAO();
 //	private static final CountryDAO COUNTRY_DAO = new CountryDAO();
 	private static final VisitDAO VISIT_DAO = new VisitDAO();
@@ -93,8 +87,6 @@ public class QuantumLabUploadHandler {
 			Patient patient = PATIENT_DAO.findById(labOrder.getPatientId());
 			Branch branch = BRANCH_DAO.findById(labOrder.getBranchId());
 			Visit visit = VISIT_DAO.findById(labOrder.getVisitId());
-			OrganizationSettingsManager organizationSettingsManager = OrganizationSettingsManager.
-					getOrganizationSettingsById(patient.getOrganizationId(), branch.getBranchName());
 			Doctor doctor = DOCTOR_DAO.findById(branch.getDefaultDoctorId());
 			SystemUser systemUser = SYSTEM_USER_DAO.findById(branch.getDefaultDoctorId());
 			MSG orderMessage = new MSG();

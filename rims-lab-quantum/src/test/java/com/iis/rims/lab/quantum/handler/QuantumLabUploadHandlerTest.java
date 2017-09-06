@@ -22,7 +22,7 @@ public class QuantumLabUploadHandlerTest {
 		LabOrderDetailDAO labOrderDetailDAO = new LabOrderDetailDAO();
 		List<LabOrderDetail> list = labOrderDetailDAO.findByCriteria("labOrderDetailId", SortDirection.ASC,
 				Restrictions.eq("orderStatus", LabOrderStatus.PN.ordinal()),
-				Restrictions.eq("labCustomerId", 65),
+				Restrictions.eq("labCustomerId", 67),
 				Restrictions.isNull("labOrderNumber"));
 		System.err.println(list.size());
 		Map<Integer, List<LabOrderDetail>> orders = new LinkedHashMap<>();
