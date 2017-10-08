@@ -1,16 +1,15 @@
 package com.iis.rims.lab.quantum.message;
 
-import java.io.File;
 import java.io.StringReader;
 
 import javax.xml.bind.JAXB;
 
 import com.iis.rims.lab.quantum.orm.MSG;
-import com.iis.rims.lab.quantum.orm.response.ResponseType;
 
 
 public class DecodeMessage {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
+		/*
 		MSG msg = JAXB.unmarshal(new File("ORM_sample.xml"), MSG.class);
 		System.err.println(msg);
 		
@@ -22,10 +21,16 @@ public class DecodeMessage {
 		xmlData = "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Response><IntegrationHistoryID>24730486</IntegrationHistoryID><Status>0</Status></Response>";
 		ResponseType response = decodeMessage(xmlData, ResponseType.class);
 		System.err.println(response.getIntegrationHistoryID());
+		
+		String xmlData = FileUtils.readFileToString(new File("10000120_4.xml"));
+		MSG msg = decodeResults(xmlData);
+		System.err.println(msg);
+		*/
 	}
 	
 	public static MSG decodeResults(String xmlData) {
-		xmlData = xmlData.replaceAll("<content[^>]*>(.+)</content>", "$1");
+		xmlData = xmlData.replaceAll("<content[^>]*>", "");
+		xmlData = xmlData.replaceAll("</content>", "");
 		return decodeMessage(xmlData, MSG.class);
 	}
 	

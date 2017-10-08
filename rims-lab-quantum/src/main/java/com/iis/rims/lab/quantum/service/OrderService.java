@@ -112,7 +112,6 @@ public class OrderService {
 						if ("0".equals(response.getStatus())) {
 						}
 						detail.setUploadStatus(UploadStatus.SUCCESSFUL.ordinal());
-						detail.setOrderStatus(LabOrderStatus.PN.ordinal());
 						labOrderDetailDAO.update(detail);
 					}
 				}
@@ -145,11 +144,18 @@ public class OrderService {
 				Restrictions.eq("orderStatus", LabOrderStatus.PN.ordinal()),
 				Restrictions.eq("labCustomerId", labCustomerId),
 				Restrictions.isNotNull("labOrderNumber"),
-				Restrictions.eq("uploadStatus", UploadStatus.UPLOADED.ordinal())
+				Restrictions.and(Restrictions.eq("uploadStatus", UploadStatus.SUCCESSFUL.ordinal()),
+						Restrictions.eq("orderStatus", LabOrderStatus.PN.ordinal()))
 				);
 		for (LabOrderDetail labOrderDetail : list) {
 			String labOrderNumber = labOrderDetail.getLabOrderNumber();
 			AppConfig.LOGGER.info("Getting result of " + labOrderNumber);
+//			if (labOrderNumber.equals("10000120") || labOrderNumber.equals("10000129")) {
+//				continue;
+//			}
+//			if (!labOrderNumber.equals("10000129")) {
+//				continue;
+//			}
 			try {
 				ArrayOfString results = integrationWebserviceSoap.getResultValues(labOrderNumber);
 				if (results != null) {
@@ -170,18 +176,37 @@ public class OrderService {
 						catch (Exception ex) {
 							AppConfig.LOGGER.error(ex.getMessage(), ex);
 						}
-						
+						int count = 0;
+						MSG msg = null;
+						String path = null;
+						String firstResult = null;
 						for (String result : resultList) {
 							// Log the raw file for processing in the case of FALIED.
-							String path = String.format("%s/%s.xml", labInLocalDir, labOrderNumber);
+							String filePath = String.format("%s/%s%s.xml", labInLocalDir, labOrderNumber,
+									count == 0 ? "" : "_" + count);
 							try {
-								FileUtils.writeStringToFile(new File(path) , result, Charset.defaultCharset());
+								FileUtils.writeStringToFile(new File(filePath) , result, Charset.defaultCharset());
+								MSG currentMsg = DecodeMessage.decodeResults(result);
+								if (msg == null) {
+									msg = currentMsg;
+									firstResult = result;
+									path = filePath;
+								}
+								else {
+									// TODO Need to discuss with Thiru about this.
+									if (!msg.getObservationRequest().isEmpty() && !currentMsg.getObservationRequest().isEmpty()) {
+										msg.getObservationRequest().get(0).getObservation().getOBX().addAll(
+												currentMsg.getObservationRequest().get(0).getObservation().getOBX());
+									}
+								}
+								count++;
 							}
+							
 							catch (IOException e) {
 								e.printStackTrace();
 							}
-							QuantumLabDownloadHandler.processResults(result, labOrderNumber, path, pdfFileName, data);
 						}
+						QuantumLabDownloadHandler.processResults(msg, firstResult, labOrderNumber, path, pdfFileName, data);
 					}
 				}
 				else {

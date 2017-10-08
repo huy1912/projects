@@ -44,11 +44,9 @@ public class QuantumLabDownloadHandler {
 		POST_TEST_CODE_MAPPING.put("CRE", "CREPOST");
 	}
 
-	public static void processResults(String messageText, String internalOrderNumber,
+	public static void processResults(MSG msg, String messageText, String internalOrderNumber,
 			String orderFile, String pdfFile, byte[] pdfContent) {
 		try {
-			MSG msg = DecodeMessage.decodeResults(messageText);
-			
 			LabOrderDAO labOrderDAO = new LabOrderDAO();
 			LabOrderDetailDAO labOrderDetailDAO = new LabOrderDetailDAO();
 			LabTestCodeDAO labTestCodeDAO = new LabTestCodeDAO();
@@ -70,7 +68,8 @@ public class QuantumLabDownloadHandler {
 				Map<String, String> testCodeNotes = new LinkedHashMap<String, String>();
 				LabOrderDetail labOrderDetail = labOrderDetailDAO.getLabOrderDetail(internalOrderNumber, accessionNumber);
 				LabOrder labOrder = labOrderDAO.findById(labOrderDetail.getLabOrderId());
-				if (labOrder != null && labOrder.getNricFinNumber().equals(nricFinNumber)) {
+				String labNricFinNumber = labOrder.getNricFinNumber().replaceAll("-", "");
+				if (labOrder != null && labNricFinNumber.equals(nricFinNumber)) {
 					int organizationId = labOrder.getOrganizationId();
 					// Insert into the result.
 					for (OBX obx : observationRequest.getObservation().getOBX()) {
