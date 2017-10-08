@@ -112,7 +112,6 @@ public class OrderService {
 						if ("0".equals(response.getStatus())) {
 						}
 						detail.setUploadStatus(UploadStatus.SUCCESSFUL.ordinal());
-						detail.setOrderStatus(LabOrderStatus.PN.ordinal());
 						labOrderDetailDAO.update(detail);
 					}
 				}
@@ -145,7 +144,7 @@ public class OrderService {
 				Restrictions.eq("orderStatus", LabOrderStatus.PN.ordinal()),
 				Restrictions.eq("labCustomerId", labCustomerId),
 				Restrictions.isNotNull("labOrderNumber"),
-				Restrictions.eq("uploadStatus", UploadStatus.UPLOADED.ordinal())
+				Restrictions.eq("uploadStatus", UploadStatus.SUCCESSFUL.ordinal())
 				);
 		for (LabOrderDetail labOrderDetail : list) {
 			String labOrderNumber = labOrderDetail.getLabOrderNumber();
